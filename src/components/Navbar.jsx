@@ -32,16 +32,16 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between">
           
-          {/* Left: ONLY the Logo Image (No extra text next to it) */}
+          {/* Left: ONLY the Logo Image in Original Colour (NO extra text next to it) */}
           <a href="#" className="flex items-center group shrink-0">
             <img
               src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
-              alt="Auto Pavilion Logo"
-              className="h-10 sm:h-11 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              alt="Auto Pavilion"
+              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
             />
           </a>
 
-          {/* Center: Spaced Nav Links (Search bar removed completely) */}
+          {/* Center: Spaced Nav Links */}
           <nav className="hidden lg:flex items-center space-x-10 text-xs font-semibold tracking-widest text-zinc-300 uppercase">
             <button onClick={() => scrollTo('inventory')} className="hover:text-white transition-colors">
               Catalog

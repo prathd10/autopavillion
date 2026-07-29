@@ -1,36 +1,21 @@
-import React, { useState, useEffect } from 'react';
-import { ArrowUpRight } from 'lucide-react';
+import React, { useState, useRef } from 'react';
+import { ArrowUpRight, Volume2, VolumeX } from 'lucide-react';
 import { BRAND_LOGOS } from '../data/cars';
 
 export default function Hero({ activeBrandFilter, setActiveBrandFilter }) {
-  const [activeCarIndex, setActiveCarIndex] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
+  const videoRef = useRef(null);
 
-  const heroCars = [
-    {
-      title: "Porsche 911 GT3 RS",
-      subtitle: "Naturally Aspirated 4.0L Flat-6 • 525 HP Motorsport Screamer. Certified with our signature 251-Point Diagnostic Inspection & 100% Non-Accident legal guarantee.",
-      image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=2400&auto=format&fit=crop"
-    },
-    {
-      title: "Lamborghini Huracán EVO",
-      subtitle: "5.2L Atmospheric V10 • 640 HP Italian Symphony. Certified with our signature 251-Point Diagnostic Inspection & 100% Non-Accident legal guarantee.",
-      image: "https://images.unsplash.com/photo-1544829099-b9a0c07fad1a?q=80&w=2400&auto=format&fit=crop"
-    },
-    {
-      title: "Ferrari 488 Pista V8",
-      subtitle: "3.9L Twin-Turbocharged V8 • 720 HP Maranello Perfection. Certified with our signature 251-Point Diagnostic Inspection & 100% Non-Accident legal guarantee.",
-      image: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=2400&auto=format&fit=crop"
+  // User's newly added looping video file
+  const videoSrc = "/the_car_is_being_overshadowed.mp4";
+  const posterImg = "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=2400&auto=format&fit=crop";
+
+  const toggleAudio = () => {
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+      setIsMuted(!isMuted);
     }
-  ];
-
-  const currentCar = heroCars[activeCarIndex];
-
-  useEffect(() => {
-    const slideTimer = setInterval(() => {
-      setActiveCarIndex((prev) => (prev + 1) % heroCars.length);
-    }, 7000);
-    return () => clearInterval(slideTimer);
-  }, []);
+  };
 
   const scrollToCatalog = () => {
     const el = document.getElementById('inventory');
@@ -40,32 +25,54 @@ export default function Hero({ activeBrandFilter, setActiveBrandFilter }) {
   return (
     <section className="relative w-full min-h-screen bg-black text-white flex flex-col justify-between overflow-hidden">
       
-      {/* FULL BLEED BACKGROUND IMAGE STRETCHING THROUGHOUT ENTIRE SCREEN WITH FLOATING ZOOM ANIMATION */}
+      {/* FULL BLEED CINEMATIC USER VIDEO BACKGROUND */}
       <div className="absolute inset-0 w-full h-full overflow-hidden">
-        {heroCars.map((car, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${
-              index === activeCarIndex ? 'opacity-100 scale-100' : 'opacity-0 scale-105 pointer-events-none'
-            }`}
-          >
-            {/* Animated Slow Zoom Image */}
-            <img
-              src={car.image}
-              alt={car.title}
-              className="w-full h-full object-cover object-center filter brightness-95 animate-floatSlow"
-            />
-          </div>
-        ))}
+        <video
+          ref={videoRef}
+          autoPlay
+          loop
+          muted={isMuted}
+          playsInline
+          preload="auto"
+          poster={posterImg}
+          className="w-full h-full object-cover object-center filter brightness-90 contrast-105 scale-105"
+        >
+          <source src={videoSrc} type="video/mp4" />
+          <img
+            src={posterImg}
+            alt="Auto Pavilion Supercar"
+            className="w-full h-full object-cover object-center"
+          />
+        </video>
 
-        {/* Studio Lighting Overlays */}
+        {/* Studio Lighting & Gradient Vignette Overlays */}
         <div className="absolute inset-0 bg-gradient-to-r from-black/90 via-black/50 to-transparent pointer-events-none" />
         <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/60 pointer-events-none" />
       </div>
 
-      {/* REPOSITIONED HERO CONTENT WITH STAGGERED FADE-IN ANIMATIONS */}
+      {/* AUDIO TOGGLE BUTTON (BOTTOM RIGHT OF HERO) */}
+      <div className="absolute bottom-24 right-6 sm:right-12 z-20">
+        <button
+          onClick={toggleAudio}
+          className="px-4 py-2.5 rounded-full bg-black/80 hover:bg-white hover:text-black border border-white/20 text-white text-xs font-bold backdrop-blur-md transition-all flex items-center space-x-2 shadow-2xl group"
+        >
+          {isMuted ? (
+            <>
+              <VolumeX className="w-4 h-4 text-zinc-400 group-hover:text-black" />
+              <span>Unmute Video Sound</span>
+            </>
+          ) : (
+            <>
+              <Volume2 className="w-4 h-4 text-emerald-400 group-hover:text-black animate-pulse" />
+              <span className="text-emerald-400 group-hover:text-black">Audio Active</span>
+            </>
+          )}
+        </button>
+      </div>
+
+      {/* REPOSITIONED HERO CONTENT */}
       <div className="relative z-10 max-w-7xl mx-auto px-6 sm:px-12 lg:px-16 w-full pt-36 sm:pt-48 pb-16 my-auto">
-        <div className="max-w-xl space-y-6">
+        <div className="max-w-xl space-y-6 animate-fadeIn">
           
           <h1 className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white font-heading leading-[1.04] uppercase animate-fadeInUp">
             LIVE BETTER, <br />
@@ -73,10 +80,10 @@ export default function Hero({ activeBrandFilter, setActiveBrandFilter }) {
           </h1>
 
           <p className="text-xs sm:text-base text-zinc-300 font-mulish font-normal leading-relaxed max-w-lg animate-fadeInUp [animation-delay:200ms]">
-            {currentCar.subtitle}
+            Curated pre-owned exotics with signature 251-Point Diagnostic Inspection & 100% Non-Accident legal guarantee.
           </p>
 
-          {/* Single Primary CTA Button with Micro-Hover Glow */}
+          {/* Single Primary CTA Button: Explore Catalog ↗ */}
           <div className="pt-2 animate-fadeInUp [animation-delay:400ms]">
             <button
               onClick={scrollToCatalog}
@@ -92,7 +99,7 @@ export default function Hero({ activeBrandFilter, setActiveBrandFilter }) {
         </div>
       </div>
 
-      {/* BOTTOM MARQUE LOGOS BAR WITH SLOW PULSE & SHIMMER */}
+      {/* BOTTOM MARQUE LOGOS BAR */}
       <div className="relative z-10 w-full bg-gradient-to-t from-black via-black/90 to-transparent pt-6 pb-6 px-6 sm:px-12 lg:px-16 border-t border-white/10">
         <div className="max-w-7xl mx-auto flex items-center justify-between overflow-x-auto opacity-80 hover:opacity-100 transition-opacity duration-300 gap-8 scrollbar-none py-1">
           {BRAND_LOGOS.map((b, idx) => (
