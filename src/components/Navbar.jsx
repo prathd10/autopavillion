@@ -32,28 +32,33 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
       <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12">
         <div className="flex items-center justify-between">
           
-          {/* Left: ONLY the Logo Image in Original Colour (NO extra text next to it) */}
+          {/* Left: Logo Image (Original Gold at top, White when scrolled down) */}
           <a href="#" className="flex items-center group shrink-0">
             <img
               src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
               alt="Auto Pavilion"
-              className="h-10 sm:h-12 w-auto object-contain transition-transform duration-300 group-hover:scale-105"
+              className={`h-7 sm:h-9 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
+                scrolled ? 'brightness-0 invert' : ''
+              }`}
             />
           </a>
 
           {/* Center: Spaced Nav Links */}
-          <nav className="hidden lg:flex items-center space-x-10 text-xs font-semibold tracking-widest text-zinc-300 uppercase">
+          <nav className="hidden lg:flex items-center space-x-8 text-xs font-semibold tracking-widest text-zinc-300 uppercase">
             <button onClick={() => scrollTo('inventory')} className="hover:text-white transition-colors">
-              Catalog
+              Inventory
             </button>
-            <button onClick={() => scrollTo('sound-studio')} className="hover:text-white transition-colors">
-              Acoustics
+            <button onClick={() => scrollTo('the-vault')} className="hover:text-white transition-colors">
+              The Vault
             </button>
-            <button onClick={() => scrollTo('certification')} className="hover:text-white transition-colors">
-              251-Cert
+            <button onClick={() => scrollTo('bespoke-sourcing')} className="hover:text-white transition-colors">
+              Sourcing
             </button>
-            <button onClick={() => scrollTo('valuation')} className="hover:text-white transition-colors">
-              Valuation
+            <button onClick={() => scrollTo('events')} className="hover:text-white transition-colors">
+              Events
+            </button>
+            <button onClick={() => scrollTo('about-us')} className="hover:text-white transition-colors">
+              About Us
             </button>
           </nav>
 
@@ -84,9 +89,9 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
           <div className="lg:hidden flex items-center space-x-2">
             <button
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              className="p-2.5 rounded-full bg-black/70 text-white border border-white/20 backdrop-blur-md"
+              className="p-2 text-white hover:text-zinc-300 focus:outline-none transition-colors"
             >
-              {mobileMenuOpen ? <X className="w-5 h-5" /> : <Menu className="w-5 h-5" />}
+              {mobileMenuOpen ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
             </button>
           </div>
 
@@ -98,16 +103,19 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
         <div className="lg:hidden bg-black/95 border-b border-white/10 px-6 py-6 transition-all space-y-4">
           <div className="flex flex-col space-y-3 text-xs font-semibold uppercase tracking-widest text-zinc-300">
             <button onClick={() => scrollTo('inventory')} className="text-left py-2 border-b border-white/10">
-              Catalog
+              Inventory
             </button>
-            <button onClick={() => scrollTo('sound-studio')} className="text-left py-2 border-b border-white/10">
-              Acoustics
+            <button onClick={() => scrollTo('the-vault')} className="text-left py-2 border-b border-white/10">
+              The Vault (Sold Gallery)
             </button>
-            <button onClick={() => scrollTo('certification')} className="text-left py-2 border-b border-white/10">
-              251-Point Certification
+            <button onClick={() => scrollTo('bespoke-sourcing')} className="text-left py-2 border-b border-white/10">
+              Bespoke Sourcing
             </button>
-            <button onClick={() => scrollTo('valuation')} className="text-left py-2 border-b border-white/10">
-              Instant Sell / Valuation
+            <button onClick={() => scrollTo('events')} className="text-left py-2 border-b border-white/10">
+              Lifestyle & Track Events
+            </button>
+            <button onClick={() => scrollTo('about-us')} className="text-left py-2 border-b border-white/10">
+              About Us
             </button>
 
             <button

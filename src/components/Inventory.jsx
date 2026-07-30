@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
-import { Search, SlidersHorizontal, Car, RefreshCw } from 'lucide-react';
+import { Car, ChevronLeft, ChevronRight, Sparkles, ArrowUpRight } from 'lucide-react';
 import CarCard from './CarCard';
+import { BRAND_LOGOS } from '../data/cars';
 
 export default function Inventory({
   cars,
@@ -9,194 +10,181 @@ export default function Inventory({
   onToggleCompare,
   activeBrandFilter,
   setActiveBrandFilter,
-  searchTerm,
-  setSearchTerm
+  onOpenFullCatalog
 }) {
-  const [selectedBodyType, setSelectedBodyType] = useState('All');
-  const [sortBy, setSortBy] = useState('featured');
-  const [maxPriceFilter, setMaxPriceFilter] = useState(80000000);
+  const [currentIndex, setCurrentIndex] = useState(0);
 
-  const bodyTypes = ['All', 'Coupe', 'SUV', 'Sedan'];
+  // Touch Swipe tracking
+  const [touchStart, setTouchStart] = useState(null);
+  const [touchEnd, setTouchEnd] = useState(null);
 
-  const filteredCars = useMemo(() => {
-    return cars
-      .filter((car) => {
-        const query = (searchTerm || '').toLowerCase();
-        const matchesSearch =
-          car.name.toLowerCase().includes(query) ||
-          car.brand.toLowerCase().includes(query) ||
-          car.engine.toLowerCase().includes(query);
+  // Home page showcase uses all available cars
+  const filteredCars = cars;
+  const total = filteredCars.length;
 
-        const matchesBrand = activeBrandFilter ? car.brand.toLowerCase() === activeBrandFilter.toLowerCase() : true;
-        const matchesBody = selectedBodyType === 'All' ? true : car.bodyType === selectedBodyType;
-        const matchesPrice = car.priceRaw <= maxPriceFilter;
+  // Circular loop navigation
+  const handleNext = () => {
+    if (total === 0) return;
+    setCurrentIndex((prev) => (prev + 1) % total);
+  };
 
-        return matchesSearch && matchesBrand && matchesBody && matchesPrice;
-      })
-      .sort((a, b) => {
-        if (sortBy === 'price-high') return b.priceRaw - a.priceRaw;
-        if (sortBy === 'price-low') return a.priceRaw - b.priceRaw;
-        if (sortBy === 'power-high') return b.hpRaw - a.hpRaw;
-        if (sortBy === 'fastest') return a.zeroToHundredRaw - b.zeroToHundredRaw;
-        return b.featured ? 1 : -1;
-      });
-  }, [cars, searchTerm, activeBrandFilter, selectedBodyType, maxPriceFilter, sortBy]);
+  const handlePrev = () => {
+    if (total === 0) return;
+    setCurrentIndex((prev) => (prev - 1 + total) % total);
+  };
+
+  // Touch gesture handlers for mobile swiping
+  const minSwipeDistance = 50;
+
+  const onTouchStart = (e) => {
+    setTouchEnd(null);
+    setTouchStart(e.targetTouches[0].clientX);
+  };
+
+  const onTouchMove = (e) => {
+    setTouchEnd(e.targetTouches[0].clientX);
+  };
+
+  const onTouchEnd = () => {
+    if (!touchStart || !touchEnd) return;
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > minSwipeDistance;
+    const isRightSwipe = distance < -minSwipeDistance;
+    if (isLeftSwipe) handleNext();
+    if (isRightSwipe) handlePrev();
+  };
+
+  // Compute circular slice of cars to display (3 on desktop, 1 on mobile)
+  const visibleCars = useMemo(() => {
+    if (total === 0) return [];
+    if (total === 1) return [{ car: filteredCars[0], originalIndex: 0 }];
+    if (total === 2) {
+      return [
+        { car: filteredCars[currentIndex % total], originalIndex: currentIndex % total },
+        { car: filteredCars[(currentIndex + 1) % total], originalIndex: (currentIndex + 1) % total }
+      ];
+    }
+    return [
+      { car: filteredCars[currentIndex % total], originalIndex: currentIndex % total },
+      { car: filteredCars[(currentIndex + 1) % total], originalIndex: (currentIndex + 1) % total },
+      { car: filteredCars[(currentIndex + 2) % total], originalIndex: (currentIndex + 2) % total }
+    ];
+  }, [filteredCars, currentIndex, total]);
 
   return (
     <section id="inventory" className="py-20 bg-black text-white relative">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Section Header */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 pb-6 border-b border-white/10">
-          <div>
-            <div className="inline-flex items-center space-x-2 text-[11px] font-bold uppercase tracking-[0.25em] text-zinc-400 mb-2">
-              <Car className="w-4 h-4 text-white" />
-              <span>Supercar Store Catalog</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading uppercase">
-              EXOTIC & LUXURY <span className="text-zinc-400 font-extralight">SHOWROOM</span>
-            </h2>
+        {/* Center-Aligned Section Header */}
+        <div className="flex flex-col items-center justify-center text-center mb-10 pb-6 border-b border-white/10 space-y-2">
+          <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading uppercase">
+            EXOTIC & LUXURY <span className="text-zinc-400 font-extralight">SHOWROOM</span>
+          </h2>
+
+          <div className="text-zinc-400 text-xs sm:text-sm font-mulish pt-1">
+            Showing <strong className="text-white font-mono text-base">{total > 0 ? (currentIndex % total) + 1 : 0}</strong> of{' '}
+            <strong className="text-white font-mono text-base">{total}</strong> Verified Supercars
           </div>
 
-          <div className="mt-4 md:mt-0 text-zinc-400 text-xs sm:text-sm font-mulish">
-            Showing <strong className="text-white font-mono text-base">{filteredCars.length}</strong> of{' '}
-            <strong className="text-white font-mono text-base">{cars.length}</strong> Verified Supercars
+          <div className="text-zinc-400 font-bold uppercase tracking-[0.25em] text-[10px] sm:text-xs pt-1">
+            Swipe to Browse
           </div>
         </div>
 
-        {/* Filter Controls Bar */}
-        <div className="mono-panel p-6 rounded-2xl border border-white/10 mb-10 space-y-6">
-          
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 items-center">
-            
-            {/* Search */}
-            <div className="lg:col-span-6 relative">
-              <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-4 h-4 text-zinc-400" />
-              <input
-                type="text"
-                value={searchTerm || ''}
-                onChange={(e) => setSearchTerm && setSearchTerm(e.target.value)}
-                placeholder="Search Porsche, Lamborghini V10, AMG GT..."
-                className="w-full pl-11 pr-4 py-3.5 rounded-xl bg-black border border-white/15 text-white placeholder-zinc-500 text-xs focus:outline-none focus:border-white transition-colors"
-              />
-              {searchTerm && (
-                <button
-                  onClick={() => setSearchTerm && setSearchTerm('')}
-                  className="absolute right-4 top-1/2 -translate-y-1/2 text-xs text-zinc-400 hover:text-white"
-                >
-                  Clear
-                </button>
-              )}
+        {/* CLEAN CIRCULAR SWIPE LOOP CAROUSEL */}
+        {total > 0 && (
+          <div className="relative space-y-6 mb-12">
+
+            {/* Swipeable Active Carousel Area */}
+            <div
+              onTouchStart={onTouchStart}
+              onTouchMove={onTouchMove}
+              onTouchEnd={onTouchEnd}
+              className="relative overflow-hidden cursor-grab active:cursor-grabbing select-none"
+            >
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 ease-out">
+                {visibleCars.map((item, idx) => (
+                  <div 
+                    key={`${item.car.id}-${idx}`}
+                    className={`${idx > 0 ? 'hidden md:block' : 'block'} ${idx === 2 ? 'hidden lg:block' : ''}`}
+                  >
+                    <CarCard
+                      car={item.car}
+                      onSelectCar={onSelectCar}
+                      isComparing={compareList.some((c) => c.id === item.car.id)}
+                      onToggleCompare={onToggleCompare}
+                    />
+                  </div>
+                ))}
+              </div>
             </div>
 
-            {/* Body Type Tabs */}
-            <div className="lg:col-span-4 flex items-center space-x-2 overflow-x-auto pb-2 lg:pb-0 scrollbar-none">
-              {bodyTypes.map((bt) => (
+            {/* Infinite Loop Pagination Indicator Bar */}
+            <div className="flex items-center justify-center space-x-2 pt-4">
+              {filteredCars.map((_, idx) => (
                 <button
-                  key={bt}
-                  onClick={() => setSelectedBodyType(bt)}
-                  className={`px-4 py-2.5 rounded-full text-xs font-bold uppercase transition-all whitespace-nowrap ${
-                    selectedBodyType === bt
-                      ? 'bg-white text-black'
-                      : 'bg-black hover:bg-white/10 border border-white/15 text-zinc-300'
+                  key={idx}
+                  onClick={() => setCurrentIndex(idx)}
+                  className={`transition-all duration-300 ${
+                    idx === currentIndex % total
+                      ? 'w-8 h-2 bg-white rounded-full'
+                      : 'w-2 h-2 bg-white/20 hover:bg-white/50 rounded-full'
                   }`}
-                >
-                  {bt}
-                </button>
+                  title={`Go to supercar ${idx + 1}`}
+                />
               ))}
             </div>
 
-            {/* Sort Dropdown */}
-            <div className="lg:col-span-2">
-              <select
-                value={sortBy}
-                onChange={(e) => setSortBy(e.target.value)}
-                className="w-full px-4 py-3.5 rounded-xl bg-black border border-white/15 text-white text-xs font-bold uppercase focus:outline-none focus:border-white"
-              >
-                <option value="featured">Sort: Featured</option>
-                <option value="price-high">Price: High to Low</option>
-                <option value="price-low">Price: Low to High</option>
-                <option value="power-high">Power: Max HP</option>
-                <option value="fastest">Acceleration: 0-100</option>
-              </select>
-            </div>
-
-          </div>
-
-          {/* Budget Range Bar */}
-          <div className="pt-4 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4">
-            <div className="flex items-center space-x-3 w-full sm:w-auto">
-              <SlidersHorizontal className="w-4 h-4 text-white" />
-              <span className="text-xs font-bold text-zinc-300 uppercase tracking-wider">
-                Max Budget Cap:
-              </span>
-              <span className="text-xs font-mono font-bold text-white">
-                ₹ {(maxPriceFilter / 10000000).toFixed(2)} Cr
-              </span>
-            </div>
-
-            <input
-              type="range"
-              min="15000000"
-              max="80000000"
-              step="2500000"
-              value={maxPriceFilter}
-              onChange={(e) => setMaxPriceFilter(Number(e.target.value))}
-              className="w-full sm:w-80 accent-white cursor-pointer"
-            />
-
-            {(activeBrandFilter || selectedBodyType !== 'All' || searchTerm || maxPriceFilter < 80000000) && (
+            {/* PROMINENT END CTA BUTTON TO VIEW ENTIRE INVENTORY */}
+            <div className="pt-8 flex justify-center">
               <button
                 onClick={() => {
-                  setActiveBrandFilter(null);
-                  setSelectedBodyType('All');
-                  if (setSearchTerm) setSearchTerm('');
-                  setMaxPriceFilter(80000000);
-                  setSortBy('featured');
+                  if (onOpenFullCatalog) {
+                    onOpenFullCatalog();
+                  } else {
+                    const el = document.getElementById('bespoke-sourcing');
+                    if (el) el.scrollIntoView({ behavior: 'smooth' });
+                  }
                 }}
-                className="text-xs text-zinc-400 hover:text-white underline font-semibold flex items-center space-x-1"
+                className="px-8 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center space-x-3 hover:bg-zinc-200 transition-all duration-300 shadow-2xl hover:scale-105 group"
               >
-                <RefreshCw className="w-3 h-3" />
-                <span>Reset</span>
+                <span>View Entire Supercar Inventory</span>
+                <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 group-hover:rotate-45 transition-transform duration-300">
+                  <ArrowUpRight className="w-3.5 h-3.5" />
+                </span>
               </button>
-            )}
-          </div>
+            </div>
 
-        </div>
-
-        {/* Supercar Product Grid */}
-        {filteredCars.length > 0 ? (
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {filteredCars.map((car) => (
-              <CarCard
-                key={car.id}
-                car={car}
-                onSelectCar={onSelectCar}
-                isComparing={compareList.some((c) => c.id === car.id)}
-                onToggleCompare={onToggleCompare}
-              />
-            ))}
-          </div>
-        ) : (
-          <div className="mono-panel p-12 text-center rounded-3xl border border-white/10 max-w-lg mx-auto">
-            <Car className="w-10 h-10 text-white mx-auto mb-4 animate-bounce" />
-            <h3 className="text-xl font-bold text-white mb-2">No Supercars Found</h3>
-            <p className="text-xs text-zinc-400 mb-6">
-              No vehicles matched your filter parameters. Try resetting your search terms.
-            </p>
-            <button
-              onClick={() => {
-                setActiveBrandFilter(null);
-                setSelectedBodyType('All');
-                if (setSearchTerm) setSearchTerm('');
-                setMaxPriceFilter(80000000);
-              }}
-              className="px-6 py-3 rounded-full bg-white text-black font-bold text-xs uppercase tracking-widest"
-            >
-              Reset All Filters
-            </button>
           </div>
         )}
+
+        {/* RELOCATED BRAND LOGOS SLOW MARQUEE (RIGHT TO LEFT) */}
+        <div className="pt-10 pb-4 border-t border-white/10 overflow-hidden relative w-full">
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+          <div className="animate-marquee flex items-center space-x-12 shrink-0">
+            {[...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS].map((b, idx) => (
+              <button
+                key={idx}
+                onClick={() => {
+                  if (setActiveBrandFilter) setActiveBrandFilter(activeBrandFilter === b.name ? null : b.name);
+                  setCurrentIndex(0);
+                }}
+                className="flex items-center space-x-2.5 shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300"
+              >
+                <img
+                  src={b.icon}
+                  alt={b.name}
+                  className="h-4 sm:h-5 w-auto object-contain filter invert contrast-200"
+                />
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-300">
+                  {b.name}
+                </span>
+              </button>
+            ))}
+          </div>
+        </div>
 
       </div>
     </section>

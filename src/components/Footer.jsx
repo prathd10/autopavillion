@@ -62,22 +62,27 @@ export default function Footer({ onOpenVipModal }) {
             <ul className="space-y-2.5 text-xs text-zinc-400 font-mulish">
               <li>
                 <button onClick={() => scrollTo('inventory')} className="hover:text-white transition-colors">
-                  Exotic Store
+                  Exotic Inventory
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo('sound-studio')} className="hover:text-white transition-colors">
-                  Sound Studio
+                <button onClick={() => scrollTo('the-vault')} className="hover:text-white transition-colors">
+                  The Vault (Sold Gallery)
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo('certification')} className="hover:text-white transition-colors">
-                  251-Point Inspection
+                <button onClick={() => scrollTo('bespoke-sourcing')} className="hover:text-white transition-colors">
+                  Bespoke Concierge
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo('valuation')} className="hover:text-white transition-colors">
-                  30-Min Trade-In
+                <button onClick={() => scrollTo('about-us')} className="hover:text-white transition-colors">
+                  About Us & Heritage
+                </button>
+              </li>
+              <li>
+                <button onClick={() => scrollTo('events')} className="hover:text-white transition-colors">
+                  Track Days & Events
                 </button>
               </li>
               <li>
