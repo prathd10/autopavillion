@@ -139,6 +139,30 @@ export default function Footer({ onOpenVipModal }) {
 
         </div>
 
+        {/* Brand Logos Marquee in Footer */}
+        <div className="py-8 border-b border-white/10 overflow-hidden relative w-full">
+          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
+          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+
+          <div className="animate-marquee flex items-center space-x-12 shrink-0">
+            {[{ name: "Porsche", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/porsche.svg" }, { name: "Lamborghini", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/lamborghini.svg" }, { name: "Ferrari", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ferrari.svg" }, { name: "Mercedes-AMG", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mercedes.svg" }, { name: "Bentley", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bentley.svg" }, { name: "Rolls-Royce", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/rollsroyce.svg" }, { name: "Aston Martin", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/astonmartin.svg" }, { name: "McLaren", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mclaren.svg" }, { name: "Bugatti", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bugatti.svg" }, { name: "Land Rover", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/landrover.svg" }, { name: "BMW M", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bmw.svg" }, { name: "Porsche", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/porsche.svg" }, { name: "Lamborghini", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/lamborghini.svg" }, { name: "Ferrari", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ferrari.svg" }, { name: "Mercedes-AMG", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mercedes.svg" }, { name: "Bentley", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bentley.svg" }, { name: "Rolls-Royce", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/rollsroyce.svg" }, { name: "Aston Martin", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/astonmartin.svg" }, { name: "McLaren", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mclaren.svg" }, { name: "Bugatti", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bugatti.svg" }, { name: "Land Rover", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/landrover.svg" }, { name: "BMW M", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bmw.svg" }].map((b, idx) => (
+              <div
+                key={idx}
+                className="flex items-center space-x-2.5 shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300"
+              >
+                <img
+                  src={b.icon}
+                  alt={b.name}
+                  className="h-4 sm:h-5 w-auto object-contain filter invert"
+                />
+                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-400">
+                  {b.name}
+                </span>
+              </div>
+            ))}
+          </div>
+        </div>
+
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 font-mulish">
           <div>

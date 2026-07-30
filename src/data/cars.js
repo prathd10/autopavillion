@@ -416,12 +416,15 @@ export const BUSINESS_FACTS = [
 ];
 
 export const BRAND_LOGOS = [
-  { name: "Porsche", icon: "https://cdn.worldvectorlogo.com/logos/porsche-6.svg" },
-  { name: "Lamborghini", icon: "https://upload.wikimedia.org/wikipedia/en/d/df/Lamborghini_Logo.svg" },
-  { name: "Ferrari", icon: "https://cdn.worldvectorlogo.com/logos/ferrari-ges-logo.svg" },
-  { name: "Mercedes-AMG", icon: "https://cdn.worldvectorlogo.com/logos/mercedes-benz-9.svg" },
-  { name: "Bentley", icon: "https://cdn.worldvectorlogo.com/logos/bentley-1.svg" },
-  { name: "Rolls-Royce", icon: "https://cdn.worldvectorlogo.com/logos/rolls-royce-motor-cars.svg" },
-  { name: "Land Rover", icon: "https://cdn.worldvectorlogo.com/logos/land-rover-2.svg" },
-  { name: "BMW M", icon: "https://upload.wikimedia.org/wikipedia/commons/4/44/BMW.svg" }
+  { name: "Porsche", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/porsche.svg" },
+  { name: "Lamborghini", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/lamborghini.svg" },
+  { name: "Ferrari", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ferrari.svg" },
+  { name: "Mercedes-AMG", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mercedes.svg" },
+  { name: "Bentley", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bentley.svg" },
+  { name: "Rolls-Royce", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/rollsroyce.svg" },
+  { name: "Aston Martin", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/astonmartin.svg" },
+  { name: "McLaren", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mclaren.svg" },
+  { name: "Bugatti", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bugatti.svg" },
+  { name: "Land Rover", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/landrover.svg" },
+  { name: "BMW M", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bmw.svg" }
 ];
