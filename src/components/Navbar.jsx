@@ -54,9 +54,6 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
             <button onClick={() => scrollTo('bespoke-sourcing')} className="hover:text-white transition-colors">
               Sourcing
             </button>
-            <button onClick={() => scrollTo('events')} className="hover:text-white transition-colors">
-              Events
-            </button>
             <button onClick={() => scrollTo('about-us')} className="hover:text-white transition-colors">
               About Us
             </button>
@@ -110,9 +107,6 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
             </button>
             <button onClick={() => scrollTo('bespoke-sourcing')} className="text-left py-2 border-b border-white/10">
               Bespoke Sourcing
-            </button>
-            <button onClick={() => scrollTo('events')} className="text-left py-2 border-b border-white/10">
-              Lifestyle & Track Events
             </button>
             <button onClick={() => scrollTo('about-us')} className="text-left py-2 border-b border-white/10">
               About Us

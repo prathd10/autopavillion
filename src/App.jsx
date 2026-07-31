@@ -5,7 +5,6 @@ import Hero from './components/Hero';
 import Inventory from './components/Inventory';
 import SoldVault from './components/SoldVault';
 import BespokeConcierge from './components/BespokeConcierge';
-import TrackEvents from './components/TrackEvents';
 import AboutUs from './components/AboutUs';
 import CarModal from './components/CarModal';
 import CarCompare from './components/CarCompare';
@@ -88,9 +87,6 @@ export default function App() {
 
           {/* 6. Bespoke Global Supercar Sourcing */}
           <BespokeConcierge />
-
-          {/* 7. Lifestyle & Track Events */}
-          <TrackEvents onOpenVipModal={handleOpenVipModal} />
 
           {/* 8. About Us & Heritage */}
           <AboutUs />

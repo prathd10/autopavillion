@@ -81,11 +81,6 @@ export default function Footer({ onOpenVipModal }) {
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo('events')} className="hover:text-white transition-colors">
-                  Track Days & Events
-                </button>
-              </li>
-              <li>
                 <button onClick={onOpenVipModal} className="hover:text-white transition-colors">
                   VIP Appointment
                 </button>
