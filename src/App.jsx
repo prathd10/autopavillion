@@ -1,131 +1,90 @@
-import React, { useState } from 'react';
-import Preloader from './components/Preloader';
-import Navbar from './components/Navbar';
-import Hero from './components/Hero';
-import Inventory from './components/Inventory';
-import SoldVault from './components/SoldVault';
-import BespokeConcierge from './components/BespokeConcierge';
-import AboutUs from './components/AboutUs';
-import CarModal from './components/CarModal';
-import CarCompare from './components/CarCompare';
-import TradeInCalculator from './components/TradeInCalculator';
-import TrustStats from './components/TrustStats';
-import Testimonials from './components/Testimonials';
-import Footer from './components/Footer';
-import { CARS_DATA } from './data/cars';
+import React from 'react';
+import { Routes, Route, Navigate } from 'react-router-dom';
 
+// Public pages
+import HomePage from './pages/HomePage';
+import InventoryPage from './pages/InventoryPage';
+import AboutPage from './pages/AboutPage';
+import SourcingPage from './pages/SourcingPage';
+import SellPage from './pages/SellPage';
+import FinancePage from './pages/FinancePage';
+import ComparePage from './pages/ComparePage';
+import InsightsPage from './pages/InsightsPage';
+import FAQPage from './pages/FAQPage';
+import Chatbot from './components/Chatbot';
+
+// Admin pages
+import AdminLogin     from './admin/pages/AdminLogin';
+import AdminDashboard from './admin/pages/AdminDashboard';
+import AdminInventory from './admin/pages/AdminInventory';
+import CarForm        from './admin/pages/CarForm';
+import AdminTestimonials from './admin/pages/AdminTestimonials';
+import TestimonialForm   from './admin/pages/TestimonialForm';
+
+// Admin layout + route guard
+import AdminLayout    from './admin/AdminLayout';
+import ProtectedRoute from './admin/ProtectedRoute';
+
+/**
+ * Root router.
+ * - /               → Public homepage (Supabase-backed car data + page tracking)
+ * - /inventory      → Public inventory listing
+ * - /about          → Public about page
+ * - /sourcing       → Public sourcing page
+ * - /faq            → Public FAQ page
+ * - /admin/login    → Supabase auth login
+ * - /admin/*        → Protected admin panel (dashboard, inventory CRUD)
+ *
+ * BrowserRouter is provided by main.jsx.
+ * AuthProvider is provided by main.jsx.
+ */
 export default function App() {
-  const [loading, setLoading] = useState(true);
-  const [selectedCar, setSelectedCar] = useState(null);
-  const [compareList, setCompareList] = useState([]);
-  const [showCompareModal, setShowCompareModal] = useState(false);
-  const [activeBrandFilter, setActiveBrandFilter] = useState(null);
-  const [searchTerm, setSearchTerm] = useState('');
-
-  const handleToggleCompare = (car) => {
-    if (compareList.some((c) => c.id === car.id)) {
-      setCompareList(compareList.filter((c) => c.id !== car.id));
-    } else {
-      if (compareList.length >= 3) {
-        alert('You can compare a maximum of 3 supercars at a time.');
-        return;
-      }
-      setCompareList([...compareList, car]);
-      setShowCompareModal(true);
-    }
-  };
-
-  const handleRemoveFromCompare = (id) => {
-    const updated = compareList.filter((c) => c.id !== id);
-    setCompareList(updated);
-    if (updated.length === 0) setShowCompareModal(false);
-  };
-
-  const handleOpenVipModal = () => {
-    const el = document.getElementById('bespoke-sourcing');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
-  };
-
   return (
-    <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black">
+    <>
+      <Routes>
+        {/* ── Public ── */}
+        <Route path="/" element={<HomePage />} />
+        <Route path="/inventory" element={<InventoryPage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/sourcing" element={<SourcingPage />} />
+        <Route path="/sell" element={<SellPage />} />
+        <Route path="/finance" element={<FinancePage />} />
+        <Route path="/compare" element={<ComparePage />} />
+        <Route path="/insights" element={<InsightsPage />} />
+        <Route path="/faq" element={<FAQPage />} />
+
+        {/* ── Admin Auth ── */}
+        <Route path="/admin/login" element={<AdminLogin />} />
+
+        {/* ── Protected Admin (sidebar layout via Outlet) ── */}
+        <Route
+          path="/admin"
+          element={
+            <ProtectedRoute>
+              <AdminLayout />
+            </ProtectedRoute>
+          }
+        >
+          {/* /admin → redirect to dashboard */}
+          <Route index element={<Navigate to="dashboard" replace />} />
+          <Route path="dashboard"           element={<AdminDashboard />} />
+          <Route path="inventory"           element={<AdminInventory />} />
+          <Route path="inventory/new"       element={<CarForm />} />
+          <Route path="inventory/:id/edit"  element={<CarForm />} />
+          
+          <Route path="testimonials"          element={<AdminTestimonials />} />
+          <Route path="testimonials/new"      element={<TestimonialForm />} />
+          <Route path="testimonials/:id/edit" element={<TestimonialForm />} />
+        </Route>
+
+        {/* Catch-all → homepage */}
+        <Route path="*" element={<Navigate to="/" replace />} />
+      </Routes>
       
-      {/* 1. Preloader Animation */}
-      {loading ? (
-        <Preloader onComplete={() => setLoading(false)} />
-      ) : (
-        <>
-          {/* 2. Floating Navbar */}
-          <Navbar
-            compareCount={compareList.length}
-            onOpenCompare={() => setShowCompareModal(true)}
-            onOpenVipModal={handleOpenVipModal}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-          />
-
-          {/* 3. Hero Section */}
-          <Hero
-            onOpenVipModal={handleOpenVipModal}
-            activeBrandFilter={activeBrandFilter}
-            setActiveBrandFilter={setActiveBrandFilter}
-          />
-
-          {/* 4. Filterable Supercar Showroom Inventory */}
-          <Inventory
-            cars={CARS_DATA}
-            onSelectCar={(car) => setSelectedCar(car)}
-            compareList={compareList}
-            onToggleCompare={handleToggleCompare}
-            activeBrandFilter={activeBrandFilter}
-            setActiveBrandFilter={setActiveBrandFilter}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-          />
-
-          {/* 5. The Vault (Sold Hypercars Gallery) */}
-          <SoldVault />
-
-          {/* 6. Bespoke Global Supercar Sourcing */}
-          <BespokeConcierge />
-
-          {/* 8. About Us & Heritage */}
-          <AboutUs />
-
-          {/* 9. Business Trust Blueprint */}
-          <TrustStats />
-
-          {/* 10. Instant Sell / Trade-In Valuation Calculator */}
-          <TradeInCalculator />
-
-          {/* 11. Client Testimonials */}
-          <Testimonials />
-
-          {/* 14. Footer */}
-          <Footer onOpenVipModal={handleOpenVipModal} />
-
-          {/* 12. Modal Drawers */}
-          {selectedCar && (
-            <CarModal
-              car={selectedCar}
-              onClose={() => setSelectedCar(null)}
-              onOpenVipModal={handleOpenVipModal}
-            />
-          )}
-
-          {showCompareModal && compareList.length > 0 && (
-            <CarCompare
-              compareList={compareList}
-              onRemoveFromCompare={handleRemoveFromCompare}
-              onCloseCompare={() => setShowCompareModal(false)}
-              onSelectCar={(car) => {
-                setShowCompareModal(false);
-                setSelectedCar(car);
-              }}
-            />
-          )}
-        </>
-      )}
-
-    </div>
+      <Routes>
+        <Route path="/admin/*" element={null} />
+        <Route path="*" element={<Chatbot />} />
+      </Routes>
+    </>
   );
 }

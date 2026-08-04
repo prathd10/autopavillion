@@ -32,7 +32,7 @@ export default function VipBooking() {
               Exclusive Appointment
             </span>
             <h2 className="text-3xl sm:text-5xl font-black text-white font-heading uppercase">
-              SCHEDULE <span className="text-zinc-400 font-extralight">VIP VISITING</span>
+              SCHEDULE <span className="text-zinc-400 font-extralight">A VIEWING</span>
             </h2>
             <p className="text-xs sm:text-sm text-zinc-400 max-w-xl mx-auto font-mulish">
               Experience private viewing in our Santacruz West, Mumbai showroom or request enclosed flatbed home presentation.
@@ -42,7 +42,7 @@ export default function VipBooking() {
           {submitted ? (
             <div className="text-center py-10 space-y-4 animate-fadeIn">
               <CheckCircle2 className="w-12 h-12 text-white mx-auto" />
-              <h3 className="text-2xl font-bold text-white font-heading uppercase">VIP Appointment Confirmed</h3>
+              <h3 className="text-2xl font-bold text-white font-heading uppercase">Appointment Confirmed</h3>
               <p className="text-xs text-zinc-300 max-w-md mx-auto">
                 Thank you {bookingData.name}! Our director will contact you at {bookingData.phone} shortly.
               </p>
@@ -83,7 +83,7 @@ export default function VipBooking() {
                 </div>
 
                 <div>
-                  <label className="text-xs font-bold uppercase text-zinc-300 block mb-2">Supercar of Interest</label>
+                  <label className="text-xs font-bold uppercase text-zinc-300 block mb-2">Vehicle of Interest</label>
                   <select
                     value={bookingData.vehicle}
                     onChange={(e) => setBookingData({ ...bookingData, vehicle: e.target.value })}
@@ -117,7 +117,7 @@ export default function VipBooking() {
                   className="px-10 py-4 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest hover:bg-zinc-200 transition-all shadow-xl inline-flex items-center space-x-2"
                 >
                   <Sparkles className="w-4 h-4" />
-                  <span>Confirm VIP Appointment</span>
+                  <span>Confirm Appointment</span>
                 </button>
               </div>
             </form>

@@ -1,29 +1,32 @@
 import React from 'react';
-import { Lock, MapPin } from 'lucide-react';
+import { History, MapPin } from 'lucide-react';
 import { VAULT_CARS } from '../data/vaultData';
 
-export default function SoldVault() {
+export default function RecentlySold() {
   return (
-    <section id="the-vault" className="py-16 sm:py-24 bg-[#050608] relative overflow-hidden border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+    <section id="recently-sold" className="py-16 sm:py-24 bg-[#050608] relative overflow-hidden border-t border-white/10">
+      
+      {/* Background abstract elements */}
+      <div className="absolute top-0 right-0 w-1/3 h-full bg-gradient-to-l from-white/[0.02] to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 left-0 w-1/2 h-1/2 bg-gradient-to-tr from-white/[0.03] to-transparent blur-3xl pointer-events-none" />
+
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Section Header - Minimal & Punchy */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-10 sm:mb-16 border-b border-white/10 pb-6 sm:pb-8">
-          <div>
-            <div className="flex items-center space-x-2 text-zinc-400 text-[10px] sm:text-[11px] font-semibold uppercase tracking-[0.3em] mb-1 sm:mb-2">
-              <Lock className="w-3.5 h-3.5" />
-              <span>Private Collection</span>
+        {/* Header section */}
+        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-20">
+          <div className="max-w-2xl space-y-4">
+            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+              <History className="w-3.5 h-3.5" />
+              <span>Recently Sold</span>
             </div>
-            <h2 
-              className="text-3xl sm:text-6xl font-black text-white tracking-tight"
-              style={{ fontFamily: "'Cinzel', serif" }}
-            >
-              THE VAULT
+            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-heading uppercase tracking-tight text-white leading-none">
+              PREMIUM <br className="hidden sm:block" />
+              <span className="text-zinc-500">COLLECTION</span>
             </h2>
+            <p className="text-zinc-400 text-sm sm:text-base max-w-lg leading-relaxed pt-2">
+              A retrospective of luxury vehicles successfully sourced and delivered to our valued clients.
+            </p>
           </div>
-          <p className="text-zinc-400 text-xs sm:text-sm max-w-sm mt-2 md:mt-0 font-mulish leading-relaxed">
-            Retrospective of rare hypercars delivered to private Indian collectors.
-          </p>
         </div>
 
         {/* Vault Photo-Centric Cards Grid (2 columns on Mobile & Desktop) */}

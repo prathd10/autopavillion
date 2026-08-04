@@ -1,10 +1,26 @@
 import React from 'react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, ArrowUpRight, ShieldCheck, Share2, Globe } from 'lucide-react';
 
 export default function Footer({ onOpenVipModal }) {
-  const scrollTo = (id) => {
-    const el = document.getElementById(id);
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
+  const location = useLocation();
+  const navigate = useNavigate();
+
+  const handleNavClick = (path, id) => {
+    if (path) {
+      navigate(path);
+    } else if (id) {
+      if (location.pathname === '/') {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
+    }
   };
 
   return (
@@ -15,16 +31,16 @@ export default function Footer({ onOpenVipModal }) {
           
           {/* Brand Block (Original Logo ONLY) */}
           <div className="lg:col-span-4 space-y-6">
-            <a href="#" className="inline-block">
+            <Link to="/" className="inline-block">
               <img
                 src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
                 alt="Auto Pavilion"
                 className="h-12 w-auto object-contain"
               />
-            </a>
+            </Link>
 
             <p className="text-xs text-zinc-400 font-mulish leading-relaxed max-w-sm">
-              Auto Pavilion is Mumbai’s premier pre-owned luxury supercar dealership. Dedicated to procuring 100% non-accident, fully certified exotics for high-net-worth individuals across India.
+              Auto Pavilion is Mumbai’s premier pre-owned luxury vehicle dealership. Dedicated to procuring fully certified premium vehicles for discerning buyers across India.
             </p>
 
             <div className="flex items-center space-x-3 pt-2">
@@ -61,28 +77,53 @@ export default function Footer({ onOpenVipModal }) {
             <h4 className="text-xs font-bold uppercase tracking-widest text-white">Showroom</h4>
             <ul className="space-y-2.5 text-xs text-zinc-400 font-mulish">
               <li>
-                <button onClick={() => scrollTo('inventory')} className="hover:text-white transition-colors">
-                  Exotic Inventory
+                <button onClick={() => handleNavClick('/inventory')} className="hover:text-white transition-colors">
+                  Premium Inventory
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo('the-vault')} className="hover:text-white transition-colors">
-                  The Vault (Sold Gallery)
+                <button onClick={() => handleNavClick(null, 'recently-sold')} className="hover:text-white transition-colors">
+                  Recently Sold
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo('bespoke-sourcing')} className="hover:text-white transition-colors">
-                  Bespoke Concierge
+                <button onClick={() => handleNavClick('/sourcing')} className="hover:text-white transition-colors">
+                  Vehicle Sourcing
                 </button>
               </li>
               <li>
-                <button onClick={() => scrollTo('about-us')} className="hover:text-white transition-colors">
+                <button onClick={() => handleNavClick('/sell')} className="hover:text-white transition-colors">
+                  Sell / Trade-In
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick('/finance')} className="hover:text-white transition-colors">
+                  Finance Options
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick('/compare')} className="hover:text-white transition-colors">
+                  Compare Vehicles
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick('/insights')} className="hover:text-white transition-colors">
+                  Journal & Insights
+                </button>
+              </li>
+              <li>
+                <button onClick={() => handleNavClick('/about')} className="hover:text-white transition-colors">
                   About Us & Heritage
                 </button>
               </li>
               <li>
+                <button onClick={() => handleNavClick('/faq')} className="hover:text-white transition-colors">
+                  FAQs & Support
+                </button>
+              </li>
+              <li>
                 <button onClick={onOpenVipModal} className="hover:text-white transition-colors">
-                  VIP Appointment
+                  Schedule a Viewing
                 </button>
               </li>
             </ul>
@@ -166,7 +207,7 @@ export default function Footer({ onOpenVipModal }) {
 
           <div className="flex items-center space-x-2 text-zinc-400">
             <ShieldCheck className="w-4 h-4 text-white" />
-            <span>251-Point Certified Dealer</span>
+            <span>Quality Certified Dealer</span>
           </div>
         </div>
 

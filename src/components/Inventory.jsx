@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Car, ChevronLeft, ChevronRight, Sparkles, ArrowUpRight } from 'lucide-react';
 import CarCard from './CarCard';
 import { BRAND_LOGOS } from '../data/cars';
@@ -10,8 +11,10 @@ export default function Inventory({
   onToggleCompare,
   activeBrandFilter,
   setActiveBrandFilter,
-  onOpenFullCatalog
+  onOpenFullCatalog,
+  isHomePage
 }) {
+  const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
   // Touch Swipe tracking
@@ -78,12 +81,12 @@ export default function Inventory({
         {/* Center-Aligned Section Header */}
         <div className="flex flex-col items-center justify-center text-center mb-10 pb-6 border-b border-white/10 space-y-2">
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading uppercase">
-            EXOTIC & LUXURY <span className="text-zinc-400 font-extralight">SHOWROOM</span>
+            PREMIUM <span className="text-zinc-400 font-extralight">SHOWROOM</span>
           </h2>
 
           <div className="text-zinc-400 text-xs sm:text-sm font-mulish pt-1">
             Showing <strong className="text-white font-mono text-base">{total > 0 ? (currentIndex % total) + 1 : 0}</strong> of{' '}
-            <strong className="text-white font-mono text-base">{total}</strong> Verified Supercars
+            <strong className="text-white font-mono text-base">{total}</strong> Verified Vehicles
           </div>
 
           <div className="text-zinc-400 font-bold uppercase tracking-[0.25em] text-[10px] sm:text-xs pt-1">
@@ -130,7 +133,7 @@ export default function Inventory({
                       ? 'w-8 h-2 bg-white rounded-full'
                       : 'w-2 h-2 bg-white/20 hover:bg-white/50 rounded-full'
                   }`}
-                  title={`Go to supercar ${idx + 1}`}
+                  title={`Go to vehicle ${idx + 1}`}
                 />
               ))}
             </div>
@@ -139,16 +142,18 @@ export default function Inventory({
             <div className="pt-8 flex justify-center">
               <button
                 onClick={() => {
-                  if (onOpenFullCatalog) {
+                  if (isHomePage) {
+                    navigate('/inventory');
+                  } else if (onOpenFullCatalog) {
                     onOpenFullCatalog();
                   } else {
-                    const el = document.getElementById('bespoke-sourcing');
+                    const el = document.getElementById('vehicle-sourcing');
                     if (el) el.scrollIntoView({ behavior: 'smooth' });
                   }
                 }}
                 className="px-8 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center space-x-3 hover:bg-zinc-200 transition-all duration-300 shadow-2xl hover:scale-105 group"
               >
-                <span>View Entire Supercar Inventory</span>
+                <span>View Entire Inventory</span>
                 <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 group-hover:rotate-45 transition-transform duration-300">
                   <ArrowUpRight className="w-3.5 h-3.5" />
                 </span>

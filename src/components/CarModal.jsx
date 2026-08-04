@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
-import { X, ShieldCheck, Rotate3D, Gauge, Zap, CheckCircle2, Send, Check } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { X, Calendar, Droplet, Cog, CarFront, FileText, CheckCircle2, Rotate3D, ShieldCheck, CreditCard, PenTool } from 'lucide-react';
+import { ikUrl } from '../lib/imagekit';
 import confetti from 'canvas-confetti';
 
 export default function CarModal({ car, onClose, onOpenVipModal }) {
@@ -116,7 +117,7 @@ export default function CarModal({ car, onClose, onOpenVipModal }) {
                 className="relative h-80 sm:h-96 rounded-2xl overflow-hidden bg-black cursor-grab active:cursor-grabbing border border-white/15 select-none"
               >
                 <img
-                  src={car.images[frameIndex % car.images.length]}
+                  src={ikUrl(car.images[frameIndex % car.images.length], { width: 800, quality: 75 })}
                   alt="360 View"
                   className="w-full h-full object-cover"
                 />
@@ -137,7 +138,7 @@ export default function CarModal({ car, onClose, onOpenVipModal }) {
             <div className="space-y-4">
               <div className="h-80 sm:h-96 rounded-2xl overflow-hidden border border-white/15 bg-black">
                 <img
-                  src={car.images[activeImageIndex]}
+                  src={ikUrl(car.images[activeImageIndex], { width: 1024, quality: 80 })}
                   alt={car.name}
                   className="w-full h-full object-cover"
                 />
@@ -152,7 +153,7 @@ export default function CarModal({ car, onClose, onOpenVipModal }) {
                       idx === activeImageIndex ? 'border-white scale-95' : 'border-white/10 opacity-60 hover:opacity-100'
                     }`}
                   >
-                    <img src={img} alt="Thumbnail" className="w-full h-full object-cover" />
+                    <img src={ikUrl(img, { width: 240, height: 160, quality: 60 })} alt="Thumbnail" className="w-full h-full object-cover" />
                   </button>
                 ))}
               </div>

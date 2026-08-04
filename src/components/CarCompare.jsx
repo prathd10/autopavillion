@@ -1,5 +1,6 @@
 import React from 'react';
 import { X, Scale, Trash2, ArrowRight } from 'lucide-react';
+import { ikUrl } from '../lib/imagekit';
 
 export default function CarCompare({ compareList, onRemoveFromCompare, onCloseCompare, onSelectCar }) {
   if (!compareList || compareList.length === 0) return null;
@@ -37,9 +38,10 @@ export default function CarCompare({ compareList, onRemoveFromCompare, onCloseCo
                   <Trash2 className="w-3.5 h-3.5" />
                 </button>
 
-                <div className="h-40 rounded-xl overflow-hidden bg-black mb-3">
-                  <img src={car.images[0]} alt={car.name} className="w-full h-full object-cover" />
-                </div>
+                <div className="relative h-48 bg-black">
+                {car.images && car.images[0] && (
+                  <img src={ikUrl(car.images[0], { width: 400, height: 300, quality: 75 })} alt={car.name} className="w-full h-full object-cover" />
+                )}</div>
 
                 <div>
                   <span className="text-[9px] uppercase font-bold text-zinc-400 tracking-wider">

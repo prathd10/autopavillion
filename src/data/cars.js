@@ -24,8 +24,8 @@ export const CARS_DATA = [
     owners: 1,
     location: "Santacruz West, Mumbai Showroom",
     verified: true,
-    inspectionCertificate: "AP-251-SUPERCAR-911",
-    inspectionScore: "251 / 251 Points Certified (Zero Paint Touches)",
+    inspectionCertificate: "AP-CERTIFIED-911",
+    inspectionScore: "Comprehensive Quality Check Passed (Zero Paint Touches)",
     soundType: "V6-FLAT6-HIGH-REV",
     soundFreq: 9000,
     soundName: "4.0L Flat-6 Screamer (9,000 RPM)",
@@ -76,8 +76,8 @@ export const CARS_DATA = [
     owners: 1,
     location: "Santacruz West, Mumbai Showroom",
     verified: true,
-    inspectionCertificate: "AP-251-EXOTIC-HURACAN",
-    inspectionScore: "251 / 251 Points Certified",
+    inspectionCertificate: "AP-CERTIFIED-HURACAN",
+    inspectionScore: "Comprehensive Quality Check Passed",
     soundType: "V10-ITALIAN-SCREAM",
     soundFreq: 8500,
     soundName: "5.2L V10 Symphony (8,500 RPM)",
@@ -125,8 +125,8 @@ export const CARS_DATA = [
     owners: 1,
     location: "Santacruz West, Mumbai Showroom",
     verified: true,
-    inspectionCertificate: "AP-251-SUPERCAR-PISTA",
-    inspectionScore: "251 / 251 Points Certified",
+    inspectionCertificate: "AP-CERTIFIED-PISTA",
+    inspectionScore: "Comprehensive Quality Check Passed",
     soundType: "V8-BITURBO-ROAR",
     soundFreq: 8000,
     soundName: "3.9L Twin-Turbo F1 V8 Roar",
@@ -174,8 +174,8 @@ export const CARS_DATA = [
     owners: 1,
     location: "Santacruz West, Mumbai Showroom",
     verified: true,
-    inspectionCertificate: "AP-251-LUX-G63",
-    inspectionScore: "251 / 251 Points Certified",
+    inspectionCertificate: "AP-CERTIFIED-G63",
+    inspectionScore: "Comprehensive Quality Check Passed",
     soundType: "V8-AMG-RUMBLE",
     soundFreq: 6000,
     soundName: "4.0L AMG V8 Thunder Rumble",
@@ -223,8 +223,8 @@ export const CARS_DATA = [
     owners: 1,
     location: "Santacruz West, Mumbai Showroom",
     verified: true,
-    inspectionCertificate: "AP-251-LUX-BENTLEY",
-    inspectionScore: "251 / 251 Points Certified",
+    inspectionCertificate: "AP-CERTIFIED-BENTLEY",
+    inspectionScore: "Comprehensive Quality Check Passed",
     soundType: "V12-SILK-BARITONE",
     soundFreq: 7000,
     soundName: "6.0L W12 Grand Tourer Symphony",
@@ -271,8 +271,8 @@ export const CARS_DATA = [
     owners: 1,
     location: "Santacruz West, Mumbai Showroom",
     verified: true,
-    inspectionCertificate: "AP-251-ROYAL-GHOST",
-    inspectionScore: "251 / 251 Points Certified",
+    inspectionCertificate: "AP-CERTIFIED-GHOST",
+    inspectionScore: "Comprehensive Quality Check Passed",
     soundType: "V12-WHISPER-SILENCE",
     soundFreq: 5000,
     soundName: "6.75L V12 Silent Velocity",
@@ -319,8 +319,8 @@ export const CARS_DATA = [
     owners: 1,
     location: "Santacruz West, Mumbai Showroom",
     verified: true,
-    inspectionCertificate: "AP-251-SUV-DEFENDER",
-    inspectionScore: "251 / 251 Points Certified",
+    inspectionCertificate: "AP-CERTIFIED-DEFENDER",
+    inspectionScore: "Comprehensive Quality Check Passed",
     soundType: "V8-SUPERCHARGED-GROWL",
     soundFreq: 6500,
     soundName: "5.0L Supercharged V8 Growl",
@@ -367,8 +367,8 @@ export const CARS_DATA = [
     owners: 1,
     location: "Santacruz West, Mumbai Showroom",
     verified: true,
-    inspectionCertificate: "AP-251-SEDAN-M5",
-    inspectionScore: "251 / 251 Points Certified",
+    inspectionCertificate: "AP-CERTIFIED-M5",
+    inspectionScore: "Comprehensive Quality Check Passed",
     soundType: "V8-M-POWER-POP",
     soundFreq: 7500,
     soundName: "4.4L M V8 Exhaust Pops & Overrun",
@@ -394,9 +394,9 @@ export const CARS_DATA = [
 
 export const BUSINESS_FACTS = [
   {
-    stat: "251-Point",
+    stat: "Comprehensive",
     title: "Diagnostic Certification",
-    description: "Every exotic vehicle undergoes rigorous multi-system diagnostic inspection & physical zero-accident body verification."
+    description: "Every premium vehicle undergoes rigorous multi-system quality checks & physical zero-accident body verification."
   },
   {
     stat: "100%",
@@ -406,12 +406,12 @@ export const BUSINESS_FACTS = [
   {
     stat: "₹500 Cr+",
     title: "Exotic Assets Delivered",
-    description: "Over 450+ ultra-luxury and exotic cars curated for HNIs, industrialists, and automotive enthusiasts across India."
+    description: "Over 450+ luxury vehicles curated for discerning buyers and automotive enthusiasts across India."
   },
   {
     stat: "30 Mins",
     title: "Instant Trade-In Valuation",
-    description: "Receive guaranteed buyback quotes and instant valuation for your supercar with nationwide flatbed pickup."
+    description: "Receive guaranteed buyback quotes and instant valuation for your premium vehicle with nationwide flatbed pickup."
   }
 ];
 

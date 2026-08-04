@@ -1,9 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight, Scale } from 'lucide-react';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 
 export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) {
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  
+  const location = useLocation();
+  const navigate = useNavigate();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -13,11 +17,21 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
-  const scrollTo = (id) => {
+  const handleNavClick = (path, id) => {
     setMobileMenuOpen(false);
-    const element = document.getElementById(id);
-    if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+    if (path) {
+      navigate(path);
+    } else if (id) {
+      if (location.pathname === '/') {
+        const element = document.getElementById(id);
+        if (element) element.scrollIntoView({ behavior: 'smooth' });
+      } else {
+        navigate('/');
+        setTimeout(() => {
+          const element = document.getElementById(id);
+          if (element) element.scrollIntoView({ behavior: 'smooth' });
+        }, 150);
+      }
     }
   };
 
@@ -33,7 +47,7 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
         <div className="flex items-center justify-between">
           
           {/* Left: Logo Image (Original Gold at top, White when scrolled down) */}
-          <a href="#" className="flex items-center group shrink-0">
+          <Link to="/" className="flex items-center group shrink-0">
             <img
               src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
               alt="Auto Pavilion"
@@ -41,20 +55,20 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
                 scrolled ? 'brightness-0 invert' : ''
               }`}
             />
-          </a>
+          </Link>
 
           {/* Center: Spaced Nav Links */}
           <nav className="hidden lg:flex items-center space-x-8 text-xs font-semibold tracking-widest text-zinc-300 uppercase">
-            <button onClick={() => scrollTo('inventory')} className="hover:text-white transition-colors">
+            <button onClick={() => handleNavClick('/inventory')} className="hover:text-white transition-colors">
               Inventory
             </button>
-            <button onClick={() => scrollTo('the-vault')} className="hover:text-white transition-colors">
-              The Vault
-            </button>
-            <button onClick={() => scrollTo('bespoke-sourcing')} className="hover:text-white transition-colors">
+            <button onClick={() => handleNavClick('/sourcing')} className="hover:text-white transition-colors">
               Sourcing
             </button>
-            <button onClick={() => scrollTo('about-us')} className="hover:text-white transition-colors">
+            <button onClick={() => handleNavClick('/sell')} className="hover:text-white transition-colors">
+              Sell
+            </button>
+            <button onClick={() => handleNavClick('/about')} className="hover:text-white transition-colors">
               About Us
             </button>
           </nav>
@@ -75,7 +89,7 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
               onClick={onOpenVipModal}
               className="px-6 py-2.5 rounded-full bg-white text-black font-bold text-xs tracking-wider flex items-center space-x-2.5 hover:bg-zinc-200 transition-all shadow-xl group"
             >
-              <span>Request VIP Viewing</span>
+              <span>Schedule a Viewing</span>
               <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 transition-transform">
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </span>
@@ -99,16 +113,16 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
       {mobileMenuOpen && (
         <div className="lg:hidden bg-black/95 border-b border-white/10 px-6 py-6 transition-all space-y-4">
           <div className="flex flex-col space-y-3 text-xs font-semibold uppercase tracking-widest text-zinc-300">
-            <button onClick={() => scrollTo('inventory')} className="text-left py-2 border-b border-white/10">
+            <button onClick={() => handleNavClick('/inventory')} className="text-left py-2 border-b border-white/10">
               Inventory
             </button>
-            <button onClick={() => scrollTo('the-vault')} className="text-left py-2 border-b border-white/10">
-              The Vault (Sold Gallery)
+            <button onClick={() => handleNavClick('/sourcing')} className="text-left py-2 border-b border-white/10">
+              Vehicle Sourcing
             </button>
-            <button onClick={() => scrollTo('bespoke-sourcing')} className="text-left py-2 border-b border-white/10">
-              Bespoke Sourcing
+            <button onClick={() => handleNavClick('/sell')} className="text-left py-2 border-b border-white/10">
+              Sell / Trade-In
             </button>
-            <button onClick={() => scrollTo('about-us')} className="text-left py-2 border-b border-white/10">
+            <button onClick={() => handleNavClick('/about')} className="text-left py-2 border-b border-white/10">
               About Us
             </button>
 
@@ -119,7 +133,7 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
               }}
               className="w-full py-3 rounded-full bg-white text-black font-bold text-xs uppercase tracking-widest text-center flex items-center justify-center space-x-2 mt-2"
             >
-              <span>Request VIP Viewing</span>
+              <span>Schedule a Viewing</span>
               <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center">
                 <ArrowUpRight className="w-3.5 h-3.5" />
               </span>

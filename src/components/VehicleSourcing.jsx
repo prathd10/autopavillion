@@ -17,43 +17,44 @@ export default function BespokeConcierge() {
   };
 
   return (
-    <section id="bespoke-sourcing" className="py-24 bg-[#08090c] relative overflow-hidden border-t border-white/10">
-      <div className="max-w-7xl mx-auto px-4 sm:px-8 lg:px-12 relative z-10">
+    <section id="vehicle-sourcing" className="py-20 sm:py-32 bg-zinc-950 relative overflow-hidden">
+      
+      {/* Abstract Background */}
+      <div className="absolute inset-0 opacity-20 pointer-events-none">
+        <div className="absolute -top-1/2 -right-1/2 w-full h-full bg-gradient-to-b from-white/10 to-transparent blur-3xl rotate-12" />
+        <div className="absolute -bottom-1/2 -left-1/2 w-full h-full bg-gradient-to-t from-white/5 to-transparent blur-3xl -rotate-12" />
+      </div>
+
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-stretch">
           
-          {/* Left Column: Visual Banner Card with Photo Background */}
-          <div className="lg:col-span-5 relative bg-[#0a0b0e] border border-white/10 min-h-[400px] flex flex-col justify-between p-8 overflow-hidden group">
-            <img 
-              src="https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1600&auto=format&fit=crop" 
-              alt="Supercar Sourcing" 
-              className="absolute inset-0 w-full h-full object-cover filter brightness-[0.35] group-hover:scale-105 transition-transform duration-700"
-            />
-            <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-transparent" />
-
-            <div className="relative z-10 space-y-4">
-              <div className="flex items-center space-x-2 text-zinc-300 text-[10px] font-bold uppercase tracking-[0.3em]">
-                <Compass className="w-3.5 h-3.5" />
-                <span>Global Acquisition Desk</span>
+          {/* Left Column: Content */}
+          <div className="lg:col-span-5 flex flex-col justify-between space-y-8 animate-fadeInUp">
+            <div className="space-y-6">
+              <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-400">
+                <Search className="w-3.5 h-3.5" />
+                <span>Premium Sourcing</span>
               </div>
 
-              <h2 
-                className="text-3xl sm:text-5xl font-black text-white tracking-tight leading-tight"
-                style={{ fontFamily: "'Cinzel', serif" }}
-              >
-                BESPOKE <br />
-                <span className="text-zinc-400 font-light">SOURCING</span>
+              <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black uppercase tracking-tight text-white leading-none font-heading">
+                FIND YOUR <br />
+                <span className="text-zinc-500">DREAM CAR</span>
               </h2>
+
+              <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed">
+                Looking for a specific make, model, or color that isn't currently in our inventory? Our sourcing team specializes in acquiring premium pre-owned vehicles through our trusted nationwide network. We handle the negotiations, inspections, and logistics to deliver your perfect car.
+              </p>
             </div>
 
-            <div className="relative z-10 space-y-3 pt-6 border-t border-white/20 text-xs text-zinc-300">
+            <div className="space-y-3 pt-6 border-t border-white/10 text-xs text-zinc-400">
               <div className="flex items-center space-x-2">
                 <Globe className="w-4 h-4 text-white shrink-0" />
-                <span>Europe • Dubai • USA Allocation Access</span>
+                <span>Pan-India Dealership Network</span>
               </div>
               <div className="flex items-center space-x-2">
                 <ShieldCheck className="w-4 h-4 text-white shrink-0" />
-                <span>251-Point Inspection & Full Legal Import</span>
+                <span>Rigorous Inspection & Full Legal Transfer</span>
               </div>
             </div>
           </div>
@@ -64,14 +65,11 @@ export default function BespokeConcierge() {
             {submitted ? (
               <div className="py-12 text-center space-y-4">
                 <CheckCircle2 className="w-12 h-12 text-white mx-auto" />
-                <h3 
-                  className="text-xl font-bold text-white tracking-wide"
-                  style={{ fontFamily: "'Cinzel', serif" }}
-                >
-                  Brief Received
+                <h3 className="text-xl font-bold text-white tracking-wide font-heading uppercase">
+                  Request Received
                 </h3>
                 <p className="text-xs text-zinc-400 max-w-xs mx-auto font-mulish">
-                  Our specialist will contact you shortly regarding allocation options.
+                  Our sourcing team will contact you shortly regarding available options.
                 </p>
                 <button 
                   onClick={() => setSubmitted(false)}
@@ -84,10 +82,10 @@ export default function BespokeConcierge() {
               <form onSubmit={handleSubmit} className="space-y-5">
                 <div className="flex items-center justify-between border-b border-white/10 pb-4 mb-2">
                   <h3 className="text-sm font-bold text-white uppercase tracking-widest">
-                    Request Unlisted Spec
+                    Request a Vehicle
                   </h3>
                   <span className="text-[10px] text-zinc-400 border border-white/20 px-3 py-0.5">
-                    CONFIDENTIAL
+                    SOURCING
                   </span>
                 </div>
 
@@ -97,7 +95,7 @@ export default function BespokeConcierge() {
                     <input 
                       type="text" 
                       required
-                      placeholder="e.g. Vikramaditya S."
+                      placeholder="e.g. Vikram Sharma"
                       value={formData.name}
                       onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                       className="w-full bg-black/80 border border-white/15 px-4 py-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-white"
@@ -123,7 +121,7 @@ export default function BespokeConcierge() {
                     <input 
                       type="text" 
                       required
-                      placeholder="e.g. Porsche 911 S/T"
+                      placeholder="e.g. Mercedes-Benz GLE"
                       value={formData.makeModel}
                       onChange={(e) => setFormData({ ...formData, makeModel: e.target.value })}
                       className="w-full bg-black/80 border border-white/15 px-4 py-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-white"
@@ -134,7 +132,7 @@ export default function BespokeConcierge() {
                     <label className="block text-[10px] uppercase tracking-wider text-zinc-400 mb-1">Budget Range</label>
                     <input 
                       type="text" 
-                      placeholder="e.g. ₹ 3.5 Cr – ₹ 5.0 Cr"
+                      placeholder="e.g. ₹ 80 L – ₹ 1.2 Cr"
                       value={formData.budget}
                       onChange={(e) => setFormData({ ...formData, budget: e.target.value })}
                       className="w-full bg-black/80 border border-white/15 px-4 py-3 text-xs text-white placeholder-zinc-600 focus:outline-none focus:border-white"

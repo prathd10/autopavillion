@@ -1,5 +1,6 @@
 import React from 'react';
 import { Scale, Eye } from 'lucide-react';
+import { ikUrl } from '../lib/imagekit';
 
 export default function CarCard({ car, onSelectCar, isComparing, onToggleCompare }) {
   return (
@@ -8,7 +9,7 @@ export default function CarCard({ car, onSelectCar, isComparing, onToggleCompare
       {/* Top Image Container (Dominant Photo Display) */}
       <div className="relative h-52 sm:h-72 overflow-hidden bg-black">
         <img
-          src={car.images[0]}
+          src={ikUrl(car.images?.[0], { width: 640, height: 480, quality: 75 })}
           alt={car.name}
           className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
         />

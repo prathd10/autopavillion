@@ -35,11 +35,11 @@ export default function TradeInCalculator() {
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading uppercase">
-            SELL YOUR EXOTIC <span className="text-zinc-400 font-extralight">IN 30 MINUTES</span>
+            SELL YOUR LUXURY CAR <span className="text-zinc-400 font-extralight">IN 30 MINUTES</span>
           </h2>
 
           <p className="text-zinc-400 text-xs sm:text-sm font-mulish">
-            Receive guaranteed buyback quotes and transparent market appraisals for your supercar.
+            Receive guaranteed buyback quotes and transparent market appraisals for your premium vehicle.
           </p>
         </div>
 

@@ -29,7 +29,7 @@ export default function TrustStats() {
             UNCOMPROMISING <span className="text-zinc-400 font-extralight">EXCELLENCE</span>
           </h2>
           <p className="text-zinc-300 text-xs sm:text-sm font-mulish">
-            Why India's high-net-worth individuals and supercar collectors choose Auto Pavilion.
+            Why discerning luxury vehicle buyers across India choose Auto Pavilion.
           </p>
         </div>
 
@@ -62,9 +62,9 @@ export default function TrustStats() {
               <Truck className="w-6 h-6 sm:w-8 sm:h-8" />
             </div>
             <div>
-              <h4 className="text-sm sm:text-lg font-bold text-white font-heading leading-tight">Nationwide Covered Flatbed Concierge Delivery</h4>
+              <h4 className="text-sm sm:text-lg font-bold text-white font-heading leading-tight">Nationwide Covered Flatbed Delivery</h4>
               <p className="text-[10px] sm:text-xs text-zinc-300 mt-0.5 sm:mt-1">
-                Enclosed temperature-controlled transport delivered directly to your private estate anywhere in India.
+                Secure, enclosed transport delivered directly to your door anywhere in India.
               </p>
             </div>
           </div>

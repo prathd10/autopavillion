@@ -55,7 +55,7 @@ export default function Hero({ onOpenVipModal }) {
           <source src={videoSrc} type="video/mp4" />
           <img
             src={posterImg}
-            alt="Auto Pavilion Supercar"
+            alt="Auto Pavilion Vehicle"
             className="w-full h-full object-cover object-center"
           />
         </video>
@@ -114,7 +114,7 @@ export default function Hero({ onOpenVipModal }) {
               animStep >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Curated pre-owned exotics with 251-Point Inspection & 100% Non-Accident legal guarantee.
+            Curated premium pre-owned vehicles with comprehensive quality checks & 100% non-accident legal guarantee.
           </p>
 
           {/* Line 4: Ultra-Compact Minimalist Capsule CTA Button */}
@@ -127,7 +127,7 @@ export default function Hero({ onOpenVipModal }) {
               onClick={scrollToCatalog}
               className="px-4 py-2 sm:px-6 sm:py-2.5 rounded-full bg-white text-black font-extrabold text-[9px] sm:text-[11px] uppercase tracking-widest flex items-center space-x-2 hover:bg-zinc-200 transition-all duration-300 shadow-2xl hover:scale-105 group"
             >
-              <span>Explore Supercar Inventory</span>
+              <span>Explore Premium Inventory</span>
               <span className="w-4 h-4 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 group-hover:rotate-45 transition-transform duration-300">
                 <ArrowUpRight className="w-2.5 h-2.5" />
               </span>
