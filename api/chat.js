@@ -1,37 +1,22 @@
-import express from 'express';
-import cors from 'cors';
-import ImageKit from 'imagekit';
-import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { GoogleGenerativeAI } from '@google/generative-ai';
+const { GoogleGenerativeAI } = require('@google/generative-ai');
 
-// Load environment variables from .env.local
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.join(__dirname, '.env.local') });
+export default async function handler(req, res) {
+  // CORS setup for Vercel Serverless Functions
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS,PATCH,DELETE,POST,PUT');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-const imagekit = new ImageKit({
-  publicKey: process.env.VITE_IMAGEKIT_PUBLIC_KEY,
-  privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
-  urlEndpoint: process.env.VITE_IMAGEKIT_URL_ENDPOINT
-});
-
-// Provide the ImageKit auth parameters
-app.get('/api/imagekit-auth', (req, res) => {
-  try {
-    const result = imagekit.getAuthenticationParameters();
-    res.send(result);
-  } catch (error) {
-    console.error('ImageKit Auth Error:', error);
-    res.status(500).json({ error: error.message });
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
   }
-});
 
-app.post('/api/chat', async (req, res) => {
+  if (req.method !== 'POST') {
+    res.status(405).json({ error: 'Method not allowed' });
+    return;
+  }
+
   try {
     const apiKey = process.env.GEMINI_API_KEY;
     if (!apiKey) {
@@ -73,11 +58,4 @@ app.post('/api/chat', async (req, res) => {
     console.error('Gemini Chat Error:', error);
     res.status(500).json({ error: error.message });
   }
-});
-
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`🚀 ImageKit Local Auth Server running on http://localhost:${PORT}`);
-  console.log(`======================================================\n`);
-});
+}

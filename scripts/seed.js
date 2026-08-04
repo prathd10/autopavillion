@@ -22,7 +22,7 @@ const imagekit = new ImageKit({
 // 2. Initialize Supabase
 const supabaseUrl = process.env.VITE_SUPABASE_URL;
 // Use service role key if available, otherwise fallback to anon key
-const supabaseKey = process.env.VITE_SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
+const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
 // Utility to upload a remote URL to ImageKit

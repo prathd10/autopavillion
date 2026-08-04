@@ -3,11 +3,8 @@ import { MessageSquare, X, Send, Bot, User, Loader2 } from 'lucide-react';
 import { FAQS } from '../data/faqs';
 import { useCars } from '../hooks/useCars';
 import { Link } from 'react-router-dom';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-
-// Initialize Gemini only if key is present
-const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-const genAI = apiKey ? new GoogleGenerativeAI(apiKey) : null;
+// Gemini API calls are now securely proxied through the backend server.
+// Do NOT use VITE_ prefix for Gemini keys.
 
 export default function Chatbot() {
   const [isOpen, setIsOpen] = useState(false);
@@ -113,38 +110,23 @@ export default function Chatbot() {
       }
     }
 
-    // 4. Gemini API Fallback (The "Live Deep Study" fallback)
-    if (genAI) {
-      try {
-        const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-        
-        // We inject the deep context of Auto Pavilion here.
-        const systemPrompt = `
-          You are the elite digital concierge for Auto Pavilion India, a premier pre-owned luxury vehicle dealership in Mumbai.
-          Tone: Professional, luxurious, knowledgeable, and discreet.
-          Knowledge base:
-          - You sell 100% non-accident cars.
-          - Every car gets a 251-Point Diagnostic Audit.
-          - You offer Bespoke Sourcing (finding cars not in stock).
-          - You offer financing through top Indian banks.
-          - You deliver pan-India on flatbeds.
-          - Showroom: Santacruz West, Mumbai.
-          
-          Current Public Inventory Details for context (do NOT list them all, just use to answer if asked):
-          ${cars.map(c => `${c.year} ${c.brand} ${c.model} (₹${c.price})`).join(', ')}
-
-          User Query: ${query}
-          
-          Respond conversationally and concisely (under 3 sentences) to the user's query based on this deep knowledge.
-        `;
-
-        const result = await model.generateContent(systemPrompt);
-        const responseText = result.response.text();
-        return responseText;
-      } catch (error) {
-        console.error("Gemini Fallback Error:", error);
-        return "I apologize, but my advanced concierge system is currently updating. You can view our full FAQs or contact our team directly at +91 82 9191 9393.";
+    // 4. Gemini API Fallback (The "Live Deep Study" fallback) proxied through backend
+    try {
+      const inventoryContext = cars.map(c => `${c.year} ${c.brand} ${c.model} (₹${c.price})`).join(', ');
+      
+      const res = await fetch('http://localhost:3001/api/chat', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ query, context: inventoryContext })
+      });
+      
+      if (res.ok) {
+        const data = await res.json();
+        if (data.reply) return data.reply;
       }
+    } catch (error) {
+      console.error("Gemini Fallback Error:", error);
+      // Fall through to ultimate fallback
     }
 
     // 5. Ultimate Default Fallback (If no API key and local fails)
