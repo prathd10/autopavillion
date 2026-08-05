@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
-import { Compass, CheckCircle2, Send, ShieldCheck, Globe } from 'lucide-react';
+import { Compass, CheckCircle2, Send, ShieldCheck, Globe, Search, Loader2 } from 'lucide-react';
+import { supabase } from '../lib/supabase';
 
-export default function BespokeConcierge() {
+export default function VehicleSourcing({ className = "bg-zinc-950" }) {
   const [submitted, setSubmitted] = useState(false);
   const [formData, setFormData] = useState({
     name: '',
@@ -10,14 +11,36 @@ export default function BespokeConcierge() {
     budget: '',
     notes: ''
   });
+  const [loading, setLoading] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitted(true);
+    setLoading(true);
+
+    try {
+      const { error } = await supabase.from('inquiries').insert([{
+        type: 'sourcing',
+        name: formData.name,
+        phone: formData.phone,
+        details: {
+          makeModel: formData.makeModel,
+          budget: formData.budget,
+          notes: formData.notes
+        }
+      }]);
+
+      if (error) throw error;
+      setSubmitted(true);
+    } catch (err) {
+      console.error('Error submitting sourcing request:', err);
+      alert('Failed to submit request. Please try again.');
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
-    <section id="vehicle-sourcing" className="py-20 sm:py-32 bg-zinc-950 relative overflow-hidden">
+    <section id="vehicle-sourcing" className={`py-20 sm:py-32 relative overflow-hidden ${className}`}>
       
       {/* Abstract Background */}
       <div className="absolute inset-0 opacity-20 pointer-events-none">
@@ -32,18 +55,13 @@ export default function BespokeConcierge() {
           {/* Left Column: Content */}
           <div className="lg:col-span-5 flex flex-col justify-between space-y-8 animate-fadeInUp">
             <div className="space-y-6">
-              <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-                <Search className="w-3.5 h-3.5" />
-                <span>Premium Sourcing</span>
-              </div>
-
               <h2 className="text-4xl sm:text-5xl lg:text-7xl font-black uppercase tracking-tight text-white leading-none font-heading">
                 FIND YOUR <br />
                 <span className="text-zinc-500">DREAM CAR</span>
               </h2>
 
               <p className="text-zinc-400 text-sm sm:text-base max-w-xl leading-relaxed">
-                Looking for a specific make, model, or color that isn't currently in our inventory? Our sourcing team specializes in acquiring premium pre-owned vehicles through our trusted nationwide network. We handle the negotiations, inspections, and logistics to deliver your perfect car.
+                Looking for a specific make, model, or color that isn't currently in our inventory? Our sourcing team specializes in acquiring exclusive pre-owned vehicles through our trusted nationwide network. We handle the negotiations, inspections, and logistics to deliver your perfect car.
               </p>
             </div>
 
@@ -153,10 +171,17 @@ export default function BespokeConcierge() {
 
                 <button 
                   type="submit"
-                  className="w-full py-4 bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center justify-center space-x-2 hover:bg-zinc-200 transition-all"
+                  disabled={loading}
+                  className="w-full py-4 bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center justify-center space-x-2 hover:bg-zinc-200 transition-all disabled:opacity-50"
                 >
-                  <span>Submit Sourcing Brief</span>
-                  <Send className="w-3.5 h-3.5" />
+                  {loading ? (
+                    <Loader2 className="w-3.5 h-3.5 animate-spin" />
+                  ) : (
+                    <>
+                      <span>Submit Sourcing Brief</span>
+                      <Send className="w-3.5 h-3.5" />
+                    </>
+                  )}
                 </button>
               </form>
             )}

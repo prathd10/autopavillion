@@ -16,7 +16,7 @@ export default function TrustStats() {
       }}
     >
       {/* Seamless Continuous Parallax Overlay */}
-      <div className="absolute inset-0 bg-gradient-to-b from-black/85 via-black/50 to-black pointer-events-none" />
+      <div className="absolute inset-0 bg-gradient-to-b from-black via-black/60 to-black/60 pointer-events-none" />
       <div className="absolute inset-0 bg-gradient-to-r from-black/80 via-black/30 to-black/80 pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
@@ -41,7 +41,7 @@ export default function TrustStats() {
               className="bg-black/75 backdrop-blur-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/20 hover:border-white/50 transition-all flex flex-col justify-between shadow-2xl"
             >
               <div>
-                <div className="text-2xl sm:text-5xl font-black font-heading text-white mb-1 sm:mb-2">
+                <div className="text-2xl sm:text-4xl lg:text-3xl xl:text-4xl font-black font-heading text-white mb-1 sm:mb-2 break-words">
                   {fact.stat}
                 </div>
                 <h3 className="text-xs sm:text-lg font-bold text-white mb-1 sm:mb-2 font-heading leading-tight">{fact.title}</h3>
@@ -69,10 +69,10 @@ export default function TrustStats() {
             </div>
           </div>
 
-          <div className="shrink-0 flex items-center space-x-2 px-4 py-2 sm:px-5 sm:py-3 rounded-full bg-white/10 border border-white/20 text-white text-[10px] sm:text-xs font-bold font-mono">
+          <a href="https://maps.google.com/?q=Auto+Pavilion,+Office+No:25,+Tirupati+Shopping+center,+S+V+Rd,+Santacruz+(W),+Mumbai-400054" target="_blank" rel="noopener noreferrer" className="shrink-0 flex items-center space-x-2 px-4 py-2 sm:px-5 sm:py-3 rounded-full bg-white/10 border border-white/20 hover:bg-white/20 transition-colors text-white text-[10px] sm:text-xs font-bold font-mono">
             <MapPin className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
             <span>Santacruz West, Mumbai HQ</span>
-          </div>
+          </a>
         </div>
 
       </div>

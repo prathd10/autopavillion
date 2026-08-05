@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { ArrowLeft, Landmark, Percent, Calculator, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function FinancePage() {
   const [loanAmount, setLoanAmount] = useState(10000000);
@@ -31,7 +33,9 @@ export default function FinancePage() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-20">
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      <Navbar />
+      <main className="flex-1 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Navigation */}
@@ -157,6 +161,8 @@ export default function FinancePage() {
 
         </div>
       </div>
+      </main>
+      <Footer />
     </div>
   );
 }

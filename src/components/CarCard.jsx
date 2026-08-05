@@ -1,13 +1,20 @@
 import React from 'react';
 import { Scale, Eye } from 'lucide-react';
 import { ikUrl } from '../lib/imagekit';
+import { useNavigate } from 'react-router-dom';
 
-export default function CarCard({ car, onSelectCar, isComparing, onToggleCompare }) {
+export default function CarCard({ car, isComparing, onToggleCompare }) {
+  const navigate = useNavigate();
   return (
     <div className="studio-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group border border-white/10 bg-[#090a0d] shadow-2xl">
       
       {/* Top Image Container (Dominant Photo Display) */}
-      <div className="relative h-52 sm:h-72 overflow-hidden bg-black">
+      <div 
+        className="relative h-52 sm:h-72 overflow-hidden bg-black cursor-pointer"
+        onClick={() => {
+          navigate(`/inventory/${car.slug}`);
+        }}
+      >
         <img
           src={ikUrl(car.images?.[0], { width: 640, height: 480, quality: 75 })}
           alt={car.name}
@@ -18,7 +25,7 @@ export default function CarCard({ car, onSelectCar, isComparing, onToggleCompare
 
         {/* Brand Logo Badge */}
         <div className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-black/70 backdrop-blur-md border border-white/10">
-          <img src={car.brandLogo} alt={car.brand} className="h-3.5 sm:h-4 w-auto object-contain filter invert contrast-200" />
+          <img src={car.brandLogo} alt={car.brand} className="h-3.5 sm:h-4 w-auto object-contain" />
         </div>
       </div>
 
@@ -76,7 +83,9 @@ export default function CarCard({ car, onSelectCar, isComparing, onToggleCompare
             </button>
 
             <button
-              onClick={() => onSelectCar(car)}
+              onClick={() => {
+                navigate(`/inventory/${car.slug}`);
+              }}
               className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white text-black font-extrabold text-[10px] sm:text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all flex items-center space-x-1 sm:space-x-1.5 shadow-md"
             >
               <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5" />

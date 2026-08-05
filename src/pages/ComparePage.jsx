@@ -3,6 +3,8 @@ import { ArrowLeft, Scale, Trash2, ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import { useCars } from '../hooks/useCars';
 import { ikUrl } from '../lib/imagekit';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function ComparePage() {
   const { cars } = useCars();
@@ -26,7 +28,9 @@ export default function ComparePage() {
   };
 
   return (
-    <div className="min-h-screen bg-[#08090c] text-white pt-24 pb-20">
+    <div className="min-h-screen bg-[#08090c] text-white flex flex-col">
+      <Navbar />
+      <main className="flex-1 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Navigation */}
@@ -141,6 +145,8 @@ export default function ComparePage() {
         </div>
 
       </div>
+      </main>
+      <Footer />
     </div>
   );
 }

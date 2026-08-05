@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { ArrowLeft, ShieldCheck, Clock, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import TradeInCalculator from '../components/TradeInCalculator';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 export default function SellPage() {
   useEffect(() => {
@@ -9,7 +11,9 @@ export default function SellPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-20">
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      <Navbar />
+      <main className="flex-1 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Navigation */}
@@ -52,6 +56,8 @@ export default function SellPage() {
       
       {/* Reusing TradeInCalculator component */}
       <TradeInCalculator />
+      </main>
+      <Footer />
     </div>
   );
 }

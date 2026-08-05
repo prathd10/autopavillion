@@ -13,20 +13,13 @@ export default function RecentlySold() {
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
         {/* Header section */}
-        <div className="flex flex-col md:flex-row md:items-end justify-between mb-12 lg:mb-20">
-          <div className="max-w-2xl space-y-4">
-            <div className="inline-flex items-center space-x-2 px-3 py-1 bg-white/5 border border-white/10 rounded-full text-[10px] font-bold uppercase tracking-widest text-zinc-400">
-              <History className="w-3.5 h-3.5" />
-              <span>Recently Sold</span>
-            </div>
-            <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-heading uppercase tracking-tight text-white leading-none">
-              PREMIUM <br className="hidden sm:block" />
-              <span className="text-zinc-500">COLLECTION</span>
-            </h2>
-            <p className="text-zinc-400 text-sm sm:text-base max-w-lg leading-relaxed pt-2">
-              A retrospective of luxury vehicles successfully sourced and delivered to our valued clients.
-            </p>
-          </div>
+        <div className="text-center max-w-3xl mx-auto mb-12 lg:mb-20 space-y-4">
+          <h2 className="text-3xl sm:text-5xl lg:text-6xl font-black font-heading uppercase tracking-tight text-white leading-none">
+            RECENTLY <span className="text-zinc-500">DELIVERED</span>
+          </h2>
+          <p className="text-zinc-400 text-sm sm:text-base max-w-lg mx-auto leading-relaxed pt-2">
+            A retrospective of luxury vehicles successfully sourced and delivered to our valued clients.
+          </p>
         </div>
 
         {/* Vault Photo-Centric Cards Grid (2 columns on Mobile & Desktop) */}

@@ -416,15 +416,23 @@ export const BUSINESS_FACTS = [
 ];
 
 export const BRAND_LOGOS = [
-  { name: "Porsche", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/porsche.svg" },
-  { name: "Lamborghini", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/lamborghini.svg" },
-  { name: "Ferrari", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ferrari.svg" },
-  { name: "Mercedes-AMG", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mercedes.svg" },
-  { name: "Bentley", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bentley.svg" },
-  { name: "Rolls-Royce", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/rollsroyce.svg" },
-  { name: "Aston Martin", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/astonmartin.svg" },
-  { name: "McLaren", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mclaren.svg" },
-  { name: "Bugatti", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bugatti.svg" },
-  { name: "Land Rover", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/landrover.svg" },
-  { name: "BMW M", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bmw.svg" }
+  { name: "Porsche", icon: "/Porsche_logo.jpg", isLocal: true },
+  { name: "Lamborghini", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/lamborghini.svg", isLocal: false },
+  { name: "Ferrari", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/ferrari.svg", isLocal: false },
+  { name: "Mercedes", icon: "/Merc_logo.jpg", isLocal: true },
+  { name: "Bentley", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bentley.svg", isLocal: false },
+  { name: "Rolls-Royce", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/rollsroyce.svg", isLocal: false },
+  { name: "Aston Martin", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/astonmartin.svg", isLocal: false },
+  { name: "McLaren", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/mclaren.svg", isLocal: false },
+  { name: "Bugatti", icon: "https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/bugatti.svg", isLocal: false },
+  { name: "Land Rover", icon: "/Landrover_llogo.jpg", isLocal: true },
+  { name: "BMW", icon: "/Bmw_logo.jpg", isLocal: true },
+  { name: "Honda", icon: "/Honda_logo.jpg", isLocal: true },
+  { name: "Hyundai", icon: "/Hyundai_logo.png", isLocal: true },
+  { name: "Jaguar", icon: "/Jaguar_logo.png", isLocal: true },
+  { name: "Kia", icon: "/Kia_logo.png", isLocal: true },
+  { name: "Mini Cooper", icon: "/MiniCopper_logo.jpg", isLocal: true },
+  { name: "Skoda", icon: "/Skoda_logo.png", isLocal: true },
+  { name: "Toyota", icon: "/Toyota_logo.jpg", isLocal: true },
+  { name: "Volkswagen", icon: "/Volkswagen_logo.png", isLocal: true }
 ];

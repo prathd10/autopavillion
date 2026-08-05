@@ -6,7 +6,6 @@ import { BRAND_LOGOS } from '../data/cars';
 
 export default function Inventory({
   cars,
-  onSelectCar,
   compareList,
   onToggleCompare,
   activeBrandFilter,
@@ -17,9 +16,10 @@ export default function Inventory({
   const navigate = useNavigate();
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Touch Swipe tracking
+  // Pointer/Swipe tracking
   const [touchStart, setTouchStart] = useState(null);
   const [touchEnd, setTouchEnd] = useState(null);
+  const [isDragging, setIsDragging] = useState(false);
 
   // Home page showcase uses all available cars
   const filteredCars = cars;
@@ -36,25 +36,36 @@ export default function Inventory({
     setCurrentIndex((prev) => (prev - 1 + total) % total);
   };
 
-  // Touch gesture handlers for mobile swiping
+  // Pointer gesture handlers for mobile and desktop swiping
   const minSwipeDistance = 50;
 
-  const onTouchStart = (e) => {
+  const onPointerDown = (e) => {
     setTouchEnd(null);
-    setTouchStart(e.targetTouches[0].clientX);
+    setTouchStart(e.clientX);
+    setIsDragging(true);
+    e.target.setPointerCapture(e.pointerId);
   };
 
-  const onTouchMove = (e) => {
-    setTouchEnd(e.targetTouches[0].clientX);
+  const onPointerMove = (e) => {
+    if (!isDragging) return;
+    setTouchEnd(e.clientX);
   };
 
-  const onTouchEnd = () => {
+  const onPointerUp = (e) => {
+    if (!isDragging) return;
+    setIsDragging(false);
+    e.target.releasePointerCapture(e.pointerId);
+    
     if (!touchStart || !touchEnd) return;
     const distance = touchStart - touchEnd;
     const isLeftSwipe = distance > minSwipeDistance;
     const isRightSwipe = distance < -minSwipeDistance;
+    
     if (isLeftSwipe) handleNext();
     if (isRightSwipe) handlePrev();
+    
+    setTouchStart(null);
+    setTouchEnd(null);
   };
 
   // Compute circular slice of cars to display (3 on desktop, 1 on mobile)
@@ -81,7 +92,7 @@ export default function Inventory({
         {/* Center-Aligned Section Header */}
         <div className="flex flex-col items-center justify-center text-center mb-10 pb-6 border-b border-white/10 space-y-2">
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading uppercase">
-            PREMIUM <span className="text-zinc-400 font-extralight">SHOWROOM</span>
+            CURATED <span className="text-zinc-400 font-extralight">SHOWROOM</span>
           </h2>
 
           <div className="text-zinc-400 text-xs sm:text-sm font-mulish pt-1">
@@ -100,9 +111,10 @@ export default function Inventory({
 
             {/* Swipeable Active Carousel Area */}
             <div
-              onTouchStart={onTouchStart}
-              onTouchMove={onTouchMove}
-              onTouchEnd={onTouchEnd}
+              onPointerDown={onPointerDown}
+              onPointerMove={onPointerMove}
+              onPointerUp={onPointerUp}
+              onPointerCancel={onPointerUp}
               className="relative overflow-hidden cursor-grab active:cursor-grabbing select-none"
             >
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 transition-all duration-500 ease-out">
@@ -113,7 +125,6 @@ export default function Inventory({
                   >
                     <CarCard
                       car={item.car}
-                      onSelectCar={onSelectCar}
                       isComparing={compareList.some((c) => c.id === item.car.id)}
                       onToggleCompare={onToggleCompare}
                     />
@@ -167,23 +178,39 @@ export default function Inventory({
         <div className="pt-10 pb-4 border-t border-white/10 overflow-hidden relative w-full">
           <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
           <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
+          {/* Hidden SVG Filter to remove white backgrounds */}
+          <svg width="0" height="0" className="absolute">
+            <filter id="remove-white">
+              <feColorMatrix type="matrix" values="
+                1 0 0 0 0
+                0 1 0 0 0
+                0 0 1 0 0
+                -1 -1 -1 0 3
+              " />
+            </filter>
+          </svg>
 
           <div className="animate-marquee flex items-center space-x-12 shrink-0">
             {[...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS, ...BRAND_LOGOS].map((b, idx) => (
               <button
                 key={idx}
                 onClick={() => {
-                  if (setActiveBrandFilter) setActiveBrandFilter(activeBrandFilter === b.name ? null : b.name);
-                  setCurrentIndex(0);
+                  navigate(`/inventory?brand=${encodeURIComponent(b.name)}`);
+                  window.scrollTo(0,0);
                 }}
                 className="flex items-center space-x-2.5 shrink-0 opacity-60 hover:opacity-100 transition-opacity duration-300"
               >
                 <img
                   src={b.icon}
                   alt={b.name}
-                  className="h-4 sm:h-5 w-auto object-contain filter invert contrast-200"
+                  className="h-7 sm:h-9 w-auto object-contain"
+                  style={
+                    b.isLocal
+                      ? { filter: 'url(#remove-white)' }
+                      : { filter: 'invert(1)' }
+                  }
                 />
-                <span className="text-[10px] sm:text-xs font-bold uppercase tracking-widest text-zinc-300">
+                <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-300">
                   {b.name}
                 </span>
               </button>

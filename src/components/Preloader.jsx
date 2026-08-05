@@ -33,7 +33,7 @@ export default function Preloader({ onComplete }) {
 
   return (
     <div
-      className={`fixed inset-0 z-50 flex flex-col items-center justify-center bg-black transition-all duration-800 ${
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-all duration-800 ${
         fadeOut ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
       }`}
     >

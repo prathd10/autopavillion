@@ -1,8 +1,8 @@
 import React, { useState, useMemo, useEffect } from 'react';
+import { useSearchParams, useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CarCard from '../components/CarCard';
-import CarModal from '../components/CarModal';
 import CarCompare from '../components/CarCompare';
 import { useCars } from '../hooks/useCars';
 import { usePageTracker } from '../hooks/usePageTracker';
@@ -16,14 +16,22 @@ export default function InventoryPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  const navigate = useNavigate();
   const { cars } = useCars();
-  const [selectedCar, setSelectedCar] = useState(null);
   const [compareList, setCompareList] = useState([]);
   const [showCompareModal, setShowCompareModal] = useState(false);
 
   // Filters State
   const [searchTerm, setSearchTerm] = useState('');
-  const [activeBrand, setActiveBrand] = useState(null);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const [activeBrand, setActiveBrand] = useState(searchParams.get('brand') || null);
+  
+  useEffect(() => {
+    const brandParam = searchParams.get('brand');
+    if (brandParam) {
+      setActiveBrand(brandParam);
+    }
+  }, [searchParams]);
   
   const [minPrice, setMinPrice] = useState('');
   const [maxPrice, setMaxPrice] = useState('');
@@ -72,8 +80,9 @@ export default function InventoryPage() {
     if (compareList.some((c) => c.id === car.id)) {
       setCompareList(compareList.filter((c) => c.id !== car.id));
     } else {
-      if (compareList.length >= 3) {
-        alert('You can compare a maximum of 3 supercars at a time.');
+      const maxCars = window.innerWidth < 768 ? 2 : 3;
+      if (compareList.length >= maxCars) {
+        alert(`You can compare a maximum of ${maxCars} supercars at a time on your current screen.`);
         return;
       }
       setCompareList([...compareList, car]);
@@ -95,6 +104,7 @@ export default function InventoryPage() {
     setMaxKms('');
     setMinYear('');
     setMaxYear('');
+    setSearchParams({});
   };
 
   return (
@@ -158,7 +168,15 @@ export default function InventoryPage() {
                 {BRAND_LOGOS.map(brand => (
                   <button
                     key={brand.name}
-                    onClick={() => setActiveBrand(activeBrand === brand.name ? null : brand.name)}
+                    onClick={() => {
+                      const newBrand = activeBrand === brand.name ? null : brand.name;
+                      setActiveBrand(newBrand);
+                      if (newBrand) {
+                        setSearchParams({ brand: newBrand });
+                      } else {
+                        setSearchParams({});
+                      }
+                    }}
                     className={`flex items-center space-x-2 px-3 py-2 rounded-xl border transition-all ${
                       activeBrand === brand.name 
                         ? 'bg-white border-white text-black' 
@@ -168,7 +186,12 @@ export default function InventoryPage() {
                     <img 
                       src={brand.icon} 
                       alt={brand.name} 
-                      className={`h-4 w-auto object-contain filter ${activeBrand === brand.name ? 'invert-0' : 'invert contrast-200'}`} 
+                      className="h-4 sm:h-5 w-auto object-contain"
+                      style={
+                        brand.isLocal
+                          ? { filter: 'url(#remove-white)' }
+                          : (activeBrand !== brand.name ? { filter: 'invert(1)' } : undefined)
+                      }
                     />
                     <span className="text-[10px] font-extrabold uppercase tracking-widest">{brand.name}</span>
                   </button>
@@ -279,7 +302,6 @@ export default function InventoryPage() {
                 <CarCard
                   key={car.id}
                   car={car}
-                  onSelectCar={setSelectedCar}
                   isComparing={compareList.some((c) => c.id === car.id)}
                   onToggleCompare={handleToggleCompare}
                 />
@@ -291,13 +313,6 @@ export default function InventoryPage() {
       
       <Footer />
 
-      {selectedCar && (
-        <CarModal
-          car={selectedCar}
-          onClose={() => setSelectedCar(null)}
-        />
-      )}
-
       {showCompareModal && compareList.length > 0 && (
         <CarCompare
           compareList={compareList}
@@ -305,8 +320,9 @@ export default function InventoryPage() {
           onCloseCompare={() => setShowCompareModal(false)}
           onSelectCar={(car) => {
             setShowCompareModal(false);
-            setSelectedCar(car);
+            navigate(`/inventory/${car.slug}`);
           }}
+          onToggleCompare={handleToggleCompare}
         />
       )}
     </div>

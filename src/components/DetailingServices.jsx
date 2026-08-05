@@ -1,7 +1,11 @@
 import React, { useState } from 'react';
 import { CheckCircle2, ChevronRight } from 'lucide-react';
 
-export default function DetailingServices({ onOpenVipModal }) {
+export default function DetailingServices() {
+  const handleOpenVipModal = () => {
+    window.dispatchEvent(new CustomEvent('open-vip-modal'));
+  };
+
   const [activeService, setActiveService] = useState(0);
 
   const services = [
@@ -106,7 +110,7 @@ export default function DetailingServices({ onOpenVipModal }) {
               </div>
 
               <button
-                onClick={onOpenVipModal}
+                onClick={handleOpenVipModal}
                 className="px-6 py-3 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest hover:bg-zinc-200 transition-all flex items-center space-x-2"
               >
                 <span>Book Detailing Appointment</span>

@@ -4,6 +4,7 @@ import { Routes, Route, Navigate } from 'react-router-dom';
 // Public pages
 import HomePage from './pages/HomePage';
 import InventoryPage from './pages/InventoryPage';
+import CarDetailsPage from './pages/CarDetailsPage';
 import AboutPage from './pages/AboutPage';
 import SourcingPage from './pages/SourcingPage';
 import SellPage from './pages/SellPage';
@@ -12,6 +13,7 @@ import ComparePage from './pages/ComparePage';
 import InsightsPage from './pages/InsightsPage';
 import FAQPage from './pages/FAQPage';
 import Chatbot from './components/Chatbot';
+import ViewingModal from './components/ViewingModal';
 
 // Admin pages
 import AdminLogin     from './admin/pages/AdminLogin';
@@ -20,6 +22,7 @@ import AdminInventory from './admin/pages/AdminInventory';
 import CarForm        from './admin/pages/CarForm';
 import AdminTestimonials from './admin/pages/AdminTestimonials';
 import TestimonialForm   from './admin/pages/TestimonialForm';
+import AdminInquiries from './admin/pages/AdminInquiries';
 
 // Admin layout + route guard
 import AdminLayout    from './admin/AdminLayout';
@@ -41,10 +44,12 @@ import ProtectedRoute from './admin/ProtectedRoute';
 export default function App() {
   return (
     <>
+      <ViewingModal />
       <Routes>
         {/* ── Public ── */}
         <Route path="/" element={<HomePage />} />
         <Route path="/inventory" element={<InventoryPage />} />
+        <Route path="/inventory/:slug" element={<CarDetailsPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/sourcing" element={<SourcingPage />} />
         <Route path="/sell" element={<SellPage />} />
@@ -68,6 +73,7 @@ export default function App() {
           {/* /admin → redirect to dashboard */}
           <Route index element={<Navigate to="dashboard" replace />} />
           <Route path="dashboard"           element={<AdminDashboard />} />
+          <Route path="inquiries"           element={<AdminInquiries />} />
           <Route path="inventory"           element={<AdminInventory />} />
           <Route path="inventory/new"       element={<CarForm />} />
           <Route path="inventory/:id/edit"  element={<CarForm />} />

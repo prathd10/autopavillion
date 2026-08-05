@@ -2,7 +2,10 @@ import React, { useState, useEffect } from 'react';
 import { Menu, X, ArrowUpRight, Scale } from 'lucide-react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 
-export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) {
+export default function Navbar({ compareCount, onOpenCompare, searchTerm, setSearchTerm }) {
+  const handleOpenVipModal = () => {
+    window.dispatchEvent(new CustomEvent('open-vip-modal'));
+  };
   const [scrolled, setScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   
@@ -59,6 +62,9 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
 
           {/* Center: Spaced Nav Links */}
           <nav className="hidden lg:flex items-center space-x-8 text-xs font-semibold tracking-widest text-zinc-300 uppercase">
+            <button onClick={() => handleNavClick('/')} className="hover:text-white transition-colors">
+              Home
+            </button>
             <button onClick={() => handleNavClick('/inventory')} className="hover:text-white transition-colors">
               Inventory
             </button>
@@ -86,7 +92,7 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
             )}
 
             <button
-              onClick={onOpenVipModal}
+              onClick={handleOpenVipModal}
               className="px-6 py-2.5 rounded-full bg-white text-black font-bold text-xs tracking-wider flex items-center space-x-2.5 hover:bg-zinc-200 transition-all shadow-xl group"
             >
               <span>Schedule a Viewing</span>
@@ -113,6 +119,9 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
       {mobileMenuOpen && (
         <div className="lg:hidden bg-black/95 border-b border-white/10 px-6 py-6 transition-all space-y-4">
           <div className="flex flex-col space-y-3 text-xs font-semibold uppercase tracking-widest text-zinc-300">
+            <button onClick={() => handleNavClick('/')} className="text-left py-2 border-b border-white/10">
+              Home
+            </button>
             <button onClick={() => handleNavClick('/inventory')} className="text-left py-2 border-b border-white/10">
               Inventory
             </button>
@@ -129,7 +138,7 @@ export default function Navbar({ compareCount, onOpenCompare, onOpenVipModal }) 
             <button
               onClick={() => {
                 setMobileMenuOpen(false);
-                onOpenVipModal();
+                handleOpenVipModal();
               }}
               className="w-full py-3 rounded-full bg-white text-black font-bold text-xs uppercase tracking-widest text-center flex items-center justify-center space-x-2 mt-2"
             >

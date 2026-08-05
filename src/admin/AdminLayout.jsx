@@ -3,11 +3,12 @@ import { NavLink, Outlet, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import {
   LayoutDashboard, Car, LogOut, ExternalLink,
-  ChevronLeft, ChevronRight, Menu, X, Plus, MessageSquare
+  ChevronLeft, ChevronRight, Menu, X, Plus, MessageSquare, Inbox
 } from 'lucide-react';
 
 const NAV_ITEMS = [
   { to: '/admin/dashboard',       label: 'Dashboard',    Icon: LayoutDashboard },
+  { to: '/admin/inquiries',       label: 'Inquiries',    Icon: Inbox },
   { to: '/admin/inventory',       label: 'Inventory',    Icon: Car },
   { to: '/admin/inventory/new',   label: 'Add Car',      Icon: Plus },
   { to: '/admin/testimonials',    label: 'Testimonials', Icon: MessageSquare },

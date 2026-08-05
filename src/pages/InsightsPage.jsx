@@ -1,6 +1,8 @@
 import React, { useEffect } from 'react';
 import { ArrowLeft, ArrowRight, Calendar, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import Navbar from '../components/Navbar';
+import Footer from '../components/Footer';
 
 const ARTICLES = [
   {
@@ -38,7 +40,9 @@ export default function InsightsPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black text-white pt-24 pb-20">
+    <div className="min-h-screen bg-black text-white flex flex-col">
+      <Navbar />
+      <main className="flex-1 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Back Navigation */}
@@ -124,6 +128,8 @@ export default function InsightsPage() {
         </div>
 
       </div>
+      </main>
+      <Footer />
     </div>
   );
 }

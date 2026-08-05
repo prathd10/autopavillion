@@ -14,7 +14,7 @@ export default function FinancePreview() {
           <div className="space-y-8">
             <div>
               <h2 className="text-3xl sm:text-5xl font-black font-heading uppercase tracking-tight text-white mb-4">
-                Premium <span className="text-zinc-500 font-extralight block">Financing</span>
+                Bespoke <span className="text-zinc-500 font-extralight block">Financing</span>
               </h2>
               <p className="text-zinc-400 font-mulish text-sm sm:text-base max-w-md leading-relaxed">
                 We partner with India's leading private banks to offer tailored financing solutions, competitive interest rates, and flexible tenures designed exclusively for luxury vehicle acquisitions.

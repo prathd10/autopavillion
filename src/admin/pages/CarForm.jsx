@@ -231,7 +231,7 @@ export default function CarForm() {
     <div className="max-w-4xl mx-auto space-y-8">
 
       {/* Header */}
-      <div className="flex items-center gap-6">
+      <div className="flex flex-col sm:flex-row sm:items-center gap-4 sm:gap-6">
         <Link
           to="/admin/inventory"
           className="w-12 h-12 flex items-center justify-center rounded-full border border-white/10 text-zinc-400 hover:text-white hover:bg-white/5 transition-all"

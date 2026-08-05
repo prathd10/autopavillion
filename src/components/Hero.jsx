@@ -1,7 +1,7 @@
 import React, { useState, useRef, useEffect } from 'react';
 import { ArrowUpRight, Volume2, VolumeX } from 'lucide-react';
 
-export default function Hero({ onOpenVipModal }) {
+export default function Hero() {
   const [isMuted, setIsMuted] = useState(true);
   const [animStep, setAnimStep] = useState(0);
   const videoRef = useRef(null);

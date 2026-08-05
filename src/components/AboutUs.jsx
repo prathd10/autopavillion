@@ -35,75 +35,114 @@ export default function AboutUs() {
             </h2>
           </div>
 
-          <div className="flex items-center space-x-2 text-xs text-zinc-300 mt-4 md:mt-0 font-mulish font-bold uppercase tracking-wider">
+          <a href="https://maps.google.com/?q=Auto+Pavilion,+Office+No:25,+Tirupati+Shopping+center,+S+V+Rd,+Santacruz+(W),+Mumbai-400054" target="_blank" rel="noopener noreferrer" className="flex items-center space-x-2 text-xs text-zinc-300 hover:text-white transition-colors mt-4 md:mt-0 font-mulish font-bold uppercase tracking-wider">
             <MapPin className="w-4 h-4 text-white" />
             <span>Santacruz West, Mumbai Showroom HQ</span>
-          </div>
+          </a>
         </div>
 
-        {/* Clean Frameless Floating Content (NO CARDS - Pure Typography & Animated Entrance) */}
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        {/* Clean Frameless Floating Content */}
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-20 items-start mt-10">
           
-          {/* Left Column: Brand Story */}
-          <div className="lg:col-span-6 space-y-6 animate-fadeInUp [animation-delay:200ms]">
-            <div className="inline-block px-3 py-1 bg-black/80 border-l-2 border-white text-[10px] font-bold text-white uppercase tracking-widest backdrop-blur-md">
-              A NOTCH ABOVE
+          {/* Left Column: Brand Story & CEO */}
+          <div className="lg:col-span-7 space-y-12 animate-fadeInUp [animation-delay:200ms]">
+            
+            {/* Story */}
+            <div className="space-y-6">
+              <div className="inline-block px-4 py-1.5 bg-white/5 border border-white/10 text-[10px] font-bold text-white uppercase tracking-[0.2em] rounded-full backdrop-blur-md">
+                A Notch Above
+              </div>
+
+              <h3 
+                className="text-4xl sm:text-6xl font-extrabold text-white leading-[1.1] tracking-tight"
+                style={{ fontFamily: "'Cinzel', serif" }}
+              >
+                CRAFTING INDIA'S <br />
+                <span className="text-zinc-500 font-light italic">SUPERCAR HERITAGE</span>
+              </h3>
+
+              <div className="space-y-6 pt-4 border-l border-white/20 pl-6">
+                <p className="text-sm sm:text-lg text-white font-mulish leading-relaxed max-w-xl">
+                  Welcome to Auto Pavilion, where sophistication meets automotive excellence.
+                </p>
+                <p className="text-xs sm:text-sm text-zinc-400 font-mulish leading-relaxed max-w-xl">
+                  At Auto Pavilion, we understand the discerning tastes and high standards of our clientele. As a leading dealer of top-tier cars, we pride ourselves on delivering an unparalleled experience that matches the luxury of our collection.
+                </p>
+                <p className="text-xs sm:text-sm text-zinc-400 font-mulish leading-relaxed max-w-xl">
+                  Established with a singular vision - to redefine the automotive experience, our journey began with a passion for excellence. From a modest beginning to a premier destination, we've consistently exceeded expectations, setting new standards in the luxury car market.
+                </p>
+              </div>
             </div>
 
-            <h3 
-              className="text-3xl sm:text-5xl font-extrabold text-white leading-tight tracking-tight"
-              style={{ fontFamily: "'Cinzel', serif" }}
-            >
-              CRAFTING INDIA'S <br />
-              <span className="text-zinc-400 font-light italic">SUPERCAR HERITAGE</span>
-            </h3>
+            {/* CEO Section (Glass Panel) */}
+            <div className="glass-panel p-8 sm:p-10 rounded-3xl relative overflow-hidden group">
+              <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-3xl -mr-10 -mt-10 pointer-events-none" />
+              <div className="flex flex-col sm:flex-row gap-8 items-center sm:items-start relative z-10">
+                <div className="relative shrink-0">
+                  <div className="absolute inset-0 bg-white/20 rounded-2xl blur-md" />
+                  <img 
+                    src="/ceo_placeholder.png" 
+                    alt="Founder & CEO" 
+                    className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-2xl object-cover shadow-2xl border border-white/20 transition-all duration-700 hover:scale-105" 
+                  />
+                </div>
+                <div className="text-center sm:text-left flex flex-col justify-center">
+                  <div className="text-zinc-500 font-bold uppercase tracking-[0.3em] text-[10px] sm:text-xs mb-4">Founder's Vision</div>
+                  <blockquote className="text-lg sm:text-2xl font-light italic text-white leading-relaxed">
+                    "Quality is never an accident; it is always the result of high intention."
+                  </blockquote>
+                </div>
+              </div>
+            </div>
 
-            <p className="text-xs sm:text-base text-zinc-300 font-mulish leading-relaxed max-w-lg">
-              Auto Pavilion was founded with a singular mission: to provide High-Net-Worth Individuals, industrialists, and avid collectors across India direct access to fully verified, non-accident exotic supercars with 100% legal transparency.
-            </p>
-
-            <p className="text-xs sm:text-sm text-zinc-400 font-mulish leading-relaxed max-w-lg">
-              Every vehicle in our collection undergoes an uncompromised 251-Point Diagnostic Audit covering chassis geometry, ECU telemetry, and complete provenance verification.
-            </p>
           </div>
 
-          {/* Right Column: Frameless Floating Statistics & Key Pillars */}
-          <div className="lg:col-span-6 space-y-10 animate-fadeInUp [animation-delay:400ms]">
+          {/* Right Column: Statistics & Map */}
+          <div className="lg:col-span-5 space-y-12 animate-fadeInUp [animation-delay:400ms]">
             
-            {/* Frameless 3-Pillar Highlight Row */}
-            <div className="grid grid-cols-1 sm:grid-cols-3 gap-8 border-t border-b border-white/15 py-8">
-              
-              <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight">251-Pt</div>
-                <div className="text-[10px] uppercase font-bold text-zinc-300 tracking-wider">Diagnostic Audit</div>
-                <p className="text-xs text-zinc-400 font-mulish leading-snug">
-                  Full OBD-II telemetry & mechanical certification.
-                </p>
+            {/* Minimalist Stats Grid */}
+            <div className="grid grid-cols-2 gap-x-8 gap-y-12">
+              <div className="space-y-2 group">
+                <div className="text-5xl sm:text-7xl font-black text-white font-mono tracking-tighter group-hover:scale-105 transition-transform origin-left">19</div>
+                <div className="text-xs sm:text-sm uppercase font-bold text-zinc-400 tracking-[0.2em]">Years in Business</div>
               </div>
-
-              <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight">100%</div>
-                <div className="text-[10px] uppercase font-bold text-zinc-300 tracking-wider">Non-Accident</div>
-                <p className="text-xs text-zinc-400 font-mulish leading-snug">
-                  Legal certificate guaranteeing chassis integrity.
-                </p>
+              <div className="space-y-2 group">
+                <div className="text-5xl sm:text-7xl font-black text-white font-mono tracking-tighter group-hover:scale-105 transition-transform origin-left">50<span className="text-zinc-500">+</span></div>
+                <div className="text-xs sm:text-sm uppercase font-bold text-zinc-400 tracking-[0.2em]">Specialists</div>
               </div>
-
-              <div className="space-y-1">
-                <div className="text-3xl sm:text-4xl font-extrabold text-white font-mono tracking-tight">₹500Cr+</div>
-                <div className="text-[10px] uppercase font-bold text-zinc-300 tracking-wider">Exotics Delivered</div>
-                <p className="text-xs text-zinc-400 font-mulish leading-snug">
-                  Over 450+ hypercars curated nationwide.
-                </p>
+              <div className="space-y-2 group">
+                <div className="text-5xl sm:text-7xl font-black text-white font-mono tracking-tighter group-hover:scale-105 transition-transform origin-left">10<span className="text-zinc-500">k</span></div>
+                <div className="text-xs sm:text-sm uppercase font-bold text-zinc-400 tracking-[0.2em]">Cars Sold</div>
               </div>
-
+              <div className="space-y-2 group">
+                <div className="text-5xl sm:text-7xl font-black text-white font-mono tracking-tighter group-hover:scale-105 transition-transform origin-left">16<span className="text-zinc-500">+</span></div>
+                <div className="text-xs sm:text-sm uppercase font-bold text-zinc-400 tracking-[0.2em]">States Served</div>
+              </div>
             </div>
 
-            {/* Bottom Statement */}
-            <div className="pt-2">
-              <blockquote className="text-sm sm:text-lg font-light italic text-zinc-200 border-l-2 border-white pl-4 leading-relaxed">
-                "We don't just sell exotics; we curate unforgettable automotive legacies for India's discerning collectors."
+            <div className="pt-8 border-t border-white/10">
+              <blockquote className="text-sm sm:text-lg font-light italic text-zinc-300 border-l-2 border-white/30 pl-5 leading-relaxed">
+                "Auto Pavilion invites you to indulge in a world of automotive opulence. Our showroom is an embodiment of luxury and sophistication, reflecting the caliber of our clientele."
               </blockquote>
+            </div>
+
+            {/* Premium Embedded Map */}
+            <div className="mt-8 relative rounded-3xl overflow-hidden border border-white/10 shadow-2xl h-72 group">
+              <div className="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-colors duration-500 z-10 pointer-events-none" />
+              <iframe 
+                src="https://maps.google.com/maps?q=Auto%20Pavilion,%20Office%20No:25,%20Tirupati%20Shopping%20center,%20S%20V%20Rd,%20Santacruz%20(W),%20Mumbai-400054&t=&z=15&ie=UTF8&iwloc=&output=embed" 
+                width="100%" 
+                height="100%" 
+                style={{ border: 0 }} 
+                allowFullScreen="" 
+                loading="lazy" 
+                referrerPolicy="no-referrer-when-downgrade"
+                className="opacity-90 group-hover:opacity-100 transition-opacity duration-500"
+              ></iframe>
+              <a href="https://maps.google.com/?q=Auto+Pavilion,+Office+No:25,+Tirupati+Shopping+center,+S+V+Rd,+Santacruz+(W),+Mumbai-400054" target="_blank" rel="noopener noreferrer" className="absolute bottom-6 left-6 px-5 py-3 bg-white text-black hover:bg-zinc-200 text-[10px] sm:text-xs font-extrabold uppercase tracking-[0.2em] rounded-full shadow-2xl flex items-center space-x-3 transition-transform hover:scale-105 z-20">
+                <MapPin className="w-4 h-4" />
+                <span>Get Directions</span>
+              </a>
             </div>
 
           </div>

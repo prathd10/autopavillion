@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const PREVIEW_ARTICLES = [
   {
     id: 1,
-    title: "The Evolution of Premium Sedans in 2026",
+    title: "The Evolution of Luxury Sedans in 2026",
     category: "Industry Trends",
     image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop"
   },
@@ -31,7 +31,7 @@ export default function InsightsPreview() {
         <div className="flex flex-col sm:flex-row sm:items-end justify-between mb-12 space-y-4 sm:space-y-0">
           <div>
             <h2 className="text-3xl sm:text-5xl font-black font-heading uppercase tracking-tight text-white mb-2">
-              The Premium <span className="text-zinc-500 font-extralight">Journal</span>
+              The Pavilion <span className="text-zinc-500 font-extralight">Journal</span>
             </h2>
             <p className="text-sm text-zinc-400 font-mulish max-w-md">
               Market trends, buying guides, and expert advice for luxury vehicle ownership.

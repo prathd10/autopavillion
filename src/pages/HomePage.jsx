@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import Preloader from '../components/Preloader';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Inventory from '../components/Inventory';
 import RecentlySold from '../components/RecentlySold';
 import FinancePreview from '../components/FinancePreview';
-import SourcingPreview from '../components/SourcingPreview';
+import VehicleSourcing from '../components/VehicleSourcing';
 import InsightsPreview from '../components/InsightsPreview';
-import CarModal from '../components/CarModal';
 import CarCompare from '../components/CarCompare';
 import TradeInCalculator from '../components/TradeInCalculator';
 import TrustStats from '../components/TrustStats';
@@ -30,11 +30,11 @@ export default function HomePage() {
 
   // Fetch live car data from Supabase (falls back to static CARS_DATA)
   const { cars } = useCars();
+  const navigate = useNavigate();
 
   const [loading, setLoading] = useState(() => {
     return !sessionStorage.getItem('hasSeenPreloader');
   });
-  const [selectedCar,       setSelectedCar]       = useState(null);
   const [compareList,       setCompareList]       = useState([]);
   const [showCompareModal,  setShowCompareModal]  = useState(false);
   const [activeBrandFilter, setActiveBrandFilter] = useState(null);
@@ -44,8 +44,9 @@ export default function HomePage() {
     if (compareList.some((c) => c.id === car.id)) {
       setCompareList(compareList.filter((c) => c.id !== car.id));
     } else {
-      if (compareList.length >= 3) {
-        alert('You can compare a maximum of 3 cars at a time.');
+      const maxCars = window.innerWidth < 768 ? 2 : 3;
+      if (compareList.length >= maxCars) {
+        alert(`You can compare a maximum of ${maxCars} cars at a time on your current screen.`);
         return;
       }
       setCompareList([...compareList, car]);
@@ -57,11 +58,6 @@ export default function HomePage() {
     const updated = compareList.filter((c) => c.id !== id);
     setCompareList(updated);
     if (updated.length === 0) setShowCompareModal(false);
-  };
-
-  const handleOpenVipModal = () => {
-    const el = document.getElementById('vehicle-sourcing');
-    if (el) el.scrollIntoView({ behavior: 'smooth' });
   };
 
   return (
@@ -77,13 +73,11 @@ export default function HomePage() {
           <Navbar
             compareCount={compareList.length}
             onOpenCompare={() => setShowCompareModal(true)}
-            onOpenVipModal={handleOpenVipModal}
             searchTerm={searchTerm}
             setSearchTerm={setSearchTerm}
           />
 
           <Hero
-            onOpenVipModal={handleOpenVipModal}
             activeBrandFilter={activeBrandFilter}
             setActiveBrandFilter={setActiveBrandFilter}
           />
@@ -91,7 +85,6 @@ export default function HomePage() {
           {/* Inventory now receives Supabase-backed (or static-fallback) cars */}
           <Inventory
             cars={cars.slice(0, 6)}
-            onSelectCar={(car) => setSelectedCar(car)}
             compareList={compareList}
             onToggleCompare={handleToggleCompare}
             activeBrandFilter={activeBrandFilter}
@@ -102,21 +95,13 @@ export default function HomePage() {
           />
 
           <RecentlySold />
-          <FinancePreview />
-          <SourcingPreview />
-          <InsightsPreview />
           <Testimonials />
+          <VehicleSourcing />
           <TrustStats />
           <TradeInCalculator />
-          <Footer onOpenVipModal={handleOpenVipModal} />
-
-          {selectedCar && (
-            <CarModal
-              car={selectedCar}
-              onClose={() => setSelectedCar(null)}
-              onOpenVipModal={handleOpenVipModal}
-            />
-          )}
+          <FinancePreview />
+          <InsightsPreview />
+          <Footer />
 
           {showCompareModal && compareList.length > 0 && (
             <CarCompare
@@ -125,8 +110,9 @@ export default function HomePage() {
               onCloseCompare={() => setShowCompareModal(false)}
               onSelectCar={(car) => {
                 setShowCompareModal(false);
-                setSelectedCar(car);
+                navigate(`/inventory/${car.slug}`);
               }}
+              onToggleCompare={handleToggleCompare}
             />
           )}
         </>

@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 import { Eye, Maximize2, Sparkles, Navigation, MapPin } from 'lucide-react';
 
-export default function VirtualShowroom({ onOpenVipModal }) {
+export default function VirtualShowroom() {
+  const handleOpenVipModal = () => {
+    window.dispatchEvent(new CustomEvent('open-vip-modal'));
+  };
   const [activeZone, setActiveZone] = useState('floor');
 
   const ZONES = {
@@ -130,7 +133,7 @@ export default function VirtualShowroom({ onOpenVipModal }) {
             </div>
 
             <button
-              onClick={onOpenVipModal}
+              onClick={handleOpenVipModal}
               className="px-6 py-2.5 bg-white text-black font-extrabold text-xs uppercase tracking-widest hover:bg-zinc-200 transition-all flex items-center space-x-2"
             >
               <span>Book Showroom Visit</span>

@@ -15,8 +15,12 @@ import { CARS_DATA } from '../data/cars';
  *
  * @returns {{ cars: object[], loading: boolean, error: string|null, source: 'supabase'|'static' }}
  */
+const generateSlug = (brand, name, year) => {
+  return `${brand}-${name}-${year}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+};
+
 export function useCars() {
-  const [cars,    setCars]    = useState(CARS_DATA); // immediate static render
+  const [cars,    setCars]    = useState(() => CARS_DATA.map(c => ({ ...c, slug: generateSlug(c.brand, c.name, c.year) })));
   const [loading, setLoading] = useState(true);
   const [error,   setError]   = useState(null);
   const [source,  setSource]  = useState('static');
@@ -36,7 +40,7 @@ export function useCars() {
         if (dbError) throw dbError;
 
         if (data && data.length > 0) {
-          setCars(data.map(mapCarFromDb));
+          setCars(data.map(mapCarFromDb).map(c => ({ ...c, slug: generateSlug(c.brand, c.name, c.year) })));
           setSource('supabase');
         }
         // Empty table → keep static data (pre-seeding) and stay 'static'
