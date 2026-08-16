@@ -1,0 +1,44 @@
+◇ injected env (6) from .env // tip: ⌘ custom filepath { path: '/custom/path/.env' }
+{
+  "id": "car/audi/200",
+  "name": "200",
+  "make": {
+    "id": "audi",
+    "name": "Audi"
+  },
+  "kind": "car",
+  "body_type": "sedan",
+  "availability": [
+    "fi",
+    "gb",
+    "nl",
+    "nz",
+    "ua",
+    "us"
+  ],
+  "regions": [
+    "eu",
+    "na",
+    "oc"
+  ],
+  "popularity": {
+    "global_decile": 6,
+    "rarity": "average"
+  },
+  "aliases": [],
+  "former_ids": [
+    "car/audi/200-turbo"
+  ],
+  "years": null,
+  "era": null,
+  "enrichment": null,
+  "enrichment_gated": true,
+  "dataset_version": "2026.08.0",
+  "upgrade_url": "https://vehiclesdb.com/pricing",
+  "attribution": {
+    "source": "VehiclesDB",
+    "url": "https://vehiclesdb.com",
+    "license": "Identity layer: CC-BY-4.0; enrichment/resolution: proprietary. Display requires visible credit — see https://vehiclesdb.com/legal/attribution",
+    "dataset_version": "2026.08.0"
+  }
+}

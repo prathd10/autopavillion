@@ -14,6 +14,7 @@ import InsightsPage from './pages/InsightsPage';
 import FAQPage from './pages/FAQPage';
 import Chatbot from './components/Chatbot';
 import ViewingModal from './components/ViewingModal';
+import ComparisonTray from './components/ComparisonTray';
 
 // Admin pages
 import AdminLogin     from './admin/pages/AdminLogin';
@@ -45,6 +46,7 @@ export default function App() {
   return (
     <>
       <ViewingModal />
+      <ComparisonTray />
       <Routes>
         {/* ── Public ── */}
         <Route path="/" element={<HomePage />} />

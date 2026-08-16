@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
-import { ShieldCheck, ChevronLeft, ChevronRight, ArrowLeft, Check, Send, Loader2 } from 'lucide-react';
+import { ShieldCheck, ChevronLeft, ChevronRight, ArrowLeft, Check, Send, Loader2, Scale } from 'lucide-react';
 import { ikUrl } from '../lib/imagekit';
+import { useComparison } from '../hooks/useComparison';
 import confetti from 'canvas-confetti';
 import { supabase } from '../lib/supabase';
 import { useCars } from '../hooks/useCars';
@@ -13,6 +14,7 @@ export default function CarDetailsPage() {
   const { slug } = useParams();
   const navigate = useNavigate();
   const { cars, loading: carsLoading } = useCars();
+  const { toggleCompare, isComparing, clearCompare } = useComparison();
   
   const [car, setCar] = useState(null);
   const [suggestedCars, setSuggestedCars] = useState([]);
@@ -276,6 +278,19 @@ export default function CarDetailsPage() {
                       Schedule Viewing
                     </button>
                   </div>
+                  
+                  <button
+                    type="button"
+                    onClick={() => toggleCompare(car.id)}
+                    className={`w-full py-4 rounded-xl border font-extrabold text-xs uppercase tracking-widest transition-all flex items-center justify-center space-x-2 mt-3 ${
+                      isComparing(car.id)
+                        ? 'bg-white text-black border-white'
+                        : 'bg-transparent border-white/20 text-white hover:bg-white/10'
+                    }`}
+                  >
+                    <Scale className="w-4 h-4" />
+                    <span>{isComparing(car.id) ? 'Added to Compare' : 'Compare this Vehicle'}</span>
+                  </button>
                 </form>
               )}
             </div>
@@ -297,12 +312,22 @@ export default function CarDetailsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {suggestedCars.map(c => (
-                <CarCard 
-                  key={c.id} 
-                  car={c} 
-                  isComparing={false} 
-                  onToggleCompare={() => {}} 
-                />
+                <div key={c.id} className="relative group">
+                  <CarCard car={c} />
+                  <button
+                    onClick={() => {
+                      clearCompare();
+                      toggleCompare(car.id);
+                      toggleCompare(c.id);
+                      navigate(`/compare?cars=${car.id},${c.id}`);
+                      window.scrollTo(0, 0);
+                    }}
+                    className="absolute top-3 left-3 px-3 py-1.5 rounded-lg bg-black/80 backdrop-blur-md border border-white/15 text-[9px] uppercase tracking-wider font-extrabold text-white opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center space-x-1 hover:bg-white hover:text-black"
+                  >
+                    <Scale className="w-3.5 h-3.5" />
+                    <span>Compare side-by-side</span>
+                  </button>
+                </div>
               ))}
             </div>
           </div>

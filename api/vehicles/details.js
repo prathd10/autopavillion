@@ -1,162 +1,26 @@
-import express from 'express';
-import cors from 'cors';
-import ImageKit from 'imagekit';
-import dotenv from 'dotenv';
-import path from 'path';
-import { fileURLToPath } from 'url';
-import { GoogleGenerativeAI } from '@google/generative-ai';
-
-// Load environment variables from .env or .env.local
-const __dirname = path.dirname(fileURLToPath(import.meta.url));
-dotenv.config({ path: path.join(__dirname, '.env') });
-dotenv.config({ path: path.join(__dirname, '.env.local') });
-
 import { createClient } from '@supabase/supabase-js';
 
-const app = express();
-app.use(cors());
-app.use(express.json());
-
-// Initialize Supabase Client
-// We use the service role key if available so the backend can bypass RLS and insert into the cache table.
 const supabaseUrl = process.env.VITE_SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY || '';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-let imagekit = null;
-if (process.env.VITE_IMAGEKIT_PUBLIC_KEY && process.env.IMAGEKIT_PRIVATE_KEY && process.env.VITE_IMAGEKIT_URL_ENDPOINT) {
-  imagekit = new ImageKit({
-    publicKey: process.env.VITE_IMAGEKIT_PUBLIC_KEY,
-    privateKey: process.env.IMAGEKIT_PRIVATE_KEY,
-    urlEndpoint: process.env.VITE_IMAGEKIT_URL_ENDPOINT
-  });
-} else {
-  console.warn('⚠️ [ImageKit] Environment variables missing. ImageKit features are disabled.');
-}
+export default async function handler(req, res) {
+  // CORS setup for Vercel Serverless Functions
+  res.setHeader('Access-Control-Allow-Credentials', true);
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
 
-// In-memory caching for VehiclesDB vehicles.json catalogue (4.68MB)
-let vehiclesCatalog = null;
-async function getVehiclesCatalog() {
-  if (vehiclesCatalog) return vehiclesCatalog;
-  try {
-    console.log('📥 Loading VehiclesDB catalog in memory...');
-    const res = await fetch('https://cdn.jsdelivr.net/gh/vehiclesdb/vehiclesdb@latest/dist/vehicles.json');
-    if (!res.ok) throw new Error(`HTTP error ${res.status}`);
-    const data = await res.json();
-    vehiclesCatalog = data;
-    console.log('✅ VehiclesDB catalog loaded in memory.');
-    return vehiclesCatalog;
-  } catch (error) {
-    console.error('❌ Failed to load VehiclesDB catalog:', error);
-    return null;
+  if (req.method === 'OPTIONS') {
+    res.status(200).end();
+    return;
   }
-}
 
-// ── VehiclesDB Search Endpoint ──
-app.get('/api/vehicles/search', async (req, res) => {
-  try {
-    const query = (req.query.q || '').trim().toLowerCase();
-    
-    // 1. Fetch active showroom inventory
-    let inventoryCars = [];
-    try {
-      const { data, error } = await supabase
-        .from('cars')
-        .select('id, name, brand, year, subtitle, price, images, mileage_kms, status')
-        .eq('status', 'active');
-      if (!error && data) {
-        inventoryCars = data;
-      }
-    } catch (dbErr) {
-      console.error('Failed to fetch inventory for search:', dbErr);
-    }
-    
-    // If query is empty, return all active inventory cars
-    if (!query) {
-      const allInv = inventoryCars.map(c => ({
-        id: c.id,
-        make: c.brand,
-        model: c.name,
-        year: c.year,
-        variant: c.subtitle || null,
-        is_inventory: true,
-        price: c.price,
-        image: c.images?.[0] || null
-      }));
-      return res.status(200).json({
-        success: true,
-        vehicles: allInv
-      });
-    }
-    
-    // 2. Filter inventory cars in memory
-    const inventoryMatches = inventoryCars.filter(c => 
-      c.name.toLowerCase().includes(query) || 
-      c.brand.toLowerCase().includes(query)
-    ).map(c => ({
-      id: c.id,
-      make: c.brand,
-      model: c.name,
-      year: c.year,
-      variant: c.subtitle || null,
-      is_inventory: true,
-      price: c.price,
-      image: c.images?.[0] || null
-    }));
-    
-    // 3. Filter global catalogue in memory
-    const catalog = await getVehiclesCatalog();
-    const globalMatches = [];
-    
-    if (catalog && catalog.makes) {
-      const queryTerms = query.split(/\s+/);
-      
-      for (const make of catalog.makes) {
-        const makeName = make.name.toLowerCase();
-        const makeSlug = make.slug.toLowerCase();
-        
-        for (const model of make.models) {
-          const modelName = model.name.toLowerCase();
-          const fullCarName = `${makeName} ${modelName}`;
-          let isMatch = false;
-          
-          if (queryTerms.length === 1) {
-            isMatch = makeName.includes(query) || modelName.includes(query);
-          } else {
-            isMatch = queryTerms.every(term => fullCarName.includes(term));
-          }
-          
-          if (isMatch) {
-            globalMatches.push({
-              id: `${model.kind || 'car'}/${make.slug}/${model.slug}`,
-              make: make.name,
-              model: model.name,
-              year: null,
-              variant: null,
-              is_inventory: false,
-              body_type: model.body_type || 'Car'
-            });
-          }
-        }
-      }
-    }
-    
-    res.status(200).json({
-      success: true,
-      vehicles: [...inventoryMatches, ...globalMatches.slice(0, 30)]
-    });
-  } catch (error) {
-    console.error('Search API Error:', error);
-    res.status(500).json({ 
-      success: false, 
-      vehicles: [], 
-      error: error.message 
-    });
+  if (req.method !== 'GET') {
+    res.status(405).json({ error: 'Method not allowed' });
+    return;
   }
-});
 
-// ── VehiclesDB Details & Cache Endpoint ──
-app.get('/api/vehicles/details', async (req, res) => {
   try {
     const id = req.query.id;
     if (!id) {
@@ -202,7 +66,6 @@ app.get('/api/vehicles/details', async (req, res) => {
       .maybeSingle();
       
     if (cachedVehicle) {
-      console.log(`✅ Served [${id}] from local database cache.`);
       return res.status(200).json({
         id: cachedVehicle.id,
         name: cachedVehicle.model,
@@ -227,7 +90,6 @@ app.get('/api/vehicles/details', async (req, res) => {
     }
     
     // 3. Cache miss: fetch from VehiclesDB API and save
-    console.log(`🌐 Cache miss. Fetching [${id}] from VehiclesDB API...`);
     const apiKey = process.env.VEHICLESDB_API_KEY;
     if (!apiKey) {
       return res.status(500).json({ error: 'VEHICLESDB_API_KEY is not configured.' });
@@ -330,8 +192,6 @@ app.get('/api/vehicles/details', async (req, res) => {
         .upsert(dbRow, { onConflict: 'id' });
       if (insertErr) {
         console.error(`Failed to cache vehicle ${id} in Supabase:`, insertErr.message);
-      } else {
-        console.log(`💾 Successfully cached vehicle [${id}] in Supabase.`);
       }
     } catch (dbErr) {
       console.error(`Database insert error for ${id}:`, dbErr);
@@ -362,69 +222,4 @@ app.get('/api/vehicles/details', async (req, res) => {
     console.error('Details API Error:', error);
     res.status(500).json({ error: error.message });
   }
-});
-
-// Provide the ImageKit auth parameters
-app.get('/api/imagekit-auth', (req, res) => {
-  try {
-    if (!imagekit) {
-      return res.status(500).json({ error: 'ImageKit is not configured.' });
-    }
-    const result = imagekit.getAuthenticationParameters();
-    res.send(result);
-  } catch (error) {
-    console.error('ImageKit Auth Error:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-app.post('/api/chat', async (req, res) => {
-  try {
-    const apiKey = process.env.GEMINI_API_KEY;
-    if (!apiKey) {
-      return res.status(500).json({ error: 'GEMINI_API_KEY is not configured.' });
-    }
-
-    const { query, context } = req.body;
-    if (!query) {
-      return res.status(400).json({ error: 'Missing query parameter.' });
-    }
-
-    const genAI = new GoogleGenerativeAI(apiKey);
-    const model = genAI.getGenerativeModel({ model: "gemini-1.5-flash" });
-
-    const systemPrompt = `
-      You are the elite digital concierge for Auto Pavilion India, a premier pre-owned luxury vehicle dealership in Mumbai.
-      Tone: Professional, luxurious, knowledgeable, and discreet.
-      Knowledge base:
-      - You sell 100% non-accident cars.
-      - Every car gets a 251-Point Diagnostic Audit.
-      - You offer Bespoke Sourcing (finding cars not in stock).
-      - You offer financing through top Indian banks.
-      - You deliver pan-India on flatbeds.
-      - Showroom: Santacruz West, Mumbai.
-      
-      Current Public Inventory Details for context (do NOT list them all, just use to answer if asked):
-      ${context}
-
-      User Query: ${query}
-      
-      Respond conversationally and concisely (under 3 sentences) to the user's query based on this deep knowledge.
-    `;
-
-    const result = await model.generateContent(systemPrompt);
-    const responseText = result.response.text();
-
-    res.status(200).json({ reply: responseText });
-  } catch (error) {
-    console.error('Gemini Chat Error:', error);
-    res.status(500).json({ error: error.message });
-  }
-});
-
-const PORT = 3001;
-app.listen(PORT, () => {
-  console.log(`\n======================================================`);
-  console.log(`🚀 ImageKit & VehiclesDB Local Server running on http://localhost:${PORT}`);
-  console.log(`======================================================\n`);
-});
+}

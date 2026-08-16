@@ -12,6 +12,11 @@ export default function handler(req, res) {
     return;
   }
 
+  if (!process.env.VITE_IMAGEKIT_PUBLIC_KEY || !process.env.IMAGEKIT_PRIVATE_KEY || !process.env.VITE_IMAGEKIT_URL_ENDPOINT) {
+    res.status(500).json({ error: 'ImageKit environment variables are missing.' });
+    return;
+  }
+
   const imagekit = new ImageKit({
     publicKey: process.env.VITE_IMAGEKIT_PUBLIC_KEY,
     privateKey: process.env.IMAGEKIT_PRIVATE_KEY,

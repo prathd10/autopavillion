@@ -68,6 +68,9 @@ export default function Navbar({ compareCount, onOpenCompare, searchTerm, setSea
             <button onClick={() => handleNavClick('/inventory')} className="hover:text-white transition-colors">
               Inventory
             </button>
+            <button onClick={() => handleNavClick('/compare')} className="hover:text-white transition-colors">
+              Compare
+            </button>
             <button onClick={() => handleNavClick('/sourcing')} className="hover:text-white transition-colors">
               Sourcing
             </button>
@@ -124,6 +127,9 @@ export default function Navbar({ compareCount, onOpenCompare, searchTerm, setSea
             </button>
             <button onClick={() => handleNavClick('/inventory')} className="text-left py-2 border-b border-white/10">
               Inventory
+            </button>
+            <button onClick={() => handleNavClick('/compare')} className="text-left py-2 border-b border-white/10">
+              Compare
             </button>
             <button onClick={() => handleNavClick('/sourcing')} className="text-left py-2 border-b border-white/10">
               Vehicle Sourcing

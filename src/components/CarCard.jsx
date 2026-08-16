@@ -2,9 +2,20 @@ import React from 'react';
 import { Scale, Eye } from 'lucide-react';
 import { ikUrl } from '../lib/imagekit';
 import { useNavigate } from 'react-router-dom';
+import { useComparison } from '../hooks/useComparison';
 
 export default function CarCard({ car, isComparing, onToggleCompare }) {
   const navigate = useNavigate();
+  const { toggleCompare, isComparing: isComparingHook } = useComparison();
+  
+  const activeComparing = isComparing !== undefined ? isComparing : isComparingHook(car.id);
+  const handleToggle = () => {
+    if (onToggleCompare) {
+      onToggleCompare(car);
+    } else {
+      toggleCompare(car.id);
+    }
+  };
   return (
     <div className="studio-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group border border-white/10 bg-[#090a0d] shadow-2xl">
       
@@ -71,10 +82,10 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
 
           <div className="flex items-center space-x-1.5 sm:space-x-2">
             <button
-              onClick={() => onToggleCompare(car)}
-              title={isComparing ? "Remove from compare" : "Add to compare"}
+              onClick={handleToggle}
+              title={activeComparing ? "Remove from compare" : "Add to compare"}
               className={`p-1.5 sm:p-2.5 rounded-full border transition-all ${
-                isComparing
+                activeComparing
                   ? 'bg-white text-black border-white'
                   : 'bg-black border-white/20 text-white hover:bg-white/10'
               }`}
