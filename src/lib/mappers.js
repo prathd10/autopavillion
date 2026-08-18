@@ -49,6 +49,7 @@ export function mapCarFromDb(row) {
     threeSixtyFrames: row.three_sixty_frames ?? [],
     features: row.features ?? [],
     status: row.status ?? 'active',
+    description: row.description ?? '',
     createdAt: row.created_at,
     updatedAt: row.updated_at,
   };
@@ -95,6 +96,7 @@ export function mapCarToDb(car) {
     three_sixty_frames: Array.isArray(car.threeSixtyFrames) ? car.threeSixtyFrames.filter(Boolean) : [],
     features: Array.isArray(car.features) ? car.features.filter(Boolean) : [],
     status: car.status || 'active',
+    description: car.description || null,
     updated_at: new Date().toISOString(),
   };
 }

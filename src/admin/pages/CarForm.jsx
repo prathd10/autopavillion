@@ -48,7 +48,12 @@ const EMPTY_CAR = {
 
 const BODY_TYPES   = ['Coupe', 'Sedan', 'SUV', 'Convertible', 'Hatchback', 'Wagon', 'Pickup', 'Supercar', 'Hypercar'];
 const FUEL_TYPES   = ['Petrol', 'Diesel', 'Hybrid', 'Electric', 'PHEV'];
-const STATUS_OPTS  = ['active', 'draft', 'sold', 'archived'];
+const STATUS_OPTS  = [
+  { value: 'active', label: 'Active' },
+  { value: 'sold', label: 'Sold' },
+  { value: 'draft', label: 'Draft' },
+  { value: 'archived', label: 'Archived' }
+];
 
 /* ─── Field helpers ──────────────────────────────────────────── */
 function Field({ label, id, required, children }) {
@@ -85,9 +90,13 @@ function TextInput({ id, value, onChange, placeholder = '', required = false, ty
 function SelectInput({ id, value, onChange, options }) {
   return (
     <select id={id} value={value} onChange={e => onChange(e.target.value)} className={inputCls}>
-      {options.map(o => (
-        <option key={o} value={o} className="bg-[#0d0e12]">{o}</option>
-      ))}
+      {options.map(o => {
+        const val = typeof o === 'object' ? o.value : o;
+        const lbl = typeof o === 'object' ? o.label : o.charAt(0).toUpperCase() + o.slice(1);
+        return (
+          <option key={val} value={val} className="bg-[#0d0e12]">{lbl}</option>
+        );
+      })}
     </select>
   );
 }

@@ -21,7 +21,7 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
       
       {/* Top Image Container (Dominant Photo Display) */}
       <div 
-        className="relative h-52 sm:h-72 overflow-hidden bg-black cursor-pointer"
+        className="relative aspect-[1264/846] w-full overflow-hidden bg-[#050608] cursor-pointer"
         onClick={() => {
           navigate(`/inventory/${car.slug}`);
         }}
@@ -29,19 +29,22 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
         <img
           src={ikUrl(car.images?.[0], { width: 640, height: 480, quality: 75 })}
           alt={car.name}
-          className="w-full h-full object-cover object-center group-hover:scale-105 transition-transform duration-700 ease-out"
+          className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700 ease-out"
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#090a0d] via-transparent to-black/20 pointer-events-none" />
 
-        {/* Brand Logo Badge */}
-        <div className="absolute top-3 right-3 sm:top-4 sm:right-4 p-1.5 sm:p-2 rounded-lg sm:rounded-xl bg-black/70 backdrop-blur-md border border-white/10">
-          <img src={car.brandLogo} alt={car.brand} className="h-3.5 sm:h-4 w-auto object-contain" />
-        </div>
+        {/* SOLD Badge Overlay */}
+        {car.status === 'sold' && (
+          <div className="absolute top-3 left-3 sm:top-4 sm:left-4 px-2.5 py-0.5 bg-red-950/80 backdrop-blur-md text-red-200 text-[8px] font-black uppercase tracking-widest rounded border border-red-700/30 shadow-[0_4px_12px_rgba(0,0,0,0.5)] z-10">
+            SOLD
+          </div>
+        )}
+
       </div>
 
       {/* Content Body */}
-      <div className="p-3.5 sm:p-5 flex-1 flex flex-col justify-between space-y-2.5 sm:space-y-3">
+      <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
         
         <div>
           <div className="flex items-center justify-between text-[9px] sm:text-xs text-zinc-400 font-semibold mb-0.5">
@@ -57,30 +60,42 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
 
         {/* Clean Spec Indicators */}
         <div className="grid grid-cols-3 gap-1 sm:gap-2 py-1.5 sm:py-2 border-y border-white/10 text-center">
-          <div className="p-1 sm:p-2 rounded-md sm:rounded-xl bg-white/5">
-            <span className="text-[8px] sm:text-[9px] uppercase text-zinc-400 block font-bold">Power</span>
-            <span className="text-[10px] sm:text-xs font-bold text-white">{car.horsepower}</span>
+          <div className="p-1 sm:p-2 rounded-md sm:rounded-xl bg-white/5 truncate">
+            <span className="text-[8px] sm:text-[9px] uppercase text-zinc-400 block font-bold">Gearbox</span>
+            <span className="text-[10px] sm:text-xs font-bold text-white truncate block">{car.transmission || 'Automatic'}</span>
           </div>
 
-          <div className="p-1 sm:p-2 rounded-md sm:rounded-xl bg-white/5">
-            <span className="text-[8px] sm:text-[9px] uppercase text-zinc-400 block font-bold">0-100</span>
-            <span className="text-[10px] sm:text-xs font-bold text-white">{car.zeroToHundred}</span>
+          <div className="p-1 sm:p-2 rounded-md sm:rounded-xl bg-white/5 truncate">
+            <span className="text-[8px] sm:text-[9px] uppercase text-zinc-400 block font-bold">Type</span>
+            <span className="text-[10px] sm:text-xs font-bold text-white truncate block">{car.bodyType || 'Luxury'}</span>
           </div>
 
-          <div className="p-1 sm:p-2 rounded-md sm:rounded-xl bg-white/5">
+          <div className="p-1 sm:p-2 rounded-md sm:rounded-xl bg-white/5 truncate">
             <span className="text-[8px] sm:text-[9px] uppercase text-zinc-400 block font-bold">Owner</span>
-            <span className="text-[10px] sm:text-xs font-bold text-white">{car.owners}st Owner</span>
+            <span className="text-[10px] sm:text-xs font-bold text-white truncate block">
+              {car.owners ? `${car.owners}${car.owners === 1 ? 'st' : car.owners === 2 ? 'nd' : 'rd'} Owner` : '1st Owner'}
+            </span>
           </div>
         </div>
 
         {/* Price & Action Row */}
         <div className="flex items-center justify-between pt-0.5">
-          <div>
-            <span className="text-[8px] sm:text-[9px] uppercase text-zinc-400 block tracking-wider font-semibold">Offer Price</span>
-            <span className="text-base sm:text-xl font-black font-mono text-white">{car.price}</span>
-          </div>
+          {car.status === 'sold' ? (
+            <div className="flex-1 mr-4">
+              <div className="w-full py-2 bg-gradient-to-r from-red-950 to-red-900 border border-red-800/40 rounded-xl text-center shadow-lg">
+                <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-red-200">
+                  SOLD
+                </span>
+              </div>
+            </div>
+          ) : (
+            <div>
+              <span className="text-[8px] sm:text-[9px] uppercase text-zinc-400 block tracking-wider font-semibold">Offer Price</span>
+              <span className="text-base sm:text-xl font-black font-mono text-white">{car.price}</span>
+            </div>
+          )}
 
-          <div className="flex items-center space-x-1.5 sm:space-x-2">
+          <div className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
             <button
               onClick={handleToggle}
               title={activeComparing ? "Remove from compare" : "Add to compare"}

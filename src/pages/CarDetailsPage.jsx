@@ -103,11 +103,11 @@ export default function CarDetailsPage() {
           {/* Left Column: Image Gallery Slider */}
           <div className="lg:col-span-7 flex flex-col space-y-4">
             {/* Main Image */}
-            <div className="relative h-[400px] sm:h-[550px] rounded-2xl overflow-hidden bg-black border border-white/10 shadow-2xl group">
+            <div className="relative h-[400px] sm:h-[550px] rounded-2xl overflow-hidden bg-[#050608] border border-white/10 shadow-2xl group">
               <img
                 src={ikUrl(car.images[activeImageIndex], { width: 1200, quality: 85 })}
                 alt={car.name}
-                className="w-full h-full object-cover transition-opacity duration-300"
+                className="w-full h-full object-contain transition-opacity duration-300"
               />
               
               {/* Slider Controls */}
@@ -146,9 +146,20 @@ export default function CarDetailsPage() {
                 </button>
               ))}
             </div>
+
+            {/* Description / Concierge Notes */}
+            {car.description && (
+              <div className="p-6 rounded-2xl border border-white/10 bg-[#0c0d11] space-y-3">
+                <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 block mb-1">Concierge Notes & Description</span>
+                <div 
+                  className="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3 description-content"
+                  dangerouslySetInnerHTML={{ __html: car.description }}
+                />
+              </div>
+            )}
             
             {/* Certification Block placed below images on desktop */}
-            <div className="hidden lg:flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 p-6 rounded-2xl border border-white/10 bg-[#0c0d11] mt-auto">
+            <div className="hidden lg:flex flex-col sm:flex-row items-start sm:items-center gap-4 p-6 rounded-2xl border border-white/10 bg-[#0c0d11] mt-auto">
               <div className="flex items-center space-x-4">
                 <ShieldCheck className="w-10 h-10 text-white" />
                 <div>
@@ -159,9 +170,6 @@ export default function CarDetailsPage() {
                   <p className="text-xs text-zinc-400 mt-1">Verified genuine mileage & non-accident guarantee.</p>
                 </div>
               </div>
-              <span className="px-4 py-2 rounded-full bg-white text-black font-extrabold text-xs shrink-0 shadow-lg">
-                SCORE: 251 / 251
-              </span>
             </div>
           </div>
 
@@ -183,16 +191,16 @@ export default function CarDetailsPage() {
             {/* Technical Details Grid */}
             <div className="grid grid-cols-2 gap-4 mb-8">
               <div className="p-4 rounded-2xl bg-[#0c0d11] border border-white/10 space-y-1">
-                <span className="text-[9px] uppercase font-bold tracking-widest text-zinc-500">Engine</span>
-                <p className="text-sm font-bold text-white">{car.engine}</p>
+                <span className="text-[9px] uppercase font-bold tracking-widest text-zinc-500">Fuel Type</span>
+                <p className="text-sm font-bold text-white">{car.fuelType || 'Petrol'}</p>
               </div>
               <div className="p-4 rounded-2xl bg-[#0c0d11] border border-white/10 space-y-1">
-                <span className="text-[9px] uppercase font-bold tracking-widest text-zinc-500">Power</span>
-                <p className="text-sm font-bold text-white">{car.horsepower}</p>
+                <span className="text-[9px] uppercase font-bold tracking-widest text-zinc-500">Exterior Color</span>
+                <p className="text-sm font-bold text-white">{car.color || 'Contact Concierge'}</p>
               </div>
               <div className="p-4 rounded-2xl bg-[#0c0d11] border border-white/10 space-y-1">
-                <span className="text-[9px] uppercase font-bold tracking-widest text-zinc-500">0-100 km/h</span>
-                <p className="text-sm font-bold text-white">{car.zeroToHundred}</p>
+                <span className="text-[9px] uppercase font-bold tracking-widest text-zinc-500">Body Type</span>
+                <p className="text-sm font-bold text-white">{car.bodyType || 'Luxury Car'}</p>
               </div>
               <div className="p-4 rounded-2xl bg-[#0c0d11] border border-white/10 space-y-1">
                 <span className="text-[9px] uppercase font-bold tracking-widest text-zinc-500">Mileage</span>
@@ -204,21 +212,36 @@ export default function CarDetailsPage() {
               </div>
               <div className="p-4 rounded-2xl bg-[#0c0d11] border border-white/10 space-y-1">
                 <span className="text-[9px] uppercase font-bold tracking-widest text-zinc-500">Ownership</span>
-                <p className="text-sm font-bold text-white">{car.owners}st Owner</p>
+                <p className="text-sm font-bold text-white">
+                  {car.owners ? `${car.owners}${car.owners === 1 ? 'st' : car.owners === 2 ? 'nd' : 'rd'} Owner` : '1st Owner'}
+                </p>
               </div>
             </div>
+
+
 
             {/* Price Box */}
             <div className="py-4 border-y border-white/10 mb-6">
-              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 block mb-1">Offer Price</span>
-              <div className="flex items-baseline space-x-3">
-                <span className="text-4xl sm:text-5xl font-black font-mono tracking-tight text-white">{car.price}</span>
-                <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Ex-Showroom</span>
+              <span className="text-[10px] font-bold uppercase tracking-widest text-zinc-500 block mb-1">
+                {car.status === 'sold' ? 'Status' : 'Offer Price'}
+              </span>
+              <div className="flex items-center space-x-3 mt-1">
+                {car.status === 'sold' ? (
+                  <span className="px-4 py-1.5 bg-gradient-to-r from-red-950 to-red-900 border border-red-800/40 text-red-200 text-xs sm:text-sm font-black uppercase tracking-widest rounded-full shadow-lg">
+                    SOLD
+                  </span>
+                ) : (
+                  <>
+                    <span className="text-4xl sm:text-5xl font-black font-mono tracking-tight text-white">{car.price}</span>
+                    <span className="text-[10px] font-bold text-zinc-400 uppercase tracking-widest">Ex-Showroom</span>
+                  </>
+                )}
               </div>
             </div>
 
+
             {/* Inquiry Form / CTAs */}
-            <div className="mt-auto pt-2">
+            <div className="pt-2">
               {formSubmitted ? (
                 <div className="p-6 rounded-2xl border border-green-500/30 bg-green-500/10 text-center space-y-3">
                   <Check className="w-10 h-10 text-green-400 mx-auto" />
