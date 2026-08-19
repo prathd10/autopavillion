@@ -22,7 +22,7 @@ const STATIC_TESTIMONIALS = [
     id: 'static-3',
     name: "Ananya M.",
     role: "Business Owner, Bangalore",
-    comment: "Auto Pavilion stands head and shoulders above other dealers. Authentic mileage certification, completely non-accident transparent documentation, and world-class customer service.",
+    comment: "Auto Pavilion stands head and shoulders above other dealers. Authentic mileage certification, completely transparent documentation, and world-class customer service.",
     car: "Rolls-Royce Ghost",
     status: 'active'
   },

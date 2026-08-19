@@ -50,7 +50,8 @@ export default function Hero() {
           playsInline
           preload="auto"
           poster={posterImg}
-          className="w-full h-full object-cover object-center filter brightness-95 contrast-105 scale-105"
+          className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
+          style={{ transform: 'scale(1.12) translate(3.5%, 3.5%)' }}
         >
           <source src={videoSrc} type="video/mp4" />
           <img
@@ -114,7 +115,7 @@ export default function Hero() {
               animStep >= 3 ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
             }`}
           >
-            Curated premium pre-owned vehicles with comprehensive quality checks & 100% non-accident legal guarantee.
+            Curated premium pre-owned vehicles, rigorously inspected and verified for complete peace of mind.
           </p>
 
           {/* Line 4: Ultra-Compact Minimalist Capsule CTA Button */}

@@ -73,7 +73,7 @@ export default function TrustStats() {
           {TRUST_CARDS.map((fact, idx) => (
             <div
               key={idx}
-              className="bg-black/65 backdrop-blur-xl p-6 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between shadow-2xl min-h-[350px] group"
+              className="bg-black/65 backdrop-blur-xl p-4 sm:p-8 rounded-2xl sm:rounded-3xl border border-white/5 hover:border-amber-500/30 hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between shadow-2xl min-h-[180px] sm:min-h-[350px] group"
             >
               {/* Top part: Number */}
               <div className="text-zinc-650 text-xs sm:text-sm font-mono tracking-widest group-hover:text-amber-500/70 transition-colors duration-300">
@@ -81,24 +81,24 @@ export default function TrustStats() {
               </div>
 
               {/* Middle part: Heading, Subheading, Description */}
-              <div className="mt-4 flex-1 flex flex-col justify-center space-y-2">
-                <h3 className="text-xl sm:text-2xl font-black text-white tracking-widest font-heading uppercase group-hover:text-zinc-100 transition-colors duration-300">
+              <div className="mt-2 sm:mt-4 flex-1 flex flex-col justify-center space-y-1 sm:space-y-2">
+                <h3 className="text-lg sm:text-2xl font-black text-white tracking-widest font-heading uppercase group-hover:text-zinc-100 transition-colors duration-300">
                   {fact.title}
                 </h3>
-                <h4 className="text-[10px] sm:text-xs font-bold text-amber-500/90 uppercase tracking-wider font-heading">
+                <h4 className="text-[9px] sm:text-xs font-bold text-amber-500/90 uppercase tracking-wider font-heading">
                   {fact.subheading}
                 </h4>
-                <p className="text-[11px] sm:text-xs text-zinc-400 leading-relaxed font-mulish pt-1">
+                <p className="text-[10px] sm:text-xs text-zinc-400 leading-relaxed font-mulish pt-0.5 sm:pt-1">
                   {fact.description}
                 </p>
               </div>
 
               {/* Bottom part: Divider & Label + Icon */}
-              <div className="mt-6">
-                <div className="w-full h-[1px] bg-white/5 mb-4 group-hover:bg-amber-500/10 transition-colors duration-300" />
-                <div className="flex items-center justify-between text-[9px] sm:text-[10px] text-zinc-500 group-hover:text-zinc-300 transition-colors duration-300 font-bold uppercase tracking-wider">
-                  <span className="font-mono">{fact.bottomLabel}</span>
-                  <fact.Icon className="w-3.5 h-3.5 text-zinc-500 group-hover:text-amber-500 group-hover:scale-110 transition-all duration-300 shrink-0 ml-2" />
+              <div className="mt-4 sm:mt-6">
+                <div className="w-full h-[1px] bg-white/5 mb-2 sm:mb-4 group-hover:bg-amber-500/10 transition-colors duration-300" />
+                <div className="flex items-center justify-between text-[8px] sm:text-[10px] text-zinc-500 group-hover:text-zinc-300 transition-colors duration-300 font-bold uppercase tracking-wider font-mono">
+                  <span>{fact.bottomLabel}</span>
+                  <fact.Icon className="w-3 sm:w-3.5 h-3 sm:h-3.5 text-zinc-500 group-hover:text-amber-500 group-hover:scale-110 transition-all duration-300 shrink-0 ml-2" />
                 </div>
               </div>
             </div>

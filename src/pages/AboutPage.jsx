@@ -50,7 +50,7 @@ export default function AboutPage() {
             </h1>
             
             <p className="text-zinc-300 text-xs sm:text-base font-mulish max-w-xl leading-relaxed">
-              An automotive house built around a simple belief — every vehicle should be chosen with the same care as the person who drives it.
+              An automotive house built around a simple belief: every vehicle should be chosen with the same care as the person who drives it.
             </p>
           </div>
         </section>
@@ -79,7 +79,7 @@ export default function AboutPage() {
                   Welcome to Auto Pavilion, where sophistication meets automotive excellence.
                 </p>
                 <p>
-                  Auto Pavilion was established with a clear vision — to cater to individuals who expect more from their automotive experience. Over the years, we have built our reputation around premium pre-owned automobiles, personal service, and a commitment to making the process of buying and selling a luxury vehicle more transparent and comfortable.
+                  Auto Pavilion was established with a clear vision: to cater to individuals who expect more from their automotive experience. Over the years, we have built our reputation around premium pre-owned automobiles, personal service, and a commitment to making the process of buying and selling a luxury vehicle more transparent and comfortable.
                 </p>
                 <p>
                   Our clientele includes discerning individuals, entrepreneurs, professionals, corporates, and HNIs who value quality, trust, and attention to detail.
@@ -204,7 +204,7 @@ export default function AboutPage() {
 
                 <div className="space-y-4 text-zinc-300 text-xs sm:text-sm font-mulish leading-relaxed max-w-2xl pt-2">
                   <p>
-                    "At Auto Pavilion, my vision has always been simple — to create an automotive experience built on trust, personal attention and a genuine appreciation for exceptional automobiles.
+                    "At Auto Pavilion, my vision has always been simple: to create an automotive experience built on trust, personal attention, and a genuine appreciation for exceptional automobiles.
                   </p>
                   <p>
                     Over the years, I have had the privilege of meeting clients from different walks of life, and one thing has remained constant: people remember how they were treated long after they remember the vehicle they purchased. That belief continues to shape the way we work.

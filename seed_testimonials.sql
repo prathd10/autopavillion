@@ -18,7 +18,7 @@ VALUES
 (
   'Ananya M.',
   'Business Owner, Bangalore',
-  'Auto Pavilion stands head and shoulders above other dealers. Authentic mileage certification, completely non-accident transparent documentation, and world-class customer service.',
+  'Auto Pavilion stands head and shoulders above other dealers. Authentic mileage certification, completely transparent documentation, and world-class customer service.',
   'Rolls-Royce Ghost',
   'active'
 ),

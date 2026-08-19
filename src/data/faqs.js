@@ -9,7 +9,7 @@ export const FAQS = [
   {
     id: 2,
     question: "Why should I choose Auto Pavilion over other dealers?",
-    answer: "We offer an uncompromised comprehensive quality check, 100% non-accident guarantees, transparent legal paperwork, and access to an exclusive 'Recently Sold' premium collection. Our sourcing service ensures a seamless, premium buying experience.",
+    answer: "We offer an uncompromised comprehensive quality check, verified history records, transparent legal paperwork, and access to an exclusive 'Recently Sold' premium collection. Our sourcing service ensures a seamless, premium buying experience.",
     keywords: ["why choose", "why you", "special", "different", "best dealer", "trust", "reliability"]
   },
   {
@@ -49,7 +49,7 @@ export const FAQS = [
   {
     id: 8,
     question: "Do you sell cars that have been in accidents?",
-    answer: "No. We have a strict zero-tolerance policy for structural damage. We guarantee a 100% non-accident history for every vehicle we sell, backed by legal certification.",
+    answer: "No. We conduct thorough structural checks on all vehicles in our collection. We only select vehicles that meet our high standards of body integrity, backed by transparent documentation.",
     keywords: ["accident", "crashed", "damaged", "structural", "totaled", "rebuilt"]
   },
   {

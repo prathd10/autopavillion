@@ -15,7 +15,7 @@ export const BUSINESS_INFO = {
     sunday: "Sunday: Closed (Available by special appointment only)",
   },
   corePromises: [
-    "100% Non-Accident History: Zero-tolerance policy for structural damage, backed by legal certification.",
+    "Rigorous Structural Verification: Thorough body and chassis integrity assessment to verify vehicle history.",
     "251-Point Diagnostic Audit: Every vehicle undergoes mechanical, electrical, and performance tests.",
     "Bespoke Sourcing: Finding premium luxury and supercars not currently in our public stock through our private network.",
     "Tailored Financing: Collaborative tie-ups with leading Indian private banks and NBFCs for premium EMI options.",

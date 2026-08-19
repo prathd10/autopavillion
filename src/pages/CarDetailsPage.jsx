@@ -167,7 +167,7 @@ export default function CarDetailsPage() {
                     Auto Pavilion Official Certification
                   </span>
                   <h3 className="text-lg font-bold text-white">251-Point Diagnostic Report</h3>
-                  <p className="text-xs text-zinc-400 mt-1">Verified genuine mileage & non-accident guarantee.</p>
+                  <p className="text-xs text-zinc-400 mt-1">Verified genuine mileage and transparent vehicle history.</p>
                 </div>
               </div>
             </div>
