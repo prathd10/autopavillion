@@ -1,0 +1,39 @@
+{
+  "timestamp": "2026-08-18T18:17:32.153Z",
+  "isDryRun": false,
+  "stats": {
+    "listingsFound": 132,
+    "listingsMigrated": 44,
+    "listingsSkipped": 0,
+    "listingsFailed": 0,
+    "imagesFound": 4063,
+    "imagesUploaded": 4063,
+    "imagesFailed": 0,
+    "duplicatesDetected": 88,
+    "validVehicles": 132,
+    "warningVehicles": 0,
+    "errorVehicles": 0,
+    "missingImageUrls": 0,
+    "missingMetadata": {}
+  },
+  "completeness": {
+    "name": 132,
+    "brand": 132,
+    "year": 132,
+    "price": 20,
+    "mileage_kms": 132,
+    "fuel_type": 132,
+    "transmission": 132,
+    "owners": 132,
+    "color": 132,
+    "location": 132,
+    "registration_type": 132,
+    "registration_month": 132,
+    "video": 0,
+    "description": 129,
+    "images": 132
+  },
+  "failures": [],
+  "skipped": [],
+  "missingMetaDetails": []
+}

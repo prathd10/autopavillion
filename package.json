@@ -10,7 +10,9 @@
     "build": "vite build",
     "lint": "oxlint",
     "preview": "vite preview",
-    "seed": "node scripts/seed.js"
+    "seed": "node scripts/seed.js",
+    "migrate:dry": "node scripts/migration/index.js --dry-run",
+    "migrate": "node scripts/migration/index.js"
   },
   "dependencies": {
     "@google/generative-ai": "^0.24.1",
@@ -21,6 +23,7 @@
     "cors": "^2.8.6",
     "express": "^5.2.1",
     "lucide-react": "^1.27.0",
+    "mysql2": "^3.23.3",
     "react": "^19.2.7",
     "react-dom": "^19.2.7",
     "react-router-dom": "^7.18.2",

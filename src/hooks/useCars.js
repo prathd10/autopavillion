@@ -33,14 +33,25 @@ export function useCars() {
         const { data, error: dbError } = await supabase
           .from('cars')
           .select('*')
-          .eq('status', 'active')
+          .order('status', { ascending: true })
           .order('created_at', { ascending: false });
 
         if (cancelled) return;
         if (dbError) throw dbError;
 
         if (data && data.length > 0) {
-          setCars(data.map(mapCarFromDb).map(c => ({ ...c, slug: generateSlug(c.brand, c.name, c.year) })));
+          const mapped = data.map(mapCarFromDb).map(c => ({ ...c, slug: generateSlug(c.brand, c.name, c.year) }));
+          
+          // Explicitly sort active vehicles first, then sold vehicles, then created_at desc
+          const sorted = [...mapped].sort((a, b) => {
+            const statusOrder = { active: 0, sold: 1, draft: 2, archived: 3 };
+            const orderA = statusOrder[a.status] ?? 99;
+            const orderB = statusOrder[b.status] ?? 99;
+            if (orderA !== orderB) return orderA - orderB;
+            return new Date(b.createdAt || 0) - new Date(a.createdAt || 0);
+          });
+          
+          setCars(sorted);
           setSource('supabase');
         }
         // Empty table → keep static data (pre-seeding) and stay 'static'
