@@ -88,7 +88,7 @@ export default function Footer() {
           </div>
 
           {/* Quick Links */}
-          <div className="lg:col-span-2 space-y-4">
+          <div className="lg:col-span-3 space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-white">Showroom</h4>
             <ul className="space-y-2.5 text-xs text-zinc-400 font-mulish">
               <li>
@@ -144,20 +144,8 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Featured Marques */}
-          <div className="lg:col-span-2 space-y-4">
-            <h4 className="text-xs font-bold uppercase tracking-widest text-white">Marques</h4>
-            <ul className="space-y-2.5 text-xs text-zinc-400 font-mulish">
-              <li>Porsche 911 GT3 RS</li>
-              <li>Lamborghini Huracán EVO</li>
-              <li>Ferrari 488 Pista</li>
-              <li>Mercedes-AMG G63</li>
-              <li>Rolls-Royce & Bentley</li>
-            </ul>
-          </div>
-
           {/* Contact Details */}
-          <div className="lg:col-span-4 space-y-4">
+          <div className="lg:col-span-5 space-y-4">
             <h4 className="text-xs font-bold uppercase tracking-widest text-white">Mumbai Showroom Address</h4>
             <div className="space-y-3 text-xs text-zinc-400 font-mulish">
               <div className="flex items-start space-x-3">
@@ -195,9 +183,15 @@ export default function Footer() {
 
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 font-mulish">
-          <div className="text-center sm:text-left flex flex-col sm:flex-row sm:items-center sm:space-x-2">
+          <div className="text-center sm:text-left flex flex-col sm:flex-row sm:items-center sm:space-x-4">
             <span>© 2026 Auto Pavilion India Private Limited. All rights reserved.</span>
-            <span className="mt-1 sm:mt-0">Developed by <a href="#" className="font-bold text-white hover:text-zinc-300 transition-colors">SynexAI</a></span>
+            <div className="mt-1 sm:mt-0 flex items-center space-x-3">
+              <span>Developed by <a href="#" className="font-bold text-white hover:text-zinc-300 transition-colors">SynexAI</a></span>
+              <span className="text-zinc-700">|</span>
+              <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
+              <span className="text-zinc-700">|</span>
+              <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+            </div>
           </div>
 
           <div className="flex items-center space-x-2 text-zinc-400">

@@ -17,7 +17,11 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
     }
   };
   return (
-    <div className="studio-card h-full rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group border border-white/10 bg-[#090a0d] shadow-2xl">
+    <div className={`studio-card h-full rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group bg-[#090a0d] shadow-2xl transition-all duration-300 ${
+      car.status === 'sold'
+        ? 'border border-red-800/40 hover:border-red-500/40 shadow-[0_4px_24px_rgba(239,68,68,0.03)]'
+        : 'border border-white/10'
+    }`}>
       
       {/* Top Image Container (Dominant Photo Display) */}
       <div 
@@ -29,10 +33,16 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
         <img
           src={ikUrl(car.images?.[0], { width: 640, height: 480, quality: 75 })}
           alt={car.name}
-          className="w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700 ease-out"
+          className={`w-full h-full object-contain group-hover:scale-[1.03] transition-transform duration-700 ease-out ${
+            car.status === 'sold' ? 'opacity-85 grayscale-[35%] contrast-[0.95]' : ''
+          }`}
         />
 
         <div className="absolute inset-0 bg-gradient-to-t from-[#090a0d] via-transparent to-black/20 pointer-events-none" />
+        
+        {car.status === 'sold' && (
+          <div className="absolute inset-0 bg-black/15 pointer-events-none" />
+        )}
 
         {/* SOLD Badge Overlay */}
         {car.status === 'sold' && (
@@ -82,8 +92,8 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
         <div className="flex items-center justify-between pt-0.5">
           {car.status === 'sold' ? (
             <div className="flex-1 mr-4">
-              <div className="w-full py-2 bg-gradient-to-r from-red-950 to-red-900 border border-red-800/40 rounded-xl text-center shadow-lg">
-                <span className="text-[10px] sm:text-xs font-black uppercase tracking-widest text-red-200">
+              <div className="w-full py-2.5 bg-[#170e10] border border-red-900/40 rounded-xl text-center shadow-inner">
+                <span className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-red-500/90 font-mono">
                   SOLD
                 </span>
               </div>
