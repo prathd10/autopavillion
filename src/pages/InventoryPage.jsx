@@ -93,7 +93,7 @@ export default function InventoryPage() {
     return `${Number(val).toLocaleString('en-IN')} km`;
   };
 
-  const { cars } = useCars();
+  const { cars, loading } = useCars();
   const [compareList, setCompareList] = useState([]);
   const [showCompareModal, setShowCompareModal] = useState(false);
 
@@ -638,7 +638,25 @@ export default function InventoryPage() {
             </div>
           </div>
 
-          {filteredCars.length === 0 ? (
+          {loading ? (
+            <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+              {Array.from({ length: 6 }).map((_, idx) => (
+                <div key={idx} className="h-[480px] rounded-3xl bg-zinc-900/40 border border-white/5 animate-pulse flex flex-col justify-between p-6">
+                  <div className="aspect-[1264/846] w-full rounded-2xl bg-zinc-800/40" />
+                  <div className="space-y-3 mt-4 flex-1">
+                    <div className="h-4 w-1/4 bg-zinc-800/40 rounded" />
+                    <div className="h-6 w-3/4 bg-zinc-800/40 rounded" />
+                    <div className="h-4 w-1/2 bg-zinc-800/40 rounded" />
+                  </div>
+                  <div className="h-12 w-full bg-zinc-800/40 rounded-xl mt-4" />
+                  <div className="flex justify-between items-center mt-6">
+                    <div className="h-8 w-1/3 bg-zinc-800/40 rounded" />
+                    <div className="h-10 w-1/3 bg-zinc-800/40 rounded-full" />
+                  </div>
+                </div>
+              ))}
+            </div>
+          ) : filteredCars.length === 0 ? (
             <div className="flex flex-col items-center justify-center py-32 text-zinc-500 space-y-4">
               <Search size={48} className="opacity-20" />
               <p className="font-bold uppercase tracking-widest text-xs">No vehicles match your filters.</p>

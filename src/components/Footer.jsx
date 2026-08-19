@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { MapPin, Phone, Mail, Clock, ArrowUpRight, ShieldCheck, Share2, Globe } from 'lucide-react';
-import { BRAND_LOGOS } from '../data/cars';
 
 export default function Footer() {
   const location = useLocation();
@@ -193,38 +192,7 @@ export default function Footer() {
 
         </div>
 
-        {/* Brand Logos Marquee in Footer */}
-        <div className="py-8 border-b border-white/10 overflow-hidden relative w-full">
-          <div className="absolute left-0 top-0 bottom-0 w-12 bg-gradient-to-r from-black to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-12 bg-gradient-to-l from-black to-transparent z-10 pointer-events-none" />
 
-          <div className="animate-marquee flex items-center space-x-12 shrink-0">
-            {[...BRAND_LOGOS, ...BRAND_LOGOS].map((b, idx) => (
-              <button
-                key={idx}
-                onClick={() => {
-                  navigate(`/inventory?brand=${encodeURIComponent(b.name)}`);
-                  window.scrollTo(0,0);
-                }}
-                className="flex items-center space-x-2.5 shrink-0 opacity-50 hover:opacity-100 transition-opacity duration-300 cursor-pointer"
-              >
-                <img
-                  src={b.icon}
-                  alt={b.name}
-                  className="h-7 sm:h-9 w-auto object-contain"
-                  style={
-                    b.isLocal
-                      ? { filter: 'url(#remove-white)' }
-                      : { filter: 'invert(1)' }
-                  }
-                />
-                <span className="text-xs sm:text-sm font-bold uppercase tracking-widest text-zinc-400">
-                  {b.name}
-                </span>
-              </button>
-            ))}
-          </div>
-        </div>
 
         <div className="pt-8 flex flex-col sm:flex-row items-center justify-between gap-4 text-[11px] text-zinc-500 font-mulish">
           <div className="text-center sm:text-left flex flex-col sm:flex-row sm:items-center sm:space-x-2">

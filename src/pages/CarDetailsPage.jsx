@@ -335,7 +335,7 @@ export default function CarDetailsPage() {
             
             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
               {suggestedCars.map(c => (
-                <div key={c.id} className="relative group">
+                <div key={c.id} className="relative group h-full flex flex-col">
                   <CarCard car={c} />
                   <button
                     onClick={() => {

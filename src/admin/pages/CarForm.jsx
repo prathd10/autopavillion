@@ -346,8 +346,8 @@ export default function CarForm() {
         {/* Performance */}
         <Section title="Engine & Performance">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Field label="Engine" id="engine" required>
-              <TextInput id="engine" value={car.engine} onChange={set('engine')} placeholder="4.0L Naturally Aspirated Flat-6" required />
+            <Field label="Engine" id="engine">
+              <TextInput id="engine" value={car.engine} onChange={set('engine')} placeholder="4.0L Naturally Aspirated Flat-6" />
             </Field>
             <Field label="Transmission" id="transmission">
               <TextInput id="transmission" value={car.transmission} onChange={set('transmission')} placeholder="7-Speed PDK Dual-Clutch" />
