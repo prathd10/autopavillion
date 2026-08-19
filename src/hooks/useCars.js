@@ -20,10 +20,10 @@ const generateSlug = (brand, name, year) => {
 };
 
 export function useCars() {
-  const [cars,    setCars]    = useState(() => CARS_DATA.map(c => ({ ...c, slug: generateSlug(c.brand, c.name, c.year) })));
+  const [cars,    setCars]    = useState([]);
   const [loading, setLoading] = useState(true);
   const [error,   setError]   = useState(null);
-  const [source,  setSource]  = useState('static');
+  const [source,  setSource]  = useState('loading');
 
   useEffect(() => {
     let cancelled = false;
@@ -53,13 +53,16 @@ export function useCars() {
           
           setCars(sorted);
           setSource('supabase');
+        } else {
+          setCars(CARS_DATA.map(c => ({ ...c, slug: generateSlug(c.brand, c.name, c.year) })));
+          setSource('static');
         }
-        // Empty table → keep static data (pre-seeding) and stay 'static'
       } catch (err) {
         if (!cancelled) {
           console.warn('[useCars] Supabase unavailable — using static fallback:', err.message);
           setError(err.message);
-          // cars state already holds CARS_DATA from initial useState
+          setCars(CARS_DATA.map(c => ({ ...c, slug: generateSlug(c.brand, c.name, c.year) })));
+          setSource('static');
         }
       } finally {
         if (!cancelled) setLoading(false);

@@ -4,7 +4,6 @@ import Preloader from '../components/Preloader';
 import Navbar from '../components/Navbar';
 import Hero from '../components/Hero';
 import Inventory from '../components/Inventory';
-import RecentlySold from '../components/RecentlySold';
 import FinancePreview from '../components/FinancePreview';
 import VehicleSourcing from '../components/VehicleSourcing';
 import InsightsPreview from '../components/InsightsPreview';
@@ -82,9 +81,11 @@ export default function HomePage() {
             setActiveBrandFilter={setActiveBrandFilter}
           />
 
-          {/* Inventory now receives Supabase-backed (or static-fallback) cars */}
+          {/* Featured Showcase (only available cars marked as featured) */}
           <Inventory
-            cars={cars.slice(0, 6)}
+            title="FEATURED VEHICLES"
+            hideMarquee={true}
+            cars={cars.filter(c => c.featured && (c.status === 'active' || !c.status))}
             compareList={compareList}
             onToggleCompare={handleToggleCompare}
             activeBrandFilter={activeBrandFilter}
@@ -94,10 +95,23 @@ export default function HomePage() {
             isHomePage={true}
           />
 
-          <RecentlySold />
+          <TrustStats />
+
+          {/* Curated Showroom (all available active cars) */}
+          <Inventory
+            title="CURATED SHOWROOM"
+            cars={cars.filter(c => c.status === 'active' || !c.status).slice(0, 12)}
+            compareList={compareList}
+            onToggleCompare={handleToggleCompare}
+            activeBrandFilter={activeBrandFilter}
+            setActiveBrandFilter={setActiveBrandFilter}
+            searchTerm={searchTerm}
+            setSearchTerm={setSearchTerm}
+            isHomePage={true}
+          />
+
           <Testimonials />
           <VehicleSourcing />
-          <TrustStats />
           <TradeInCalculator />
           <FinancePreview />
           <InsightsPreview />

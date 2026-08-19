@@ -74,6 +74,7 @@ export default function AdminInventory() {
       let q = supabase
         .from('cars')
         .select('*', { count: 'exact' })
+        .order('status', { ascending: true })
         .order('created_at', { ascending: false })
         .range(page * PAGE_SIZE, page * PAGE_SIZE + PAGE_SIZE - 1);
 

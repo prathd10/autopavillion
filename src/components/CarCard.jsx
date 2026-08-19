@@ -17,7 +17,7 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
     }
   };
   return (
-    <div className="studio-card rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group border border-white/10 bg-[#090a0d] shadow-2xl">
+    <div className="studio-card h-full rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group border border-white/10 bg-[#090a0d] shadow-2xl">
       
       {/* Top Image Container (Dominant Photo Display) */}
       <div 
