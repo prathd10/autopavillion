@@ -3,7 +3,7 @@ import { NavLink, Outlet, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
 import {
   LayoutDashboard, Car, LogOut, ExternalLink,
-  ChevronLeft, ChevronRight, Menu, X, Plus, MessageSquare, Inbox
+  ChevronLeft, ChevronRight, Menu, X, Plus, MessageSquare, Inbox, HelpCircle
 } from 'lucide-react';
 
 const NAV_ITEMS = [
@@ -12,6 +12,7 @@ const NAV_ITEMS = [
   { to: '/admin/inventory',       label: 'Inventory',    Icon: Car },
   { to: '/admin/inventory/new',   label: 'Add Car',      Icon: Plus },
   { to: '/admin/testimonials',    label: 'Testimonials', Icon: MessageSquare },
+  { to: '/admin/faqs',            label: 'Chatbot FAQs',  Icon: HelpCircle },
 ];
 
 export default function AdminLayout() {

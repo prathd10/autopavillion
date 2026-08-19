@@ -26,6 +26,8 @@ import CarForm        from './admin/pages/CarForm';
 import AdminTestimonials from './admin/pages/AdminTestimonials';
 import TestimonialForm   from './admin/pages/TestimonialForm';
 import AdminInquiries from './admin/pages/AdminInquiries';
+import AdminFAQs from './admin/pages/AdminFAQs';
+import FAQForm from './admin/pages/FAQForm';
 
 // Admin layout + route guard
 import AdminLayout    from './admin/AdminLayout';
@@ -84,6 +86,10 @@ export default function App() {
           <Route path="inventory/new"       element={<CarForm />} />
           <Route path="inventory/:id/edit"  element={<CarForm />} />
           
+          <Route path="faqs"                  element={<AdminFAQs />} />
+          <Route path="faqs/new"              element={<FAQForm />} />
+          <Route path="faqs/:id/edit"         element={<FAQForm />} />
+
           <Route path="testimonials"          element={<AdminTestimonials />} />
           <Route path="testimonials/new"      element={<TestimonialForm />} />
           <Route path="testimonials/:id/edit" element={<TestimonialForm />} />
