@@ -131,7 +131,7 @@ export default function FinancePage() {
               <div>
                 <h3 className="text-xl font-bold font-heading uppercase mb-2">Premier Banking Partners</h3>
                 <p className="text-sm text-zinc-400 font-mulish">
-                  We have direct alliances with HDFC Bank, ICICI Bank, and Kotak Prime to ensure smooth, fast-track approvals for our clients.
+                  We have direct alliances with India's leading private banks and financial institutions to ensure smooth, fast-track approvals for our clients.
                 </p>
               </div>
             </div>

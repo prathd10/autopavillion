@@ -81,7 +81,7 @@ export const FAQS = [
   {
     id: 13,
     question: "Do you provide financing or EMI options?",
-    answer: "Yes, we work with India's leading private banks and NBFCs (like HDFC, ICICI, and Kotak Prime) to offer tailored luxury car financing and EMI solutions for our clients at highly competitive interest rates.",
+    answer: "Yes, we work with India's leading private banks and NBFCs to offer tailored luxury car financing and EMI solutions for our clients at highly competitive interest rates.",
     keywords: ["finance", "loan", "emi", "financing", "bank", "interest", "monthly", "credit"]
   },
   {

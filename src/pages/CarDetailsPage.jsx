@@ -318,6 +318,11 @@ export default function CarDetailsPage() {
               )}
             </div>
 
+            {/* EMI Calculator */}
+            {car.status !== 'sold' && car.priceRaw > 0 && (
+              <EmiCalculator carPriceRaw={car.priceRaw} />
+            )}
+
           </div>
         </div>
 
@@ -359,6 +364,121 @@ export default function CarDetailsPage() {
       </main>
 
       <Footer />
+    </div>
+  );
+}
+
+function EmiCalculator({ carPriceRaw }) {
+  const [downPaymentPct, setDownPaymentPct] = React.useState(20); // 20%
+  const [tenureYears, setTenureYears] = React.useState(5); // 5 Years
+  const [interestRate, setInterestRate] = React.useState(9.5); // 9.5%
+
+  const price = carPriceRaw || 4000000;
+  const downPayment = Math.round((price * downPaymentPct) / 100);
+  const loanAmount = price - downPayment;
+
+  const calculateEmi = () => {
+    const r = interestRate / 12 / 100;
+    const n = tenureYears * 12;
+    if (r === 0) return loanAmount / n;
+    const emi = (loanAmount * r * Math.pow(1 + r, n)) / (Math.pow(1 + r, n) - 1);
+    return Math.round(emi);
+  };
+
+  const emi = calculateEmi();
+  const totalPayment = emi * tenureYears * 12;
+  const totalInterest = totalPayment - loanAmount;
+
+  const formatRupees = (val) => {
+    return new Intl.NumberFormat('en-IN', {
+      style: 'currency',
+      currency: 'INR',
+      maximumFractionDigits: 0
+    }).format(val);
+  };
+
+  return (
+    <div className="mt-6 p-6 rounded-2xl sm:rounded-3xl border border-white/10 bg-[#0c0d11]/85 backdrop-blur-md space-y-4">
+      <h4 className="text-xs font-black text-white uppercase tracking-widest border-b border-white/5 pb-2">
+        EMI Calculator
+      </h4>
+
+      <div className="space-y-3">
+        {/* Down Payment Slider */}
+        <div className="space-y-1">
+          <div className="flex justify-between text-[10px] sm:text-xs font-semibold">
+            <span className="text-zinc-400">Down Payment ({downPaymentPct}%)</span>
+            <span className="text-white font-mono">{formatRupees(downPayment)}</span>
+          </div>
+          <input
+            type="range"
+            min="10"
+            max="80"
+            step="5"
+            value={downPaymentPct}
+            onChange={(e) => setDownPaymentPct(Number(e.target.value))}
+            className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+          />
+        </div>
+
+        {/* Tenure Slider */}
+        <div className="space-y-1">
+          <div className="flex justify-between text-[10px] sm:text-xs font-semibold">
+            <span className="text-zinc-400">Tenure</span>
+            <span className="text-white font-mono">{tenureYears} Years</span>
+          </div>
+          <input
+            type="range"
+            min="1"
+            max="7"
+            step="1"
+            value={tenureYears}
+            onChange={(e) => setTenureYears(Number(e.target.value))}
+            className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+          />
+        </div>
+
+        {/* Interest Rate Slider */}
+        <div className="space-y-1">
+          <div className="flex justify-between text-[10px] sm:text-xs font-semibold">
+            <span className="text-zinc-400">Interest Rate (p.a.)</span>
+            <span className="text-white font-mono">{interestRate}%</span>
+          </div>
+          <input
+            type="range"
+            min="7"
+            max="15"
+            step="0.25"
+            value={interestRate}
+            onChange={(e) => setInterestRate(Number(e.target.value))}
+            className="w-full h-1 bg-zinc-800 rounded-lg appearance-none cursor-pointer accent-amber-500"
+          />
+        </div>
+      </div>
+
+      {/* Result Display */}
+      <div className="p-3.5 rounded-xl bg-white/5 border border-white/5 text-center space-y-0.5">
+        <span className="text-[8px] uppercase tracking-widest text-zinc-400 font-bold">Estimated Monthly EMI</span>
+        <div className="text-xl sm:text-2xl font-black text-amber-500 font-mono">
+          {formatRupees(emi)}<span className="text-[10px] text-zinc-400 font-mulish font-normal"> / mo</span>
+        </div>
+      </div>
+
+      {/* Breakdowns */}
+      <div className="grid grid-cols-2 gap-2 text-[9px] sm:text-[10px]">
+        <div className="p-2.5 rounded-lg bg-[#090a0d] border border-white/5 space-y-0.5">
+          <span className="text-zinc-500 uppercase font-bold tracking-wider">Loan Principal</span>
+          <p className="text-white font-mono font-bold">{formatRupees(loanAmount)}</p>
+        </div>
+        <div className="p-2.5 rounded-lg bg-[#090a0d] border border-white/5 space-y-0.5">
+          <span className="text-zinc-500 uppercase font-bold tracking-wider">Interest Payable</span>
+          <p className="text-white font-mono font-bold">{formatRupees(totalInterest)}</p>
+        </div>
+      </div>
+
+      <p className="text-[8px] text-zinc-500 font-mulish text-center leading-normal">
+        *Calculations are indicative. Rates and loan terms vary based on financial profile and lending institutions.
+      </p>
     </div>
   );
 }

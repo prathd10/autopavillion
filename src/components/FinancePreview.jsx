@@ -28,7 +28,7 @@ export default function FinancePreview() {
                 </div>
                 <div>
                   <h4 className="text-sm font-bold text-white uppercase tracking-widest mb-1">Premier Alliances</h4>
-                  <p className="text-xs text-zinc-500">Direct partnerships with HDFC, ICICI, and Kotak for fast approvals.</p>
+                  <p className="text-xs text-zinc-500">Direct partnerships with leading private financial institutions for fast approvals.</p>
                 </div>
               </div>
               <div className="flex items-start space-x-4">

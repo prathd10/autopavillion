@@ -99,6 +99,7 @@ export default function InventoryPage() {
 
   // Filters State
   const [searchTerm, setSearchTerm] = useState('');
+  const [availability, setAvailability] = useState('available');
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeBrand, setActiveBrand] = useState(searchParams.get('brand') || null);
   
@@ -206,6 +207,9 @@ export default function InventoryPage() {
   // Filter Logic
   const filteredCars = useMemo(() => {
     return cars.filter(car => {
+      // 0. Availability
+      if (availability === 'available' && car.status === 'sold') return false;
+
       // 1. Search Term
       if (searchTerm) {
         const term = searchTerm.toLowerCase();
@@ -244,7 +248,7 @@ export default function InventoryPage() {
 
       return true;
     });
-  }, [cars, searchTerm, activeBrand, minPrice, maxPrice, minKms, maxKms, minYear, maxYear, activeFuel, activeTrans, activeOwners, activeLocation]);
+  }, [cars, searchTerm, activeBrand, minPrice, maxPrice, minKms, maxKms, minYear, maxYear, activeFuel, activeTrans, activeOwners, activeLocation, availability]);
 
   // Handlers
   const handleToggleCompare = (car) => {
@@ -279,6 +283,7 @@ export default function InventoryPage() {
     setActiveTrans('');
     setActiveOwners('');
     setActiveLocation('');
+    setAvailability('available');
     setSearchParams({});
   };
 
@@ -334,6 +339,30 @@ export default function InventoryPage() {
                   <X size={14} />
                 </button>
               </div>
+            </div>
+
+            {/* Availability Filter Tabs */}
+            <div className="grid grid-cols-2 gap-1.5 p-1 bg-black/60 border border-white/5 rounded-xl">
+              <button
+                onClick={() => setAvailability('available')}
+                className={`py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all ${
+                  availability === 'available'
+                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/10'
+                    : 'text-zinc-400 hover:text-white bg-transparent'
+                }`}
+              >
+                Available
+              </button>
+              <button
+                onClick={() => setAvailability('all')}
+                className={`py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all ${
+                  availability === 'all'
+                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/10'
+                    : 'text-zinc-400 hover:text-white bg-transparent'
+                }`}
+              >
+                All Vehicles
+              </button>
             </div>
 
             {/* Accordions */}
