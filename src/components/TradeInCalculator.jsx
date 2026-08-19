@@ -24,14 +24,36 @@ export default function TradeInCalculator() {
     e.preventDefault();
     setLoading(true);
 
-    let baseVal = 25000000;
-    if (formData.brand === 'Ferrari' || formData.brand === 'Rolls-Royce') baseVal = 45000000;
-    if (formData.brand === 'Lamborghini' || formData.brand === 'Bentley') baseVal = 35000000;
-    if (formData.brand === 'Porsche' || formData.brand === 'Mercedes-AMG') baseVal = 28000000;
+    let baseVal = 1500000; // Default base value for normal brands
 
-    const yearFactor = (Number(formData.year) - 2018) * 2000000;
-    const mileageDep = (Number(formData.mileage) / 1000) * 400000;
-    const finalEstimate = Math.max(12000000, baseVal + yearFactor - mileageDep);
+    // Super luxury / Hypercars
+    if (['Ferrari', 'Rolls-Royce', 'McLaren', 'Aston Martin'].includes(formData.brand)) {
+      baseVal = 45000000;
+    }
+    // High Luxury
+    else if (['Lamborghini', 'Bentley'].includes(formData.brand)) {
+      baseVal = 35000000;
+    }
+    // Luxury Sports
+    else if (['Porsche', 'Maserati', 'Mercedes-AMG'].includes(formData.brand)) {
+      baseVal = 28000000;
+    }
+    // Premium Luxury
+    else if (['Mercedes-Benz', 'BMW', 'Audi', 'Land Rover', 'Jaguar', 'Lexus', 'Volvo'].includes(formData.brand)) {
+      baseVal = 6000000;
+    }
+    // Semi-Premium
+    else if (['Toyota', 'Jeep', 'Mini', 'Volkswagen', 'Skoda'].includes(formData.brand)) {
+      baseVal = 3000000;
+    }
+    // Normal Mass-market
+    else if (['Honda', 'Hyundai', 'Kia', 'Mahindra', 'Tata', 'Maruti Suzuki', 'MG', 'Ford'].includes(formData.brand)) {
+      baseVal = 1200000;
+    }
+
+    const yearFactor = (Number(formData.year) - 2022) * (baseVal * 0.08);
+    const mileageDep = (Number(formData.mileage) / 10000) * (baseVal * 0.05);
+    const finalEstimate = Math.max(baseVal * 0.35, baseVal + yearFactor - mileageDep);
 
     try {
       const { error } = await supabase.from('inquiries').insert([{
@@ -49,10 +71,10 @@ export default function TradeInCalculator() {
 
       if (error) throw error;
 
-      const minRange = (finalEstimate * 0.95 / 10000000).toFixed(2);
-      const maxRange = (finalEstimate * 1.05 / 10000000).toFixed(2);
-
-      setCalculatedValue({ min: minRange, max: maxRange });
+      setCalculatedValue({
+        min: finalEstimate * 0.95,
+        max: finalEstimate * 1.05
+      });
       setSubmitted(true);
     } catch (err) {
       console.error('Error submitting trade-in request:', err);
@@ -79,7 +101,7 @@ export default function TradeInCalculator() {
         
         <div className="text-center max-w-3xl mx-auto mb-14 space-y-3">
           <h2 className="text-3xl sm:text-5xl font-black text-white tracking-tight font-heading uppercase">
-            SELL YOUR LUXURY CAR <span className="text-zinc-400 font-extralight">IN 30 MINUTES</span>
+            SELL YOUR CAR <span className="text-zinc-400 font-extralight">IN 30 MINUTES</span>
           </h2>
 
           <p className="text-zinc-400 text-xs sm:text-sm font-mulish">
@@ -105,7 +127,10 @@ export default function TradeInCalculator() {
                   <span>Instant Market Appraisal Estimate</span>
                 </div>
                 <div className="text-3xl font-mono font-black text-white">
-                  ₹ {calculatedValue.min} Cr - ₹ {calculatedValue.max} Cr
+                  {calculatedValue.min >= 10000000 
+                    ? `₹ ${(calculatedValue.min / 10000000).toFixed(2)} Cr - ₹ ${(calculatedValue.max / 10000000).toFixed(2)} Cr`
+                    : `₹ ${(calculatedValue.min / 100000).toFixed(1)} Lakh - ₹ ${(calculatedValue.max / 100000).toFixed(1)} Lakh`
+                  }
                 </div>
               </div>
 
@@ -163,14 +188,41 @@ export default function TradeInCalculator() {
                     onChange={(e) => setFormData({...formData, brand: e.target.value})}
                     className="w-full px-4 py-3.5 rounded-xl bg-black border border-white/20 text-white text-xs font-semibold focus:outline-none focus:border-white"
                   >
-                    <option value="Porsche">Porsche</option>
-                    <option value="Lamborghini">Lamborghini</option>
-                    <option value="Ferrari">Ferrari</option>
-                    <option value="Mercedes-AMG">Mercedes-AMG</option>
+                    {/* Luxury & Supercar */}
+                    <option value="Aston Martin">Aston Martin</option>
                     <option value="Bentley">Bentley</option>
+                    <option value="Ferrari">Ferrari</option>
+                    <option value="Lamborghini">Lamborghini</option>
+                    <option value="Maserati">Maserati</option>
+                    <option value="McLaren">McLaren</option>
+                    <option value="Porsche">Porsche</option>
                     <option value="Rolls-Royce">Rolls-Royce</option>
+                    
+                    {/* Premium / Luxury */}
+                    <option value="Audi">Audi</option>
+                    <option value="BMW">BMW</option>
+                    <option value="Jaguar">Jaguar</option>
                     <option value="Land Rover">Land Rover</option>
-                    <option value="BMW M">BMW M</option>
+                    <option value="Lexus">Lexus</option>
+                    <option value="Mercedes-Benz">Mercedes-Benz</option>
+                    <option value="Mercedes-AMG">Mercedes-AMG</option>
+                    <option value="Mini">Mini</option>
+                    <option value="Volvo">Volvo</option>
+                    
+                    {/* Normal / Other Brands */}
+                    <option value="Ford">Ford</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Hyundai">Hyundai</option>
+                    <option value="Jeep">Jeep</option>
+                    <option value="Kia">Kia</option>
+                    <option value="Mahindra">Mahindra</option>
+                    <option value="Maruti Suzuki">Maruti Suzuki</option>
+                    <option value="MG">MG</option>
+                    <option value="Skoda">Skoda</option>
+                    <option value="Tata">Tata</option>
+                    <option value="Toyota">Toyota</option>
+                    <option value="Volkswagen">Volkswagen</option>
+                    
                     <option value="Other">Other (Specify)</option>
                   </select>
                 </div>

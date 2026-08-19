@@ -81,7 +81,7 @@ export default function AboutUs() {
                 <div className="relative shrink-0">
                   <div className="absolute inset-0 bg-white/20 rounded-2xl blur-md" />
                   <img 
-                    src="/ceo_placeholder.png" 
+                    src="/mohammed atique.jpeg" 
                     alt="Founder & CEO" 
                     className="relative w-28 h-28 sm:w-36 sm:h-36 rounded-2xl object-cover shadow-2xl border border-white/20 transition-all duration-700 hover:scale-105" 
                   />

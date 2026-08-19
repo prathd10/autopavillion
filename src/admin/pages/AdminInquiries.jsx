@@ -55,6 +55,7 @@ export default function AdminInquiries() {
       case 'trade_in': return 'Sell / Trade-In';
       case 'car_inquiry': return 'Car Inquiry';
       case 'sourcing': return 'Vehicle Sourcing';
+      case 'chatbot': return 'Chatbot Lead';
       default: return type;
     }
   };
@@ -63,6 +64,16 @@ export default function AdminInquiries() {
     const { details } = inc;
     if (!details) return null;
 
+    if (inc.type === 'chatbot') {
+      return (
+        <div className="text-xs space-y-1">
+          <p><span className="text-zinc-500">Bot Intent:</span> <span className="uppercase font-bold text-white text-[10px] tracking-wide">{details.intent || 'Callback'}</span></p>
+          {details.vehicleName && <p><span className="text-zinc-500">Car Reference:</span> <span className="text-zinc-300 font-semibold">{details.vehicleName}</span></p>}
+          <p><span className="text-zinc-500">Contact Preference:</span> <span className="text-zinc-300 font-semibold">{details.whatsapp ? 'WhatsApp' : 'Direct Call'}</span></p>
+          {details.message && <p><span className="text-zinc-500">Bot Notes:</span> <span className="text-zinc-400 font-mulish">{details.message}</span></p>}
+        </div>
+      );
+    }
     if (inc.type === 'viewing') {
       return (
         <div className="text-xs space-y-1">

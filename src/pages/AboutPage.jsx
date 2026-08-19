@@ -22,7 +22,7 @@ export default function AboutPage() {
   
 
   // Luxury Executive Portrait for Founder
-  const founderImg = "https://images.unsplash.com/photo-1507679799987-c73779587ccf?q=80&w=800&auto=format&fit=crop";
+  const founderImg = "/mohammed atique.jpeg";
 
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col">
@@ -221,7 +221,7 @@ export default function AboutPage() {
                 </div>
 
                 <div className="pt-4 font-heading">
-                  <h4 className="text-white text-base font-extrabold uppercase tracking-wider">[OWNER'S NAME]</h4>
+                  <h4 className="text-white text-base font-extrabold uppercase tracking-wider">Mohammed Atique</h4>
                   <p className="text-zinc-500 text-xs mt-0.5 uppercase tracking-widest font-bold">Founder / Owner, Auto Pavilion</p>
                 </div>
               </div>
