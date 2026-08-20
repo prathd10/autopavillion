@@ -69,7 +69,7 @@ export default function AboutUs() {
                   At Auto Pavilion, we understand the discerning tastes and high standards of our clientele. As a leading dealer of top-tier cars, we pride ourselves on delivering an unparalleled experience that matches the luxury of our collection.
                 </p>
                 <p className="text-xs sm:text-sm text-zinc-400 font-mulish leading-relaxed max-w-xl">
-                  Established with a singular vision - to redefine the automotive experience, our journey began with a passion for excellence. From a modest beginning to a premier destination, we've consistently exceeded expectations, setting new standards in the luxury car market.
+                  Established with a singular vision: to redefine the automotive experience, our journey began with a passion for excellence. From a modest beginning to a premier destination, we've consistently exceeded expectations, setting new standards in the luxury car market.
                 </p>
               </div>
             </div>

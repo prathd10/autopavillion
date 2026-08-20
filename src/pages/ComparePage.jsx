@@ -251,10 +251,10 @@ export default function ComparePage() {
 
     if (carA.is_inventory && !carB.is_inventory) {
       pointsA.push(`**Available immediately** in our Mumbai showroom for private viewing.`);
-      pointsB.push(`Bespoke sourcing required — let our specialist team acquire this model for you.`);
+      pointsB.push(`Bespoke sourcing required. Our specialist team can acquire this model for you.`);
     } else if (carB.is_inventory && !carA.is_inventory) {
       pointsB.push(`**Available immediately** in our Mumbai showroom for private viewing.`);
-      pointsA.push(`Bespoke sourcing required — let our specialist team acquire this model for you.`);
+      pointsA.push(`Bespoke sourcing required. Our specialist team can acquire this model for you.`);
     }
 
     return { pointsA, pointsB };

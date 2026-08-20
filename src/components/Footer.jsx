@@ -186,8 +186,6 @@ export default function Footer() {
           <div className="text-center sm:text-left flex flex-col sm:flex-row sm:items-center sm:space-x-4">
             <span>© 2026 Auto Pavilion India Private Limited. All rights reserved.</span>
             <div className="mt-1 sm:mt-0 flex items-center space-x-3">
-              <span>Developed by <a href="#" className="font-bold text-white hover:text-zinc-300 transition-colors">SynexAI</a></span>
-              <span className="text-zinc-700">|</span>
               <Link to="/privacy" className="hover:text-white transition-colors">Privacy Policy</Link>
               <span className="text-zinc-700">|</span>
               <Link to="/terms" className="hover:text-white transition-colors">Terms of Service</Link>

@@ -396,12 +396,12 @@ export const BUSINESS_FACTS = [
   {
     stat: "Comprehensive",
     title: "Diagnostic Certification",
-    description: "Every premium vehicle undergoes rigorous multi-system quality checks & physical zero-accident body verification."
+    description: "Every premium vehicle undergoes rigorous multi-system quality checks & complete structural validation."
   },
   {
-    stat: "100%",
-    title: "Non-Accident Guarantee",
-    description: "Legal non-accident certificate with genuine mileage & transparent ownership history on every vehicle delivered."
+    stat: "Verified",
+    title: "History & Ownership",
+    description: "Guaranteed genuine mileage history & transparent ownership documentation verified on every vehicle."
   },
   {
     stat: "₹500 Cr+",
