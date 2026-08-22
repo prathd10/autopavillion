@@ -45,8 +45,7 @@ export default function ImageUploader({ value = [], onChange, label, maxFiles = 
 
     try {
       // 1. Fetch authentication signature from our backend
-      // We check both local port (3001) and relative path for Vercel/production
-      const authRes = await fetch('http://localhost:3001/api/imagekit-auth').catch(() => fetch('/api/imagekit-auth'));
+      const authRes = await fetch('/api/imagekit-auth');
       if (!authRes.ok) throw new Error('Failed to fetch upload signature');
       const auth = await authRes.json();
 
