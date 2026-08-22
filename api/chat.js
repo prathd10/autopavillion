@@ -1,4 +1,4 @@
-const { GoogleGenerativeAI } = require('@google/generative-ai');
+import { GoogleGenerativeAI } from '@google/generative-ai';
 
 export default async function handler(req, res) {
   // CORS setup for Vercel Serverless Functions
