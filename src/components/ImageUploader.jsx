@@ -60,7 +60,7 @@ export default function ImageUploader({ value = [], onChange, label, maxFiles = 
         formData.append('expire', auth.expire);
         formData.append('token', auth.token);
         formData.append('fileName', file.name);
-        formData.append('folder', '/cars'); // Organize uploads into a cars folder
+        formData.append('folder', '/autopavillion/cars'); // Organize uploads into the same cars folder as the seed script
 
         const uploadRes = await fetch('https://upload.imagekit.io/api/v1/files/upload', {
           method: 'POST',
@@ -73,10 +73,8 @@ export default function ImageUploader({ value = [], onChange, label, maxFiles = 
         }
 
         const data = await uploadRes.json();
-        // The API returns the URL of the uploaded image. 
-        // We extract just the relative path so it works with our ikUrl() helper
-        const url = new URL(data.url);
-        newUrls.push(url.pathname);
+        // Save the relative filePath (e.g. /autopavillion/cars/filename.jpg) so it resolves correctly with our ikUrl helper
+        newUrls.push(data.filePath);
       }
     } catch (err) {
       console.error('Upload failed:', err);
