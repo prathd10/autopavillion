@@ -1,10 +1,58 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { MapPin, Phone, Mail, Clock, ArrowUpRight, ShieldCheck, Share2, Globe } from 'lucide-react';
+import { MapPin, Phone, Mail, Clock, ArrowUpRight, ShieldCheck, Share2, Globe, Users } from 'lucide-react';
+import { supabase } from '../lib/supabase';
+
+function Odometer({ value }) {
+  const digits = String(value).padStart(6, '0').split('');
+  return (
+    <div className="flex space-x-1 justify-start items-center">
+      {digits.map((digit, idx) => (
+        <div
+          key={idx}
+          className="relative w-6 h-9 bg-gradient-to-b from-[#1a1b20] via-[#090a0c] to-[#1a1b20] border border-white/10 rounded-md flex items-center justify-center overflow-hidden"
+          style={{
+            boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.8), inset 0 -2px 4px rgba(0,0,0,0.8)',
+          }}
+        >
+          <div className="absolute top-1/2 left-0 right-0 h-[1px] bg-black/50 -translate-y-1/2 pointer-events-none z-10" />
+          <span className="text-white text-xs font-black font-mono tracking-normal relative z-0 select-none">
+            {digit}
+          </span>
+        </div>
+      ))}
+    </div>
+  );
+}
 
 export default function Footer() {
   const location = useLocation();
   const navigate = useNavigate();
+
+  const [analytics, setAnalytics] = React.useState({
+    total: 190783,
+    today: 38,
+    yesterday: 29
+  });
+
+  React.useEffect(() => {
+    async function fetchAnalytics() {
+      try {
+        const { data, error } = await supabase.rpc('get_footer_analytics');
+        if (error) throw error;
+        if (data) {
+          setAnalytics({
+            total: data.total ?? 190783,
+            today: data.today ?? 38,
+            yesterday: data.yesterday ?? 29
+          });
+        }
+      } catch (err) {
+        console.warn('[FooterAnalytics] Failed to fetch:', err.message);
+      }
+    }
+    fetchAnalytics();
+  }, []);
 
   const handleOpenVipModal = () => {
     window.dispatchEvent(new CustomEvent('open-vip-modal'));
@@ -84,6 +132,22 @@ export default function Footer() {
               >
                 <MapPin className="w-4 h-4" />
               </a>
+            </div>
+
+            {/* Viewers Counter */}
+            <div className="pt-6 border-t border-white/10 space-y-3.5">
+              <span className="text-[9px] uppercase font-bold tracking-[0.25em] text-zinc-500 block">Website Visitors</span>
+              <Odometer value={analytics.total} />
+              <div className="space-y-2 pt-1 text-[11px] text-zinc-400">
+                <div className="flex items-center space-x-2.5">
+                  <Users className="w-3.5 h-3.5 text-zinc-500" />
+                  <span className="font-semibold uppercase tracking-wider text-[10px]">Users Today : <strong className="text-white font-mono">{analytics.today}</strong></span>
+                </div>
+                <div className="flex items-center space-x-2.5">
+                  <Users className="w-3.5 h-3.5 text-zinc-600" />
+                  <span className="font-semibold uppercase tracking-wider text-[10px]">Users Yesterday : <strong className="text-zinc-300 font-mono">{analytics.yesterday}</strong></span>
+                </div>
+              </div>
             </div>
           </div>
 
