@@ -1,4 +1,4 @@
-const ImageKit = require('imagekit');
+import ImageKit from 'imagekit';
 
 export default function handler(req, res) {
   // CORS setup for Vercel Serverless Functions
