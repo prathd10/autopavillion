@@ -22,7 +22,7 @@ export default function AboutPage() {
   
 
   // Luxury Executive Portrait for Founder
-  const founderImg = "/mohammed atique.jpeg";
+  const founderImg = "/mohd.atique.jpeg";
 
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col">

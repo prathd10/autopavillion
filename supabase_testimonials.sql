@@ -29,6 +29,12 @@ create policy "Public can read active testimonials"
   for select
   using (status = 'active');
 
+-- Public storefront: anyone can submit reviews (no auth required)
+create policy "Anyone can insert testimonials"
+  on public.testimonials
+  for insert
+  with check (true);
+
 -- Admin: authenticated users have full access (select, insert, update, delete)
 create policy "Authenticated admin has full access to testimonials"
   on public.testimonials

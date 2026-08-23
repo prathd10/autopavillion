@@ -24,13 +24,13 @@ export function mapCarFromDb(row) {
     price: row.price ?? '',
     priceRaw: row.price_raw ?? 0,
     bodyType: row.body_type ?? '',
-    engine: row.engine ?? '',
-    horsepower: row.horsepower ?? '',
-    hpRaw: row.hp_raw ?? 0,
-    torque: row.torque ?? '',
-    zeroToHundred: row.zero_to_hundred ?? '',
-    zeroToHundredRaw: row.zero_to_hundred_raw ?? 0,
-    topSpeed: row.top_speed ?? '',
+    engine: '', // Fallback after column removal
+    horsepower: '', // Fallback after column removal
+    hpRaw: 0, // Fallback after column removal
+    torque: '', // Fallback after column removal
+    zeroToHundred: '', // Fallback after column removal
+    zeroToHundredRaw: 0, // Fallback after column removal
+    topSpeed: '', // Fallback after column removal
     transmission: row.transmission ?? '',
     mileageKms: row.mileage_kms ?? '',
     fuelType: row.fuel_type ?? 'Petrol',
@@ -41,9 +41,11 @@ export function mapCarFromDb(row) {
     verified: row.verified ?? false,
     inspectionCertificate: row.inspection_certificate ?? '',
     inspectionScore: row.inspection_score ?? '',
-    soundType: row.sound_type ?? '',
-    soundFreq: row.sound_freq ?? 0,
-    soundName: row.sound_name ?? '',
+    registrationType: row.registration_type ?? 'Individual',
+    registrationState: row.registration_state ?? '',
+    soundType: '', // Fallback after column removal
+    soundFreq: 0, // Fallback after column removal
+    soundName: '', // Fallback after column removal
     featured: row.featured ?? false,
     images: row.images ?? [],
     threeSixtyFrames: row.three_sixty_frames ?? [],
@@ -71,15 +73,8 @@ export function mapCarToDb(car) {
     price: car.price,
     price_raw: Number(car.priceRaw) || 0,
     body_type: car.bodyType,
-    engine: car.engine,
-    horsepower: car.horsepower,
-    hp_raw: Number(car.hpRaw) || 0,
-    torque: car.torque,
-    zero_to_hundred: car.zeroToHundred,
-    zero_to_hundred_raw: Number(car.zeroToHundredRaw) || 0,
-    top_speed: car.topSpeed,
-    transmission: car.transmission,
     mileage_kms: car.mileageKms,
+    transmission: car.transmission || null,
     fuel_type: car.fuelType,
     color: car.color,
     interior_color: car.interiorColor,
@@ -88,9 +83,8 @@ export function mapCarToDb(car) {
     verified: Boolean(car.verified),
     inspection_certificate: car.inspectionCertificate || null,
     inspection_score: car.inspectionScore || null,
-    sound_type: car.soundType || null,
-    sound_freq: car.soundFreq ? Number(car.soundFreq) : null,
-    sound_name: car.soundName || null,
+    registration_type: car.registrationType || 'Individual',
+    registration_state: car.registrationState || null,
     featured: Boolean(car.featured),
     images: Array.isArray(car.images) ? car.images.filter(Boolean) : [],
     three_sixty_frames: Array.isArray(car.threeSixtyFrames) ? car.threeSixtyFrames.filter(Boolean) : [],

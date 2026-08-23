@@ -3,7 +3,8 @@ import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import {
   Plus, Search, Edit2, Trash2, AlertTriangle,
-  RefreshCw, ChevronLeft, ChevronRight, X, MessageSquare, ArrowRight
+  RefreshCw, ChevronLeft, ChevronRight, X, MessageSquare, ArrowRight,
+  Copy, Check
 } from 'lucide-react';
 
 const STATUS_BADGE = {
@@ -61,8 +62,16 @@ export default function AdminTestimonials() {
   const [search,       setSearch]       = useState('');
   const [page,         setPage]         = useState(0);
   const [deleteTarget, setDeleteTarget] = useState(null);
-  const [deleting,     setDeleting]     = useState(false);
-  const [total,        setTotal]        = useState(0);
+  const [deleting,    setDeleting]    = useState(false);
+  const [total,       setTotal]       = useState(0);
+  const [copied,      setCopied]      = useState(false);
+
+  const handleCopyLink = () => {
+    const reviewUrl = `${window.location.origin}/review`;
+    navigator.clipboard.writeText(reviewUrl);
+    setCopied(true);
+    setTimeout(() => setCopied(false), 2000);
+  };
 
   const fetchTestimonials = useCallback(async () => {
     setLoading(true);
@@ -139,6 +148,32 @@ export default function AdminTestimonials() {
             </span>
           </Link>
         </div>
+      </div>
+
+      {/* Share Link Banner */}
+      <div className="mono-panel p-6 rounded-3xl border border-white/10 bg-black/40 backdrop-blur-2xl flex flex-col md:flex-row md:items-center justify-between gap-6">
+        <div className="space-y-1">
+          <h3 className="text-white font-extrabold text-sm uppercase tracking-wider">Receive Client Reviews</h3>
+          <p className="text-zinc-400 text-xs leading-relaxed">
+            Send this public link to your customers. When they submit a review, it will write to the database and reflect immediately.
+          </p>
+        </div>
+        <button
+          onClick={handleCopyLink}
+          className="px-5 py-3.5 rounded-full bg-white/5 border border-white/10 text-white font-extrabold text-[10px] uppercase tracking-widest hover:bg-white hover:text-black flex items-center justify-center space-x-2 transition-all shrink-0 active:scale-95"
+        >
+          {copied ? (
+            <>
+              <Check size={12} />
+              <span>Copied!</span>
+            </>
+          ) : (
+            <>
+              <Copy size={12} />
+              <span>Copy Review Link</span>
+            </>
+          )}
+        </button>
       </div>
 
       {/* Search */}

@@ -152,7 +152,7 @@ export default function CarDetailsPage() {
               <div className="p-6 rounded-2xl border border-white/10 bg-[#0c0d11] space-y-3">
                 <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 block mb-1">Concierge Notes & Description</span>
                 <div 
-                  className="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3 description-content"
+                  className="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3 description-content whitespace-pre-wrap"
                   dangerouslySetInnerHTML={{ __html: car.description }}
                 />
               </div>
@@ -179,7 +179,16 @@ export default function CarDetailsPage() {
             {/* Header */}
             <div className="mb-6">
               <div className="flex items-center space-x-3 mb-3">
-                <img src={car.brandLogo} alt={car.brand} className="h-6 sm:h-8 w-auto object-contain" />
+                {car.brandLogo && (
+                  <img
+                    src={car.brandLogo}
+                    alt={car.brand}
+                    className={`h-6 sm:h-8 w-auto object-contain ${car.brandLogo.includes('simple-icons') ? 'filter invert brightness-0' : ''}`}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                )}
                 <span className="text-[10px] sm:text-xs uppercase font-bold tracking-widest text-zinc-400">
                   {car.brand} • {car.year}
                 </span>
