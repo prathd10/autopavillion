@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
 import { mapCarFromDb, mapCarToDb } from '../../lib/mappers';
 import { ikUrl } from '../../lib/imagekit';
+import { BRAND_LOGOS } from '../../data/cars';
 import {
   Save, ArrowLeft, Plus, X, Loader2,
   AlertCircle, CheckCircle2, ImageIcon
@@ -19,13 +20,6 @@ const EMPTY_CAR = {
   price: '',
   priceRaw: '',
   bodyType: 'Coupe',
-  engine: '',
-  horsepower: '',
-  hpRaw: '',
-  torque: '',
-  zeroToHundred: '',
-  zeroToHundredRaw: '',
-  topSpeed: '',
   transmission: '',
   mileageKms: '',
   fuelType: 'Petrol',
@@ -36,9 +30,9 @@ const EMPTY_CAR = {
   verified: true,
   inspectionCertificate: '',
   inspectionScore: '',
-  soundType: '',
-  soundFreq: '',
-  soundName: '',
+  registrationType: 'Individual',
+  registrationState: '',
+  description: '',
   featured: false,
   images: [],
   threeSixtyFrames: [],
@@ -183,6 +177,7 @@ export default function CarForm() {
   const [loading, setLoading] = useState(isEdit);
   const [saving,  setSaving]  = useState(false);
   const [toast,   setToast]   = useState(null); // { type: 'success'|'error', msg }
+  const [isCustomBrand, setIsCustomBrand] = useState(false);
 
   // Load existing car for edit
   useEffect(() => {
@@ -193,7 +188,24 @@ export default function CarForm() {
       if (error) {
         setToast({ type: 'error', msg: 'Car not found: ' + error.message });
       } else {
-        setCar(mapCarFromDb(data));
+        const mapped = mapCarFromDb(data);
+        
+        // Auto-populate logo if missing for backward compatibility
+        if (mapped.brand && !mapped.brandLogo) {
+          const matchingBrand = BRAND_LOGOS.find(b => b.name.toLowerCase() === mapped.brand.toLowerCase());
+          if (matchingBrand) {
+            mapped.brandLogo = matchingBrand.icon;
+          } else {
+            mapped.brandLogo = `https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/${mapped.brand.toLowerCase().replace(/[^a-z0-9]/g, '')}.svg`;
+          }
+        }
+
+        setCar(mapped);
+        if (mapped.brand && !BRAND_LOGOS.some(b => b.name.toLowerCase() === mapped.brand.toLowerCase())) {
+          setIsCustomBrand(true);
+        } else {
+          setIsCustomBrand(false);
+        }
       }
       setLoading(false);
     }
@@ -204,14 +216,55 @@ export default function CarForm() {
     return value => setCar(prev => ({ ...prev, [field]: value }));
   }
 
+  const handleBrandDropdownChange = (val) => {
+    if (val === 'Other') {
+      setIsCustomBrand(true);
+      setCar(prev => ({
+        ...prev,
+        brand: '',
+        brandLogo: ''
+      }));
+    } else {
+      setIsCustomBrand(false);
+      const matchingBrand = BRAND_LOGOS.find(b => b.name === val);
+      setCar(prev => ({
+        ...prev,
+        brand: val,
+        brandLogo: matchingBrand ? matchingBrand.icon : ''
+      }));
+    }
+  };
+
+  const handleCustomBrandChange = (val) => {
+    const logoUrl = val.trim()
+      ? `https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/${val.toLowerCase().replace(/[^a-z0-9]/g, '')}.svg`
+      : '';
+    setCar(prev => ({
+      ...prev,
+      brand: val,
+      brandLogo: logoUrl
+    }));
+  };
+
   async function handleSubmit(e) {
     e.preventDefault();
     setSaving(true);
     setToast(null);
     try {
       // Auto-generate ID from name if creating new car
+      let finalLogo = car.brandLogo;
+      if (car.brand && !finalLogo) {
+        const matchingBrand = BRAND_LOGOS.find(b => b.name.toLowerCase() === car.brand.toLowerCase());
+        if (matchingBrand) {
+          finalLogo = matchingBrand.icon;
+        } else {
+          finalLogo = `https://raw.githubusercontent.com/simple-icons/simple-icons/develop/icons/${car.brand.toLowerCase().replace(/[^a-z0-9]/g, '')}.svg`;
+        }
+      }
+
       const carWithId = {
         ...car,
+        brandLogo: finalLogo,
         id: isEdit ? car.id : (car.id || car.name.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '') + '-' + Date.now()),
       };
 
@@ -286,12 +339,51 @@ export default function CarForm() {
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Field label="Brand" id="brand" required>
-              <TextInput id="brand" value={car.brand} onChange={set('brand')} placeholder="e.g. Porsche" required />
+              <SelectInput
+                id="brandSelect"
+                value={isCustomBrand ? 'Other' : car.brand}
+                onChange={handleBrandDropdownChange}
+                options={[
+                  { value: '', label: 'Select a Brand' },
+                  ...BRAND_LOGOS.map(b => ({ value: b.name, label: b.name })),
+                  { value: 'Other', label: 'Other (Add brand)' }
+                ]}
+              />
             </Field>
-            <Field label="Brand Logo URL" id="brandLogo">
-              <TextInput id="brandLogo" value={car.brandLogo} onChange={set('brandLogo')} placeholder="https://…/logo.svg" />
-            </Field>
+            <div className="flex items-end">
+              {car.brandLogo && (
+                <div className="flex items-center gap-3 p-3.5 rounded-2xl bg-white/5 border border-white/10 w-fit">
+                  <img
+                    src={car.brandLogo}
+                    alt={`${car.brand || 'Brand'} logo`}
+                    className={`w-8 h-8 object-contain ${car.brandLogo.includes('simple-icons') ? 'filter invert brightness-0' : ''}`}
+                    onError={(e) => {
+                      e.target.style.display = 'none';
+                    }}
+                  />
+                  <div>
+                    <p className="text-[9px] font-bold text-zinc-500 tracking-widest uppercase">Auto Logo</p>
+                    <p className="text-[10px] font-semibold text-zinc-300 truncate max-w-[200px]">{car.brandLogo.split('/').pop()}</p>
+                  </div>
+                </div>
+              )}
+            </div>
           </div>
+
+          {isCustomBrand && (
+            <div className="mt-4">
+              <Field label="Custom Brand Name" id="customBrand" required>
+                <TextInput
+                  id="customBrand"
+                  value={car.brand}
+                  onChange={handleCustomBrandChange}
+                  placeholder="e.g. Maserati"
+                  required
+                />
+              </Field>
+            </div>
+          )}
+
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
             <Field label="Year" id="year" required>
               <TextInput id="year" type="number" value={car.year} onChange={set('year')} required />
@@ -304,6 +396,11 @@ export default function CarForm() {
             </Field>
             <Field label="Fuel Type" id="fuelType">
               <SelectInput id="fuelType" value={car.fuelType} onChange={set('fuelType')} options={FUEL_TYPES} />
+            </Field>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 mt-6">
+            <Field label="Transmission" id="transmission">
+              <TextInput id="transmission" value={car.transmission} onChange={set('transmission')} placeholder="e.g. 7-Speed PDK Dual-Clutch / Automatic / Manual" />
             </Field>
           </div>
           <div className="flex flex-wrap gap-8 pt-4">
@@ -341,38 +438,12 @@ export default function CarForm() {
               <TextInput id="inspScore" value={car.inspectionScore} onChange={set('inspectionScore')} placeholder="251 / 251 Points Certified" />
             </Field>
           </div>
-        </Section>
-
-        {/* Performance */}
-        <Section title="Engine & Performance">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Field label="Engine" id="engine">
-              <TextInput id="engine" value={car.engine} onChange={set('engine')} placeholder="4.0L Naturally Aspirated Flat-6" />
+            <Field label="Registration Type" id="registrationType">
+              <SelectInput id="registrationType" value={car.registrationType} onChange={set('registrationType')} options={['Individual', 'Corporate']} />
             </Field>
-            <Field label="Transmission" id="transmission">
-              <TextInput id="transmission" value={car.transmission} onChange={set('transmission')} placeholder="7-Speed PDK Dual-Clutch" />
-            </Field>
-          </div>
-          <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            <Field label="Horsepower" id="horsepower">
-              <TextInput id="horsepower" value={car.horsepower} onChange={set('horsepower')} placeholder="525 HP" />
-            </Field>
-            <Field label="HP (raw)" id="hpRaw">
-              <TextInput id="hpRaw" type="number" value={car.hpRaw} onChange={set('hpRaw')} placeholder="525" />
-            </Field>
-            <Field label="Torque" id="torque">
-              <TextInput id="torque" value={car.torque} onChange={set('torque')} placeholder="465 Nm @ 9,000 RPM" />
-            </Field>
-            <Field label="Top Speed" id="topSpeed">
-              <TextInput id="topSpeed" value={car.topSpeed} onChange={set('topSpeed')} placeholder="296 km/h" />
-            </Field>
-          </div>
-          <div className="grid grid-cols-2 gap-6">
-            <Field label="0–100 km/h" id="zeroToHundred">
-              <TextInput id="zeroToHundred" value={car.zeroToHundred} onChange={set('zeroToHundred')} placeholder="3.2 sec" />
-            </Field>
-            <Field label="0–100 (raw sec)" id="zeroToHundredRaw">
-              <TextInput id="zeroToHundredRaw" type="number" step="0.01" value={car.zeroToHundredRaw} onChange={set('zeroToHundredRaw')} placeholder="3.2" />
+            <Field label="Registration State" id="registrationState">
+              <TextInput id="registrationState" value={car.registrationState} onChange={set('registrationState')} placeholder="e.g. Maharashtra (MH) or Delhi (DL)" />
             </Field>
           </div>
         </Section>
@@ -389,19 +460,21 @@ export default function CarForm() {
           </div>
         </Section>
 
-        {/* Sound */}
-        <Section title="Engine Sound Signature">
-          <div className="grid grid-cols-1 sm:grid-cols-3 gap-6">
-            <Field label="Sound Type ID" id="soundType">
-              <TextInput id="soundType" value={car.soundType} onChange={set('soundType')} placeholder="V6-FLAT6-HIGH-REV" />
-            </Field>
-            <Field label="Sound Freq (RPM)" id="soundFreq">
-              <TextInput id="soundFreq" type="number" value={car.soundFreq} onChange={set('soundFreq')} placeholder="9000" />
-            </Field>
-            <Field label="Sound Display Name" id="soundName">
-              <TextInput id="soundName" value={car.soundName} onChange={set('soundName')} placeholder="4.0L Flat-6 Screamer" />
-            </Field>
-          </div>
+        {/* Description */}
+        <Section title="Concierge Notes & Description">
+          <Field label="Vehicle Description" id="description">
+            <textarea
+              id="description"
+              value={car.description}
+              onChange={e => set('description')(e.target.value)}
+              placeholder="Provide a detailed description of the car's condition, optional equipment, and history..."
+              rows={6}
+              className="w-full px-5 py-4 rounded-2xl bg-black/40 backdrop-blur-md border border-white/10
+                text-white placeholder-zinc-600 text-sm font-medium
+                focus:outline-none focus:border-white/40 focus:bg-white/10
+                transition-all duration-300 resize-y min-h-[120px]"
+            />
+          </Field>
         </Section>
 
         {/* Media */}

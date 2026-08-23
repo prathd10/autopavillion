@@ -27,16 +27,6 @@ create table if not exists public.cars (
   fuel_type             text        default 'Petrol',
   status                text        default 'active',   -- active | sold | draft | archived
 
-  -- Performance
-  engine                text,
-  horsepower            text,
-  hp_raw                int         default 0,
-  torque                text,
-  zero_to_hundred       text,
-  zero_to_hundred_raw   numeric     default 0,
-  top_speed             text,
-  transmission          text,
-
   -- Condition & Ownership
   mileage_kms           text,
   owners                int         default 1,
@@ -44,15 +34,13 @@ create table if not exists public.cars (
   verified              boolean     default true,
   inspection_certificate text,
   inspection_score      text,
+  transmission          text,
+  registration_type     text        default 'Individual',
+  registration_state    text,
 
   -- Aesthetics
   color                 text,
   interior_color        text,
-
-  -- Sound signature (used by the engine-sound player on the storefront)
-  sound_type            text,
-  sound_freq            int,
-  sound_name            text,
 
   -- Flags
   featured              boolean     default false,
