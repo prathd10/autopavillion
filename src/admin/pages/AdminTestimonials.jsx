@@ -251,7 +251,9 @@ export default function AdminTestimonials() {
                           )}
                           <div className="min-w-0">
                             <p className="text-sm text-white font-extrabold tracking-wide truncate max-w-[200px] uppercase">{t.name}</p>
-                            <p className="text-[10px] tracking-widest text-zinc-500 truncate max-w-[200px] uppercase mt-1">{t.role}</p>
+                            <p className="text-[10px] tracking-widest text-zinc-500 truncate max-w-[200px] uppercase mt-1">
+                              {t.role}{t.company ? ` @ ${t.company}` : ''}
+                            </p>
                             <p className="text-[9px] text-zinc-400 font-mono mt-0.5 max-w-[200px] truncate">{t.car}</p>
                           </div>
                         </div>
@@ -312,7 +314,9 @@ export default function AdminTestimonials() {
                     )}
                     <div className="min-w-0 flex-1">
                       <p className="text-sm text-white font-extrabold uppercase tracking-wide truncate">{t.name}</p>
-                      <p className="text-[10px] tracking-widest text-zinc-500 uppercase mt-0.5">{t.role}</p>
+                      <p className="text-[10px] tracking-widest text-zinc-500 uppercase mt-0.5">
+                        {t.role}{t.company ? ` @ ${t.company}` : ''}
+                      </p>
                       <p className="text-[10px] text-zinc-400 font-mono mt-0.5">{t.car}</p>
                     </div>
                   </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Navbar from '../components/Navbar';
+import { Link } from 'react-router-dom';
 import Footer from '../components/Footer';
 import { supabase } from '../lib/supabase';
 import ImageUploader from '../components/ImageUploader';
@@ -12,6 +12,7 @@ export default function SubmitReviewPage() {
   const [formData, setFormData] = useState({
     name: '',
     role: '',
+    company: '',
     car: '',
     comment: '',
     photo: ''
@@ -23,6 +24,10 @@ export default function SubmitReviewPage() {
 
   useEffect(() => {
     window.scrollTo(0, 0);
+    const timer = setTimeout(() => {
+      window.scrollTo(0, 0);
+    }, 100);
+    return () => clearTimeout(timer);
   }, []);
 
   async function handleSubmit(e) {
@@ -33,6 +38,7 @@ export default function SubmitReviewPage() {
     const payload = {
       name: formData.name.trim(),
       role: formData.role.trim(),
+      company: formData.company.trim() || null,
       car: formData.car.trim() || 'General Experience',
       comment: formData.comment.trim(),
       status: 'active', // Reflects immediately on backend & frontend
@@ -46,7 +52,7 @@ export default function SubmitReviewPage() {
 
       if (dbError) throw dbError;
       setSuccess(true);
-      setFormData({ name: '', role: '', car: '', comment: '', photo: '' });
+      setFormData({ name: '', role: '', company: '', car: '', comment: '', photo: '' });
     } catch (err) {
       console.error('[SubmitReviewPage]', err.message);
       setError(err.message || 'Failed to submit review. Please try again.');
@@ -60,9 +66,18 @@ export default function SubmitReviewPage() {
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-amber-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
 
-      <Navbar />
+      {/* Centered Logo Header */}
+      <header className="w-full flex justify-center pt-12 pb-2 relative z-10">
+        <Link to="/" className="group flex items-center justify-center shrink-0">
+          <img
+            src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
+            alt="Auto Pavilion"
+            className="h-9 sm:h-11 w-auto object-contain transition-all duration-300 group-hover:scale-105"
+          />
+        </Link>
+      </header>
 
-      <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-xl mx-auto w-full relative z-10">
+      <main className="flex-1 pt-4 pb-24 px-4 sm:px-6 lg:px-8 max-w-xl mx-auto w-full relative z-10">
         {success ? (
           <div className="mono-panel p-8 sm:p-12 rounded-3xl border border-green-500/20 bg-black/60 text-center space-y-6 animate-fadeInUp shadow-2xl backdrop-blur-xl">
             <div className="w-16 h-16 rounded-full bg-green-500/10 border border-green-500/20 flex items-center justify-center mx-auto">
@@ -133,10 +148,10 @@ export default function SubmitReviewPage() {
                   type="text"
                   id="name"
                   required
-                  placeholder="e.g. Vikramaditya S."
+                  placeholder="Enter your name"
                   value={formData.name}
                   onChange={(e) => setFormData({ ...formData, name: e.target.value })}
-                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-700 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all"
+                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-750 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all"
                 />
               </div>
 
@@ -150,26 +165,44 @@ export default function SubmitReviewPage() {
                   type="text"
                   id="role"
                   required
-                  placeholder="e.g. Industrialist & Collector / Entrepreneur"
+                  placeholder="Enter your title (e.g. Founder)"
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
-                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-700 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all"
+                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-750 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all"
                 />
               </div>
 
-              {/* Car Purchased (Optional) */}
+              {/* Company */}
+              <div className="space-y-2">
+                <label htmlFor="company" className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400 flex items-center space-x-1.5">
+                  <Briefcase className="w-3 h-3 text-zinc-500" />
+                  <span>Company / Organization</span>
+                </label>
+                <input
+                  type="text"
+                  id="company"
+                  required
+                  placeholder="Enter your company"
+                  value={formData.company}
+                  onChange={(e) => setFormData({ ...formData, company: e.target.value })}
+                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-750 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all"
+                />
+              </div>
+
+              {/* Car Purchased */}
               <div className="space-y-2">
                 <label htmlFor="car" className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400 flex items-center space-x-1.5">
                   <Car className="w-3 h-3 text-zinc-500" />
-                  <span>Vehicle Purchased (Optional)</span>
+                  <span>Vehicle Purchased</span>
                 </label>
                 <input
                   type="text"
                   id="car"
-                  placeholder="e.g. Porsche 911 GT3 RS"
+                  required
+                  placeholder="Enter vehicle model"
                   value={formData.car}
                   onChange={(e) => setFormData({ ...formData, car: e.target.value })}
-                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-700 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all"
+                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-750 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all"
                 />
               </div>
 
@@ -183,10 +216,10 @@ export default function SubmitReviewPage() {
                   id="comment"
                   required
                   rows={5}
-                  placeholder="Write a brief description of your experience..."
+                  placeholder="Write your review here..."
                   value={formData.comment}
                   onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
-                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-700 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all resize-none"
+                  className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-750 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all resize-none"
                 />
               </div>
 

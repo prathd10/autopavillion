@@ -12,6 +12,7 @@ const EMPTY_TESTIMONIAL = {
   id: '',
   name: '',
   role: '',
+  company: '',
   comment: '',
   car: '',
   status: 'active',
@@ -191,16 +192,21 @@ export default function TestimonialForm() {
         <Section title="Testimonial Details">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Field label="Client Name" id="name" required>
-              <TextInput id="name" value={testimonial.name} onChange={set('name')} placeholder="e.g. Vikramaditya S." required />
+              <TextInput id="name" value={testimonial.name} onChange={set('name')} placeholder="Enter name" required />
             </Field>
-            <Field label="Client Role / Location" id="role" required>
-              <TextInput id="role" value={testimonial.role} onChange={set('role')} placeholder="e.g. Industrialist & Porsche Collector, Mumbai" required />
+            <Field label="Designation" id="role" required>
+              <TextInput id="role" value={testimonial.role} onChange={set('role')} placeholder="Enter designation (e.g. CEO / Collector)" required />
             </Field>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
-            <Field label="Car Purchased" id="car" required>
-              <TextInput id="car" value={testimonial.car} onChange={set('car')} placeholder="e.g. Porsche 911 GT3 RS" required />
+            <Field label="Company" id="company" required>
+              <TextInput id="company" value={testimonial.company || ''} onChange={set('company')} placeholder="Enter company name" required />
             </Field>
+            <Field label="Car Purchased" id="car" required>
+              <TextInput id="car" value={testimonial.car} onChange={set('car')} placeholder="Enter vehicle model" required />
+            </Field>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             <Field label="Status" id="status">
               <SelectInput id="status" value={testimonial.status} onChange={set('status')} options={STATUS_OPTS} />
             </Field>
@@ -211,7 +217,7 @@ export default function TestimonialForm() {
               id="comment" 
               value={testimonial.comment} 
               onChange={set('comment')} 
-              placeholder="Enter the client's testimonial..." 
+              placeholder="Enter testimonial comment..." 
               required 
               as="textarea"
             />
