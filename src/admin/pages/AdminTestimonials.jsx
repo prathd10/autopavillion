@@ -1,6 +1,7 @@
 import React, { useEffect, useState, useCallback } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
+import { ikUrl } from '../../lib/imagekit';
 import {
   Plus, Search, Edit2, Trash2, AlertTriangle,
   RefreshCw, ChevronLeft, ChevronRight, X, MessageSquare, ArrowRight,
@@ -236,10 +237,23 @@ export default function AdminTestimonials() {
                     >
                       {/* Client */}
                       <td className="px-6 py-4 w-1/4">
-                        <div className="min-w-0">
-                          <p className="text-sm text-white font-extrabold tracking-wide truncate max-w-[200px] uppercase">{t.name}</p>
-                          <p className="text-[10px] tracking-widest text-zinc-500 truncate max-w-[200px] uppercase mt-1">{t.role}</p>
-                          <p className="text-[9px] text-zinc-400 font-mono mt-0.5 max-w-[200px] truncate">{t.car}</p>
+                        <div className="flex items-center gap-3">
+                          {t.photo ? (
+                            <img
+                              src={ikUrl(t.photo, { width: 40, height: 40, quality: 70 })}
+                              alt={t.name}
+                              className="w-10 h-10 rounded-full object-cover bg-zinc-800 border border-white/10 flex-shrink-0"
+                            />
+                          ) : (
+                            <div className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-500 font-bold text-xs flex-shrink-0">
+                              {t.name ? t.name.charAt(0).toUpperCase() : '?'}
+                            </div>
+                          )}
+                          <div className="min-w-0">
+                            <p className="text-sm text-white font-extrabold tracking-wide truncate max-w-[200px] uppercase">{t.name}</p>
+                            <p className="text-[10px] tracking-widest text-zinc-500 truncate max-w-[200px] uppercase mt-1">{t.role}</p>
+                            <p className="text-[9px] text-zinc-400 font-mono mt-0.5 max-w-[200px] truncate">{t.car}</p>
+                          </div>
                         </div>
                       </td>
                       
@@ -284,12 +298,25 @@ export default function AdminTestimonials() {
             <div className="lg:hidden divide-y divide-white/10">
               {testimonials.map(t => (
                 <div key={t.id} className="p-5 flex flex-col gap-4">
-                  <div className="flex-1 min-w-0">
-                    <p className="text-sm text-white font-extrabold uppercase tracking-wide truncate">{t.name}</p>
-                    <p className="text-[10px] tracking-widest text-zinc-500 uppercase mt-1">{t.role}</p>
-                    <p className="text-[10px] text-zinc-400 font-mono mt-0.5">{t.car}</p>
-                    <p className="text-xs text-zinc-300 italic mt-3 line-clamp-3">{t.comment}</p>
+                  <div className="flex items-center gap-3">
+                    {t.photo ? (
+                      <img
+                        src={ikUrl(t.photo, { width: 44, height: 44, quality: 70 })}
+                        alt={t.name}
+                        className="w-11 h-11 rounded-full object-cover bg-zinc-800 border border-white/10 flex-shrink-0"
+                      />
+                    ) : (
+                      <div className="w-11 h-11 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-zinc-500 font-bold text-xs flex-shrink-0">
+                        {t.name ? t.name.charAt(0).toUpperCase() : '?'}
+                      </div>
+                    )}
+                    <div className="min-w-0 flex-1">
+                      <p className="text-sm text-white font-extrabold uppercase tracking-wide truncate">{t.name}</p>
+                      <p className="text-[10px] tracking-widest text-zinc-500 uppercase mt-0.5">{t.role}</p>
+                      <p className="text-[10px] text-zinc-400 font-mono mt-0.5">{t.car}</p>
+                    </div>
                   </div>
+                  <p className="text-xs text-zinc-300 italic line-clamp-3">{t.comment}</p>
                   <div className="flex gap-3 justify-end mt-2">
                     <button onClick={() => navigate(`/admin/testimonials/${t.id}/edit`)} className="px-4 py-2 rounded-full border border-white/10 text-xs font-bold uppercase tracking-widest text-white hover:bg-white/10 transition-all">Edit</button>
                     <button onClick={() => setDeleteTarget(t)} className="px-4 py-2 rounded-full border border-red-500/20 text-xs font-bold uppercase tracking-widest text-red-400 hover:bg-red-500/10 transition-all">Delete</button>

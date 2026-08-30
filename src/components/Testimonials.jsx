@@ -1,6 +1,7 @@
 import React from 'react';
 import { Star, Quote, Loader2 } from 'lucide-react';
 import { useTestimonials } from '../hooks/useTestimonials';
+import { ikUrl } from '../lib/imagekit';
 
 export default function Testimonials() {
   const { testimonials, loading } = useTestimonials();
@@ -34,7 +35,7 @@ export default function Testimonials() {
             <Loader2 className="w-8 h-8 animate-spin text-zinc-500" />
           </div>
         ) : (
-          <div className="animate-marquee flex items-center space-x-6 shrink-0 py-2">
+          <div className="animate-marquee flex items-stretch space-x-6 shrink-0 py-2">
             {displayReviews.map((r, idx) => (
               <div 
                 key={`${r.id || idx}-${idx}`}
@@ -54,10 +55,19 @@ export default function Testimonials() {
                   </p>
                 </div>
 
-                <div className="pt-3 border-t border-white/10">
-                  <h4 className="text-xs sm:text-sm font-bold text-white font-heading">{r.name}</h4>
-                  <span className="text-[10px] sm:text-[11px] text-zinc-400 block font-semibold">{r.role}</span>
-                  <span className="text-[9px] sm:text-[10px] text-zinc-400 font-mono block mt-0.5">Purchased: {r.car}</span>
+                <div className="pt-3 border-t border-white/10 flex items-center gap-3">
+                  {r.photo && (
+                    <img 
+                      src={ikUrl(r.photo, { width: 80, height: 80, quality: 80 })} 
+                      alt={r.name}
+                      className="w-10 h-10 rounded-full object-cover border border-white/10 flex-shrink-0 bg-zinc-900"
+                    />
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <h4 className="text-xs sm:text-sm font-bold text-white font-heading truncate">{r.name}</h4>
+                    <span className="text-[10px] sm:text-[11px] text-zinc-400 block font-semibold truncate">{r.role}</span>
+                    <span className="text-[9px] sm:text-[10px] text-zinc-400 font-mono block mt-0.5 truncate">Purchased: {r.car}</span>
+                  </div>
                 </div>
               </div>
             ))}
