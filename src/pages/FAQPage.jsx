@@ -4,6 +4,7 @@ import Footer from '../components/Footer';
 import { usePageTracker } from '../hooks/usePageTracker';
 import { FAQS } from '../data/faqs';
 import { ChevronDown, MessageSquare } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function FAQPage() {
   usePageTracker('/faq');
@@ -13,8 +14,27 @@ export default function FAQPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": FAQS.map(faq => ({
+      "@type": "Question",
+      "name": faq.question,
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": faq.answer
+      }
+    }))
+  };
+
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col">
+      <SEO
+        title="Frequently Asked Questions (FAQs)"
+        description="Find answers to common questions about buying pre-owned luxury supercars, our 251-point inspection, warranty, vehicle sourcing, and trade-in in Mumbai."
+        url="https://autopavilion.in/faq"
+        schema={faqSchema}
+      />
       <Navbar />
       
       <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">

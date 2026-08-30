@@ -1,27 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const PREVIEW_ARTICLES = [
-  {
-    id: 1,
-    title: "The Evolution of Luxury Sedans in 2026",
-    category: "Industry Trends",
-    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    id: 2,
-    title: "Why Certified Pre-Owned is the Smart Choice",
-    category: "Buying Guide",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    title: "Preserving Value: Maintenance Tips",
-    category: "Ownership",
-    image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=600&auto=format&fit=crop"
-  }
-];
+import { BLOG_ARTICLES } from '../data/blogData';
 
 export default function InsightsPreview() {
   return (
@@ -47,11 +27,11 @@ export default function InsightsPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {PREVIEW_ARTICLES.map(article => (
-            <Link to="/insights" key={article.id} className="group block">
+          {BLOG_ARTICLES.map(article => (
+            <Link to={`/insights/${article.slug}`} key={article.id} className="group block">
               <div className="relative h-64 mb-6 rounded-2xl overflow-hidden border border-white/10">
                 <img 
-                  src={article.image} 
+                  src={article.coverImage} 
                   alt={article.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />

@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import VehicleSourcing from '../components/VehicleSourcing';
 import Footer from '../components/Footer';
 import { usePageTracker } from '../hooks/usePageTracker';
+import SEO from '../components/SEO';
 
 export default function SourcingPage() {
   usePageTracker('/sourcing');
@@ -13,6 +14,11 @@ export default function SourcingPage() {
 
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col">
+      <SEO
+        title="Bespoke Luxury Supercar Sourcing India"
+        description="Cannot find your exact spec? Auto Pavilion's bespoke vehicle sourcing concierge connects with private collectors nationwide to procure your dream Porsche, Ferrari, or Lamborghini."
+        url="https://autopavilion.in/sourcing"
+      />
       <Navbar />
       
       {/* Global Parallax Background for Sourcing Page */}

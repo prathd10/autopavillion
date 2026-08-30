@@ -1,0 +1,8 @@
+# Auto Pavilion Robots.txt
+User-agent: *
+Allow: /
+Disallow: /admin/
+Disallow: /admin/*
+
+# Sitemap index
+Sitemap: https://autopavilion.in/sitemap.xml

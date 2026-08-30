@@ -8,6 +8,7 @@ import { useCars } from '../hooks/useCars';
 import { usePageTracker } from '../hooks/usePageTracker';
 import { BRAND_LOGOS } from '../data/cars';
 import { Search, Filter, X } from 'lucide-react';
+import SEO from '../components/SEO';
 
 // Dual Handle Range Slider Component
 function DualRangeSlider({ min, max, valueMin, valueMax, onChangeMin, onChangeMax, step, formatLabel }) {
@@ -289,6 +290,11 @@ export default function InventoryPage() {
 
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col">
+      <SEO
+        title="Pre-Owned Luxury & Exotic Supercar Inventory"
+        description="Browse certified pre-owned Porsche, Lamborghini, Ferrari, Mercedes-AMG, Bentley, and Rolls-Royce supercars in Mumbai. 251-point inspected with verified history."
+        url="https://autopavilion.in/inventory"
+      />
       <Navbar 
         compareCount={compareList.length}
         onOpenCompare={() => setShowCompareModal(true)}
