@@ -488,7 +488,6 @@ export default function CarForm() {
               value={car.images}
               onChange={set('images')}
               previewOpts={{ width: 320, height: 200, quality: 75 }}
-              maxFiles={20}
             />
           </Field>
         </Section>

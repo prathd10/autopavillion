@@ -3,7 +3,7 @@ import { supabase } from '../lib/supabase';
 import { ikUrl } from '../lib/imagekit';
 import { UploadCloud, X, Loader2, Image as ImageIcon } from 'lucide-react';
 
-export default function ImageUploader({ value = [], onChange, label, maxFiles = 10, previewOpts }) {
+export default function ImageUploader({ value = [], onChange, label, maxFiles = null, previewOpts }) {
   const [uploading, setUploading] = useState(false);
   const [dragActive, setDragActive] = useState(false);
   const fileInputRef = useRef(null);
@@ -35,7 +35,7 @@ export default function ImageUploader({ value = [], onChange, label, maxFiles = 
   };
 
   const processFiles = async (files) => {
-    if (value.length + files.length > maxFiles) {
+    if (maxFiles && value.length + files.length > maxFiles) {
       alert(`You can only upload up to ${maxFiles} images.`);
       return;
     }
@@ -44,14 +44,14 @@ export default function ImageUploader({ value = [], onChange, label, maxFiles = 
     const newUrls = [...value];
 
     try {
-      // 1. Fetch authentication signature from our backend
-      const authRes = await fetch('/api/imagekit-auth');
-      if (!authRes.ok) throw new Error('Failed to fetch upload signature');
-      const auth = await authRes.json();
-
-      // 2. Upload each file directly to ImageKit
+      // Upload each file directly to ImageKit
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
+
+        // 1. Fetch a fresh authentication signature from our backend for each file
+        const authRes = await fetch('/api/imagekit-auth');
+        if (!authRes.ok) throw new Error('Failed to fetch upload signature');
+        const auth = await authRes.json();
         
         const formData = new FormData();
         formData.append('file', file);
@@ -126,7 +126,7 @@ export default function ImageUploader({ value = [], onChange, label, maxFiles = 
             <div>
               <p className="text-sm font-bold text-white mb-1">Click to upload or drag & drop</p>
               <p className="text-[10px] tracking-widest uppercase text-zinc-500">
-                JPEG, PNG, WEBP (Max {maxFiles} files)
+                JPEG, PNG, WEBP{maxFiles ? ` (Max ${maxFiles} files)` : ''}
               </p>
             </div>
           </div>
