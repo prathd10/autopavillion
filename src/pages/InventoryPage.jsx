@@ -99,7 +99,7 @@ export default function InventoryPage() {
 
   // Filters State
   const [searchTerm, setSearchTerm] = useState('');
-  const [availability, setAvailability] = useState('available');
+  const [availability, setAvailability] = useState('all');
   const [searchParams, setSearchParams] = useSearchParams();
   const [activeBrand, setActiveBrand] = useState(searchParams.get('brand') || null);
   

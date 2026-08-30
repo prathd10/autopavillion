@@ -165,7 +165,7 @@ export default function SubmitReviewPage() {
                   type="text"
                   id="role"
                   required
-                  placeholder="Enter your title (e.g. Founder)"
+                  placeholder="Enter your title"
                   value={formData.role}
                   onChange={(e) => setFormData({ ...formData, role: e.target.value })}
                   className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-750 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all"

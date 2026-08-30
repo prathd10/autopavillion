@@ -1,27 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-
-const PREVIEW_ARTICLES = [
-  {
-    id: 1,
-    title: "The Evolution of Luxury Sedans in 2026",
-    category: "Industry Trends",
-    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    id: 2,
-    title: "Why Certified Pre-Owned is the Smart Choice",
-    category: "Buying Guide",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=600&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    title: "Preserving Value: Maintenance Tips",
-    category: "Ownership",
-    image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=600&auto=format&fit=crop"
-  }
-];
+import { ARTICLES } from '../data/blogs';
 
 export default function InsightsPreview() {
   return (
@@ -47,9 +27,9 @@ export default function InsightsPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {PREVIEW_ARTICLES.map(article => (
-            <Link to="/insights" key={article.id} className="group block">
-              <div className="relative h-64 mb-6 rounded-2xl overflow-hidden border border-white/10">
+          {ARTICLES.slice(0, 3).map(article => (
+            <Link to={`/insights/${article.id}`} key={article.id} className="group block">
+              <div className="relative h-64 mb-6 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 animate-fadeIn">
                 <img 
                   src={article.image} 
                   alt={article.title}
@@ -57,7 +37,7 @@ export default function InsightsPreview() {
                 />
               </div>
               <div className="space-y-3">
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">
                   {article.category}
                 </span>
                 <h3 className="text-lg font-bold font-heading uppercase text-white group-hover:text-zinc-300 transition-colors line-clamp-2">

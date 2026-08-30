@@ -3,36 +3,7 @@ import { ArrowLeft, ArrowRight, Calendar, User } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
-const ARTICLES = [
-  {
-    id: 1,
-    title: "The Evolution of Premium Sedans in 2026",
-    excerpt: "Discover how top luxury manufacturers are blending performance with unprecedented comfort in this year's lineup.",
-    date: "August 12, 2026",
-    author: "Auto Pavilion Editorial",
-    category: "Industry Trends",
-    image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: 2,
-    title: "Why Certified Pre-Owned is the Smart Choice",
-    excerpt: "An in-depth look at the rigorous inspection standards that make our certified pre-owned vehicles a reliable investment.",
-    date: "July 28, 2026",
-    author: "Auto Pavilion Editorial",
-    category: "Buying Guide",
-    image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1000&auto=format&fit=crop"
-  },
-  {
-    id: 3,
-    title: "Preserving Value: Maintenance Tips for Luxury Cars",
-    excerpt: "Expert advice from our service partners on how to maintain your vehicle's pristine condition and maximize its resale value.",
-    date: "July 15, 2026",
-    author: "Auto Pavilion Editorial",
-    category: "Ownership",
-    image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=1000&auto=format&fit=crop"
-  }
-];
+import { ARTICLES, FEATURED_ARTICLE } from '../data/blogs';
 
 export default function InsightsPage() {
   useEffect(() => {
@@ -64,10 +35,13 @@ export default function InsightsPage() {
         </div>
 
         {/* Featured Article */}
-        <div className="mb-16 rounded-3xl overflow-hidden relative group border border-white/10">
+        <Link 
+          to={`/insights/${FEATURED_ARTICLE.id}`}
+          className="mb-16 rounded-3xl overflow-hidden relative group border border-white/10 cursor-pointer shadow-2xl block"
+        >
           <div className="absolute inset-0 bg-black">
             <img 
-              src="https://images.unsplash.com/photo-1503376713253-7b719463b2f5?q=80&w=2000&auto=format&fit=crop" 
+              src={FEATURED_ARTICLE.image} 
               alt="Featured" 
               className="w-full h-full object-cover opacity-60 group-hover:opacity-40 transition-opacity duration-700" 
             />
@@ -78,52 +52,61 @@ export default function InsightsPage() {
             <span className="inline-block px-3 py-1 bg-white text-black text-[10px] font-bold uppercase tracking-widest rounded-full mb-4 w-max">
               Featured Insight
             </span>
-            <h2 className="text-3xl sm:text-5xl font-black font-heading uppercase tracking-tight mb-4 max-w-3xl">
-              The Future of Premium Mobility in India
+            <h2 className="text-3xl sm:text-5xl font-black font-heading uppercase tracking-tight mb-4 max-w-3xl group-hover:text-zinc-300 transition-colors">
+              {FEATURED_ARTICLE.title}
             </h2>
             <p className="text-zinc-300 font-mulish max-w-2xl mb-8">
-              As infrastructure improves and buyer preferences evolve, we analyze the shifting landscape of the Indian luxury car market and what to expect in the coming decade.
+              {FEATURED_ARTICLE.excerpt}
             </p>
             <div className="flex items-center space-x-6 text-xs text-zinc-400 font-bold uppercase tracking-widest">
               <div className="flex items-center space-x-2">
                 <Calendar className="w-4 h-4" />
-                <span>August 24, 2026</span>
+                <span>{FEATURED_ARTICLE.date}</span>
               </div>
               <div className="flex items-center space-x-2">
                 <User className="w-4 h-4" />
-                <span>Editorial Team</span>
+                <span>{FEATURED_ARTICLE.author}</span>
               </div>
             </div>
           </div>
-        </div>
+        </Link>
 
         {/* Articles Grid */}
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {ARTICLES.map((article) => (
-            <div key={article.id} className="group cursor-pointer">
-              <div className="relative h-64 mb-6 rounded-2xl overflow-hidden border border-white/10">
+            <Link 
+              to={`/insights/${article.id}`}
+              key={article.id} 
+              className="group cursor-pointer flex flex-col h-full bg-zinc-950/20 border border-white/5 hover:border-white/10 p-5 rounded-3xl transition-all duration-300 hover:-translate-y-1 shadow-lg animate-fadeIn"
+            >
+              <div className="relative h-48 sm:h-56 mb-6 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900">
                 <img 
                   src={article.image} 
                   alt={article.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
               </div>
-              <div className="space-y-4">
-                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
-                  {article.category}
-                </span>
-                <h3 className="text-xl font-bold font-heading uppercase text-white group-hover:text-zinc-300 transition-colors">
-                  {article.title}
-                </h3>
-                <p className="text-sm text-zinc-400 font-mulish line-clamp-3">
-                  {article.excerpt}
-                </p>
-                <div className="flex items-center justify-between text-xs font-bold text-zinc-500 uppercase tracking-widest pt-4 border-t border-white/10">
+              <div className="flex-1 flex flex-col justify-between space-y-4">
+                <div className="space-y-3">
+                  <span className="text-[10px] font-extrabold text-amber-500 uppercase tracking-widest block">
+                    {article.category}
+                  </span>
+                  <h3 className="text-lg font-bold font-heading uppercase text-white group-hover:text-zinc-300 transition-colors line-clamp-2">
+                    {article.title}
+                  </h3>
+                  <p className="text-xs sm:text-sm text-zinc-400 font-mulish line-clamp-3 leading-relaxed">
+                    {article.excerpt}
+                  </p>
+                </div>
+                <div className="flex items-center justify-between text-[10px] font-bold text-zinc-500 uppercase tracking-widest pt-4 border-t border-white/5">
                   <span>{article.date}</span>
-                  <ArrowRight className="w-4 h-4 group-hover:text-white transition-colors" />
+                  <div className="flex items-center space-x-1.5 text-zinc-450 group-hover:text-white transition-colors">
+                    <span>Read Article</span>
+                    <ArrowRight className="w-3.5 h-3.5" />
+                  </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
 
