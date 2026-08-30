@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { supabase } from '../../lib/supabase';
+import ImageUploader from '../../components/ImageUploader';
 import {
   Save, ArrowLeft, Loader2,
   AlertCircle, CheckCircle2
@@ -14,6 +15,7 @@ const EMPTY_TESTIMONIAL = {
   comment: '',
   car: '',
   status: 'active',
+  photo: '',
 };
 
 const STATUS_OPTS  = ['active', 'draft'];
@@ -212,6 +214,19 @@ export default function TestimonialForm() {
               placeholder="Enter the client's testimonial..." 
               required 
               as="textarea"
+            />
+          </Field>
+
+          <Field label="Client Photo / Profile (Optional)" id="photo">
+            <p className="text-[10px] tracking-widest uppercase text-zinc-500 mb-4">
+              Optional: Drag and drop or upload a client profile photo (portrait or with vehicle).
+            </p>
+            <ImageUploader
+              label="Client Photo"
+              value={testimonial.photo ? [testimonial.photo] : []}
+              onChange={(urls) => set('photo')(urls[0] || '')}
+              previewOpts={{ width: 150, height: 150, quality: 75 }}
+              maxFiles={1}
             />
           </Field>
         </Section>

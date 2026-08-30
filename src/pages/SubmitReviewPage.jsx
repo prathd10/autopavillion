@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { supabase } from '../lib/supabase';
+import ImageUploader from '../components/ImageUploader';
 import { usePageTracker } from '../hooks/usePageTracker';
 import { Star, MessageSquare, Check, Loader2, User, Briefcase, Car, FileText } from 'lucide-react';
 
@@ -12,7 +13,8 @@ export default function SubmitReviewPage() {
     name: '',
     role: '',
     car: '',
-    comment: ''
+    comment: '',
+    photo: ''
   });
   const [rating, setRating] = useState(5); // Visual only, luxury aesthetics
   const [loading, setLoading] = useState(false);
@@ -33,7 +35,8 @@ export default function SubmitReviewPage() {
       role: formData.role.trim(),
       car: formData.car.trim() || 'General Experience',
       comment: formData.comment.trim(),
-      status: 'active' // Reflects immediately on backend & frontend
+      status: 'active', // Reflects immediately on backend & frontend
+      photo: formData.photo || null
     };
 
     try {
@@ -43,7 +46,7 @@ export default function SubmitReviewPage() {
 
       if (dbError) throw dbError;
       setSuccess(true);
-      setFormData({ name: '', role: '', car: '', comment: '' });
+      setFormData({ name: '', role: '', car: '', comment: '', photo: '' });
     } catch (err) {
       console.error('[SubmitReviewPage]', err.message);
       setError(err.message || 'Failed to submit review. Please try again.');
@@ -184,6 +187,24 @@ export default function SubmitReviewPage() {
                   value={formData.comment}
                   onChange={(e) => setFormData({ ...formData, comment: e.target.value })}
                   className="w-full px-5 py-4 rounded-2xl bg-black/40 border border-white/10 text-white placeholder-zinc-700 text-sm font-medium focus:outline-none focus:border-white/30 focus:bg-white/5 transition-all resize-none"
+                />
+              </div>
+
+              {/* Photo Upload (Optional) */}
+              <div className="space-y-2">
+                <label className="text-[10px] font-extrabold uppercase tracking-widest text-zinc-400 flex items-center space-x-1.5">
+                  <User className="w-3 h-3 text-zinc-500" />
+                  <span>Your Photo (Optional)</span>
+                </label>
+                <p className="text-[10px] tracking-widest uppercase text-zinc-500 mb-2">
+                  Optional: Showcase yourself with your vehicle or share a profile photo.
+                </p>
+                <ImageUploader
+                  label="Client Photo"
+                  value={formData.photo ? [formData.photo] : []}
+                  onChange={(urls) => setFormData({ ...formData, photo: urls[0] || '' })}
+                  previewOpts={{ width: 150, height: 150, quality: 75 }}
+                  maxFiles={1}
                 />
               </div>
 
