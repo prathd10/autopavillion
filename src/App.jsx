@@ -16,6 +16,7 @@ import FAQPage from './pages/FAQPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import SubmitReviewPage from './pages/SubmitReviewPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 import Chatbot from './components/Chatbot';
 import ViewingModal from './components/ViewingModal';
 import ComparisonTray from './components/ComparisonTray';
@@ -66,9 +67,7 @@ export default function App() {
         <Route path="/finance" element={<FinancePage />} />
         <Route path="/compare" element={<ComparePage />} />
         <Route path="/insights" element={<InsightsPage />} />
-        <Route path="/insights/:slug" element={<BlogDetailPage />} />
-        <Route path="/blog" element={<Navigate to="/insights" replace />} />
-        <Route path="/blog/:slug" element={<BlogDetailPage />} />
+        <Route path="/insights/:id" element={<BlogDetailPage />} />
         <Route path="/faq" element={<FAQPage />} />
         <Route path="/privacy" element={<PrivacyPolicyPage />} />
         <Route path="/terms" element={<TermsOfServicePage />} />

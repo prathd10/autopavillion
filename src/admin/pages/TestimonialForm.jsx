@@ -195,7 +195,7 @@ export default function TestimonialForm() {
               <TextInput id="name" value={testimonial.name} onChange={set('name')} placeholder="Enter name" required />
             </Field>
             <Field label="Designation" id="role" required>
-              <TextInput id="role" value={testimonial.role} onChange={set('role')} placeholder="Enter designation (e.g. CEO / Collector)" required />
+              <TextInput id="role" value={testimonial.role} onChange={set('role')} placeholder="Enter designation" required />
             </Field>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
