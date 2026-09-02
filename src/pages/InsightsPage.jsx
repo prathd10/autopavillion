@@ -10,8 +10,15 @@ export default function InsightsPage() {
     window.scrollTo(0, 0);
   }, []);
 
+  const featuredArticle = BLOG_ARTICLES.find(a => a.featured) || BLOG_ARTICLES[0];
+
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
+      <SEO
+        title="Insights & Journal"
+        description="Explore our latest articles, market trends, and expert advice on buying, owning, and selling premium vehicles."
+        url="https://autopavilion.in/insights"
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -57,6 +64,11 @@ export default function InsightsPage() {
             </h2>
             <p className="text-zinc-300 font-mulish max-w-2xl mb-8">
               {FEATURED_ARTICLE.excerpt}
+            <h2 className="text-3xl sm:text-5xl font-black font-heading uppercase tracking-tight mb-4 max-w-3xl">
+              {featuredArticle.title}
+            </h2>
+            <p className="text-zinc-300 font-mulish max-w-2xl mb-8">
+              {featuredArticle.excerpt}
             </p>
             <div className="flex items-center space-x-6 text-xs text-zinc-400 font-bold uppercase tracking-widest">
               <div className="flex items-center space-x-2">
@@ -66,6 +78,11 @@ export default function InsightsPage() {
               <div className="flex items-center space-x-2">
                 <User className="w-4 h-4" />
                 <span>{FEATURED_ARTICLE.author}</span>
+                <span>{featuredArticle.publishedAt}</span>
+              </div>
+              <div className="flex items-center space-x-2">
+                <User className="w-4 h-4" />
+                <span>{featuredArticle.author.name}</span>
               </div>
             </div>
           </div>
@@ -80,8 +97,15 @@ export default function InsightsPage() {
               className="group cursor-pointer flex flex-col h-full bg-zinc-950/20 border border-white/5 hover:border-white/10 p-5 rounded-3xl transition-all duration-300 hover:-translate-y-1 shadow-lg animate-fadeIn"
             >
               <div className="relative h-48 sm:h-56 mb-6 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900">
+          {BLOG_ARTICLES.map((article) => (
+            <Link 
+              to={`/insights/${article.slug}`} 
+              key={article.id} 
+              className="group cursor-pointer block"
+            >
+              <div className="relative h-64 mb-6 rounded-2xl overflow-hidden border border-white/10">
                 <img 
-                  src={article.image} 
+                  src={article.coverImage} 
                   alt={article.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
@@ -104,6 +128,19 @@ export default function InsightsPage() {
                     <span>Read Article</span>
                     <ArrowRight className="w-3.5 h-3.5" />
                   </div>
+              <div className="space-y-4">
+                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
+                  {article.category}
+                </span>
+                <h3 className="text-xl font-bold font-heading uppercase text-white group-hover:text-zinc-300 transition-colors">
+                  {article.title}
+                </h3>
+                <p className="text-sm text-zinc-400 font-mulish line-clamp-3">
+                  {article.excerpt}
+                </p>
+                <div className="flex items-center justify-between text-xs font-bold text-zinc-500 uppercase tracking-widest pt-4 border-t border-white/10">
+                  <span>{article.publishedAt}</span>
+                  <ArrowRight className="w-4 h-4 group-hover:text-white transition-colors" />
                 </div>
               </div>
             </Link>

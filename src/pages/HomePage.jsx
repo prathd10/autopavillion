@@ -12,6 +12,7 @@ import TradeInCalculator from '../components/TradeInCalculator';
 import TrustStats from '../components/TrustStats';
 import Testimonials from '../components/Testimonials';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import { useCars } from '../hooks/useCars';
 import { usePageTracker } from '../hooks/usePageTracker';
 
@@ -69,6 +70,10 @@ export default function HomePage() {
         }} />
       ) : (
         <>
+          <SEO
+            description="Auto Pavilion is Mumbai's premier pre-owned luxury supercar dealership. Curated Porsche, Ferrari, Lamborghini, AMG, Rolls-Royce, and Bentley supercars with a 251-point diagnostic audit & verified history."
+            url="https://autopavilion.in"
+          />
           <Navbar
             compareCount={compareList.length}
             onOpenCompare={() => setShowCompareModal(true)}

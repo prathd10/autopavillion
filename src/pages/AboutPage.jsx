@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { usePageTracker } from '../hooks/usePageTracker';
-import { Sparkles, ArrowRight, Quote, Compass, Eye, Shield, Users, Landmark, MapPin } from 'lucide-react';
+import { ArrowRight, Quote, Compass, Eye, Shield, Users, Landmark, MapPin } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function AboutPage() {
   usePageTracker('/about');
@@ -26,6 +27,11 @@ export default function AboutPage() {
 
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col">
+      <SEO
+        title="About Us - Luxury Supercar Heritage & 251-Point Standard"
+        description="Learn about Auto Pavilion Mumbai's legacy of excellence, founder vision by Mohd. Atique, and our uncompromising 251-point supercar diagnostic certification."
+        url="https://autopavilion.in/about"
+      />
       <Navbar />
 
       <main className="flex-1">

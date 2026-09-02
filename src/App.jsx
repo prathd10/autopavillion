@@ -11,6 +11,7 @@ import SellPage from './pages/SellPage';
 import FinancePage from './pages/FinancePage';
 import ComparePage from './pages/ComparePage';
 import InsightsPage from './pages/InsightsPage';
+import BlogDetailPage from './pages/BlogDetailPage';
 import FAQPage from './pages/FAQPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
@@ -42,6 +43,8 @@ import ProtectedRoute from './admin/ProtectedRoute';
  * - /about          → Public about page
  * - /sourcing       → Public sourcing page
  * - /faq            → Public FAQ page
+ * - /insights       → Public insights/blog listing
+ * - /insights/:slug → Single blog article view
  * - /admin/login    → Supabase auth login
  * - /admin/*        → Protected admin panel (dashboard, inventory CRUD)
  *

@@ -9,6 +9,7 @@ import { useCars } from '../hooks/useCars';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CarCard from '../components/CarCard';
+import SEO from '../components/SEO';
 
 export default function CarDetailsPage() {
   const { slug } = useParams();
@@ -83,8 +84,51 @@ export default function CarDetailsPage() {
     }
   };
 
+  // Dynamic Car Structured Data for Rich Snippets
+  const carSchema = car ? {
+    "@context": "https://schema.org",
+    "@type": "Car",
+    "name": `${car.year} ${car.brand} ${car.name}`,
+    "manufacturer": {
+      "@type": "Organization",
+      "name": car.brand
+    },
+    "model": car.name,
+    "vehicleModelDate": car.year?.toString(),
+    "bodyType": car.bodyType || "Coupe",
+    "fuelType": car.fuelType || "Petrol",
+    "vehicleTransmission": car.transmission || "Automatic",
+    "mileageFromOdometer": {
+      "@type": "QuantitativeValue",
+      "value": car.mileageKms || "10000",
+      "unitCode": "KMT"
+    },
+    "image": car.images || [],
+    "description": car.subtitle || `${car.year} ${car.brand} ${car.name} available at Auto Pavilion Mumbai. Certified with 251-point audit.`,
+    "offers": {
+      "@type": "Offer",
+      "price": car.priceRaw || "10000000",
+      "priceCurrency": "INR",
+      "availability": "https://schema.org/InStock",
+      "seller": {
+        "@type": "AutoDealer",
+        "name": "Auto Pavilion Mumbai"
+      }
+    }
+  } : null;
+
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black">
+      {car && (
+        <SEO
+          title={`${car.year} ${car.brand} ${car.name} - ${car.price}`}
+          description={`Certified Pre-Owned ${car.year} ${car.brand} ${car.name} for sale in Mumbai. ${car.subtitle || ''}. 251-point quality audit passed with complete service history.`}
+          image={car.images && car.images.length > 0 ? car.images[0] : undefined}
+          url={`https://autopavilion.in/inventory/${car.slug}`}
+          schema={carSchema}
+        />
+      )}
+
       <Navbar compareCount={0} onOpenCompare={() => {}} searchTerm="" setSearchTerm={() => {}} />
 
       <main className="pt-24 pb-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

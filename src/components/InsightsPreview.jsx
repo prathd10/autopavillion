@@ -1,7 +1,7 @@
 import React from 'react';
 import { ArrowRight } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import { ARTICLES } from '../data/blogs';
+import { BLOG_ARTICLES } from '../data/blogData';
 
 export default function InsightsPreview() {
   return (
@@ -31,7 +31,7 @@ export default function InsightsPreview() {
             <Link to={`/insights/${article.id}`} key={article.id} className="group block">
               <div className="relative h-64 mb-6 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 animate-fadeIn">
                 <img 
-                  src={article.image} 
+                  src={article.coverImage} 
                   alt={article.title}
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
