@@ -27,9 +27,9 @@ export default function InsightsPreview() {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-          {ARTICLES.slice(0, 3).map(article => (
-            <Link to={`/insights/${article.id}`} key={article.id} className="group block">
-              <div className="relative h-64 mb-6 rounded-2xl overflow-hidden border border-white/10 bg-zinc-900 animate-fadeIn">
+          {BLOG_ARTICLES.map(article => (
+            <Link to={`/insights/${article.slug}`} key={article.id} className="group block">
+              <div className="relative h-64 mb-6 rounded-2xl overflow-hidden border border-white/10">
                 <img 
                   src={article.coverImage} 
                   alt={article.title}
@@ -37,7 +37,7 @@ export default function InsightsPreview() {
                 />
               </div>
               <div className="space-y-3">
-                <span className="text-[10px] font-bold text-amber-500 uppercase tracking-widest block">
+                <span className="text-[10px] font-bold text-zinc-500 uppercase tracking-widest">
                   {article.category}
                 </span>
                 <h3 className="text-lg font-bold font-heading uppercase text-white group-hover:text-zinc-300 transition-colors line-clamp-2">

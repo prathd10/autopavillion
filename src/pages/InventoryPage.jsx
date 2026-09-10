@@ -284,7 +284,7 @@ export default function InventoryPage() {
     setActiveTrans('');
     setActiveOwners('');
     setActiveLocation('');
-    setAvailability('available');
+    setAvailability('all');
     setSearchParams({});
   };
 
@@ -350,16 +350,6 @@ export default function InventoryPage() {
             {/* Availability Filter Tabs */}
             <div className="grid grid-cols-2 gap-1.5 p-1 bg-black/60 border border-white/5 rounded-xl">
               <button
-                onClick={() => setAvailability('available')}
-                className={`py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all ${
-                  availability === 'available'
-                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/10'
-                    : 'text-zinc-400 hover:text-white bg-transparent'
-                }`}
-              >
-                Available
-              </button>
-              <button
                 onClick={() => setAvailability('all')}
                 className={`py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all ${
                   availability === 'all'
@@ -368,6 +358,16 @@ export default function InventoryPage() {
                 }`}
               >
                 All Vehicles
+              </button>
+              <button
+                onClick={() => setAvailability('available')}
+                className={`py-2 rounded-lg text-[10px] font-black uppercase tracking-wider transition-all ${
+                  availability === 'available'
+                    ? 'bg-amber-500 text-black shadow-lg shadow-amber-500/10'
+                    : 'text-zinc-400 hover:text-white bg-transparent'
+                }`}
+              >
+                Available Only
               </button>
             </div>
 
