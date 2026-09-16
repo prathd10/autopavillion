@@ -3,7 +3,7 @@ export const FEATURED_ARTICLE = {
   title: "The Future of Premium Mobility in India",
   excerpt: "As infrastructure improves and buyer preferences evolve, we analyze the shifting landscape of the Indian luxury car market and what to expect in the coming decade.",
   date: "August 24, 2026",
-  author: "Editorial Team",
+  author: "Autopavilion editorial team",
   category: "Featured Insight",
   image: "https://images.unsplash.com/photo-1503376713253-7b719463b2f5?q=80&w=2000&auto=format&fit=crop",
   content: `The Indian luxury automotive segment is undergoing a massive transformation as we head deeper into the decade. Driven by robust macroeconomic growth, rising disposable incomes, and key infrastructure additions like the Mumbai Trans Harbour Link (Atal Setu) and the coastal road network, luxury car ownership has expanded far beyond traditional enclaves.
@@ -24,7 +24,7 @@ export const ARTICLES = [
     title: "The Evolution of Premium Sedans in 2026",
     excerpt: "Discover how top luxury manufacturers are blending performance with unprecedented comfort in this year's lineup.",
     date: "August 12, 2026",
-    author: "Auto Pavilion Editorial",
+    author: "Autopavilion editorial team",
     category: "Industry Trends",
     image: "https://images.unsplash.com/photo-1605559424843-9e4c228bf1c2?q=80&w=1000&auto=format&fit=crop",
     content: `The luxury sedan landscape in India, particularly within the bustling streets of Mumbai and Navi Mumbai, has undergone a monumental shift in 2026. Buyers are no longer just looking for a status symbol; they demand a blend of advanced hybrid efficiency, executive-class ride comfort, and cutting-edge digital integration.
@@ -43,7 +43,7 @@ With Navi Mumbai emerging as a premium corporate and residential hub, areas like
     title: "Why Certified Pre-Owned is the Smart Choice",
     excerpt: "An in-depth look at the rigorous inspection standards that make our certified pre-owned vehicles a reliable investment.",
     date: "July 28, 2026",
-    author: "Auto Pavilion Editorial",
+    author: "Autopavilion editorial team",
     category: "Buying Guide",
     image: "https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?q=80&w=1000&auto=format&fit=crop",
     content: `Investing in a luxury vehicle is a significant milestone, but smart buyers in Mumbai and Navi Mumbai know that buying brand-new isn't always the most financially sound decision. The certified pre-owned (CPO) luxury car market is booming, and for good reason.
@@ -62,7 +62,7 @@ For second-hand premium cars in Mumbai, verifying flood history is critical. Our
     title: "Preserving Value: Maintenance Tips for Luxury Cars",
     excerpt: "Expert advice from our service partners on how to maintain your vehicle's pristine condition and maximize its resale value.",
     date: "July 15, 2026",
-    author: "Auto Pavilion Editorial",
+    author: "Autopavilion editorial team",
     category: "Ownership",
     image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=1000&auto=format&fit=crop",
     content: `Owning a luxury car in Mumbai or Navi Mumbai is an exhilarating experience, but the coastal environment presents unique challenges. High humidity, saline air, heavy monsoon rainfall, and congested traffic can take a toll on high-end vehicles from Porsche, Mercedes-Benz, BMW, and Audi. Here is how you can preserve your vehicle's pristine condition and maximize its future resale value.
