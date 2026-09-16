@@ -3,7 +3,7 @@ import { useParams, Link } from 'react-router-dom';
 import { 
   ArrowLeft, Calendar, Clock, CheckCircle2, 
   ChevronDown, ChevronUp, Sparkles, ShieldCheck, ArrowRight, 
-  Copy, Check, MessageSquare 
+  Copy, Check, MessageSquare, User 
 } from 'lucide-react';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -178,14 +178,12 @@ export default function BlogDetailPage() {
             )}
 
             {/* Author Byline */}
-            <div className="flex items-center space-x-4 pt-4 border-t border-white/10">
-              <img 
-                src={article.author.avatar} 
-                alt={article.author.name}
-                className="w-12 h-12 rounded-full object-cover border border-white/20 shadow-md"
-              />
+            <div className="flex items-center space-x-3 pt-4 border-t border-white/10">
+              <div className="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center border border-white/10 text-zinc-400">
+                <User className="w-5 h-5" />
+              </div>
               <div>
-                <div className="font-bold text-sm text-white">{article.author.name}</div>
+                <div className="font-bold text-sm text-white">Autopavilion editorial team</div>
                 <div className="text-xs text-zinc-400">{article.author.role}</div>
               </div>
             </div>

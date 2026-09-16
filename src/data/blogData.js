@@ -15,9 +15,8 @@ export const BLOG_ARTICLES = [
     publishedAt: "August 28, 2026",
     updatedAt: "August 29, 2026",
     author: {
-      name: "Rehan & Editorial Team",
-      role: "Supercar Sourcing & Diagnostics Lead",
-      avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=300&auto=format&fit=crop"
+      name: "Autopavilion editorial team",
+      role: "Editorial Desk"
     },
     coverImage: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1600&auto=format&fit=crop",
     image: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1600&auto=format&fit=crop",
@@ -141,9 +140,8 @@ At Auto Pavilion, our legal concierge manages all RTO endorsements, transfer fil
     publishedAt: "August 25, 2026",
     updatedAt: "August 27, 2026",
     author: {
-      name: "Auto Pavilion Editorial",
-      role: "Luxury Vehicle Valuation Desk",
-      avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=300&auto=format&fit=crop"
+      name: "Autopavilion editorial team",
+      role: "Editorial Desk"
     },
     coverImage: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1600&auto=format&fit=crop",
     image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1600&auto=format&fit=crop",
@@ -227,9 +225,8 @@ Choose the **Mercedes-AMG GT** if you crave thunderous V8 theatrics, muscle-car 
     publishedAt: "August 21, 2026",
     updatedAt: "August 23, 2026",
     author: {
-      name: "Auto Pavilion Master Tech Team",
-      role: "Lead Quality & Forensic Inspection",
-      avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=300&auto=format&fit=crop"
+      name: "Autopavilion editorial team",
+      role: "Editorial Desk"
     },
     coverImage: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=1600&auto=format&fit=crop",
     image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=1600&auto=format&fit=crop",

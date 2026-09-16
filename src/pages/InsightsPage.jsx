@@ -73,7 +73,7 @@ export default function InsightsPage() {
               </div>
               <div className="flex items-center space-x-2">
                 <User className="w-4 h-4" />
-                <span>{featuredArticle.author.name}</span>
+                <span>Autopavilion editorial team</span>
               </div>
             </div>
           </div>
