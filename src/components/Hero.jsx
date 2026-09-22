@@ -8,9 +8,14 @@ export default function Hero() {
 
   // User's looping video file
   const videoSrc = "/the_car_is_being_overshadowed.mp4";
-  const posterImg = "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=2400&auto=format&fit=crop";
 
   useEffect(() => {
+    if (videoRef.current) {
+      videoRef.current.play().catch(() => {
+        // Handled by browser autoplay policy
+      });
+    }
+
     // Staggered line-by-line entrance animation after preloader finishes
     const t1 = setTimeout(() => setAnimStep(1), 350);  // Line 1: LIVE BETTER,
     const t2 = setTimeout(() => setAnimStep(2), 750);  // Line 2: LIVE LUXURY
@@ -41,7 +46,7 @@ export default function Hero() {
     <section className="relative w-full min-h-screen bg-black text-white flex flex-col justify-between overflow-hidden">
       
       {/* FULL BLEED CINEMATIC USER VIDEO BACKGROUND */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
         <video
           ref={videoRef}
           autoPlay
@@ -49,16 +54,10 @@ export default function Hero() {
           muted={isMuted}
           playsInline
           preload="auto"
-          poster={posterImg}
           className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
           style={{ transform: 'scale(1.12) translate(3.5%, 3.5%)' }}
         >
           <source src={videoSrc} type="video/mp4" />
-          <img
-            src={posterImg}
-            alt="Auto Pavilion Vehicle"
-            className="w-full h-full object-cover object-center"
-          />
         </video>
 
         {/* Lighter Gradient Vignette Overlays to reveal the video supercar clearly */}
