@@ -29,6 +29,9 @@ importers:
       express:
         specifier: ^5.2.1
         version: 5.2.1(supports-color@10.2.2)
+      imagekit:
+        specifier: ^6.0.0
+        version: 6.0.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
       lucide-react:
         specifier: ^1.27.0
         version: 1.46.0(react@19.3.0)
@@ -60,9 +63,6 @@ importers:
       dotenv:
         specifier: ^17.4.2
         version: 17.4.2
-      imagekit:
-        specifier: ^6.0.0
-        version: 6.0.0(debug@4.4.3(supports-color@10.2.2))(supports-color@10.2.2)
       oxlint:
         specifier: ^1.71.0
         version: 1.83.0
