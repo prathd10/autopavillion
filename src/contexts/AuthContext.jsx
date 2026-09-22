@@ -4,24 +4,70 @@ import { supabase } from '../lib/supabase';
 const AuthContext = createContext(null);
 
 /**
- * Provides Supabase auth state (user, loading) and actions (signIn, signOut)
+ * Checks if a given Supabase user has verified administrative privileges.
+ * Multi-layer check: app_metadata, admin_users table, or administrative email domain.
+ */
+async function checkAdminStatus(currentUser) {
+  if (!currentUser) return false;
+
+  // 1. Check custom Supabase auth metadata role
+  if (currentUser.app_metadata?.role === 'admin' || currentUser.user_metadata?.role === 'admin') {
+    return true;
+  }
+
+  // 2. Check admin_users database table
+  try {
+    const { data, error } = await supabase
+      .from('admin_users')
+      .select('id')
+      .eq('id', currentUser.id)
+      .maybeSingle();
+    if (!error && data) return true;
+  } catch {
+    // Silently continue to fallback
+  }
+
+  // 3. Fallback verification for designated Auto Pavilion dealership management emails
+  const email = (currentUser.email || '').toLowerCase().trim();
+  const allowedAdmins = [
+    'admin@autopavilion.com',
+    'admin@autopavilion.in',
+    'info@autopavilion.in',
+    'management@autopavilion.in'
+  ];
+  if (allowedAdmins.includes(email) || email.endsWith('@autopavilion.in')) {
+    return true;
+  }
+
+  return false;
+}
+
+/**
+ * Provides Supabase auth state (user, isAdmin, loading) and actions (signIn, signOut)
  * to all children. Wrap the app root with this provider.
  */
 export function AuthProvider({ children }) {
-  const [user, setUser]     = useState(null);
+  const [user, setUser] = useState(null);
+  const [isAdmin, setIsAdmin] = useState(false);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     // Hydrate session from storage on mount
-    supabase.auth.getSession().then(({ data: { session } }) => {
-      setUser(session?.user ?? null);
+    supabase.auth.getSession().then(async ({ data: { session } }) => {
+      const currentUser = session?.user ?? null;
+      setUser(currentUser);
+      const admin = await checkAdminStatus(currentUser);
+      setIsAdmin(admin);
       setLoading(false);
     });
 
     // Keep state in sync with Supabase auth events
     const { data: { subscription } } = supabase.auth.onAuthStateChange(
-      (_event, session) => {
-        setUser(session?.user ?? null);
+      async (_event, session) => {
+        const currentUser = session?.user ?? null;
+        setUser(currentUser);
+        const admin = await checkAdminStatus(currentUser);
+        setIsAdmin(admin);
       }
     );
 
@@ -34,7 +80,7 @@ export function AuthProvider({ children }) {
   const signOut = () => supabase.auth.signOut();
 
   return (
-    <AuthContext.Provider value={{ user, loading, signIn, signOut }}>
+    <AuthContext.Provider value={{ user, isAdmin, loading, signIn, signOut }}>
       {children}
     </AuthContext.Provider>
   );

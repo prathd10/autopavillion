@@ -20,12 +20,25 @@ async function getVehiclesCatalog() {
   }
 }
 
-export default async function handler(req, res) {
-  // CORS setup for Vercel Serverless Functions
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*');
+function setCorsHeaders(req, res) {
+  const origin = req.headers.origin || '';
+  const isLocal = origin.includes('localhost') || origin.includes('127.0.0.1');
+  const isAllowedDomain = origin.endsWith('.autopavilion.in') || origin === 'https://autopavilion.in' || origin.endsWith('.vercel.app');
+
+  if (isLocal || isAllowedDomain) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+  } else if (!origin) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', 'https://autopavilion.in');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept');
+}
+
+export default async function handler(req, res) {
+  setCorsHeaders(req, res);
 
   if (req.method === 'OPTIONS') {
     res.status(200).end();
@@ -33,12 +46,13 @@ export default async function handler(req, res) {
   }
 
   if (req.method !== 'GET') {
-    res.status(405).json({ error: 'Method not allowed' });
+    res.status(405).json({ error: 'Method not allowed.' });
     return;
   }
 
   try {
-    const query = (req.query.q || '').trim().toLowerCase();
+    const rawQ = req.query.q || '';
+    const query = (typeof rawQ === 'string' ? rawQ : '').trim().toLowerCase().slice(0, 100);
     
     // 1. Fetch active showroom inventory
     let inventoryCars = [];

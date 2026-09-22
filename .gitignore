@@ -23,3 +23,12 @@ dist-ssr
 *.sln
 *.sw?
 .env
+.env*.local
+
+# Database dumps & backup files
+*.dump
+*.bak
+*.sql.gz
+ans_*.sql
+ans_a57_mytemp_website_1774688871.sql
+scripts/migration/backups/
