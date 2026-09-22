@@ -4,12 +4,25 @@ const supabaseUrl = process.env.VITE_SUPABASE_URL || '';
 const supabaseKey = process.env.SUPABASE_SERVICE_ROLE_KEY || process.env.VITE_SUPABASE_ANON_KEY || '';
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export default async function handler(req, res) {
-  // CORS setup for Vercel Serverless Functions
-  res.setHeader('Access-Control-Allow-Credentials', true);
-  res.setHeader('Access-Control-Allow-Origin', '*');
+function setCorsHeaders(req, res) {
+  const origin = req.headers.origin || '';
+  const isLocal = origin.includes('localhost') || origin.includes('127.0.0.1');
+  const isAllowedDomain = origin.endsWith('.autopavilion.in') || origin === 'https://autopavilion.in' || origin.endsWith('.vercel.app');
+
+  if (isLocal || isAllowedDomain) {
+    res.setHeader('Access-Control-Allow-Origin', origin);
+    res.setHeader('Access-Control-Allow-Credentials', 'true');
+  } else if (!origin) {
+    res.setHeader('Access-Control-Allow-Origin', '*');
+  } else {
+    res.setHeader('Access-Control-Allow-Origin', 'https://autopavilion.in');
+  }
   res.setHeader('Access-Control-Allow-Methods', 'GET,OPTIONS');
-  res.setHeader('Access-Control-Allow-Headers', 'X-CSRF-Token, X-Requested-With, Accept, Accept-Version, Content-Length, Content-MD5, Content-Type, Date, X-Api-Version');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization, X-CSRF-Token, X-Requested-With, Accept');
+}
+
+export default async function handler(req, res) {
+  setCorsHeaders(req, res);
 
   if (req.method === 'OPTIONS') {
     res.status(200).end();
@@ -17,21 +30,28 @@ export default async function handler(req, res) {
   }
 
   if (req.method !== 'GET') {
-    res.status(405).json({ error: 'Method not allowed' });
+    res.status(405).json({ error: 'Method not allowed.' });
     return;
   }
 
   try {
-    const id = req.query.id;
-    if (!id) {
-      return res.status(400).json({ error: 'Missing id parameter.' });
+    const rawId = req.query.id;
+    if (!rawId || typeof rawId !== 'string') {
+      return res.status(400).json({ error: 'Missing or invalid id parameter.' });
+    }
+
+    const id = rawId.trim();
+    // Validate id parameter format to prevent SSRF and path traversal
+    if (id.length > 100 || !/^[a-zA-Z0-9_\-/]+$/.test(id) || id.includes('..')) {
+      return res.status(400).json({ error: 'Invalid id format.' });
     }
     
-    // 1. Check inventory table (cars) first
+    // 1. Check inventory table (cars) first — MUST be active for public storefront
     const { data: inventoryCar } = await supabase
       .from('cars')
       .select('*')
       .eq('id', id)
+      .eq('status', 'active')
       .maybeSingle();
       
     if (inventoryCar) {
@@ -99,7 +119,7 @@ export default async function handler(req, res) {
     if (parts.length !== 3) {
       return res.status(400).json({ error: `Invalid canonical id format: ${id}` });
     }
-    const [kind, make_slug, model_slug] = parts;
+    const [kind, make_slug, model_slug] = parts.map(p => encodeURIComponent(p));
     
     const fullUrl = `https://vehiclesdb.com/v1/vehicles/${kind}/${make_slug}/${model_slug}/full`;
     const imagesUrl = `https://vehiclesdb.com/v1/vehicles/${kind}/${make_slug}/${model_slug}/images`;
@@ -137,7 +157,7 @@ export default async function handler(req, res) {
       return res.status(404).json({ error: `Vehicle model [${id}] not found in VehiclesDB.` });
     }
     
-    // Generate fallback specs for global catalogue if enrichment is gated (free tier)
+    // Generate fallback specs for global catalogue if enrichment is gated
     const generateFallbackSpecs = (make, model) => {
       const str = (make + model).toLowerCase();
       let hash = 0;
@@ -219,7 +239,7 @@ export default async function handler(req, res) {
       specs: rawData
     });
   } catch (error) {
-    console.error('Details API Error:', error);
-    res.status(500).json({ error: error.message });
+    console.error('[Details API Error]:', error);
+    res.status(500).json({ error: 'Failed to retrieve vehicle details.' });
   }
 }

@@ -3,10 +3,21 @@ import { supabase } from '../lib/supabase';
 import { ikUrl } from '../lib/imagekit';
 import { UploadCloud, X, Loader2, Image as ImageIcon } from 'lucide-react';
 
-export default function ImageUploader({ value = [], onChange, label, maxFiles = null, previewOpts }) {
+export default function ImageUploader({ 
+  value = [], 
+  onChange, 
+  label: _label, 
+  maxFiles = null, 
+  previewOpts,
+  purpose = 'inventory',
+  folder = '/autopavilion/cars'
+}) {
   const [uploading, setUploading] = useState(false);
   const [dragActive, setDragActive] = useState(false);
   const fileInputRef = useRef(null);
+
+  const ALLOWED_TYPES = ['image/jpeg', 'image/png', 'image/webp'];
+  const MAX_FILE_SIZE_BYTES = 10 * 1024 * 1024; // 10MB
 
   const handleDrag = (e) => {
     e.preventDefault();
@@ -40,17 +51,42 @@ export default function ImageUploader({ value = [], onChange, label, maxFiles = 
       return;
     }
 
+    // Client-side file validation
+    for (let i = 0; i < files.length; i++) {
+      const file = files[i];
+      if (!ALLOWED_TYPES.includes(file.type)) {
+        alert(`Invalid file format: "${file.name}". Only JPEG, PNG, and WebP images are allowed.`);
+        return;
+      }
+      if (file.size > MAX_FILE_SIZE_BYTES) {
+        alert(`File too large: "${file.name}". Maximum allowed size is 10 MB.`);
+        return;
+      }
+    }
+
     setUploading(true);
     const newUrls = [...value];
 
     try {
+      // Get current auth session if available
+      const { data: { session } } = await supabase.auth.getSession();
+      const authHeaders = {};
+      if (session?.access_token) {
+        authHeaders['Authorization'] = `Bearer ${session.access_token}`;
+      }
+
       // Upload each file directly to ImageKit
       for (let i = 0; i < files.length; i++) {
         const file = files[i];
 
-        // 1. Fetch a fresh authentication signature from our backend for each file
-        const authRes = await fetch('/api/imagekit-auth');
-        if (!authRes.ok) throw new Error('Failed to fetch upload signature');
+        // 1. Fetch an authenticated upload signature from backend
+        const authRes = await fetch(`/api/imagekit-auth?purpose=${encodeURIComponent(purpose)}`, {
+          headers: authHeaders
+        });
+        if (!authRes.ok) {
+          const errData = await authRes.json().catch(() => ({}));
+          throw new Error(errData.error || 'Failed to fetch upload signature');
+        }
         const auth = await authRes.json();
         
         const formData = new FormData();
@@ -59,8 +95,8 @@ export default function ImageUploader({ value = [], onChange, label, maxFiles = 
         formData.append('signature', auth.signature);
         formData.append('expire', auth.expire);
         formData.append('token', auth.token);
-        formData.append('fileName', file.name);
-        formData.append('folder', '/autopavillion/cars'); // Organize uploads into the same cars folder as the seed script
+        formData.append('fileName', file.name.replace(/[^a-zA-Z0-9._-]/g, '_'));
+        formData.append('folder', folder);
 
         const uploadRes = await fetch('https://upload.imagekit.io/api/v1/files/upload', {
           method: 'POST',

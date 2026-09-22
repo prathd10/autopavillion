@@ -41,7 +41,7 @@ export default function SubmitReviewPage() {
       company: formData.company.trim() || null,
       car: formData.car.trim() || 'General Experience',
       comment: formData.comment.trim(),
-      status: 'active', // Reflects immediately on backend & frontend
+      status: 'draft', // Submitted as draft for admin moderation
       photo: formData.photo || null
     };
 
@@ -88,7 +88,7 @@ export default function SubmitReviewPage() {
               <p className="text-zinc-400 text-xs tracking-widest uppercase">Thank you for sharing your experience</p>
             </div>
             <p className="text-zinc-300 text-sm leading-relaxed">
-              Your testimonial has been saved and published. It will now reflect on our public homepage and admin dashboard.
+              Your testimonial has been received. Our concierge team will review and publish it shortly.
             </p>
             <button
               onClick={() => setSuccess(false)}
@@ -234,6 +234,8 @@ export default function SubmitReviewPage() {
                 </p>
                 <ImageUploader
                   label="Client Photo"
+                  purpose="review"
+                  folder="/autopavilion/reviews"
                   value={formData.photo ? [formData.photo] : []}
                   onChange={(urls) => setFormData({ ...formData, photo: urls[0] || '' })}
                   previewOpts={{ width: 150, height: 150, quality: 75 }}

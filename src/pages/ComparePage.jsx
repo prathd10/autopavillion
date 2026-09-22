@@ -7,6 +7,7 @@ import { supabase } from '../lib/supabase';
 import { ikUrl } from '../lib/imagekit';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import { safeMarkdownBold } from '../lib/sanitize';
 
 export default function ComparePage() {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -579,7 +580,7 @@ export default function ComparePage() {
                     {verdict.pointsA.map((pt, idx) => (
                       <li key={idx} className="flex items-start space-x-2">
                         <span className="text-[#e2b857] font-bold shrink-0">✔</span>
-                        <span dangerouslySetInnerHTML={{ __html: pt.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                        <span dangerouslySetInnerHTML={{ __html: safeMarkdownBold(pt) }} />
                       </li>
                     ))}
                     {verdict.pointsA.length === 0 && (
@@ -596,7 +597,7 @@ export default function ComparePage() {
                     {verdict.pointsB.map((pt, idx) => (
                       <li key={idx} className="flex items-start space-x-2">
                         <span className="text-[#e2b857] font-bold shrink-0">✔</span>
-                        <span dangerouslySetInnerHTML={{ __html: pt.replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>') }} />
+                        <span dangerouslySetInnerHTML={{ __html: safeMarkdownBold(pt) }} />
                       </li>
                     ))}
                     {verdict.pointsB.length === 0 && (

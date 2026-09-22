@@ -10,6 +10,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import CarCard from '../components/CarCard';
 import SEO from '../components/SEO';
+import { sanitizeHtml } from '../lib/sanitize';
 
 export default function CarDetailsPage() {
   const { slug } = useParams();
@@ -197,7 +198,7 @@ export default function CarDetailsPage() {
                 <span className="text-[10px] uppercase font-bold tracking-widest text-zinc-500 block mb-1">Concierge Notes & Description</span>
                 <div 
                   className="text-xs sm:text-sm text-zinc-300 leading-relaxed space-y-3 description-content whitespace-pre-wrap"
-                  dangerouslySetInnerHTML={{ __html: car.description }}
+                  dangerouslySetInnerHTML={{ __html: sanitizeHtml(car.description) }}
                 />
               </div>
             )}
