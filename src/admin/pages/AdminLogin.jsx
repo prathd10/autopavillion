@@ -69,7 +69,7 @@ export default function AdminLogin() {
           {/* Header */}
           <div className="flex flex-col items-center justify-center text-center mb-8">
             <img
-              src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
+              src="/logo.png"
               alt="Auto Pavilion"
               className="h-10 w-auto object-contain brightness-0 invert mb-6"
             />

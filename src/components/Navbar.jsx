@@ -52,7 +52,7 @@ export default function Navbar({ compareCount, onOpenCompare, searchTerm, setSea
           {/* Left: Logo Image (Original Gold at top, White when scrolled down) */}
           <Link to="/" className="flex items-center group shrink-0">
             <img
-              src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
+              src="/logo.png"
               alt="Auto Pavilion"
               className={`h-7 sm:h-9 w-auto object-contain transition-all duration-300 group-hover:scale-105 ${
                 scrolled ? 'brightness-0 invert' : ''

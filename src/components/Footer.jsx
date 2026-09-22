@@ -97,7 +97,7 @@ export default function Footer() {
           <div className="lg:col-span-4 space-y-6">
             <Link to="/" className="inline-block">
               <img
-                src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
+                src="/logo.png"
                 alt="Auto Pavilion"
                 className="h-12 w-auto object-contain"
               />
@@ -267,8 +267,17 @@ export default function Footer() {
 
           <div className="animate-marquee flex items-center space-x-12 shrink-0">
             {(() => {
+              const excludedBrands = [
+                'lamborghini',
+                'ferrari',
+                'bugatti',
+                'rolls-royce',
+                'rolls royce',
+                'aston martin',
+                'mclaren'
+              ];
               const filteredLogos = BRAND_LOGOS.filter(
-                b => !['lamborghini', 'ferrari'].includes(b.name.toLowerCase())
+                b => !excludedBrands.includes(b.name.toLowerCase().trim())
               );
               return [...filteredLogos, ...filteredLogos].map((b, idx) => (
                 <button

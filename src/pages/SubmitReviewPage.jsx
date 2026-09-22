@@ -70,7 +70,7 @@ export default function SubmitReviewPage() {
       <header className="w-full flex justify-center pt-12 pb-2 relative z-10">
         <Link to="/" className="group flex items-center justify-center shrink-0">
           <img
-            src="https://autopavilion.in/wp-content/uploads/2023/10/cropped-autopavilion_logo.png"
+            src="/logo.png"
             alt="Auto Pavilion"
             className="h-9 sm:h-11 w-auto object-contain transition-all duration-300 group-hover:scale-105"
           />
