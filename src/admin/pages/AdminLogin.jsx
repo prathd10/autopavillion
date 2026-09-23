@@ -14,7 +14,7 @@ export default function AdminLogin() {
   const [loading,  setLoading]  = useState(false);
 
   const videoSrc = "/the_car_is_being_overshadowed.mp4";
-  const posterImg = "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=2400&auto=format&fit=crop";
+  const [videoLoaded, setVideoLoaded] = useState(false);
 
   // Already logged in — redirect straight away
   if (user) {
@@ -47,17 +47,19 @@ export default function AdminLogin() {
   return (
     <div className="relative min-h-screen bg-black text-white flex items-center justify-center overflow-hidden font-mulish">
       {/* CINEMATIC VIDEO BACKGROUND */}
-      <div className="absolute inset-0 w-full h-full overflow-hidden">
+      <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
         <video
           autoPlay
           loop
           muted
           playsInline
-          poster={posterImg}
-          className="w-full h-full object-cover object-center filter brightness-50 contrast-125 scale-105"
+          onLoadedData={() => setVideoLoaded(true)}
+          onPlaying={() => setVideoLoaded(true)}
+          className={`w-full h-full object-cover object-center filter brightness-50 contrast-125 scale-105 transition-opacity duration-700 ${
+            videoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
         >
           <source src={videoSrc} type="video/mp4" />
-          <img src={posterImg} alt="Background" className="w-full h-full object-cover object-center" />
         </video>
         <div className="absolute inset-0 bg-gradient-to-t from-black via-black/40 to-black/80 pointer-events-none" />
       </div>
@@ -94,7 +96,7 @@ export default function AdminLogin() {
                 onChange={e => setEmail(e.target.value)}
                 required
                 autoComplete="email"
-                placeholder="admin@autopavilion.com"
+                placeholder="work.autopavillion@gmail.com"
                 className="w-full px-5 py-3.5 rounded-2xl bg-white/5 border border-white/10
                   text-white placeholder-zinc-600 text-sm
                   focus:outline-none focus:border-white/40 focus:bg-white/10
