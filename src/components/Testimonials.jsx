@@ -56,19 +56,29 @@ export default function Testimonials() {
                 </div>
 
                 <div className="pt-3 border-t border-white/10 flex items-center gap-3">
-                  {r.photo && (
+                  {r.photo ? (
                     <img 
                       src={ikUrl(r.photo, { width: 120, height: 120, quality: 85 })} 
                       alt={r.name}
-                      className="w-14 sm:w-16 h-14 sm:h-16 rounded-full object-cover border border-white/20 ring-4 ring-white/5 shadow-xl flex-shrink-0 bg-zinc-900"
+                      className="w-12 sm:w-14 h-12 sm:h-14 rounded-full object-cover border border-white/20 ring-4 ring-white/5 shadow-xl flex-shrink-0 bg-zinc-900"
                     />
+                  ) : (
+                    <div className="w-12 sm:w-14 h-12 sm:h-14 rounded-full border border-white/20 ring-4 ring-white/5 shadow-xl flex-shrink-0 bg-gradient-to-br from-zinc-800 to-zinc-950 flex items-center justify-center font-bold text-amber-400 text-sm">
+                      {r.name?.charAt(0) || 'G'}
+                    </div>
                   )}
                   <div className="min-w-0 flex-1">
                     <h4 className="text-xs sm:text-sm font-bold text-white font-heading truncate">{r.name}</h4>
-                    <span className="text-[10px] sm:text-[11px] text-zinc-400 block font-semibold truncate">
-                      {r.role}{r.company ? ` at ${r.company}` : ''}
-                    </span>
-                    <span className="text-[9px] sm:text-[10px] text-zinc-400 font-mono block mt-0.5 truncate">Purchased: {r.car}</span>
+                    {r.role && (
+                      <span className="text-[10px] sm:text-[11px] text-zinc-400 block font-semibold truncate">
+                        {r.role}{r.company && r.company !== 'Google' ? ` at ${r.company}` : ''}
+                      </span>
+                    )}
+                    {r.car && (
+                      <span className="text-[9px] sm:text-[10px] text-zinc-400 font-mono block mt-0.5 truncate">
+                        Purchased: {r.car}
+                      </span>
+                    )}
                   </div>
                 </div>
               </div>

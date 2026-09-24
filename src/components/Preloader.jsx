@@ -5,12 +5,15 @@ export default function Preloader({ onComplete }) {
   const [showUnderline, setShowUnderline] = useState(false);
   const [fadeOut, setFadeOut] = useState(false);
 
-  const brandName = "AUTO PAVILION";
+  // Exact letter cutoffs for Auto Pavilion logo image (1108x158)
+  // "A", "u", "t", "o", " ", "P", "a", "v", "i", "l", "i", "o", "n" (13 steps)
+  const cutoffs = [0, 11.5, 19.5, 26.5, 36.5, 43.5, 50.5, 56.5, 61.5, 70.0, 74.5, 79.5, 84.0, 100];
+  const totalSteps = cutoffs.length - 1;
 
   useEffect(() => {
     const letterTimer = setInterval(() => {
       setLettersVisible((prev) => {
-        if (prev < brandName.length) {
+        if (prev < totalSteps) {
           return prev + 1;
         } else {
           clearInterval(letterTimer);
@@ -31,6 +34,8 @@ export default function Preloader({ onComplete }) {
     };
   }, [onComplete]);
 
+  const currentPercent = cutoffs[lettersVisible] || 0;
+
   return (
     <div
       className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-all duration-800 ${
@@ -47,37 +52,55 @@ export default function Preloader({ onComplete }) {
             background-position: 200% 0;
           }
         }
-        .gold-shine-text {
+        .gold-shine-mask {
           background: linear-gradient(110deg, #D4AF37 35%, #FFFDF0 50%, #D4AF37 65%);
           background-size: 200% 100%;
-          -webkit-background-clip: text;
-          -webkit-text-fill-color: transparent;
           animation: subtleGoldShine 3.5s linear infinite;
         }
       `}</style>
 
-      {/* Main Animated Name */}
-      <div className="relative px-3 sm:px-6 py-2 text-center w-full max-w-4xl mx-auto overflow-hidden">
-        <h1 
-          className="text-[20px] min-[360px]:text-[24px] sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-[0.1em] sm:tracking-[0.18em] flex items-center justify-center whitespace-nowrap overflow-hidden"
-          style={{ fontFamily: "'Cinzel', serif" }}
-        >
-          {brandName.split('').map((char, index) => (
-            <span
-              key={index}
-              className={`inline-block transition-all duration-500 transform shrink-0 ${
-                index < lettersVisible
-                  ? 'opacity-100 translate-y-0'
-                  : 'opacity-0 translate-y-3'
-              } ${showUnderline ? 'gold-shine-text' : 'text-white'} ${char === ' ' ? 'w-2 sm:w-6' : ''}`}
-            >
-              {char}
-            </span>
-          ))}
-        </h1>
+      {/* Main Animated Logo */}
+      <div className="relative px-4 sm:px-6 py-2 text-center w-full max-w-4xl mx-auto overflow-hidden">
+        <div className="relative mx-auto w-[270px] min-[360px]:w-[310px] sm:w-[480px] md:w-[600px] lg:w-[680px] aspect-[1108/158] flex items-center justify-center">
+          {/* Logo container with letter-by-letter reveal */}
+          <div
+            className="w-full h-full relative"
+            style={{
+              clipPath: `inset(0 ${100 - currentPercent}% 0 0)`,
+              transition: 'clip-path 90ms linear',
+            }}
+          >
+            {/* Base Logo Image (Crisp white during reveal, transitions to original gold) */}
+            <img
+              src="/logo.png"
+              alt="Auto Pavilion"
+              className={`w-full h-full object-contain transition-all duration-500 ${
+                showUnderline ? 'opacity-100 filter-none' : 'brightness-0 invert opacity-95'
+              }`}
+            />
+
+            {/* Metallic Gold Sheen Overlay when fully revealed */}
+            <div
+              className={`absolute inset-0 pointer-events-none transition-opacity duration-700 ${
+                showUnderline ? 'opacity-100 gold-shine-mask' : 'opacity-0'
+              }`}
+              style={{
+                maskImage: 'url(/logo.png)',
+                WebkitMaskImage: 'url(/logo.png)',
+                maskSize: 'contain',
+                WebkitMaskSize: 'contain',
+                maskRepeat: 'no-repeat',
+                WebkitMaskRepeat: 'no-repeat',
+                maskPosition: 'center',
+                WebkitMaskPosition: 'center',
+                mixBlendMode: 'screen',
+              }}
+            />
+          </div>
+        </div>
 
         {/* Subtle Gold Underline */}
-        <div className="relative mt-4 h-[2px] w-full max-w-xs sm:max-w-lg mx-auto overflow-hidden rounded-full bg-white/10">
+        <div className="relative mt-5 sm:mt-6 h-[2px] w-full max-w-xs sm:max-w-lg mx-auto overflow-hidden rounded-full bg-white/10">
           <div
             className={`h-full bg-[#D4AF37] transition-all duration-700 ease-out shadow-[0_0_8px_rgba(212,175,55,0.4)] ${
               showUnderline ? 'w-full opacity-100' : 'w-0 opacity-0'
@@ -88,3 +111,4 @@ export default function Preloader({ onComplete }) {
     </div>
   );
 }
+
