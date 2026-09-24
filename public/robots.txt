@@ -5,4 +5,4 @@ Disallow: /admin/
 Disallow: /admin/*
 
 # Sitemap index
-Sitemap: https://autopavilion.in/sitemap.xml
+Sitemap: https://www.autopavilion.in/sitemap.xml
