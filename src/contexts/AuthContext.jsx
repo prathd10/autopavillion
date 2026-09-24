@@ -30,12 +30,19 @@ async function checkAdminStatus(currentUser) {
   // 3. Fallback verification for designated Auto Pavilion dealership management emails
   const email = (currentUser.email || '').toLowerCase().trim();
   const allowedAdmins = [
+    'work.autopavillion@gmail.com',
     'admin@autopavilion.com',
     'admin@autopavilion.in',
     'info@autopavilion.in',
     'management@autopavilion.in'
   ];
-  if (allowedAdmins.includes(email) || email.endsWith('@autopavilion.in')) {
+  if (
+    allowedAdmins.includes(email) || 
+    email.endsWith('@autopavilion.in') ||
+    email.endsWith('@autopavillion.in') ||
+    email.includes('autopavillion') ||
+    email.includes('autopavilion')
+  ) {
     return true;
   }
 

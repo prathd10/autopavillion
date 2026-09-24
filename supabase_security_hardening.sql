@@ -46,8 +46,10 @@ begin
   end if;
 
   -- 3. Check administrative email domain or primary admin accounts
-  if (auth.jwt() ->> 'email') in ('admin@autopavilion.com', 'admin@autopavilion.in', 'info@autopavilion.in', 'management@autopavilion.in')
-     or (auth.jwt() ->> 'email') like '%@autopavilion.in' then
+  if (auth.jwt() ->> 'email') in ('work.autopavillion@gmail.com', 'admin@autopavilion.com', 'admin@autopavilion.in', 'info@autopavilion.in', 'management@autopavilion.in')
+     or (auth.jwt() ->> 'email') like '%@autopavilion.in'
+     or (auth.jwt() ->> 'email') like '%@autopavillion.in'
+     or (auth.jwt() ->> 'email') like '%autopavillion%' then
     return true;
   end if;
 
@@ -264,8 +266,10 @@ grant execute on function public.get_footer_analytics() to anon, authenticated;
 
 insert into public.admin_users (id, email)
 select id, email from auth.users
-where email in ('admin@autopavilion.com', 'admin@autopavilion.in', 'info@autopavilion.in', 'management@autopavilion.in')
+where email in ('work.autopavillion@gmail.com', 'admin@autopavilion.com', 'admin@autopavilion.in', 'info@autopavilion.in', 'management@autopavilion.in')
    or email like '%@autopavilion.in'
+   or email like '%@autopavillion.in'
+   or email like '%autopavillion%'
 on conflict (id) do nothing;
 
 -- ============================================================

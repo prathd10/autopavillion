@@ -4,6 +4,7 @@ import { ArrowUpRight, Volume2, VolumeX } from 'lucide-react';
 export default function Hero() {
   const [isMuted, setIsMuted] = useState(true);
   const [animStep, setAnimStep] = useState(0);
+  const [videoLoaded, setVideoLoaded] = useState(false);
   const videoRef = useRef(null);
 
   // User's looping video file
@@ -11,6 +12,9 @@ export default function Hero() {
 
   useEffect(() => {
     if (videoRef.current) {
+      if (videoRef.current.readyState >= 2) {
+        setVideoLoaded(true);
+      }
       videoRef.current.play().catch(() => {
         // Handled by browser autoplay policy
       });
@@ -54,7 +58,11 @@ export default function Hero() {
           muted={isMuted}
           playsInline
           preload="auto"
-          className="w-full h-full object-cover object-center filter brightness-95 contrast-105"
+          onLoadedData={() => setVideoLoaded(true)}
+          onPlaying={() => setVideoLoaded(true)}
+          className={`w-full h-full object-cover object-center filter brightness-95 contrast-105 transition-opacity duration-700 ${
+            videoLoaded ? 'opacity-100' : 'opacity-0'
+          }`}
           style={{ transform: 'scale(1.12) translate(3.5%, 3.5%)' }}
         >
           <source src={videoSrc} type="video/mp4" />
