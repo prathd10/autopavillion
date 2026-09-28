@@ -177,7 +177,7 @@ export default function AboutPage() {
 
 
         {/* ==================================================
-            SECTION 4 — FOUNDER / OWNER'S NOTE
+            SECTION 4 — FOUNDER'S NOTE
             ================================================== */}
         <section className="py-20 sm:py-28 bg-black/60 border-b border-white/5">
           <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -188,7 +188,7 @@ export default function AboutPage() {
                 <div className="absolute inset-0 border border-amber-500/20 rounded-3xl translate-x-3 translate-y-3 pointer-events-none transition-transform duration-500 group-hover:translate-x-1.5 group-hover:translate-y-1.5" />
                 <img 
                   src={founderImg} 
-                  alt="Founder / Owner - Auto Pavilion" 
+                  alt="Founder - Auto Pavilion" 
                   className="w-full aspect-[4/5] object-cover rounded-3xl relative z-10 border border-white/10" 
                 />
               </div>
@@ -228,7 +228,7 @@ export default function AboutPage() {
 
                 <div className="pt-4 font-heading">
                   <h4 className="text-white text-base font-extrabold uppercase tracking-wider">Mohammed Atique</h4>
-                  <p className="text-zinc-500 text-xs mt-0.5 uppercase tracking-widest font-bold">Founder / Owner, Auto Pavilion</p>
+                  <p className="text-zinc-500 text-xs mt-0.5 uppercase tracking-widest font-bold">Founder, Auto Pavilion</p>
                 </div>
               </div>
 
