@@ -4,19 +4,19 @@
   
   <!-- Core Showroom Pages -->
   <url>
-    <loc>https://autopavilion.in/</loc>
+    <loc>https://www.autopavilion.in/</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/inventory</loc>
+    <loc>https://www.autopavilion.in/inventory</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/insights</loc>
+    <loc>https://www.autopavilion.in/insights</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
@@ -24,7 +24,7 @@
 
   <!-- Editorial SEO Blog Articles -->
   <url>
-    <loc>https://autopavilion.in/insights/buying-pre-owned-porsche-mumbai-guide</loc>
+    <loc>https://www.autopavilion.in/insights/buying-pre-owned-porsche-mumbai-guide</loc>
     <lastmod>2026-08-29</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -34,7 +34,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://autopavilion.in/insights/porsche-911-vs-mercedes-amg-gt-investment</loc>
+    <loc>https://www.autopavilion.in/insights/porsche-911-vs-mercedes-amg-gt-investment</loc>
     <lastmod>2026-08-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -44,7 +44,7 @@
     </image:image>
   </url>
   <url>
-    <loc>https://autopavilion.in/insights/supercar-inspection-251-point-audit</loc>
+    <loc>https://www.autopavilion.in/insights/supercar-inspection-251-point-audit</loc>
     <lastmod>2026-08-23</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
@@ -56,55 +56,55 @@
 
   <!-- Commercial Services & Tools -->
   <url>
-    <loc>https://autopavilion.in/sourcing</loc>
+    <loc>https://www.autopavilion.in/sourcing</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/sell</loc>
+    <loc>https://www.autopavilion.in/sell</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/finance</loc>
+    <loc>https://www.autopavilion.in/finance</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/compare</loc>
+    <loc>https://www.autopavilion.in/compare</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/about</loc>
+    <loc>https://www.autopavilion.in/about</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/faq</loc>
+    <loc>https://www.autopavilion.in/faq</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/privacy</loc>
+    <loc>https://www.autopavilion.in/privacy</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/terms</loc>
+    <loc>https://www.autopavilion.in/terms</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
-    <loc>https://autopavilion.in/review</loc>
+    <loc>https://www.autopavilion.in/review</loc>
     <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
