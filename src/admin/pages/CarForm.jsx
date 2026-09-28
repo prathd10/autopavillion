@@ -481,7 +481,7 @@ export default function CarForm() {
         <Section title="Media — Direct Uploads">
           <Field label="Gallery Images" id="images">
             <p className="text-[10px] tracking-widest uppercase text-zinc-500 mb-4">
-              Drag and drop high-resolution images. These will be securely uploaded directly to ImageKit.
+              Drag and drop high-resolution images. Securely uploaded to ImageKit. Drag uploaded image cards to reorder them — image #1 will be the primary cover photo.
             </p>
             <ImageUploader
               label="Gallery Images"
