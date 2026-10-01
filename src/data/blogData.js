@@ -26,7 +26,7 @@ export const BLOG_ARTICLES = [
       metaTitle: "Pre-Owned Porsche Buying Guide Mumbai (2026) | Auto Pavilion",
       metaDescription: "Looking to buy a pre-owned Porsche in Mumbai? Read our 2026 buyer guide covering 911 diagnostics, PDK audit, RTO transfer, and certified pre-owned warranties.",
       keywords: "pre-owned porsche mumbai, buy used 911 india, certified porsche 718 cayman, used luxury cars santacruz mumbai, pre owned supercar warranty",
-      canonical: "https://autopavilion.in/insights/buying-pre-owned-porsche-mumbai-guide"
+      canonical: "https://www.autopavilion.in/insights/buying-pre-owned-porsche-mumbai-guide"
     },
     keyTakeaways: [
       "Always demand an ECU Over-Rev report (Ignition Ranges 1 to 6) to detect hidden track abuse.",
@@ -151,7 +151,7 @@ At Auto Pavilion, our legal concierge manages all RTO endorsements, transfer fil
       metaTitle: "Porsche 911 vs Mercedes-AMG GT: Depreciation & Value in India | Auto Pavilion",
       metaDescription: "Comparing Porsche 911 and Mercedes-AMG GT resale values, maintenance costs, and performance in Mumbai. Discover which exotic car holds its value best in India.",
       keywords: "porsche 911 vs amg gt india, exotic car depreciation india, best supercar investment mumbai, buy used amg gt, porsche 911 resale value",
-      canonical: "https://autopavilion.in/insights/porsche-911-vs-mercedes-amg-gt-investment"
+      canonical: "https://www.autopavilion.in/insights/porsche-911-vs-mercedes-amg-gt-investment"
     },
     keyTakeaways: [
       "The Porsche 911 maintains an exceptional 72-78% value retention over 3 years in India due to high collector liquidity.",
@@ -236,7 +236,7 @@ Choose the **Mercedes-AMG GT** if you crave thunderous V8 theatrics, muscle-car 
       metaTitle: "251-Point Supercar Diagnostic Inspection | Auto Pavilion Mumbai",
       metaDescription: "Learn how Auto Pavilion inspects pre-owned luxury supercars with our 251-point audit: ECU diagnostics, paint depth micrometer check, laser chassis scan & flood verification.",
       keywords: "supercar inspection mumbai, 251 point diagnostic audit, pre purchase inspection exotic cars, verify flood damage luxury car, certified supercar showroom",
-      canonical: "https://autopavilion.in/insights/supercar-inspection-251-point-audit"
+      canonical: "https://www.autopavilion.in/insights/supercar-inspection-251-point-audit"
     },
     keyTakeaways: [
       "Conventional 50-point used car checks fail to detect supercar ECU anomalies, launch control abuse, and subframe stress.",

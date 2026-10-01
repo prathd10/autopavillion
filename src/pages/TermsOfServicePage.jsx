@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { usePageTracker } from '../hooks/usePageTracker';
 import { FileText } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function TermsOfServicePage() {
   usePageTracker('/terms');
@@ -13,6 +14,11 @@ export default function TermsOfServicePage() {
 
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col">
+      <SEO
+        title="Terms of Service"
+        description="Review the terms and conditions governing the use of Auto Pavilion's luxury vehicle dealership platform, services, and inventory inquiries."
+        url="https://www.autopavilion.in/terms"
+      />
       <Navbar />
       
       <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">

@@ -16,7 +16,21 @@ export default function SEO({
 }) {
   const defaultSiteTitle = "Auto Pavilion | Exotic & Luxury Supercar Showroom Mumbai";
   const fullTitle = title ? `${title} | Auto Pavilion` : defaultSiteTitle;
-  const canonicalUrl = url || (typeof window !== 'undefined' ? window.location.href : 'https://autopavilion.in');
+  
+  // Standardize canonical origin on https://www.autopavilion.in (the production canonical host)
+  const computeCanonical = (rawUrl) => {
+    if (!rawUrl && typeof window === 'undefined') {
+      return 'https://www.autopavilion.in';
+    }
+    const target = rawUrl || `${window.location.origin}${window.location.pathname}`;
+    // Strip query parameters and hashes for canonical purity
+    const cleanPath = target.split('?')[0].split('#')[0];
+    return cleanPath
+      .replace(/^http:\/\//, 'https://')
+      .replace(/^https:\/\/autopavilion\.in/, 'https://www.autopavilion.in');
+  };
+
+  const canonicalUrl = computeCanonical(url);
 
   useEffect(() => {
     // 1. Update Document Title

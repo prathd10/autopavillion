@@ -2,22 +2,7 @@ import { useState, useEffect } from 'react';
 import { supabase } from '../lib/supabase';
 import { mapCarFromDb } from '../lib/mappers';
 import { CARS_DATA } from '../data/cars';
-
-/**
- * Fetches active cars from Supabase.
- *
- * Falls back to the static CARS_DATA if:
- *  - Supabase is unreachable / env vars not set
- *  - The cars table is empty (pre-seeding phase)
- *
- * This means the storefront keeps working during development
- * until the seeding script populates the DB.
- *
- * @returns {{ cars: object[], loading: boolean, error: string|null, source: 'supabase'|'static' }}
- */
-const generateSlug = (brand, name, year) => {
-  return `${brand}-${name}-${year}`.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-};
+import { generateSlug } from '../lib/slug';
 
 export function useCars() {
   const [cars,    setCars]    = useState([]);

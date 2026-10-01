@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import TradeInCalculator from '../components/TradeInCalculator';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 export default function SellPage() {
   useEffect(() => {
@@ -12,6 +13,11 @@ export default function SellPage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
+      <SEO
+        title="Sell or Consign Your Luxury Supercar Mumbai"
+        description="Sell or trade-in your pre-owned Porsche, Ferrari, Lamborghini, or exotic car at Auto Pavilion. 30-minute valuation, discreet transaction, and same-day payment."
+        url="https://www.autopavilion.in/sell"
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

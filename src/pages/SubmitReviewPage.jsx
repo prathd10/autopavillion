@@ -5,6 +5,7 @@ import { supabase } from '../lib/supabase';
 import ImageUploader from '../components/ImageUploader';
 import { usePageTracker } from '../hooks/usePageTracker';
 import { Star, MessageSquare, Check, Loader2, User, Briefcase, Car, FileText } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function SubmitReviewPage() {
   usePageTracker('/review');
@@ -63,6 +64,11 @@ export default function SubmitReviewPage() {
 
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col relative overflow-hidden">
+      <SEO
+        title="Client Experience & Review Submission"
+        description="Share your supercar acquisition or ownership experience with Auto Pavilion Mumbai. We value feedback from our distinguished clientele."
+        url="https://www.autopavilion.in/review"
+      />
       {/* Background decoration */}
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[800px] h-[500px] bg-gradient-to-b from-amber-500/5 to-transparent blur-3xl pointer-events-none -z-10" />
 

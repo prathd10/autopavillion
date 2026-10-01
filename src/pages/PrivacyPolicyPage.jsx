@@ -3,6 +3,7 @@ import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
 import { usePageTracker } from '../hooks/usePageTracker';
 import { Shield } from 'lucide-react';
+import SEO from '../components/SEO';
 
 export default function PrivacyPolicyPage() {
   usePageTracker('/privacy');
@@ -13,6 +14,11 @@ export default function PrivacyPolicyPage() {
 
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black flex flex-col">
+      <SEO
+        title="Privacy Policy"
+        description="Learn how Auto Pavilion collects, protects, and respects your personal information during luxury vehicle inquiries and transactions."
+        url="https://www.autopavilion.in/privacy"
+      />
       <Navbar />
       
       <main className="flex-1 pt-32 pb-24 px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto w-full">

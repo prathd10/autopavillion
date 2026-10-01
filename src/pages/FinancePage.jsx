@@ -3,6 +3,7 @@ import { ArrowLeft, Landmark, Percent, Calculator, Phone } from 'lucide-react';
 import { Link } from 'react-router-dom';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 
 export default function FinancePage() {
   const [loanAmount, setLoanAmount] = useState(10000000);
@@ -34,6 +35,11 @@ export default function FinancePage() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col">
+      <SEO
+        title="Supercar Financing & Luxury Auto Loans Mumbai"
+        description="Tailored financing solutions for luxury supercars in Mumbai. Competitive interest rates, flexible tenures, and partnerships with India's premier private banks."
+        url="https://www.autopavilion.in/finance"
+      />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

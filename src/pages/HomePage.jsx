@@ -63,78 +63,76 @@ export default function HomePage() {
   return (
     <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish selection:bg-white selection:text-black">
 
-      {loading ? (
+      {loading && (
         <Preloader onComplete={() => {
           setLoading(false);
           sessionStorage.setItem('hasSeenPreloader', 'true');
         }} />
-      ) : (
-        <>
-          <SEO
-            description="Auto Pavilion is Mumbai's premier pre-owned luxury supercar dealership. Curated Porsche, Ferrari, Lamborghini, AMG, Rolls-Royce, and Bentley supercars with a 251-point diagnostic audit & verified history."
-            url="https://autopavilion.in"
-          />
-          <Navbar
-            compareCount={compareList.length}
-            onOpenCompare={() => setShowCompareModal(true)}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-          />
+      )}
 
-          <Hero
-            activeBrandFilter={activeBrandFilter}
-            setActiveBrandFilter={setActiveBrandFilter}
-          />
+      <SEO
+        description="Auto Pavilion is Mumbai's premier pre-owned luxury supercar dealership. Curated Porsche, Ferrari, Lamborghini, AMG, Rolls-Royce, and Bentley supercars with a 251-point diagnostic audit & verified history."
+        url="https://www.autopavilion.in"
+      />
+      <Navbar
+        compareCount={compareList.length}
+        onOpenCompare={() => setShowCompareModal(true)}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+      />
 
-          {/* Featured Showcase (only available cars marked as featured) */}
-          <Inventory
-            title="FEATURED VEHICLES"
-            hideMarquee={true}
-            cars={cars.filter(c => c.featured && (c.status === 'active' || !c.status))}
-            compareList={compareList}
-            onToggleCompare={handleToggleCompare}
-            activeBrandFilter={activeBrandFilter}
-            setActiveBrandFilter={setActiveBrandFilter}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            isHomePage={true}
-          />
+      <Hero
+        activeBrandFilter={activeBrandFilter}
+        setActiveBrandFilter={setActiveBrandFilter}
+      />
 
-          <TrustStats />
+      {/* Featured Showcase (only available cars marked as featured) */}
+      <Inventory
+        title="FEATURED VEHICLES"
+        hideMarquee={true}
+        cars={cars.filter(c => c.featured && (c.status === 'active' || !c.status))}
+        compareList={compareList}
+        onToggleCompare={handleToggleCompare}
+        activeBrandFilter={activeBrandFilter}
+        setActiveBrandFilter={setActiveBrandFilter}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        isHomePage={true}
+      />
 
-          {/* Curated Showroom (all available active cars) */}
-          <Inventory
-            title="CURATED SHOWROOM"
-            cars={cars.filter(c => c.status === 'active' || !c.status).slice(0, 12)}
-            compareList={compareList}
-            onToggleCompare={handleToggleCompare}
-            activeBrandFilter={activeBrandFilter}
-            setActiveBrandFilter={setActiveBrandFilter}
-            searchTerm={searchTerm}
-            setSearchTerm={setSearchTerm}
-            isHomePage={true}
-          />
+      <TrustStats />
 
-          <Testimonials />
-          <VehicleSourcing />
-          <TradeInCalculator />
-          <FinancePreview />
-          <InsightsPreview />
-          <Footer />
+      {/* Curated Showroom (all available active cars) */}
+      <Inventory
+        title="CURATED SHOWROOM"
+        cars={cars.filter(c => c.status === 'active' || !c.status).slice(0, 12)}
+        compareList={compareList}
+        onToggleCompare={handleToggleCompare}
+        activeBrandFilter={activeBrandFilter}
+        setActiveBrandFilter={setActiveBrandFilter}
+        searchTerm={searchTerm}
+        setSearchTerm={setSearchTerm}
+        isHomePage={true}
+      />
 
-          {showCompareModal && compareList.length > 0 && (
-            <CarCompare
-              compareList={compareList}
-              onRemoveFromCompare={handleRemoveFromCompare}
-              onCloseCompare={() => setShowCompareModal(false)}
-              onSelectCar={(car) => {
-                setShowCompareModal(false);
-                navigate(`/inventory/${car.slug}`);
-              }}
-              onToggleCompare={handleToggleCompare}
-            />
-          )}
-        </>
+      <Testimonials />
+      <VehicleSourcing />
+      <TradeInCalculator />
+      <FinancePreview />
+      <InsightsPreview />
+      <Footer />
+
+      {showCompareModal && compareList.length > 0 && (
+        <CarCompare
+          compareList={compareList}
+          onRemoveFromCompare={handleRemoveFromCompare}
+          onCloseCompare={() => setShowCompareModal(false)}
+          onSelectCar={(car) => {
+            setShowCompareModal(false);
+            navigate(`/inventory/${car.slug}`);
+          }}
+          onToggleCompare={handleToggleCompare}
+        />
       )}
     </div>
   );

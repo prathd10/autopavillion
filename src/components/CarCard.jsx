@@ -1,21 +1,25 @@
 import React from 'react';
 import { Scale, Eye } from 'lucide-react';
 import { ikUrl } from '../lib/imagekit';
-import { useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { useComparison } from '../hooks/useComparison';
 
 export default function CarCard({ car, isComparing, onToggleCompare }) {
-  const navigate = useNavigate();
   const { toggleCompare, isComparing: isComparingHook } = useComparison();
   
   const activeComparing = isComparing !== undefined ? isComparing : isComparingHook(car.id);
-  const handleToggle = () => {
+  const handleToggle = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (onToggleCompare) {
       onToggleCompare(car);
     } else {
       toggleCompare(car.id);
     }
   };
+
+  const detailUrl = `/inventory/${car.slug}`;
+
   return (
     <div className={`studio-card h-full rounded-2xl sm:rounded-3xl overflow-hidden flex flex-col justify-between group bg-[#090a0d] shadow-2xl transition-all duration-300 ${
       car.status === 'sold'
@@ -23,12 +27,11 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
         : 'border border-white/10'
     }`}>
       
-      {/* Top Image Container (Dominant Photo Display) */}
-      <div 
-        className="relative aspect-[1264/846] w-full overflow-hidden bg-[#050608] cursor-pointer"
-        onClick={() => {
-          navigate(`/inventory/${car.slug}`);
-        }}
+      {/* Top Image Container (Dominant Photo Display) - Semantic Crawlable Link */}
+      <Link 
+        to={detailUrl}
+        className="relative aspect-[1264/846] w-full overflow-hidden bg-[#050608] block cursor-pointer"
+        aria-label={`View full specifications for ${car.name}`}
       >
         <img
           src={ikUrl(car.images?.[0], { width: 640, height: 480, quality: 75 })}
@@ -51,7 +54,7 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
           </div>
         )}
 
-      </div>
+      </Link>
 
       {/* Content Body */}
       <div className="p-4 sm:p-6 flex-1 flex flex-col justify-between space-y-3 sm:space-y-4">
@@ -63,7 +66,9 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
           </div>
 
           <h3 className="text-base sm:text-xl font-bold text-white font-heading group-hover:text-zinc-300 transition-colors leading-tight">
-            {car.name}
+            <Link to={detailUrl} className="hover:text-zinc-300 transition-colors">
+              {car.name}
+            </Link>
           </h3>
           <p className="text-[10px] sm:text-xs text-zinc-400 line-clamp-1 mt-0.5 font-mulish">{car.subtitle}</p>
         </div>
@@ -107,9 +112,10 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
 
           <div className="flex items-center space-x-1.5 sm:space-x-2 shrink-0">
             <button
+              type="button"
               onClick={handleToggle}
               title={activeComparing ? "Remove from compare" : "Add to compare"}
-              className={`p-1.5 sm:p-2.5 rounded-full border transition-all ${
+              className={`p-1.5 sm:p-2.5 rounded-full border transition-all cursor-pointer ${
                 activeComparing
                   ? 'bg-white text-black border-white'
                   : 'bg-black border-white/20 text-white hover:bg-white/10'
@@ -118,15 +124,13 @@ export default function CarCard({ car, isComparing, onToggleCompare }) {
               <Scale className="w-3.5 h-3.5 sm:w-4 sm:h-4" />
             </button>
 
-            <button
-              onClick={() => {
-                navigate(`/inventory/${car.slug}`);
-              }}
-              className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white text-black font-extrabold text-[10px] sm:text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all flex items-center space-x-1 sm:space-x-1.5 shadow-md"
+            <Link
+              to={detailUrl}
+              className="px-3 py-1.5 sm:px-4 sm:py-2 rounded-full bg-white text-black font-extrabold text-[10px] sm:text-xs uppercase tracking-wider hover:bg-zinc-200 transition-all flex items-center space-x-1 sm:space-x-1.5 shadow-md cursor-pointer"
             >
               <Eye className="w-3 h-3 sm:w-3.5 sm:h-3.5" />
               <span>Specs</span>
-            </button>
+            </Link>
           </div>
         </div>
 
