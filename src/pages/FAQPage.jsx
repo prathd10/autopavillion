@@ -32,7 +32,7 @@ export default function FAQPage() {
       <SEO
         title="Frequently Asked Questions (FAQs)"
         description="Find answers to common questions about buying pre-owned luxury supercars, our 251-point inspection, warranty, vehicle sourcing, and trade-in in Mumbai."
-        url="https://autopavilion.in/faq"
+        url="https://www.autopavilion.in/faq"
         schema={faqSchema}
       />
       <Navbar />

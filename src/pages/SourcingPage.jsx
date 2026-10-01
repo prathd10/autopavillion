@@ -17,9 +17,8 @@ export default function SourcingPage() {
       <SEO
         title="Bespoke Luxury Supercar Sourcing India"
         description="Cannot find your exact spec? Auto Pavilion's bespoke vehicle sourcing concierge connects with private collectors nationwide to procure your dream Porsche, Ferrari, or Lamborghini."
-        url="https://autopavilion.in/sourcing"
+        url="https://www.autopavilion.in/sourcing"
       />
-      <Navbar />
       
       {/* Global Parallax Background for Sourcing Page */}
       <div 

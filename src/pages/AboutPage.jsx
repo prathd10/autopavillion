@@ -30,7 +30,7 @@ export default function AboutPage() {
       <SEO
         title="About Us - Luxury Supercar Heritage & 251-Point Standard"
         description="Learn about Auto Pavilion Mumbai's legacy of excellence, founder vision by Mohd. Atique, and our uncompromising 251-point supercar diagnostic certification."
-        url="https://autopavilion.in/about"
+        url="https://www.autopavilion.in/about"
       />
       <Navbar />
 

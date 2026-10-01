@@ -18,7 +18,7 @@ export default function InsightsPage() {
       <SEO
         title="Insights & Journal"
         description="Explore our latest articles, market trends, and expert advice on buying, owning, and selling premium vehicles."
-        url="https://autopavilion.in/insights"
+        url="https://www.autopavilion.in/insights"
       />
       <Navbar />
       <main className="flex-1 pt-24 pb-20">

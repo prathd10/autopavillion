@@ -7,6 +7,7 @@ import { supabase } from '../lib/supabase';
 import { ikUrl } from '../lib/imagekit';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import SEO from '../components/SEO';
 import { safeMarkdownBold } from '../lib/sanitize';
 
 export default function ComparePage() {
@@ -308,6 +309,11 @@ export default function ComparePage() {
 
   return (
     <div className="min-h-screen bg-[#08090c] text-white flex flex-col">
+      <SEO
+        title="Compare Luxury Supercars & Sports Cars"
+        description="Compare technical specifications, horsepower, transmission, pricing, and performance metrics side-by-side at Auto Pavilion Mumbai."
+        url="https://www.autopavilion.in/compare"
+      />
       <Navbar />
 
       <main className="flex-1 pt-24 pb-20">

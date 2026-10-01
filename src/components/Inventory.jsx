@@ -1,5 +1,5 @@
 import React, { useState, useMemo } from 'react';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
 import { Car, ChevronLeft, ChevronRight, Sparkles, ArrowUpRight } from 'lucide-react';
 import CarCard from './CarCard';
 import { BRAND_LOGOS } from '../data/cars';
@@ -210,24 +210,34 @@ export default function Inventory({
 
             {/* PROMINENT END CTA BUTTON TO VIEW ENTIRE INVENTORY */}
             <div className="pt-8 flex justify-center">
-              <button
-                onClick={() => {
-                  if (isHomePage) {
-                    navigate('/inventory');
-                  } else if (onOpenFullCatalog) {
-                    onOpenFullCatalog();
-                  } else {
-                    const el = document.getElementById('vehicle-sourcing');
-                    if (el) el.scrollIntoView({ behavior: 'smooth' });
-                  }
-                }}
-                className="px-8 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center space-x-3 hover:bg-zinc-200 transition-all duration-300 shadow-2xl hover:scale-105 group"
-              >
-                <span>View Entire Inventory</span>
-                <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 group-hover:rotate-45 transition-transform duration-300">
-                  <ArrowUpRight className="w-3.5 h-3.5" />
-                </span>
-              </button>
+              {isHomePage ? (
+                <Link
+                  to="/inventory"
+                  className="px-8 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center space-x-3 hover:bg-zinc-200 transition-all duration-300 shadow-2xl hover:scale-105 group"
+                >
+                  <span>View Entire Inventory</span>
+                  <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 group-hover:rotate-45 transition-transform duration-300">
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </Link>
+              ) : (
+                <button
+                  onClick={() => {
+                    if (onOpenFullCatalog) {
+                      onOpenFullCatalog();
+                    } else {
+                      const el = document.getElementById('vehicle-sourcing');
+                      if (el) el.scrollIntoView({ behavior: 'smooth' });
+                    }
+                  }}
+                  className="px-8 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest flex items-center space-x-3 hover:bg-zinc-200 transition-all duration-300 shadow-2xl hover:scale-105 group"
+                >
+                  <span>View Entire Inventory</span>
+                  <span className="w-5 h-5 rounded-full bg-black text-white flex items-center justify-center group-hover:scale-110 group-hover:rotate-45 transition-transform duration-300">
+                    <ArrowUpRight className="w-3.5 h-3.5" />
+                  </span>
+                </button>
+              )}
             </div>
 
           </div>

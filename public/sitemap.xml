@@ -1,112 +1,1524 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  
-  <!-- Core Showroom Pages -->
   <url>
     <loc>https://www.autopavilion.in/</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://www.autopavilion.in/inventory</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://www.autopavilion.in/insights</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.9</priority>
   </url>
-
-  <!-- Editorial SEO Blog Articles -->
   <url>
-    <loc>https://www.autopavilion.in/insights/buying-pre-owned-porsche-mumbai-guide</loc>
-    <lastmod>2026-08-29</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&amp;w=1600&amp;auto=format&amp;fit=crop</image:loc>
-      <image:title>The Ultimate Guide to Buying a Pre-Owned Porsche in Mumbai</image:title>
-    </image:image>
+    <loc>https://www.autopavilion.in/about</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://www.autopavilion.in/insights/porsche-911-vs-mercedes-amg-gt-investment</loc>
-    <lastmod>2026-08-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&amp;w=1600&amp;auto=format&amp;fit=crop</image:loc>
-      <image:title>Porsche 911 vs Mercedes-AMG GT: Value &amp; Depreciation Analysis</image:title>
-    </image:image>
-  </url>
-  <url>
-    <loc>https://www.autopavilion.in/insights/supercar-inspection-251-point-audit</loc>
-    <lastmod>2026-08-23</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
-    <image:image>
-      <image:loc>https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&amp;w=1600&amp;auto=format&amp;fit=crop</image:loc>
-      <image:title>Why Supercar Inspections Matter: Inside Auto Pavilion 251-Point Audit</image:title>
-    </image:image>
-  </url>
-
-  <!-- Commercial Services & Tools -->
   <url>
     <loc>https://www.autopavilion.in/sourcing</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.autopavilion.in/sell</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.autopavilion.in/finance</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://www.autopavilion.in/compare</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
-    <loc>https://www.autopavilion.in/about</loc>
-    <lastmod>2026-08-30</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
-  <url>
     <loc>https://www.autopavilion.in/faq</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
   <url>
     <loc>https://www.autopavilion.in/privacy</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.autopavilion.in/terms</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.3</priority>
   </url>
   <url>
     <loc>https://www.autopavilion.in/review</loc>
-    <lastmod>2026-08-30</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/insights/buying-pre-owned-porsche-mumbai-guide</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&amp;w=1600&amp;auto=format&amp;fit=crop</image:loc>
+      <image:title>The Ultimate Guide to Buying a Pre-Owned Porsche in Mumbai (2026 Edition)</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/insights/porsche-911-vs-mercedes-amg-gt-investment</loc>
+    <lastmod>2026-08-26</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&amp;w=1600&amp;auto=format&amp;fit=crop</image:loc>
+      <image:title>Porsche 911 vs Mercedes-AMG GT: Which Exotic Holds Its Value Best in India?</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/insights/supercar-inspection-251-point-audit</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&amp;w=1600&amp;auto=format&amp;fit=crop</image:loc>
+      <image:title>Why Supercar Inspections Matter: Inside Auto Pavilion&apos;s 251-Point Diagnostic Audit</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2019-bmw-z4-deep-blue-premium-luxury-roadster-sporty-convertible-2019</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/bmw1_t5KXxrZxE.png</image:loc>
+      <image:title>2019 BMW Z4 – Deep Blue | Premium Luxury Roadster | Sporty Convertible</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/lamborghini-2020-lamborghini-urus-luxury-performance-suv-italian-super-suv-2020</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/Gemini_Generated_Image_tpb02gtpb02gtpb0_uqHp8ex62.png</image:loc>
+      <image:title>2020 Lamborghini Urus – Luxury Performance SUV | Italian Super SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-2019-audi-a6-35-tfsi-s-line-ibis-white-premium-executive-luxury-sedan-single-owner-2019</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/WhatsApp_Image_2026-09-28_at_11.49.51__1__L23BFAV0Q.jpeg</image:loc>
+      <image:title>2019 Audi A6 35 TFSI S Line – Ibis White | Premium Executive Luxury Sedan | Single Owner</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/toyota-2022-toyota-camry-hybrid-burning-black-premium-hybrid-luxury-sedan-single-owner-2022</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/WhatsApp_Image_2026-09-27_at_13.49.43_oeZax-ldz.jpeg</image:loc>
+      <image:title>2022 Toyota Camry Hybrid – Burning Black | Premium Hybrid Luxury Sedan | Single Owner</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-2020-mercedes-amg-g-63-obsidian-black-high-performance-luxury-suv-2022</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavillion/cars/WhatsApp_Image_2026-09-10_at_02.03.51_1xH2WZeUd.jpeg</image:loc>
+      <image:title>2020 Mercedes-AMG G 63 – Obsidian Black | High-Performance Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/jaguar-2022-jaguar-f-pace-s-2-0d-r-dynamic-portofino-blue-performance-luxury-suv-single-owner-2022</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/WhatsApp_Image_2026-09-27_at_17.56.21_JirRevkAq.jpeg</image:loc>
+      <image:title>2022 Jaguar F-PACE S 2.0D R-Dynamic – Portofino Blue | Performance Luxury SUV | Single Owner</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2018-bmw-520d-luxury-line-bluestone-metallic-executive-luxury-sedan-premium-comfort-2018</loc>
+    <lastmod>2026-08-31</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavillion/cars/WhatsApp_Image_2026-08-31_at_20.37.48_-pLwZQKQs.jpeg</image:loc>
+      <image:title>2018 BMW 520d Luxury Line – Bluestone Metallic | Executive Luxury Sedan | Premium Comfort</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2022-bmw-x3-xdrive30i-m-sport-mineral-white-sporty-luxury-suv-single-owner-2022</loc>
+    <lastmod>2026-09-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavillion/cars/WhatsApp_Image_2026-08-28_at_18.27.43_oORwW4mwO.jpeg</image:loc>
+      <image:title>2022 BMW X3 xDrive30i M Sport – Mineral White | Sporty Luxury SUV | Single Owner</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2021-bmw-730ld-dpe-signature-2021</loc>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavillion/cars/WhatsApp_Image_2026-09-01_at_13.03.05_1Xb4qsHlv.jpeg</image:loc>
+      <image:title>2021 BMW 730Ld DPE Signature</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-5-series-530i-sedan-m-blue-metallic-2009</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23547/gallery/23518_evy-0xgqo.jpg</image:loc>
+      <image:title>BMW 5 Series 530i Sedan M Blue Metallic</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volkswagen-volkswagen-taigun-highline-1-0-tsi-at-curcuma-yellow-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23550/gallery/24031_rp6LYbnPF.jpg</image:loc>
+      <image:title>Volkswagen Taigun Highline 1.0 TSI AT Curcuma Yellow</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/toyota-toyota-innova-hycross-vx-hybrid-8-str-blackish-ageha-gf-2023</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23587/gallery/23551_XxsQyn5s5.jpg</image:loc>
+      <image:title>Toyota Innova Hycross VX Hybrid 8 STR Blackish Ageha GF</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/porsche-2020-porsche-cayenne-white-premium-performance-luxury-suv-2022</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavillion/cars/WhatsApp_Image_2026-09-10_at_14.54.40_POTxEZVPD.jpeg</image:loc>
+      <image:title>2020 Porsche Cayenne – White | Premium Performance Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-c-class-200-cgi-elegance-o-black-2012</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23631/gallery/25539_wED-EtWUU.jpg</image:loc>
+      <image:title>Mercedes Benz C Class 200 CGI Elegance O Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-volvo-v40-cross-country-d3-inscription-denim-blue-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23658/gallery/23632_vdWLfuKlB.jpg</image:loc>
+      <image:title>Volvo V40 Cross Country D3 Inscription Denim Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-5-series-525d-sedan-havanna-metallic-2011</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23718/gallery/24002_eV0Dc0f-i.jpg</image:loc>
+      <image:title>BMW 5 Series 525d Sedan Havanna Metallic</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/toyota-toyota-camry-hybrid-pearl-white-2014</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23749/gallery/23719_F5kAKeg-n.jpg</image:loc>
+      <image:title>Toyota Camry Hybrid Pearl White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/land-rover-land-rover-discovery-sport-hse-7-seater-f-white-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23783/gallery/23750_QuTcL3za6.jpg</image:loc>
+      <image:title>Land Rover Discovery Sport HSE 7-Seater F White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bentley-bentley-continental-gt-2020</loc>
+    <lastmod>2026-09-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavillion/cars/26E8E7E8-8282-439E-9FBE-C10F0E1CA0A0_-B-tszHTi.png</image:loc>
+      <image:title>Bentley Continental GT</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-5-series-520d-sedan-t-silver-metallic-2012</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23816/gallery/23784_rbSjtRRUT.jpg</image:loc>
+      <image:title>BMW 5 Series 520d Sedan T Silver Metallic</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-6-series-gt-630d-luxury-line-mediterranean-blue-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23848/gallery/23818_6aIrXaD0m.jpg</image:loc>
+      <image:title>BMW 6 Series GT 630d Luxury Line Mediterranean Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/toyota-toyota-innova-crysta-2-4-zx-at-7-str-garnet-red-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23877/gallery/23849_m8AHWjhfJ.jpg</image:loc>
+      <image:title>Toyota Innova Crysta 2.4 ZX AT 7 STR Garnet Red</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/skoda-skoda-octavia-ambition-2-0-tdi-cr-at-cappuccino-beige-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23930/gallery/23905_YEs9eW-Sx.jpg</image:loc>
+      <image:title>Skoda Octavia Ambition 2.0 TDI CR AT Cappuccino Beige</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volkswagen-volkswagen-t-roc-1-5-tsi-ravenna-blue-2020</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23960/gallery/23931_R6kUr9e8c.jpg</image:loc>
+      <image:title>Volkswagen T-Roc 1.5 TSI Ravenna Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-volvo-s60-d4-bright-silver-metallic-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24117/gallery/24165_I-vJeGWal.jpg</image:loc>
+      <image:title>Volvo S60 D4 Bright Silver Metallic</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-honda-crv-1-6-awd-9at-i-dtec-white-orchid-pearl-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24121/gallery/24379__2rzjbXrt.jpg</image:loc>
+      <image:title>Honda CRV 1.6 AWD 9At (i-DTEC) White Orchid Pearl</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-honda-accord-2-4-vtil-i-vtec-signet-silver-2005</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24123/gallery/24348_0lw2Jd2yg.jpg</image:loc>
+      <image:title>Honda Accord 2.4 VTIL (i-VTEC) Signet Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/ford-ford-ecosport-1-5-ti-vct-titanium-at-petrol-diamond-white-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24139/gallery/24140_Z3D3LQkAD.jpg</image:loc>
+      <image:title>Ford EcoSport 1.5 Ti-VCT Titanium (AT) Petrol Diamond white</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-volvo-xc40-inscription-black-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24196/gallery/24275_CIOfbTnA-.jpg</image:loc>
+      <image:title>Volvo XC40 Inscription Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/jeep-jeep-meridian-limited-o-4x4-at-velvet-red-black-roof-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24223/gallery/24197_fdSCuTD-B.jpg</image:loc>
+      <image:title>Jeep Meridian Limited (O) 4X4 AT Velvet Red / Black Roof</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volkswagen-volkswagen-tiguan-allspace-2-0-tsi-petroleum-blue-2020</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24453/gallery/24464_wDxz0WDt_.jpg</image:loc>
+      <image:title>Volkswagen Tiguan AllSpace 2.0 TSI Petroleum Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/skoda-skoda-slavia-style-1-5l-tsi-dsg-carbon-steel-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24555/gallery/24556_DSvXiXMXB.jpg</image:loc>
+      <image:title>Skoda Slavia Style 1.5L TSI DSG Carbon Steel</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/jeep-jeep-compass-80-anniversary-1-4-petrol-dct-exotica-red-black-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24576/gallery/24578_d1UOpUiwK.jpg</image:loc>
+      <image:title>Jeep Compass 80 Anniversary 1.4 Petrol DCT Exotica Red + Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/morris-garage-morris-garage-gloster-savvy-6-str-2-0-twin-turbo-4wd-agate-red-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24643/gallery/24607_MGI9sw3M4.jpg</image:loc>
+      <image:title>Morris Garage Gloster Savvy 6 STR 2.0 Twin Turbo 4WD Agate Red</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-volvo-v40-cross-country-d3-b-blue-2013</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24645/gallery/24646_iQp2VQr-e.jpg</image:loc>
+      <image:title>Volvo V40 Cross Country D3 B Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/ford-ford-ecosport-titanium-1-5l-ti-vct-at-smoke-grey-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24705/gallery/24677_COzi_rvGY.jpg</image:loc>
+      <image:title>Ford EcoSport Titanium + 1.5L Ti-VCT AT Smoke Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/skoda-skoda-kodiaq-l-k-2-0-tdi-4x4-at-magnetic-brown-metal-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24707/gallery/24742_MGElBw4kK.jpg</image:loc>
+      <image:title>Skoda Kodiaq L&amp;K 2.0 TDI 4x4 AT Magnetic Brown Metal</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-audi-q3-35-tdi-premium-plus-sunroof-misano-red-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24741/gallery/24715_--_RmCMLb.jpg</image:loc>
+      <image:title>Audi Q3 35 TDI Premium Plus + Sunroof Misano Red</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mahindra-mahindra-thar-lx-hard-top-petrol-at-4wd-a3-dark-grey-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24780/gallery/24789_CDZAMT4WQ.jpg</image:loc>
+      <image:title>Mahindra Thar LX Hard Top Petrol AT 4WD A3 Dark Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-x6-xdrive-30d-alpine-white-metallic-2013</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24783/gallery/24844_ESRBtP0WO.jpg</image:loc>
+      <image:title>BMW X6 xDrive 30d Alpine White Metallic</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/ford-ford-ecosport-1-5-ti-vct-titanium-at-petrol-k-blue-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24847/gallery/24869_MWKqcrukFB.jpg</image:loc>
+      <image:title>Ford EcoSport 1.5 Ti-VCT Titanium (AT) Petrol K Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/skoda-skoda-superb-l-k-2-0-tsi-moon-white-2023</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24852/gallery/24926_L2qyce8pD.jpg</image:loc>
+      <image:title>Skoda Superb L&amp;K 2.0 Tsi Moon White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/jeep-jeep-compass-limited-o-1-4-petrol-at-bright-white-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24854/gallery/24855_tfweIEqGT.jpg</image:loc>
+      <image:title>Jeep Compass Limited (O) 1.4 Petrol AT Bright White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/maruti-suzuki-maruti-suzuki-ciaz-sigma-hybrid-1-5-magma-grey-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24986/gallery/24957_0x-4liY22.jpg</image:loc>
+      <image:title>Maruti Suzuki Ciaz Sigma Hybrid 1.5 Magma Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-e-class-e-220-d-obsidian-black-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24990/gallery/24991_V-DeOBxnS.jpg</image:loc>
+      <image:title>Mercedes Benz E Class E 220 d Obsidian Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-b-class-b180-cdi-style-p-silver-2014</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24459/gallery/24482_3ssmFNnfg.jpg</image:loc>
+      <image:title>Mercedes Benz B Class B180 CDI Style P Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-honda-city-hybrid-ehev-zx-at-petrol-platinum-white-pearl-2023</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25027/gallery/25050_LGSEOkS3b.jpg</image:loc>
+      <image:title>Honda City Hybrid eHEV ZX AT Petrol Platinum White Pearl</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/toyota-toyota-fortuner-2-7-4x2-at-super-white-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25081/gallery/25085_weVYVGC64T.jpg</image:loc>
+      <image:title>Toyota Fortuner 2.7 4x2 AT Super White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/maruti-suzuki-maruti-suzuki-baleno-alpha-ags-prime-celestial-blue-2023</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25084/gallery/25088_a6CwQN1DZ.jpg</image:loc>
+      <image:title>Maruti Suzuki Baleno Alpha AGS Prime Celestial Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/toyota-toyota-urban-cruiser-premium-grade-at-sunny-white-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25163/gallery/25176_0f0a4JFlp.jpg</image:loc>
+      <image:title>Toyota Urban Cruiser Premium Grade AT Sunny White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/maruti-suzuki-maruti-suzuki-grand-vitara-alpha-smart-hybrid-at-a-white-and-m-black-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25165/gallery/25170_7B3f55t8ml.jpg</image:loc>
+      <image:title>Maruti Suzuki Grand Vitara Alpha Smart Hybrid AT A White and M Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/ford-ford-ecosport-1-5-ti-vct-titanium-at-petrol-m-silver-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25167/gallery/25168_KSbQwaANT.jpg</image:loc>
+      <image:title>Ford EcoSport 1.5 Ti-VCT Titanium (AT) Petrol M Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-cla-class-200-cdi-sport-calcite-white-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25262/gallery/25274_iyGhEVo0l.jpg</image:loc>
+      <image:title>Mercedes Benz CLA Class 200 CDI Sport Calcite White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-honda-cr-v-2-4l-4wd-avn-white-orchid-pearl-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25264/gallery/25270_9xeofPUP6c.jpg</image:loc>
+      <image:title>Honda CR V 2.4L 4WD AVN White Orchid Pearl</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-x1-sdrive20i-xline-alpine-white-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25267/gallery/25268__8664-Jx5.jpg</image:loc>
+      <image:title>BMW X1 sDrive20i xLine Alpine White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-honda-city-1-5-v-mt-urban-titanium-2013</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25398/gallery/25414_2ZvQX-FVs.jpg</image:loc>
+      <image:title>Honda City 1.5 V MT Urban Titanium</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/jeep-jeep-compass-limited-1-4-petrol-at-brilliant-black-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25402/gallery/25403_ZPFMZpMWV.jpg</image:loc>
+      <image:title>Jeep Compass Limited 1.4 Petrol AT Brilliant Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/toyota-toyota-urban-cruiser-premium-grade-at-sunny-white-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25575/gallery/25616_3kMrFjUPE.jpg</image:loc>
+      <image:title>Toyota Urban Cruiser Premium Grade AT Sunny White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/tata-tata-hexa-xta-4x2-7-str-aura-white-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25579/gallery/25580_hViPaISGzg.jpg</image:loc>
+      <image:title>Tata Hexa XTA 4x2 7 STR Aura White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/ford-ford-ecosport-titanium-1-5l-ti-vct-at-smoke-grey-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25643/gallery/25642_y3rKP0_FA.png</image:loc>
+      <image:title>Ford EcoSport Titanium + 1.5L Ti-VCT AT Smoke Grey</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-volvo-xc60-b5-inscription-crystal-white-pearl-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25648/gallery/25649_pKL9-LkQE.jpg</image:loc>
+      <image:title>Volvo XC60 B5 Inscription Crystal White Pearl</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/skoda-skoda-octavia-style-2-0-lava-blue-metallic-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25502/gallery/25503_Rn6FhISEj.jpg</image:loc>
+      <image:title>Skoda Octavia Style 2.0 Lava Blue Metallic</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-c-200-edition-c-obsidian-black-immaculate-condition-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25947/gallery/25921_Gsugxz4ZQ.jpg</image:loc>
+      <image:title>Mercedes-Benz C 200 (Edition C) – Obsidian Black | Immaculate Condition</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-s500l-iridium-silver-luxury-redefined-2012</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25979/gallery/25948_LRc_tr53Y.jpg</image:loc>
+      <image:title>Mercedes-Benz S500L – Iridium Silver | Luxury Redefined</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-honda-civic-v-cvt-platinum-white-pearl-excellent-condition-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26007/gallery/25980_iGDA7dTXh.jpg</image:loc>
+      <image:title>Honda Civic V CVT – Platinum White Pearl | Excellent Condition</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/jaguar-jaguar-xf-pure-diesel-polaris-white-luxury-performance-2016</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26036/gallery/26008_PV87y6akOr.jpg</image:loc>
+      <image:title>Jaguar XF Pure Diesel – Polaris White | Luxury &amp; Performance</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/toyota-toyota-camry-hybrid-platinum-white-pearl-advanced-luxury-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26067/gallery/26037_JeCR2qEWr.jpg</image:loc>
+      <image:title>Toyota Camry Hybrid – Platinum White Pearl | Advanced Luxury</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/skoda-skoda-superb-sportsline-2-0-tsi-race-blue-like-new-2020</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26098/gallery/26068_BlDO0A50Mn.jpg</image:loc>
+      <image:title>Skoda Superb Sportsline 2.0 TSI – Race Blue | Like New</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/land-rover-land-rover-velar-p250-r-dynamic-fuji-white-premium-suv-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26128/gallery/26099_nTyXWYWLAB.jpg</image:loc>
+      <image:title>Land Rover Velar P250 R-Dynamic – Fuji White | Premium SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-b-180-sports-classy-white-2013</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25828/gallery/25798_1FF_lGo9H.jpg</image:loc>
+      <image:title>Mercedes-Benz B 180 Sports – Classy White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-volvo-s90-d4-inscription-crystal-white-pearl-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25858/gallery/25829_RC1dCmBGe.jpg</image:loc>
+      <image:title>Volvo S90 D4 Inscription – Crystal White Pearl</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-330i-m-sport-alpine-white-impeccable-condition-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25889/gallery/25859_U6TJ1pIi4.jpg</image:loc>
+      <image:title>BMW 330i M Sport – Alpine White | Impeccable Condition</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/tata-tata-harrier-xza-plus-dark-edition-atl-black-dk-premium-suv-2020</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25920/gallery/25890_8c-YQ5Olu4.jpg</image:loc>
+      <image:title>Tata Harrier XZA Plus Dark Edition – ATL Black DK | Premium SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/morris-garage-morris-garage-hector-sharp-1-5-dct-petrol-dual-tone-aurora-silver-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25646/gallery/25668_ywS-F2NUP9.jpg</image:loc>
+      <image:title>Morris Garage Hector Sharp 1.5 DCT Petrol Dual Tone Aurora Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volkswagen-volkswagen-polo-gt-1-2-tsi-carbon-steel-grey-sporty-hatchback-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26131/gallery/26136_f7IrKP_e_.jpg</image:loc>
+      <image:title>Volkswagen Polo GT 1.2 TSI – Carbon Steel Grey | Sporty Hatchback</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/hyundai-hyundai-alcazar-1-5t-dct-signature-o-6-str-titan-grey-almost-new-2023</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26133/gallery/26134_edfcDxA3z.jpg</image:loc>
+      <image:title>Hyundai Alcazar 1.5T DCT Signature (O) 6-Str – Titan Grey | Almost New</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-e220-cdi-cavansite-blue-executive-luxury-sedan-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26189/gallery/26198_8FLBBRmNy.jpg</image:loc>
+      <image:title>Mercedes-Benz E220 CDI – Cavansite Blue | Executive Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/hyundai-hyundai-creta-vtvt-sx-o-polar-white-feature-packed-suv-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26191/gallery/26193_NdtoOKBMyB.jpg</image:loc>
+      <image:title>Hyundai Creta VTVT SX (O) – Polar White | Feature-Packed SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mahindra-mahindra-xuv700-ax7-l-at-7-seater-everest-white-premium-suv-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26266/gallery/26294_lFqU5rjlc.jpg</image:loc>
+      <image:title>Mahindra XUV700 AX7 L AT 7-Seater – Everest White | Premium SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/jeep-jeep-compass-limited-o-1-4-petrol-at-brilliant-black-2020</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25730/gallery/26270_uvNQRl74x-.jpg</image:loc>
+      <image:title>Jeep Compass Limited (O) 1.4 Petrol AT Brilliant Black</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volkswagen-2023-volkswagen-virtus-1-0-tsi-highline-candy-white-almost-new-2023</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26351/gallery/26354_oHMWYptEug.jpg</image:loc>
+      <image:title>2023 Volkswagen Virtus 1.0 TSI Highline – Candy White | Almost New</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-2021-volvo-xc40-t4-r-design-glacier-silver-luxury-compact-suv-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26424/gallery/26688_A5BOL2Tdf.jpg</image:loc>
+      <image:title>2021 Volvo XC40 T4 R-Design – Glacier Silver | Luxury Compact SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-2021-volvo-xc40-t4-r-design-bursting-blue-sporty-luxury-suv-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26783/gallery/26753_O4NIBcuqI.jpg</image:loc>
+      <image:title>2021 Volvo XC40 T4 R-Design – Bursting Blue | Sporty Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/tata-tata-nexon-ev-xz-plus-signature-teal-blue-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24850/gallery/24860_cRTpUn2FB.jpg</image:loc>
+      <image:title>Tata Nexon EV XZ Plus Signature Teal Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/tata-tata-nexon-ev-xm-pure-silver-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23904/gallery/23878_u9VQu_OXb.jpg</image:loc>
+      <image:title>Tata Nexon EV XM Pure Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-gle-250d-4matic-irradium-silver-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24119/gallery/24312_QJA_lIWqT.jpg</image:loc>
+      <image:title>Mercedes GLE 250d 4Matic Irradium Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volkswagen-2016-volkswagen-polo-1-2-mpi-comfortline-candy-white-reliable-hatchback-2016</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26791/gallery/26861_u3ufQHFbLN.jpg</image:loc>
+      <image:title>2016 Volkswagen Polo 1.2 MPI Comfortline – Candy White | Reliable Hatchback</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/skoda-skoda-superb-style-tsi-at-magnetic-brown-metallic-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25400/gallery/25408_yIN7hpFeS.jpg</image:loc>
+      <image:title>Skoda Superb Style TSI AT Magnetic Brown Metallic</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volkswagen-volkswagen-tiguan-comfortline-tdi-oryx-white-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25260/gallery/25280_8oB-Cacgb.jpg</image:loc>
+      <image:title>Volkswagen Tiguan Comfortline TDI Oryx White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-c-class-c-200-blueefficiency-p-silver-2012</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/24457/gallery/24472_qSg5RbbGI.jpg</image:loc>
+      <image:title>Mercedes Benz C Class C 200 BlueEFFICIENCY P Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-x5-xdrive-30d-imperial-blue-luxury-suv-2016</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26349/gallery/26352_Ann0LW16K.jpg</image:loc>
+      <image:title>BMW X5 xDrive 30d – Imperial Blue | Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-mercedes-benz-b180-cdi-polar-silver-compact-luxury-2014</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26263/gallery/26327_yTiqn_ef_f.jpg</image:loc>
+      <image:title>Mercedes-Benz B180 CDI – Polar Silver | Compact Luxury</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-2020-honda-jazz-vx-cvt-i-vtec-lunar-silver-metallic-practical-automatic-hatchback-2020</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26796/gallery/26831_ebfYqqiEej.jpg</image:loc>
+      <image:title>2020 Honda Jazz VX CVT (i-VTEC) – Lunar Silver Metallic | Practical Automatic Hatchback</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2016-mercedes-benz-glc-300-4matic-cbu-iridium-silver-luxury-suv-with-power-prestige-2016</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26829/gallery/26892_C-0uDrX2Y0.jpg</image:loc>
+      <image:title>2016 Mercedes-Benz GLC 300 4MATIC (CBU) – Iridium Silver | Luxury SUV with Power &amp; Prestige</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-march-2019-bmw-x1-2-0d-sdrive-expedition-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27037/gallery/27036_d2tGrd34T.png</image:loc>
+      <image:title>March 2019 BMW X1 2.0d sDrive Expedition</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/land-rover-2022-land-rover-discovery-sport-2-0-se-r-dynamic-fuji-white-bold-capable-luxury-suv-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26891/gallery/26896_0xhABj3_z.jpg</image:loc>
+      <image:title>2022 Land Rover Discovery Sport 2.0 SE R-Dynamic – Fuji White | Bold &amp; Capable Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-2018-audi-q3-30-tfsi-premium-plus-misano-red-sporty-compact-suv-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26508/gallery/26587_Us4Ujf9Vd.jpg</image:loc>
+      <image:title>2018 Audi Q3 30 TFSI Premium Plus – Misano Red | Sporty Compact SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-2016-honda-city-sv-m-t-alabaster-silver-reliable-efficient-sedan-2016</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26721/gallery/26723_vQQzZUZrJ.jpg</image:loc>
+      <image:title>2016 Honda City SV M/T – Alabaster Silver | Reliable &amp; Efficient Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/maruti-suzuki-maruti-suzuki-baleno-zeta-at-petrol-pure-silver-2016</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/25728/gallery/25733_dJ9saS6JX.jpg</image:loc>
+      <image:title>Maruti Suzuki Baleno Zeta AT Petrol Pure Silver</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2021-mercedes-benz-e220d-iridium-silver-executive-luxury-sedan-2021</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26510/gallery/26641_5tDzEszYT.jpg</image:loc>
+      <image:title>2021 Mercedes-Benz E220d – Iridium Silver | Executive Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mini-2022-mini-cooper-3-door-lci2-chilli-red-iconic-hatchback-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26422/gallery/26658_uuLRHcoDz.jpg</image:loc>
+      <image:title>2022 Mini Cooper 3-Door LCI2 – Chilli Red | Iconic Hatchback</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-january-2017-bmw-x1-2-0d-sdrive-xline-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27035/gallery/27041_Y4BIF2_cO.jpg</image:loc>
+      <image:title>January 2017 BMW X1 2.0d sDrive XLine</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2017-bmw-530i-sport-line-imperial-blue-premium-luxury-sedan-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27040/gallery/27117_5hXBHzGvdp.jpg</image:loc>
+      <image:title>2017 BMW 530i Sport Line – Imperial Blue | Premium Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-bmw-5-series-520d-luxury-line-imperial-blue-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/23716/gallery/27047_AkAVy3QN9.jpg</image:loc>
+      <image:title>BMW 5 Series 520d Luxury Line Imperial Blue</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mini-2018-mini-cooper-3-door-jcw-volcanic-orange-high-performance-icon-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/26963/gallery/26968_NN776mGikl.jpg</image:loc>
+      <image:title>2018 Mini Cooper 3-Door JCW – Volcanic Orange | High-Performance Icon</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-july-2021-audi-q2-40-tfsi-quattro-premium-plus-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27103/gallery/27124_ImHvySyv4.jpg</image:loc>
+      <image:title>July 2021 Audi Q2 40 TFSI Quattro Premium Plus</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2012-mercedes-benz-e200-cgi-elegance-calcite-white-2012</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27179/gallery/27218_e5TZSTjtf.jpg</image:loc>
+      <image:title>2012 Mercedes-Benz E200 CGI Elegance – Calcite White</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-2020-volvo-xc40-t4-r-design-bursting-blue-premium-compact-suv-2020</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27181/gallery/27256_essRz93xs.jpg</image:loc>
+      <image:title>2020 Volvo XC40 T4 R-Design – Bursting Blue | Premium Compact SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/kia-kia-ev6-gt-line-awd-moonscape-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27289/gallery/27323_7SfgKQWZR.jpg</image:loc>
+      <image:title>Kia EV6 GT Line AWD Moonscape</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2022-bmw-x1-sdrive20i-xline-black-sapphire-premium-compact-luxury-suv-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27326/gallery/27333_Hz_jmicXC.jpeg</image:loc>
+      <image:title>2022 BMW X1 sDrive20i XLine – Black Sapphire | Premium Compact Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2015-bmw-320d-prestige-imperial-blue-metallic-sporty-refined-luxury-sedan-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27332/gallery/27467_9vV2uWUbV.jpeg</image:loc>
+      <image:title>2015 BMW 320d Prestige – Imperial Blue Metallic | Sporty &amp; Refined Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2022-bmw-220i-gran-coupe-m-sport-black-sapphire-sporty-luxury-sedan-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27401/gallery/27436_vEBjRcCf5.jpeg</image:loc>
+      <image:title>2022 BMW 220i Gran Coupe M Sport – Black Sapphire | Sporty Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-2018-audi-a4-30-tfsi-s-line-moonlight-blue-luxury-executive-sedan-2018</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27501/gallery/27654_IDycUzwAG.jpeg</image:loc>
+      <image:title>2018 Audi A4 30 TFSI S-Line – Moonlight Blue | Luxury Executive Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/honda-2014-honda-city-sv-a-t-taffeta-white-smooth-reliable-automatic-sedan-2014</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27029/gallery/26999_MkGhQcWTUX.jpg</image:loc>
+      <image:title>2014 Honda City SV A/T – Taffeta White | Smooth &amp; Reliable Automatic Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/ford-2019-ford-ecosport-titanium-canyon-ridge-compact-suv-with-style-features-2019</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27114/gallery/27814_yozcvvjip.jpeg</image:loc>
+      <image:title>2019 Ford EcoSport Titanium+ – Canyon Ridge | Compact SUV with Style &amp; Features</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/kia-2024-kia-seltos-x-line-g1-5t-7dct-matte-graphite-sporty-compact-suv-2024</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27183/gallery/27184_vJ_N3JI7q.jpg</image:loc>
+      <image:title>2024 Kia Seltos X-Line G1.5T 7DCT – Matte Graphite | Sporty Compact SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/hyundai-2017-hyundai-creta-vtvt-sx-o-dual-tone-red-black-top-spec-petrol-suv-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27330/gallery/27334_UXkJaE3hIW.jpeg</image:loc>
+      <image:title>2017 Hyundai Creta VTVT SX (O) – Dual Tone Red/Black | Top-Spec Petrol SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-2017-audi-q3-30-tfsi-premium-cortina-white-compact-luxury-suv-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27540/gallery/27505_MVBdKiwzA.jpeg</image:loc>
+      <image:title>2017 Audi Q3 30 TFSI Premium – Cortina White | Compact Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/land-rover-2017-land-rover-discovery-sport-hse-firenze-red-premium-luxury-suv-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27577/gallery/27592_GhZKdT546.jpeg</image:loc>
+      <image:title>2017 Land Rover Discovery Sport HSE – Firenze Red | Premium Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2021-mercedes-benz-glc-200-progressive-obsidian-black-luxury-mid-size-suv-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27578/gallery/27541_a9x6mlkHv.jpeg</image:loc>
+      <image:title>2021 Mercedes-Benz GLC 200 Progressive – Obsidian Black | Luxury Mid-Size SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2019-bmw-x1-sdrive20d-xline-mediterranean-blue-luxury-compact-diesel-suv-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27582/gallery/27586_lGNqc6975y.jpeg</image:loc>
+      <image:title>2019 BMW X1 sDrive20d XLine – Mediterranean Blue | Luxury Compact Diesel SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/tata-2021-tata-safari-xza-plus-2-0-kryotec-frost-white-premium-7-seater-diesel-suv-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27585/gallery/27796_0eWhmDCTK.jpeg</image:loc>
+      <image:title>2021 Tata Safari XZA Plus 2.0 Kryotec – Frost White | Premium 7-Seater Diesel SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2015-bmw-320d-prestige-alpine-white-luxury-diesel-sedan-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27690/gallery/27695_55qYBDcAT.jpeg</image:loc>
+      <image:title>2015 BMW 320d Prestige – Alpine White | Luxury Diesel Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2018-mercedes-benz-c-220-cdi-edition-c-polar-white-luxury-diesel-sedan-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27692/gallery/27726_iAosEar4Sa.jpeg</image:loc>
+      <image:title>2018 Mercedes-Benz C 220 CDI Edition C – Polar White | Luxury Diesel Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2023-bmw-x7-xdrive40i-lci-m-sport-tanzanite-blue-flagship-luxury-suv-vvip-number-plate-2023</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27694/gallery/27755_yh_dMHGawC.jpeg</image:loc>
+      <image:title>2023 BMW X7 xDrive40i LCI M Sport – Tanzanite Blue | Flagship Luxury SUV | VVIP Number Plate</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2016-mercedes-benz-c-250-cdi-cavansite-blue-powerful-luxury-diesel-sedan-2016</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27864/gallery/27991_0IU53vTCj.jpeg</image:loc>
+      <image:title>2016 Mercedes-Benz C 250 CDI – Cavansite Blue | Powerful Luxury Diesel Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2019-bmw-x5-xdrive30d-dpe-imperial-blue-luxury-performance-suv-2019</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27866/gallery/27955_8winApw69.jpeg</image:loc>
+      <image:title>2019 BMW X5 xDrive30d DPE – Imperial Blue | Luxury Performance SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2018-bmw-520d-luxury-line-cashmere-silver-executive-luxury-sedan-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27868/gallery/27885_OLvQoix02.jpeg</image:loc>
+      <image:title>2018 BMW 520d Luxury Line – Cashmere Silver | Executive Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2022-mercedes-benz-a-200d-limousine-polar-white-sporty-luxury-sedan-bh-registered-2022</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/27873/gallery/27926_qyhKvnd2lF.jpeg</image:loc>
+      <image:title>2022 Mercedes-Benz A 200d Limousine – Polar White | Sporty Luxury Sedan | BH Registered</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-2021-audi-a6-45-tfsi-technology-seville-red-metallic-premium-executive-luxury-sedan-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28069/gallery/28027_6NKQ6coeJx.jpeg</image:loc>
+      <image:title>2021 Audi A6 45 TFSI Technology – Seville Red Metallic | Premium Executive Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2018-bmw-x1-sdrive20d-expedition-mediterranean-blue-premium-compact-luxury-suv-single-owner-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28112/gallery/28070_tVlrGtLbuZ.jpeg</image:loc>
+      <image:title>2018 BMW X1 sDrive20d Expedition – Mediterranean Blue | Premium Compact Luxury SUV | Single Owner</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-2018-audi-q5-45-tfsi-premium-plus-mythos-black-premium-luxury-suv-2018</loc>
+    <lastmod>2026-08-28</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28182/gallery/28149_5bPt0Xjus1.jpeg</image:loc>
+      <image:title>2018 Audi Q5 45 TFSI Premium Plus – Mythos Black | Premium Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-2019-volvo-xc40-inscription-crystal-pearl-white-scandinavian-luxury-suv-2019</loc>
+    <lastmod>2026-08-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28216/gallery/28183_f-HJ76FXB.jpeg</image:loc>
+      <image:title>2019 Volvo XC40 Inscription – Crystal Pearl White | Scandinavian Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2021-bmw-x1-sdrive20i-xline-pythonic-blue-premium-luxury-suv-2021</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28257/gallery/28217_EnqNrpdbx.jpeg</image:loc>
+      <image:title>2021 BMW X1 sDrive20i xLine – Pythonic Blue | Premium Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2018-mercedes-benz-cla-200-cavansite-blue-sporty-luxury-coupe-sedan-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28307/gallery/28273_HTj8U2VuZ.jpeg</image:loc>
+      <image:title>2018 Mercedes-Benz CLA 200 – Cavansite Blue | Sporty Luxury Coupe-Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2020-bmw-x3-xdrive20d-luxury-line-black-sapphire-premium-luxury-suv-2020</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28346/gallery/28309_uH2-Jcm3C.jpeg</image:loc>
+      <image:title>2020 BMW X3 xDrive20d Luxury Line – Black Sapphire | Premium Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2021-bmw-520d-lci-luxury-line-imperial-blue-executive-luxury-sedan-2021</loc>
+    <lastmod>2026-09-22</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28380/gallery/28347_OJrO93TUo.jpeg</image:loc>
+      <image:title>2021 BMW 520d LCI Luxury Line – Imperial Blue | Executive Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/volvo-2021-volvo-xc40-t4-r-design-glacier-silver-sporty-scandinavian-luxury-suv-2021</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28425/gallery/28394_QOLcNgdIL.jpeg</image:loc>
+      <image:title>2021 Volvo XC40 T4 R-Design – Glacier Silver | Sporty Scandinavian Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-2018-audi-q3-30-tfsi-premium-cortina-white-premium-compact-luxury-suv-2018</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28454/gallery/28426_NP3Ys1gRVp.jpeg</image:loc>
+      <image:title>2018 Audi Q3 30 TFSI Premium – Cortina White | Premium Compact Luxury SUV</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2017-mercedes-benz-cla-200-cavansite-blue-sporty-luxury-coupe-sedan-2017</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28488/gallery/28455_FgUspE3x-.jpeg</image:loc>
+      <image:title>2017 Mercedes-Benz CLA 200 – Cavansite Blue | Sporty Luxury Coupe-Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/audi-2017-audi-a4-30-tfsi-technology-ibis-white-premium-executive-luxury-sedan-2017</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28490/gallery/28585_aEUI-w15wd.jpeg</image:loc>
+      <image:title>2017 Audi A4 30 TFSI Technology – Ibis White | Premium Executive Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/mercedes-benz-2015-mercedes-benz-c-200-avantgarde-iridium-silver-executive-luxury-sedan-2015</loc>
+    <lastmod>2026-08-18</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28492/gallery/28537_eAzZnTO_ac.jpeg</image:loc>
+      <image:title>2015 Mercedes-Benz C 200 Avantgarde – Iridium Silver | Executive Luxury Sedan</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://www.autopavilion.in/inventory/bmw-2022-bmw-320d-luxury-edition-phytonic-blue-premium-executive-luxury-sedan-single-owner-2022</loc>
+    <lastmod>2026-08-19</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://ik.imagekit.io/autopavillion/autopavilion/cars/28644/gallery/28612_TZneZ0ZWMs.jpeg</image:loc>
+      <image:title>2022 BMW 320d Luxury Edition – Phytonic Blue | Premium Executive Luxury Sedan | Single Owner</image:title>
+    </image:image>
   </url>
 </urlset>
