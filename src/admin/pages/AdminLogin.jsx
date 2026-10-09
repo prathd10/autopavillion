@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuth } from '../../contexts/AuthContext';
 import { Eye, EyeOff, AlertCircle, Loader2, ArrowRight } from 'lucide-react';
+import SEO from '../../components/SEO';
 
 export default function AdminLogin() {
   const { signIn, user } = useAuth();
@@ -46,6 +47,7 @@ export default function AdminLogin() {
 
   return (
     <div className="relative min-h-screen bg-black text-white flex items-center justify-center overflow-hidden font-mulish">
+      <SEO title="Admin Login" noindex={true} />
       {/* CINEMATIC VIDEO BACKGROUND */}
       <div className="absolute inset-0 w-full h-full overflow-hidden bg-black">
         <video

@@ -293,7 +293,7 @@ export default function InventoryPage() {
       <SEO
         title="Pre-Owned Luxury & Exotic Supercar Inventory"
         description="Browse certified pre-owned Porsche, Lamborghini, Ferrari, Mercedes-AMG, Bentley, and Rolls-Royce supercars in Mumbai. 251-point inspected with verified history."
-        url="https://autopavilion.in/inventory"
+        url="https://www.autopavilion.in/inventory"
       />
       <Navbar 
         compareCount={compareList.length}

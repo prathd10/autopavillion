@@ -1,8 +1,45 @@
 {
+  "redirects": [
+    {
+      "source": "/insights/buying-pre-owned-porsche-mumbai-guide",
+      "destination": "/insights/buying-used-luxury-car-mumbai-checklist-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/porsche-911-vs-mercedes-amg-gt-investment",
+      "destination": "/insights/pre-owned-vs-new-luxury-cars-india-depreciation-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/supercar-inspection-251-point-audit",
+      "destination": "/insights/best-luxury-car-dealers-in-mumbai",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
       "destination": "/api/$1"
+    },
+    {
+      "source": "/wp-(.*)",
+      "destination": "/api/legacy-cleanup"
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/api/legacy-cleanup"
+    },
+    {
+      "source": "/feed(.*)",
+      "destination": "/api/legacy-cleanup"
+    },
+    {
+      "source": "/trackback(.*)",
+      "destination": "/api/legacy-cleanup"
+    },
+    {
+      "source": "/sitemap.xml",
+      "destination": "/api/sitemap"
     },
     {
       "source": "/(.*)",
@@ -10,6 +47,24 @@
     }
   ],
   "headers": [
+    {
+      "source": "/admin/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [

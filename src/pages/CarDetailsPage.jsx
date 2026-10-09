@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, Link } from 'react-router-dom';
 import { ShieldCheck, ChevronLeft, ChevronRight, ArrowLeft, Check, Send, Loader2, Scale } from 'lucide-react';
 import { ikUrl } from '../lib/imagekit';
 import { useComparison } from '../hooks/useComparison';
@@ -39,10 +39,42 @@ export default function CarDetailsPage() {
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({ name: '', phone: '', city: 'Mumbai' });
 
-  if (carsLoading || !car) {
+  if (carsLoading) {
     return (
       <div className="min-h-screen bg-[#08090c] text-white flex items-center justify-center">
         <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-white"></div>
+      </div>
+    );
+  }
+
+  if (!car) {
+    return (
+      <div className="min-h-screen bg-[#08090c] text-slate-100 font-mulish flex flex-col justify-between selection:bg-white selection:text-black">
+        <SEO
+          title="Vehicle Listing Not Found"
+          description="The requested vehicle listing is not currently available or has been removed from the Auto Pavilion inventory."
+          url={`https://www.autopavilion.in/inventory/${slug}`}
+          noindex={true}
+        />
+        <Navbar compareCount={0} onOpenCompare={() => {}} searchTerm="" setSearchTerm={() => {}} />
+        <main className="flex-1 flex flex-col items-center justify-center px-4 text-center py-32 max-w-xl mx-auto">
+          <div className="w-16 h-16 rounded-full bg-white/5 border border-white/10 flex items-center justify-center mb-6">
+            <ShieldCheck className="w-8 h-8 text-zinc-500" />
+          </div>
+          <h1 className="text-3xl sm:text-4xl font-heading font-black uppercase tracking-tight text-white mb-3">
+            Vehicle Not Found
+          </h1>
+          <p className="text-zinc-400 text-sm mb-8 leading-relaxed font-mulish">
+            The vehicle listing you are looking for may have been sold, archived, or is no longer publicly listed in our Mumbai showroom.
+          </p>
+          <Link
+            to="/inventory"
+            className="px-8 py-3.5 rounded-full bg-white text-black font-extrabold text-xs uppercase tracking-widest hover:bg-zinc-200 transition-all shadow-xl hover:scale-105"
+          >
+            Explore Active Inventory
+          </Link>
+        </main>
+        <Footer />
       </div>
     );
   }
@@ -110,10 +142,11 @@ export default function CarDetailsPage() {
       "@type": "Offer",
       "price": car.priceRaw || "10000000",
       "priceCurrency": "INR",
-      "availability": "https://schema.org/InStock",
+      "availability": car.status === 'sold' ? "https://schema.org/SoldOut" : "https://schema.org/InStock",
       "seller": {
         "@type": "AutoDealer",
-        "name": "Auto Pavilion Mumbai"
+        "name": "Auto Pavilion Mumbai",
+        "url": "https://www.autopavilion.in"
       }
     }
   } : null;
@@ -125,7 +158,7 @@ export default function CarDetailsPage() {
           title={`${car.year} ${car.brand} ${car.name} - ${car.price}`}
           description={`Certified Pre-Owned ${car.year} ${car.brand} ${car.name} for sale in Mumbai. ${car.subtitle || ''}. 251-point quality audit passed with complete service history.`}
           image={car.images && car.images.length > 0 ? car.images[0] : undefined}
-          url={`https://autopavilion.in/inventory/${car.slug}`}
+          url={`https://www.autopavilion.in/inventory/${car.slug}`}
           schema={carSchema}
         />
       )}

@@ -1,8 +1,62 @@
-# Auto Pavilion Robots.txt
+# Auto Pavilion Production Robots.txt
+# Controls Googlebot & crawler indexing to prioritize new showroom & blog pages.
+
 User-agent: *
-Allow: /
+
+# Explicitly Allow New Website Pages & Sections
+Allow: /$
+Allow: /inventory$
+Allow: /inventory/*
+Allow: /insights$
+Allow: /insights/*
+Allow: /about$
+Allow: /sourcing$
+Allow: /sell$
+Allow: /finance$
+Allow: /compare$
+Allow: /faq$
+Allow: /privacy$
+Allow: /terms$
+Allow: /review$
+Allow: /sitemap.xml
+Allow: /assets/*
+
+# Disallow Internal Admin Portal & APIs
+Disallow: /admin
 Disallow: /admin/
 Disallow: /admin/*
+Disallow: /api/
+Disallow: /api/*
 
-# Sitemap index
+# Disallow Legacy WordPress (Vehica Theme) Traps & Endpoints
+Disallow: /wp-admin/
+Disallow: /wp-content/
+Disallow: /wp-includes/
+Disallow: /wp-json/
+Disallow: /xmlrpc.php
+Disallow: /wp-login.php
+Disallow: /trackback/
+Disallow: /feed/
+Disallow: /comments/
+Disallow: /*/feed/
+Disallow: /*/trackback/
+Disallow: /category/
+Disallow: /tag/
+Disallow: /author/
+
+# Disallow Faceted Search & Query Parameter Permutations (prevents crawl budget depletion)
+Disallow: /*?*
+Disallow: /*?s=*
+Disallow: /*?p=*
+Disallow: /*?make=*
+Disallow: /*?model=*
+Disallow: /*?year=*
+Disallow: /*?price=*
+Disallow: /*?sort=*
+Disallow: /*?order=*
+Disallow: /*?vehica*
+Disallow: /*?filter*
+
+# Canonical XML Sitemap
 Sitemap: https://www.autopavilion.in/sitemap.xml
+

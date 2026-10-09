@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { NavLink, Outlet, Link, useNavigate } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContext';
+import SEO from '../components/SEO';
 import {
   LayoutDashboard, Car, LogOut, ExternalLink,
   ChevronLeft, ChevronRight, Menu, X, Plus, MessageSquare, Inbox, HelpCircle
@@ -117,6 +118,7 @@ export default function AdminLayout() {
 
   return (
     <div className="flex h-screen bg-black text-white font-mulish overflow-hidden">
+      <SEO title="Admin Portal" noindex={true} />
       {/* Desktop Sidebar */}
       <div className="hidden md:block h-full relative z-20">
         <Sidebar />

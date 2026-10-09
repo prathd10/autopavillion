@@ -16,6 +16,7 @@ import FAQPage from './pages/FAQPage';
 import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
 import TermsOfServicePage from './pages/TermsOfServicePage';
 import SubmitReviewPage from './pages/SubmitReviewPage';
+import NotFoundPage from './pages/NotFoundPage';
 import Chatbot from './components/Chatbot';
 import ViewingModal from './components/ViewingModal';
 import ComparisonTray from './components/ComparisonTray';
@@ -101,8 +102,8 @@ export default function App() {
           <Route path="testimonials/:id/edit" element={<TestimonialForm />} />
         </Route>
 
-        {/* Catch-all → homepage */}
-        <Route path="*" element={<Navigate to="/" replace />} />
+        {/* Catch-all → 404 Not Found */}
+        <Route path="*" element={<NotFoundPage />} />
       </Routes>
       
       <Routes>
