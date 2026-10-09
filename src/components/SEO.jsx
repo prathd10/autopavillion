@@ -52,7 +52,8 @@ export default function SEO({
     // 2. Standard Meta Tags
     setMeta('description', description);
     setMeta('keywords', keywords);
-    setMeta('robots', noindex ? 'noindex, nofollow' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    setMeta('robots', noindex ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
+    setMeta('googlebot', noindex ? 'noindex, nofollow, noarchive' : 'index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1');
 
     // 3. Open Graph Tags
     setMeta('og:title', fullTitle, true);

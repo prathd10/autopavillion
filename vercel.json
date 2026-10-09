@@ -5,6 +5,22 @@
       "destination": "/api/$1"
     },
     {
+      "source": "/wp-(.*)",
+      "destination": "/api/legacy-cleanup"
+    },
+    {
+      "source": "/xmlrpc.php",
+      "destination": "/api/legacy-cleanup"
+    },
+    {
+      "source": "/feed(.*)",
+      "destination": "/api/legacy-cleanup"
+    },
+    {
+      "source": "/trackback(.*)",
+      "destination": "/api/legacy-cleanup"
+    },
+    {
       "source": "/sitemap.xml",
       "destination": "/api/sitemap"
     },
@@ -14,6 +30,24 @@
     }
   ],
   "headers": [
+    {
+      "source": "/admin/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow, noarchive"
+        }
+      ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        {
+          "key": "X-Robots-Tag",
+          "value": "noindex, nofollow"
+        }
+      ]
+    },
     {
       "source": "/(.*)",
       "headers": [
