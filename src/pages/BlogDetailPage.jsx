@@ -66,27 +66,27 @@ export default function BlogDetailPage() {
     "@type": "BlogPosting",
     "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": `https://autopavilion.in/insights/${article.slug}`
+      "@id": `https://www.autopavilion.in/insights/${article.slug}`
     },
     "headline": article.title,
     "description": article.excerpt,
     "image": [article.coverImage],
-    "datePublished": "2026-08-28T09:00:00+05:30",
-    "dateModified": "2026-08-29T12:00:00+05:30",
+    "datePublished": article.publishedAt ? new Date(article.publishedAt).toISOString() : new Date().toISOString(),
+    "dateModified": article.updatedAt ? new Date(article.updatedAt).toISOString() : new Date().toISOString(),
     "author": {
       "@type": "Person",
-      "name": article.author.name,
-      "jobTitle": article.author.role
+      "name": article.author?.name || "Auto Pavilion Editorial Desk",
+      "jobTitle": article.author?.role || "Editorial Desk"
     },
     "publisher": {
       "@type": "Organization",
       "name": "Auto Pavilion",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://autopavilion.in/wp-content/uploads/2020/12/cropped-icon-v-32x32.png"
+        "url": "https://www.autopavilion.in/logo.png"
       }
     },
-    "keywords": article.tags.join(", ")
+    "keywords": Array.isArray(article.tags) ? article.tags.join(", ") : ""
   };
 
   // FAQ Schema if article has FAQs

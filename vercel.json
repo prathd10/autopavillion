@@ -1,4 +1,21 @@
 {
+  "redirects": [
+    {
+      "source": "/insights/buying-pre-owned-porsche-mumbai-guide",
+      "destination": "/insights/buying-used-luxury-car-mumbai-checklist-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/porsche-911-vs-mercedes-amg-gt-investment",
+      "destination": "/insights/pre-owned-vs-new-luxury-cars-india-depreciation-guide",
+      "permanent": true
+    },
+    {
+      "source": "/insights/supercar-inspection-251-point-audit",
+      "destination": "/insights/best-luxury-car-dealers-in-mumbai",
+      "permanent": true
+    }
+  ],
   "rewrites": [
     {
       "source": "/api/(.*)",
