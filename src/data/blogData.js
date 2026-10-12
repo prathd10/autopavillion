@@ -19,8 +19,8 @@ export const BLOG_ARTICLES = [
       name: "Auto Pavilion Editorial Desk",
       role: "Luxury Automotive Advisory"
     },
-    coverImage: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1600&auto=format&fit=crop",
-    image: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1600&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1621808752171-531c30903889?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1621808752171-531c30903889?q=80&w=1600&auto=format&fit=crop",
     featured: true,
     tags: ["Luxury Car Dealers Mumbai", "Pre-Owned Luxury Cars", "Auto Pavilion Santacruz", "Certified Supercars", "Mumbai Car Showrooms"],
     seo: {
@@ -45,9 +45,9 @@ However, acquiring a high-end vehicle in Mumbai demands discerning scrutiny. Whi
       },
       {
         type: "image",
-        url: "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=1600&auto=format&fit=crop",
-        alt: "Luxury and Exotic Supercars in Mumbai Showroom",
-        caption: "Curated lineup of certified pre-owned luxury sedans and exotics in an indoor diagnostic showroom."
+        url: "https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?q=80&w=1600&auto=format&fit=crop",
+        alt: "Bentley and Mercedes luxury vehicles showcased in boutique showroom",
+        caption: "Curated lineup of certified pre-owned luxury sedans and exotics in an indoor boutique showroom."
       },
       {
         type: "paragraph",
@@ -139,8 +139,8 @@ However, acquiring a high-end vehicle in Mumbai demands discerning scrutiny. Whi
       name: "Auto Pavilion Editorial Desk",
       role: "Technical Inspection Team"
     },
-    coverImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop",
-    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?q=80&w=1600&auto=format&fit=crop",
     featured: false,
     tags: ["Used Luxury Cars Mumbai", "Pre-Owned Car Checklist", "RTO Transfer Maharashtra", "Flood Check Mumbai", "Car Buying Guide"],
     seo: {
@@ -165,9 +165,9 @@ However, Mumbai poses environmental and bureaucratic conditions that differ sign
       },
       {
         type: "image",
-        url: "https://images.unsplash.com/photo-1486006920555-c77dce18193b?q=80&w=1600&auto=format&fit=crop",
-        alt: "Under-chassis and suspension diagnostic inspection on showroom lift",
-        caption: "Comprehensive suspension, brake lines, and underbody structural inspection under hydraulic lift illumination."
+        url: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1600&auto=format&fit=crop",
+        alt: "Diagnostic multi-point mechanical inspection by certified automotive technician",
+        caption: "Rigorous 251-point diagnostic audit verifying mechanical components, wiring looms, and fluid levels."
       },
       {
         type: "paragraph",
@@ -253,8 +253,8 @@ At Auto Pavilion, our dedicated RTO concierge handles all documentation, local t
       name: "Auto Pavilion Editorial Desk",
       role: "Market Economics & Valuations"
     },
-    coverImage: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1600&auto=format&fit=crop",
-    image: "https://images.unsplash.com/photo-1618843479313-40f8afb4b4d8?q=80&w=1600&auto=format&fit=crop",
+    coverImage: "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1555215695-3004980ad54e?q=80&w=1600&auto=format&fit=crop",
     featured: false,
     tags: ["Pre-Owned vs New", "Luxury Car Depreciation India", "Automotive Investment", "Car Finance India", "HNIS Luxury Cars"],
     seo: {
@@ -279,8 +279,8 @@ When you drive a new ₹1.2 Crore luxury sedan out of an authorized showroom, th
       },
       {
         type: "image",
-        url: "https://images.unsplash.com/photo-1614162692292-7ac56d7f7f1e?q=80&w=1600&auto=format&fit=crop",
-        alt: "Certified luxury supercar with verified provenance and low mileage",
+        url: "https://images.unsplash.com/photo-1583121274602-3e2820c69888?q=80&w=1600&auto=format&fit=crop",
+        alt: "Certified exotic supercar in pristine showroom condition",
         caption: "Low-mileage certified exotic retaining pristine condition and factory performance specifications."
       },
       {
