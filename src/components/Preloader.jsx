@@ -17,17 +17,19 @@ export default function Preloader({ onComplete }) {
           return prev + 1;
         } else {
           clearInterval(letterTimer);
-          setTimeout(() => setShowUnderline(true), 120);
+          // Reveal underline and gold sheen quickly after letters appear
+          setTimeout(() => setShowUnderline(true), 60);
+          // Hold gold sheen briefly so user appreciates the brand, then fade out smoothly
           setTimeout(() => {
             setFadeOut(true);
             setTimeout(() => {
               onComplete();
-            }, 700);
-          }, 2200);
+            }, 500);
+          }, 950);
           return prev;
         }
       });
-    }, 85);
+    }, 55); // 13 steps * 55ms = ~715ms letter reveal
 
     return () => {
       clearInterval(letterTimer);
@@ -38,7 +40,7 @@ export default function Preloader({ onComplete }) {
 
   return (
     <div
-      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-all duration-800 ${
+      className={`fixed inset-0 z-[100] flex flex-col items-center justify-center bg-black transition-all duration-500 ${
         fadeOut ? 'opacity-0 scale-105 pointer-events-none' : 'opacity-100 scale-100'
       }`}
     >
@@ -55,7 +57,7 @@ export default function Preloader({ onComplete }) {
         .gold-shine-mask {
           background: linear-gradient(110deg, #D4AF37 35%, #FFFDF0 50%, #D4AF37 65%);
           background-size: 200% 100%;
-          animation: subtleGoldShine 3.5s linear infinite;
+          animation: subtleGoldShine 2.5s linear infinite;
         }
       `}</style>
 
@@ -67,21 +69,21 @@ export default function Preloader({ onComplete }) {
             className="w-full h-full relative"
             style={{
               clipPath: `inset(0 ${100 - currentPercent}% 0 0)`,
-              transition: 'clip-path 90ms linear',
+              transition: 'clip-path 55ms linear',
             }}
           >
             {/* Base Logo Image (Crisp white during reveal, transitions to original gold) */}
             <img
               src="/logo.png"
               alt="Auto Pavilion"
-              className={`w-full h-full object-contain transition-all duration-500 ${
+              className={`w-full h-full object-contain transition-all duration-400 ${
                 showUnderline ? 'opacity-100 filter-none' : 'brightness-0 invert opacity-95'
               }`}
             />
 
             {/* Metallic Gold Sheen Overlay when fully revealed */}
             <div
-              className={`absolute inset-0 pointer-events-none transition-opacity duration-700 ${
+              className={`absolute inset-0 pointer-events-none transition-opacity duration-500 ${
                 showUnderline ? 'opacity-100 gold-shine-mask' : 'opacity-0'
               }`}
               style={{
@@ -102,7 +104,7 @@ export default function Preloader({ onComplete }) {
         {/* Subtle Gold Underline */}
         <div className="relative mt-5 sm:mt-6 h-[2px] w-full max-w-xs sm:max-w-lg mx-auto overflow-hidden rounded-full bg-white/10">
           <div
-            className={`h-full bg-[#D4AF37] transition-all duration-700 ease-out shadow-[0_0_8px_rgba(212,175,55,0.4)] ${
+            className={`h-full bg-[#D4AF37] transition-all duration-500 ease-out shadow-[0_0_8px_rgba(212,175,55,0.4)] ${
               showUnderline ? 'w-full opacity-100' : 'w-0 opacity-0'
             }`}
           />
