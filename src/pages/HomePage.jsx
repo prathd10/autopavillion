@@ -16,6 +16,31 @@ import SEO from '../components/SEO';
 import { useCars } from '../hooks/useCars';
 import { usePageTracker } from '../hooks/usePageTracker';
 
+// Business details for Google (local search + brand searches like "auto pavilion")
+const DEALER_SCHEMA = {
+  "@context": "https://schema.org",
+  "@type": "AutoDealer",
+  "@id": "https://www.autopavilion.in/#dealer",
+  "name": "Auto Pavilion",
+  "alternateName": ["Autopavilion", "Auto Pavillion", "Auto Pavilion Mumbai"],
+  "url": "https://www.autopavilion.in",
+  "logo": "https://www.autopavilion.in/logo.png",
+  "image": "https://www.autopavilion.in/logo.png",
+  "description": "Pre-owned luxury car dealer in Santacruz West, Mumbai. Buy, sell, trade in, finance and source certified luxury cars.",
+  "telephone": "+91-82919-19393",
+  "email": "info@autopavilion.in",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "Office No. 25, Tirupati Shopping Center, S.V. Road, Santacruz (West)",
+    "addressLocality": "Mumbai",
+    "addressRegion": "Maharashtra",
+    "postalCode": "400054",
+    "addressCountry": "IN"
+  },
+  "areaServed": ["Mumbai", "Maharashtra", "India"],
+  "sameAs": ["https://www.instagram.com/autopavilion_india/"]
+};
+
 /**
  * The public-facing homepage.
  *
@@ -73,6 +98,7 @@ export default function HomePage() {
       <SEO
         description="Auto Pavilion is Mumbai's premier pre-owned luxury supercar dealership. Curated Porsche, Ferrari, Lamborghini, AMG, Rolls-Royce, and Bentley supercars with a 251-point diagnostic audit & verified history."
         url="https://www.autopavilion.in"
+        schema={DEALER_SCHEMA}
       />
       <Navbar
         compareCount={compareList.length}

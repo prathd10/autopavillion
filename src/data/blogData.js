@@ -24,7 +24,7 @@ export const BLOG_ARTICLES = [
     featured: true,
     tags: ["Luxury Car Dealers Mumbai", "Pre-Owned Luxury Cars", "Auto Pavilion Santacruz", "Certified Supercars", "Mumbai Car Showrooms"],
     seo: {
-      metaTitle: "Best Pre-Owned Luxury Car Dealers in Mumbai (2026 Guide) | Auto Pavilion",
+      metaTitle: "Best Pre-Owned Luxury Car Dealers in Mumbai (2026 Guide)",
       metaDescription: "Looking for trusted luxury car dealers in Mumbai? Discover how to choose certified pre-owned showrooms in Santacruz & Bandra with verified inspection audits, warranties, and clean RTO titles.",
       keywords: "luxury car dealers in mumbai, pre owned luxury car dealers mumbai, used car dealers santacruz west, certified luxury cars mumbai, best exotic car showrooms mumbai, buy porsche mercedes bmw mumbai",
       canonical: "https://www.autopavilion.in/insights/best-luxury-car-dealers-in-mumbai"
@@ -144,7 +144,7 @@ However, acquiring a high-end vehicle in Mumbai demands discerning scrutiny. Whi
     featured: false,
     tags: ["Used Luxury Cars Mumbai", "Pre-Owned Car Checklist", "RTO Transfer Maharashtra", "Flood Check Mumbai", "Car Buying Guide"],
     seo: {
-      metaTitle: "Buying a Used Luxury Car in Mumbai: 2026 Checklist & Guide | Auto Pavilion",
+      metaTitle: "Buying a Used Luxury Car in Mumbai: 2026 Checklist & Guide",
       metaDescription: "The definitive checklist for buying a used luxury car in Mumbai. Learn how to verify flood damage, navigate Maharashtra RTO registration (MH-01/MH-02), and budget maintenance costs.",
       keywords: "buying used luxury car mumbai, pre owned bmw mumbai checklist, used mercedes benz mumbai price, rto transfer luxury car maharashtra, flood damaged car verification mumbai, used audi maintenance mumbai",
       canonical: "https://www.autopavilion.in/insights/buying-used-luxury-car-mumbai-checklist-guide"
@@ -258,7 +258,7 @@ At Auto Pavilion, our dedicated RTO concierge handles all documentation, local t
     featured: false,
     tags: ["Pre-Owned vs New", "Luxury Car Depreciation India", "Automotive Investment", "Car Finance India", "HNIS Luxury Cars"],
     seo: {
-      metaTitle: "Pre-Owned vs New Luxury Cars in India: Financial ROI Guide | Auto Pavilion",
+      metaTitle: "Pre-Owned vs New Luxury Cars in India: Financial ROI Guide",
       metaDescription: "Is it better to buy a brand new or certified pre-owned luxury car in India? Compare depreciation curves, GST + CESS tax savings, and discover how to save ₹35L+ on your next luxury car.",
       keywords: "pre owned vs new luxury cars india, luxury car depreciation india, used car vs new car roi mumbai, buy certified pre owned luxury car, saving taxes on luxury cars india, exotic car resale value",
       canonical: "https://www.autopavilion.in/insights/pre-owned-vs-new-luxury-cars-india-depreciation-guide"
@@ -327,6 +327,421 @@ Today, leading luxury dealerships like Auto Pavilion have bridged this divide. T
       {
         q: "Can I get an extended warranty on a pre-owned luxury car?",
         a: "Yes. Many vehicles in our showroom still carry active OEM manufacturer warranties or are backed by comprehensive Auto Pavilion mechanical coverage."
+      }
+    ]
+  },
+  {
+    id: "auto-pavilion-mumbai-santacruz-showroom",
+    slug: "auto-pavilion-mumbai-santacruz-showroom",
+    title: "Auto Pavilion Mumbai: Pre-Owned Luxury Car Showroom in Santacruz West",
+    subtitle: "Who We Are, Where to Find Us on S.V. Road, and How We Help You Buy, Sell, Finance or Source a Luxury Car",
+    excerpt: "Auto Pavilion is a pre-owned luxury car dealer on S.V. Road, Santacruz West, Mumbai. Here is everything you need to know about our showroom, our services, and how to reach us.",
+    category: "About Auto Pavilion",
+    readTime: "6 min read",
+    publishedAt: "October 30, 2026",
+    updatedAt: "October 30, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Auto Pavilion", "Autopavilion Mumbai", "Auto Pavilion Santacruz", "Luxury Car Showroom Mumbai", "Pre-Owned Luxury Cars Mumbai"],
+    seo: {
+      metaTitle: "Pre-Owned Luxury Car Showroom in Santacruz West, Mumbai",
+      metaDescription: "Auto Pavilion (autopavilion.in) is a pre-owned luxury car dealer on S.V. Road, Santacruz West, Mumbai. Buy, sell, trade in, finance or source your next luxury car.",
+      keywords: "auto pavilion, autopavilion, auto pavillion, auto pavilion mumbai, auto pavilion santacruz, autopavilion.in, luxury car showroom santacruz west, pre owned luxury car dealer mumbai",
+      canonical: "https://www.autopavilion.in/insights/auto-pavilion-mumbai-santacruz-showroom"
+    },
+    keyTakeaways: [
+      "Auto Pavilion is a pre-owned luxury car dealership at Office No. 25, Tirupati Shopping Center, S.V. Road, Santacruz (West), Mumbai - 400054.",
+      "The official website is www.autopavilion.in. The name is sometimes searched as \"Autopavilion\" or \"Auto Pavillion\"; it is the same business.",
+      "Services cover buying certified pre-owned luxury cars, selling or trading in your car, finance assistance, bespoke vehicle sourcing, and RTO paperwork.",
+      "You can reach the showroom on +91 82 9191 9393 to book a private viewing, a test drive, or a valuation."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Who We Are",
+        content: `Auto Pavilion is a pre-owned luxury car dealership based in Santacruz West, Mumbai. Founded by Mohd. Atique, the business was built around a simple idea: buying or selling a luxury car should feel informed, personal and transparent, not rushed or uncertain.
+
+Our clients include entrepreneurs, professionals, corporates and HNIs who value quality and attention to detail. Many of them come back to us when it is time for their next car, and that long-term relationship matters more to us than any single transaction.
+
+If you have searched for "Autopavilion", "Auto Pavillion" or "Auto Pavilion Mumbai", you are in the right place. Our official website is www.autopavilion.in, and our showroom is on S.V. Road in Santacruz West.`
+      },
+      {
+        type: "callout",
+        title: "Visit Auto Pavilion",
+        text: "Office No. 25, Tirupati Shopping Center, S.V. Road, Santacruz (West), Mumbai - 400054. Call +91 82 9191 9393 or email info@autopavilion.in to book a private viewing or test drive. Follow our latest arrivals on Instagram at @autopavilion_india."
+      },
+      {
+        type: "paragraph",
+        heading: "2. What You Can Do at Auto Pavilion",
+        content: `Auto Pavilion is a full-service luxury car dealer, not just a showroom floor. Whether you are buying your first luxury car, upgrading, or selling a car you have owned for years, the same team handles the process from the first conversation to the day the keys change hands.`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Buy a Certified Pre-Owned Luxury Car",
+            desc: "Browse a curated collection of luxury sedans, SUVs and sports cars from brands such as Mercedes-Benz, BMW, Audi, Porsche, Land Rover, Jaguar and more. Every car goes through our 251-point inspection standard before it is offered for sale."
+          },
+          {
+            title: "Sell or Trade In Your Car",
+            desc: "Get a no-obligation offer within 30 minutes of inspection, with secure RTGS settlement. If you are upgrading, the value of your current car can be adjusted against your next one."
+          },
+          {
+            title: "Luxury Car Finance",
+            desc: "We help arrange pre-owned luxury car loans through leading banks and NBFCs, so you can plan the purchase around a tenure and EMI that suits you."
+          },
+          {
+            title: "Bespoke Vehicle Sourcing",
+            desc: "Looking for a specific model, colour or specification that is not in stock? Our sourcing service uses our network across India to find it for you."
+          },
+          {
+            title: "RTO and Documentation Support",
+            desc: "We coordinate ownership transfer, hypothecation removal and insurance transfer, so the paperwork is handled correctly and on time."
+          },
+          {
+            title: "Delivery Across India",
+            desc: "We assist clients outside Mumbai and coordinate deliveries across multiple cities and states."
+          }
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1611821064430-0d40291d0f0b?q=80&w=1600&auto=format&fit=crop",
+        alt: "Black Porsche 911 parked outside a modern building",
+        caption: "Sports cars, sedans and SUVs: every vehicle is selected for its condition, history and overall value."
+      },
+      {
+        type: "paragraph",
+        heading: "3. How Buying a Car from Auto Pavilion Works",
+        content: `1. Explore the collection: browse current stock on our Inventory page or follow new arrivals on Instagram.
+2. Speak to the team: call or WhatsApp us to check availability, ask questions and request more photos or a video walkaround.
+3. Private viewing and test drive: visit the Santacruz West showroom at a time that suits you.
+4. Review the details: we share the available inspection findings, service records and documentation for the car you are considering.
+5. Finance and paperwork: if you need a loan, we help arrange it. We also prepare the ownership transfer documents.
+6. Delivery: collect your car from the showroom or arrange delivery to your home, in Mumbai or elsewhere.`
+      },
+      {
+        type: "table",
+        heading: "Auto Pavilion at a Glance",
+        columns: ["Detail", "Information"],
+        rows: [
+          ["Business", "Auto Pavilion: pre-owned luxury car dealer"],
+          ["Address", "Office No. 25, Tirupati Shopping Center, S.V. Road, Santacruz (West), Mumbai - 400054"],
+          ["Phone / WhatsApp", "+91 82 9191 9393"],
+          ["Email", "info@autopavilion.in"],
+          ["Website", "www.autopavilion.in"],
+          ["Instagram", "@autopavilion_india"],
+          ["Services", "Buy, sell, trade-in, finance, bespoke sourcing, RTO support"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "4. Serving Mumbai, Maharashtra and the Rest of India",
+        content: `Our Santacruz West location on S.V. Road is easy to reach from Bandra, Khar, Juhu, Vile Parle, Andheri, Powai and South Mumbai, and is close to Mumbai airport for clients flying in from other cities.
+
+We also work with clients across Maharashtra, including Pune, Nashik, Nagpur, Thane and Navi Mumbai, and in other states. For buyers who cannot visit in person, we share detailed photos, videos and documents, and coordinate delivery once the deal is complete.`
+      }
+    ],
+    faqs: [
+      {
+        q: "Is Auto Pavilion the same as Autopavilion or autopavilion.in?",
+        a: "Yes. Auto Pavilion is sometimes written as \"Autopavilion\" or \"Auto Pavillion\". It is the same pre-owned luxury car dealership in Santacruz West, Mumbai, and our official website is www.autopavilion.in."
+      },
+      {
+        q: "Where is the Auto Pavilion showroom in Mumbai?",
+        a: "Our showroom is at Office No. 25, Tirupati Shopping Center, S.V. Road, Santacruz (West), Mumbai - 400054."
+      },
+      {
+        q: "How do I contact Auto Pavilion?",
+        a: "Call or WhatsApp +91 82 9191 9393, email info@autopavilion.in, or send an enquiry through the contact form on www.autopavilion.in."
+      },
+      {
+        q: "Does Auto Pavilion buy used luxury cars?",
+        a: "Yes. You can sell your car outright or trade it in against another car. We give a no-obligation offer within 30 minutes of inspection and settle payment securely via RTGS."
+      },
+      {
+        q: "Can I buy a car from Auto Pavilion if I live outside Mumbai?",
+        a: "Yes. We help clients across Maharashtra and other states with video walkarounds, documentation, finance and delivery."
+      }
+    ]
+  },
+  {
+    id: "best-pre-owned-luxury-car-dealer-maharashtra",
+    slug: "best-pre-owned-luxury-car-dealer-maharashtra",
+    title: "How to Choose the Best Pre-Owned Luxury Car Dealer in Maharashtra",
+    subtitle: "A Buyer's Guide for Pune, Nashik, Nagpur, Thane and Beyond: What to Check, How Remote Buying Works, and How Ownership Transfer Works Within the State",
+    excerpt: "Buying a pre-owned luxury car from outside Mumbai? Here is how to judge whether a dealer is trustworthy, what to ask for before you travel, and how ownership transfer works within Maharashtra.",
+    category: "Buyer Guide",
+    readTime: "7 min read",
+    publishedAt: "October 30, 2026",
+    updatedAt: "October 30, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1503376780353-7e6692767b70?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Luxury Car Dealer Maharashtra", "Used Luxury Cars Pune", "Pre-Owned Cars Maharashtra", "Maharashtra RTO Transfer", "Auto Pavilion"],
+    seo: {
+      metaTitle: "Best Luxury Car Dealer in Maharashtra: 2026 Buyer's Guide",
+      metaDescription: "How to choose the best pre-owned luxury car dealer in Maharashtra. What to check, how to buy remotely from Pune, Nashik or Nagpur, and how RTO transfer works.",
+      keywords: "best car dealer in maharashtra, best luxury car dealer maharashtra, pre owned luxury cars maharashtra, used luxury cars pune, used luxury cars nagpur, used luxury cars nashik, luxury car dealer near me, best car dealer in mumbai",
+      canonical: "https://www.autopavilion.in/insights/best-pre-owned-luxury-car-dealer-maharashtra"
+    },
+    keyTakeaways: [
+      "Mumbai has the widest choice of pre-owned luxury cars in Maharashtra, so many buyers from Pune, Nashik, Nagpur and elsewhere shop there.",
+      "The best dealer is one you can verify: a physical showroom, inspection findings shared up front, complete documents and clear answers.",
+      "Ask for a video walkaround, service history and insurance claim history before you travel to see a car.",
+      "For a car already registered in Maharashtra, ownership transfer to a buyer anywhere in the state needs no inter-state NOC and no fresh road tax."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why Buyers Across Maharashtra Look to Mumbai",
+        content: `If you are shopping for a pre-owned Mercedes-Benz, BMW, Audi, Porsche or Range Rover, Mumbai gives you the widest choice of models, specifications and colours in the state. That is why buyers from Pune, Nashik, Nagpur, Aurangabad (Chhatrapati Sambhajinagar), Kolhapur, Thane and Navi Mumbai often look at Mumbai dealers before they decide.
+
+The trade-off is distance. When the showroom is a few hours away, you need a dealer you can trust before you make the trip. Searching for "the best car dealer in Maharashtra" is really asking: which dealer will tell me the truth about a car I have not seen yet?`
+      },
+      {
+        type: "paragraph",
+        heading: "2. Six Signs of a Dealer You Can Trust",
+        content: `Rankings and adverts only tell you so much. These are the practical checks that separate a reliable luxury car dealer from a risky one:`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "1. A Real, Verifiable Showroom",
+            desc: "Check that the dealer has a fixed address you can visit, a working landline or mobile number, and a consistent name across their website, Google listing and social media."
+          },
+          {
+            title: "2. Inspection Findings Shared Up Front",
+            desc: "A good dealer shares what their inspection found, including the imperfections, before you travel. Auto Pavilion inspects every car to a 251-point standard."
+          },
+          {
+            title: "3. Complete Documentation",
+            desc: "Ask to see the RC, insurance policy, service history, insurance claim history and loan status (hypothecation) before you pay a token."
+          },
+          {
+            title: "4. Remote Buying Support",
+            desc: "Detailed photos, a live or recorded video walkaround, and quick answers on WhatsApp make it possible to shortlist confidently from another city."
+          },
+          {
+            title: "5. RTO and Insurance Handled for You",
+            desc: "The dealer should prepare the ownership transfer forms and insurance transfer, and keep you updated until the new RC is in your name."
+          },
+          {
+            title: "6. Delivery and After-Sale Contact",
+            desc: "Ask how the car will reach you, who your point of contact is after the sale, and what happens if something needs attention."
+          }
+        ]
+      },
+      {
+        type: "table",
+        heading: "What to Request Before You Travel to See a Car",
+        columns: ["Request", "Why It Matters"],
+        rows: [
+          ["Video walkaround (exterior, interior, cold start)", "Shows panel gaps, paint, cabin wear and how the engine starts, before you spend a day travelling"],
+          ["Service history", "Confirms the car was maintained on schedule, ideally at an authorised workshop"],
+          ["Insurance claim history", "Reveals past accident repairs that may not be visible"],
+          ["RC copy and number of owners", "Confirms registration details, ownership count and that the chassis number matches"],
+          ["Loan / hypothecation status", "If there is an outstanding loan, the bank NOC and Form 35 are needed before transfer"],
+          ["Inspection findings", "Gives you a clear list of what is perfect and what is not"]
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1600&auto=format&fit=crop",
+        alt: "Black Range Rover Sport parked in front of a garage",
+        caption: "Luxury SUVs such as the Range Rover Sport are popular with buyers across Maharashtra."
+      },
+      {
+        type: "paragraph",
+        heading: "3. How Buying From Another Maharashtra City Works",
+        content: `1. Shortlist online: browse the dealer's current stock and ask for photos, videos and documents for the cars you like.
+2. Review the paperwork: go through the service history, claim history and inspection findings from home.
+3. Visit or send someone you trust: see the car and take a test drive. Many buyers combine this with a day trip to Mumbai.
+4. Agree the deal in writing: pay a token only against a written agreement that states the price, what is included and the timeline.
+5. Pay by bank transfer: avoid cash. Pay through a traceable bank transfer or through your financing bank.
+6. Transfer and delivery: the dealer files the transfer, and the car is delivered to you or collected from the showroom.`
+      },
+      {
+        type: "paragraph",
+        heading: "4. Ownership Transfer Within Maharashtra",
+        content: `If the car is already registered in Maharashtra (an MH number), transferring it to a buyer in Pune, Nashik, Nagpur or anywhere else in the state is simpler than an inter-state purchase. There is no inter-state NOC and no fresh Maharashtra road tax, because the car stays in the same state.
+
+The transfer usually involves Form 29 and Form 30, the original RC, valid insurance and PUC, and Form 35 with a bank NOC if the car had a loan. The application is filed through the Parivahan (Vahan) system and completed with the RTO.
+
+If the car is registered outside Maharashtra, the process is longer: you need an NOC from the original state's RTO and must pay Maharashtra road tax when re-registering. A good dealer will tell you this up front and help you through it.`
+      },
+      {
+        type: "callout",
+        title: "Coming From Outside Mumbai? Plan Your Visit",
+        text: "Auto Pavilion's showroom is on S.V. Road, Santacruz West, close to Mumbai airport and the Western Express Highway. Call +91 82 9191 9393 before you travel and we will keep your shortlisted cars ready for viewing and test drives."
+      }
+    ],
+    faqs: [
+      {
+        q: "Who is the best pre-owned luxury car dealer in Maharashtra?",
+        a: "The best dealer for you is one that shares inspection findings and documents openly, has a real showroom you can visit, and handles RTO transfer and delivery. Auto Pavilion in Santacruz West, Mumbai, works with buyers across Maharashtra on exactly this basis."
+      },
+      {
+        q: "Can I buy a car from a Mumbai dealer if I live in Pune or Nagpur?",
+        a: "Yes. You can shortlist using photos, videos and documents, visit for a test drive or send someone you trust, and have the car delivered once the transfer is filed."
+      },
+      {
+        q: "Do I need an NOC to transfer a Mumbai-registered car to Pune?",
+        a: "No. An inter-state NOC is only needed when a car moves to a different state. Within Maharashtra, ownership transfer is done with Forms 29 and 30 (and Form 35 if there was a loan)."
+      },
+      {
+        q: "Do I have to pay road tax again if I buy a used MH-registered car?",
+        a: "No. Road tax in Maharashtra is paid once at first registration. You only pay Maharashtra road tax again when bringing in a car registered in another state."
+      },
+      {
+        q: "Does Auto Pavilion deliver cars outside Mumbai?",
+        a: "Yes. We coordinate deliveries to clients across Maharashtra and in other states."
+      }
+    ]
+  },
+  {
+    id: "sell-luxury-car-mumbai-best-price-guide",
+    slug: "sell-luxury-car-mumbai-best-price-guide",
+    title: "How to Sell Your Luxury Car in Mumbai for the Best Price",
+    subtitle: "Private Sale, Online Buyers or a Specialist Dealer? What Affects Your Car's Value, and How to Prepare for a Smooth Sale",
+    excerpt: "Selling a Mercedes, BMW, Audi, Porsche or Range Rover in Mumbai? Compare your options, learn what really drives the price, and get your car ready for the best offer.",
+    category: "Seller Guide",
+    readTime: "7 min read",
+    publishedAt: "October 30, 2026",
+    updatedAt: "October 30, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1580273916550-e323be2ae537?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Sell Luxury Car Mumbai", "Car Trade-In Mumbai", "Used Car Valuation", "Sell BMW Mercedes Mumbai", "Auto Pavilion"],
+    seo: {
+      metaTitle: "Sell Your Luxury Car in Mumbai: Best Price Guide (2026)",
+      metaDescription: "Selling a luxury car in Mumbai? Compare private sale, online buyers and specialist dealers, see what drives the price, and get an offer within 30 minutes of inspection.",
+      keywords: "sell luxury car mumbai, sell used car mumbai, sell mercedes mumbai, sell bmw mumbai, sell audi mumbai, luxury car trade in mumbai, used car valuation mumbai, best price for used luxury car",
+      canonical: "https://www.autopavilion.in/insights/sell-luxury-car-mumbai-best-price-guide"
+    },
+    keyTakeaways: [
+      "You can sell privately, to an online car buyer, or to a specialist luxury car dealer. Each trades price against time, effort and risk.",
+      "Service history, accident and claim history, original paint and the car's specification affect a luxury car's price more than mileage alone.",
+      "Keep your RC, insurance, service records, both keys and loan papers ready; a complete file builds buyer confidence.",
+      "Auto Pavilion gives a no-obligation offer within 30 minutes of inspection, with secure RTGS settlement and trade-in options."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Your Three Options for Selling a Luxury Car in Mumbai",
+        content: `When it is time to sell your luxury car, most Mumbai owners choose between three routes:
+
+1. A private sale: listing the car yourself and dealing directly with buyers.
+2. An online car-buying platform: a quick quote and pickup, usually priced for the mass market.
+3. A specialist pre-owned luxury car dealer: an outright sale or a trade-in against your next car.
+
+There is no single right answer. The best choice depends on how much time you have, how much effort you want to put in, and how much you value a safe, paperwork-free sale.`
+      },
+      {
+        type: "table",
+        heading: "Comparing Your Options",
+        columns: ["Factor", "Private Sale", "Online Car Buyer", "Specialist Luxury Dealer"],
+        rows: [
+          ["Price potential", "Can be high, but depends on finding the right buyer", "Often conservative for luxury models", "Strong, because the dealer understands luxury specs and demand"],
+          ["Time to sell", "Weeks to months", "Fast", "Fast; often the same day"],
+          ["Effort for you", "High: calls, viewings, test drives, negotiation", "Low", "Low"],
+          ["Safety", "Risk of time-wasters and payment issues", "Generally safe", "Safe, with bank-transfer settlement"],
+          ["Paperwork", "You handle the RTO transfer", "Handled", "Handled"],
+          ["Trade-in option", "No", "Sometimes", "Yes, adjusted against your next car"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "2. What Really Drives the Price of a Pre-Owned Luxury Car",
+        content: `Luxury car buyers look closely at a car's history and specification. These factors make the biggest difference to your offer:
+
+1. Service history: regular servicing, ideally at an authorised workshop, with records to prove it.
+2. Accident and insurance claim history: a clean claim record and no structural repairs make a big difference.
+3. Original paint: factory paint on all panels is worth more than a car with repainted sections.
+4. Specification and options: packages such as M Sport, AMG Line, panoramic sunroofs, premium audio and driver-assistance features add value.
+5. Number of owners and kilometres: fewer owners and reasonable mileage for the car's age help.
+6. Remaining warranty or service package: an active warranty or prepaid service plan reassures the next buyer.
+7. Condition: tyres, brakes, cabin wear, and all electronics working as they should.
+8. Colour and demand: popular colours and in-demand models sell faster and for more.`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Gather Your Documents",
+            desc: "Original RC, valid insurance and PUC, service records, original purchase invoice, warranty or service package papers, and both keys."
+          },
+          {
+            title: "Sort Out Any Loan First",
+            desc: "If the car is on a loan, get the outstanding amount from your bank. The bank's NOC and Form 35 are needed to remove hypothecation before transfer."
+          },
+          {
+            title: "Present the Car Well",
+            desc: "A thorough wash, interior clean and fixing small issues such as warning lights or worn wiper blades helps the car make a strong first impression."
+          },
+          {
+            title: "Get a Specialist Valuation",
+            desc: "Generic price calculators often miss the value of luxury specifications. An inspection by a luxury car specialist gives you a realistic figure."
+          }
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1592198084033-aade902d1aae?q=80&w=1600&auto=format&fit=crop",
+        alt: "Red Ferrari sports car parked in front of other luxury cars",
+        caption: "Specification, history and condition matter more than mileage alone when valuing a luxury car."
+      },
+      {
+        type: "paragraph",
+        heading: "3. How Selling to Auto Pavilion Works",
+        content: `1. Share your car's details: tell us the make, model, year, kilometres and condition through our Sell page, by phone, or on WhatsApp.
+2. Inspection: we inspect the car at our Santacruz West showroom or arrange an inspection with you.
+3. Offer within 30 minutes: after inspection, we give you a clear, no-obligation offer.
+4. Payment: once you accept, payment is settled securely via RTGS.
+5. Paperwork and collection: we handle the transfer paperwork and can arrange flatbed collection of your car.
+
+If you are upgrading, you can trade your car in instead. Its value is adjusted against the car you choose from our collection, so you handle one transaction instead of two.`
+      },
+      {
+        type: "callout",
+        title: "Selling a Car That Still Has a Loan?",
+        text: "You can still sell it. Share your loan details with us and we will explain how the outstanding amount, the bank NOC and the transfer are handled, so nothing is left pending after the sale."
+      }
+    ],
+    faqs: [
+      {
+        q: "How quickly can I sell my luxury car in Mumbai?",
+        a: "With a specialist dealer like Auto Pavilion, you receive an offer within 30 minutes of inspection, and payment is settled via RTGS once you accept."
+      },
+      {
+        q: "Can I sell a car that is still under a loan?",
+        a: "Yes. The outstanding loan is cleared as part of the sale, and the bank NOC and Form 35 are used to remove hypothecation before the ownership transfer."
+      },
+      {
+        q: "What documents do I need to sell my car?",
+        a: "The original RC, valid insurance and PUC, your ID and address proof, service records, both keys, and loan closure papers if the car was financed."
+      },
+      {
+        q: "Can I trade in my car for another luxury car at Auto Pavilion?",
+        a: "Yes. Your car's value is adjusted against the car you choose from our collection."
+      },
+      {
+        q: "Does Auto Pavilion buy cars from outside Mumbai?",
+        a: "Yes. Once a deal is agreed, we can arrange flatbed collection from your home, including outside Mumbai."
       }
     ]
   }
