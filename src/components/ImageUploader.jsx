@@ -1,16 +1,18 @@
 import React, { useState, useRef } from 'react';
 import { supabase } from '../lib/supabase';
 import { ikUrl } from '../lib/imagekit';
-import { UploadCloud, X, Loader2, GripVertical, ChevronLeft, ChevronRight, Star } from 'lucide-react';
+import { UploadCloud, X, Loader2, GripVertical, ChevronLeft, ChevronRight, Star, Clock } from 'lucide-react';
 
-export default function ImageUploader({ 
-  value = [], 
-  onChange, 
-  label: _label, 
-  maxFiles = null, 
+export default function ImageUploader({
+  value = [],
+  onChange,
+  label: _label,
+  maxFiles = null,
   previewOpts,
   purpose = 'inventory',
-  folder = '/autopavilion/cars'
+  folder = '/autopavilion/cars',
+  // Optional local image (from /public) that can be added with one click
+  comingSoonSrc = null
 }) {
   const [uploading, setUploading] = useState(false);
   const [dragActive, setDragActive] = useState(false);
@@ -127,6 +129,21 @@ export default function ImageUploader({
     if (fileInputRef.current) fileInputRef.current.value = '';
   };
 
+  // Uploads the bundled "Coming Soon" image through the normal ImageKit flow
+  const addComingSoon = async () => {
+    if (uploading || !comingSoonSrc) return;
+    try {
+      const res = await fetch(comingSoonSrc);
+      if (!res.ok) throw new Error('Could not load the Coming Soon image');
+      const blob = await res.blob();
+      const fileName = comingSoonSrc.split('/').pop() || 'coming-soon.jpg';
+      await processFiles([new File([blob], fileName, { type: blob.type || 'image/jpeg' })]);
+    } catch (err) {
+      console.error('Coming Soon image failed:', err);
+      alert(`Could not add Coming Soon image: ${err.message}`);
+    }
+  };
+
   const removeImage = (indexToRemove) => {
     onChange(value.filter((_, idx) => idx !== indexToRemove));
   };
@@ -233,6 +250,24 @@ export default function ImageUploader({
           </div>
         )}
       </div>
+
+      {comingSoonSrc && (
+        <div className="flex flex-wrap items-center gap-3 px-1">
+          <button
+            type="button"
+            onClick={addComingSoon}
+            disabled={uploading}
+            className="inline-flex items-center gap-2 px-4 py-2 rounded-full border border-white/20 bg-white/5 text-white text-[11px] font-bold tracking-widest uppercase hover:bg-white/10 hover:border-white/40 transition-all duration-200 cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+            title="Add the Auto Pavilion 'Coming Soon' image to the gallery"
+          >
+            <Clock size={14} />
+            <span>Coming Soon</span>
+          </button>
+          <span className="text-[10px] tracking-widest uppercase text-zinc-500">
+            No photos yet? Add the placeholder image
+          </span>
+        </div>
+      )}
 
       {/* Previews Grid with Reordering */}
       {value.length > 0 && (

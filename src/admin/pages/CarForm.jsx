@@ -488,6 +488,7 @@ export default function CarForm() {
               value={car.images}
               onChange={set('images')}
               previewOpts={{ width: 320, height: 200, quality: 75 }}
+              comingSoonSrc="/coming-soon.jpg"
             />
           </Field>
         </Section>
