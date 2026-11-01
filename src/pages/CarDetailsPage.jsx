@@ -5,6 +5,7 @@ import { ikUrl } from '../lib/imagekit';
 import { useComparison } from '../hooks/useComparison';
 import confetti from 'canvas-confetti';
 import { supabase } from '../lib/supabase';
+import { notifyInquiry } from '../lib/notifyInquiry';
 import { useCars } from '../hooks/useCars';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -92,7 +93,7 @@ export default function CarDetailsPage() {
     setLoading(true);
 
     try {
-      const { error } = await supabase.from('inquiries').insert([{
+      const inquiry = {
         type: 'car_inquiry',
         name: formData.name,
         phone: formData.phone,
@@ -102,9 +103,11 @@ export default function CarDetailsPage() {
           carPrice: car.price,
           city: formData.city
         }
-      }]);
+      };
+      const { error } = await supabase.from('inquiries').insert([inquiry]);
 
       if (error) throw error;
+      notifyInquiry(inquiry);
       setFormSubmitted(true);
       try {
         confetti({ particleCount: 80, spread: 70, origin: { y: 0.6 } });

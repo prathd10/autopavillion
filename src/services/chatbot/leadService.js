@@ -1,4 +1,5 @@
 import { supabase } from '../../lib/supabase';
+import { notifyInquiry } from '../../lib/notifyInquiry';
 
 export const leadService = {
   /**
@@ -28,6 +29,7 @@ export const leadService = {
       if (error) {
         throw error;
       }
+      notifyInquiry(payload);
       return true;
     } catch (err) {
       console.error('[leadService] Failed to submit chatbot lead to database:', err.message);
