@@ -12,6 +12,7 @@ dotenv.config({ path: path.join(__dirname, '.env') });
 dotenv.config({ path: path.join(__dirname, '.env.local') });
 
 import { createClient } from '@supabase/supabase-js';
+import notifyInquiryHandler from './api/notify-inquiry.js';
 
 const app = express();
 const allowedOrigins = [
@@ -505,6 +506,9 @@ app.post('/api/chat', async (req, res) => {
     res.status(500).json({ error: 'Failed to process chat query.' });
   }
 });
+
+// Enquiry email notifications (same handler as the Vercel function)
+app.post('/api/notify-inquiry', (req, res) => notifyInquiryHandler(req, res));
 
 const PORT = 3001;
 app.listen(PORT, () => {

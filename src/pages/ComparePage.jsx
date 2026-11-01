@@ -4,6 +4,7 @@ import { Scale, X, Search, Sparkles, Check, Loader2, ArrowRight, Plus, Phone, Ch
 import { useComparison } from '../hooks/useComparison';
 import { useCars } from '../hooks/useCars';
 import { supabase } from '../lib/supabase';
+import { notifyInquiry } from '../lib/notifyInquiry';
 import { ikUrl } from '../lib/imagekit';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
@@ -172,7 +173,7 @@ export default function ComparePage() {
     setLeadLoading(newLoad);
 
     try {
-      const { error } = await supabase.from('inquiries').insert([{
+      const inquiry = {
         type: 'bespoke_sourcing',
         name: leadName[slotIndex],
         phone: leadPhone[slotIndex],
@@ -181,9 +182,11 @@ export default function ComparePage() {
           model: vehicle.name,
           source: 'comparison_page_unavailable'
         }
-      }]);
+      };
+      const { error } = await supabase.from('inquiries').insert([inquiry]);
 
       if (error) throw error;
+      notifyInquiry(inquiry);
       
       const newSub = [...leadSubmitted];
       newSub[slotIndex] = true;

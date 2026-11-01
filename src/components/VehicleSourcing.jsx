@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Compass, CheckCircle2, Send, ShieldCheck, Globe, Search, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { notifyInquiry } from '../lib/notifyInquiry';
 
 export default function VehicleSourcing({ className = "bg-zinc-950" }) {
   const [submitted, setSubmitted] = useState(false);
@@ -18,7 +19,7 @@ export default function VehicleSourcing({ className = "bg-zinc-950" }) {
     setLoading(true);
 
     try {
-      const { error } = await supabase.from('inquiries').insert([{
+      const inquiry = {
         type: 'sourcing',
         name: formData.name,
         phone: formData.phone,
@@ -27,9 +28,11 @@ export default function VehicleSourcing({ className = "bg-zinc-950" }) {
           budget: formData.budget,
           notes: formData.notes
         }
-      }]);
+      };
+      const { error } = await supabase.from('inquiries').insert([inquiry]);
 
       if (error) throw error;
+      notifyInquiry(inquiry);
       setSubmitted(true);
     } catch (err) {
       console.error('Error submitting sourcing request:', err);

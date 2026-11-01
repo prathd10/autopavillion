@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { X, Calendar, Clock, MapPin, Send, CheckCircle2, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { notifyInquiry } from '../lib/notifyInquiry';
 
 export default function ViewingModal() {
   const [isOpen, setIsOpen] = useState(false);
@@ -41,7 +42,7 @@ export default function ViewingModal() {
     setLoading(true);
     
     try {
-      const { error } = await supabase.from('inquiries').insert([{
+      const inquiry = {
         type: 'viewing',
         name: formData.name,
         phone: formData.phone,
@@ -50,9 +51,11 @@ export default function ViewingModal() {
           time: formData.time,
           carOfInterest: formData.carOfInterest
         }
-      }]);
+      };
+      const { error } = await supabase.from('inquiries').insert([inquiry]);
 
       if (error) throw error;
+      notifyInquiry(inquiry);
       setSubmitted(true);
     } catch (err) {
       console.error('Error submitting viewing request:', err);

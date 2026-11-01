@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { Calculator, Phone, Clock, CheckCircle2, Send, Loader2 } from 'lucide-react';
 import { supabase } from '../lib/supabase';
+import { notifyInquiry } from '../lib/notifyInquiry';
 
 export default function TradeInCalculator() {
   const parallaxBg = "https://images.unsplash.com/photo-1617814076367-b759c7d7e738?q=80&w=2400&auto=format&fit=crop";
@@ -56,7 +57,7 @@ export default function TradeInCalculator() {
     const finalEstimate = Math.max(baseVal * 0.35, baseVal + yearFactor - mileageDep);
 
     try {
-      const { error } = await supabase.from('inquiries').insert([{
+      const inquiry = {
         type: 'trade_in',
         name: formData.name,
         phone: formData.phone,
@@ -67,9 +68,11 @@ export default function TradeInCalculator() {
           year: formData.year,
           mileage: formData.mileage
         }
-      }]);
+      };
+      const { error } = await supabase.from('inquiries').insert([inquiry]);
 
       if (error) throw error;
+      notifyInquiry(inquiry);
 
       setCalculatedValue({
         min: finalEstimate * 0.95,
