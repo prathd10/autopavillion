@@ -744,6 +744,425 @@ If you are upgrading, you can trade your car in instead. Its value is adjusted a
         a: "Yes. Once a deal is agreed, we can arrange flatbed collection from your home, including outside Mumbai."
       }
     ]
+  },
+  {
+    id: "used-luxury-car-loan-mumbai-guide",
+    slug: "used-luxury-car-loan-mumbai-guide",
+    title: "Used Luxury Car Loans in Mumbai: Eligibility, Down Payment, Documents and EMI",
+    subtitle: "How Financing a Pre-Owned Mercedes, BMW, Audi or Porsche Works, What Lenders Look At, and How to Plan an EMI You Are Comfortable With",
+    excerpt: "Planning to finance a pre-owned luxury car in Mumbai? Here is how used car loans work, how much you may need as a down payment, which documents to keep ready, and what your EMI could look like.",
+    category: "Finance Guide",
+    readTime: "7 min read",
+    publishedAt: "November 02, 2026",
+    updatedAt: "November 02, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Used Car Loan Mumbai", "Luxury Car Finance", "Pre-Owned Car EMI", "Car Loan Documents", "Auto Pavilion"],
+    seo: {
+      metaTitle: "Used Luxury Car Loan in Mumbai: EMI, Down Payment & Documents",
+      metaDescription: "How to finance a pre-owned luxury car in Mumbai: eligibility, down payment, documents, example EMIs and tips for a faster approval.",
+      keywords: "used car loan mumbai, pre owned luxury car loan, used luxury car finance mumbai, second hand car loan emi, used bmw loan, used mercedes loan, car loan documents india, luxury car emi calculator",
+      canonical: "https://www.autopavilion.in/insights/used-luxury-car-loan-mumbai-guide"
+    },
+    keyTakeaways: [
+      "Banks and finance companies lend on pre-owned luxury cars, but the loan is based on the lender's valuation of the car, not just the asking price.",
+      "Used car loans usually carry a higher interest rate and a shorter maximum tenure than new car loans, and the car's age affects both.",
+      "Your credit score, income proof and existing EMIs decide how much you can borrow and at what rate.",
+      "Keep your KYC, income documents and bank statements ready, and the dealer can supply the car's RC, insurance and valuation details."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Can You Get a Loan on a Pre-Owned Luxury Car?",
+        content: `Yes. Most major private banks and many finance companies (NBFCs) offer loans on pre-owned cars, including luxury models from Mercedes-Benz, BMW, Audi, Porsche, Volvo, Jaguar and Land Rover.
+
+Financing a used car works differently from a new one in three important ways:
+
+1. The loan amount is linked to the lender's valuation of the car. If the bank values the car below the agreed price, the difference comes out of your down payment.
+2. Interest rates are usually higher than on new car loans, because the lender sees more risk in an older asset.
+3. The maximum tenure is often shorter, and many lenders limit how old the car can be by the time the loan ends.
+
+Rates and limits change often and differ from one lender to the next, so always compare a few written offers before you commit.`
+      },
+      {
+        type: "paragraph",
+        heading: "2. What Lenders Look At",
+        content: `When you apply, the lender assesses both you and the car:
+
+1. Credit score: a strong repayment history usually means faster approval and a better rate.
+2. Income and stability: salary slips for salaried buyers, or income tax returns and business financials for self-employed buyers and business owners.
+3. Existing EMIs: lenders check how much of your monthly income already goes to other loans.
+4. The car's age, model and condition: a newer, well-documented car with a clean history is easier to finance.
+5. Down payment: a larger down payment lowers the lender's risk and your EMI.
+
+If you are buying the car in your company's name, the lender will also ask for the company's registration documents, financial statements and a board resolution or authorisation letter.`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Identity and Address Proof",
+            desc: "PAN card and Aadhaar, plus passport, driving licence or a utility bill if your current address differs."
+          },
+          {
+            title: "Income Proof",
+            desc: "Recent salary slips and Form 16 if you are salaried; income tax returns for the last two to three years if you are self-employed."
+          },
+          {
+            title: "Bank Statements",
+            desc: "Usually the last six months, showing your salary credits or business income and any existing EMIs."
+          },
+          {
+            title: "Car Documents",
+            desc: "The car's RC, insurance and the lender's valuation report. At Auto Pavilion we share the RC, insurance and service details with your lender directly."
+          }
+        ]
+      },
+      {
+        type: "table",
+        heading: "Example EMIs at 9.5% Interest",
+        columns: ["Loan Amount", "3 Years", "4 Years", "5 Years"],
+        rows: [
+          ["₹15 lakh", "₹48,049 / month", "₹37,685 / month", "₹31,503 / month"],
+          ["₹20 lakh", "₹64,066 / month", "₹50,246 / month", "₹42,004 / month"],
+          ["Total interest on ₹20 lakh", "₹3.06 lakh", "₹4.12 lakh", "₹5.20 lakh"]
+        ]
+      },
+      {
+        type: "paragraph",
+        content: `These figures are examples only, worked out at a 9.5% annual rate. Your actual rate depends on the lender, your profile and the car. A longer tenure lowers the EMI but increases the total interest you pay. You can try your own numbers on the EMI calculator on our Finance page.`
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1600&auto=format&fit=crop",
+        alt: "Technician inspecting a car's engine bay",
+        caption: "Lenders base the loan on the car's valuation, so a clean inspection and service history help."
+      },
+      {
+        type: "paragraph",
+        heading: "3. How the Loan Works When You Buy From Auto Pavilion",
+        content: `1. Choose your car: shortlist from our collection and agree the price.
+2. Check your eligibility: share your basic details and we connect you with our partner banks for an offer.
+3. Submit documents: you provide your KYC and income documents; we provide the car's documents and support the valuation.
+4. Approval and payment: once the loan is sanctioned, the lender pays its share and you pay the down payment.
+5. Transfer with hypothecation: the ownership transfer is filed in your name, with the lender's hypothecation recorded on the RC (Form 34).
+6. Delivery: you take delivery once the payment and paperwork are complete.
+
+When you finish repaying the loan, the lender issues an NOC and Form 35 so the hypothecation can be removed from your RC.`
+      },
+      {
+        type: "callout",
+        title: "Tips for a Faster Approval",
+        text: "Check your credit report before you apply and fix any errors. Keep your documents ready as clear PDFs. Plan a down payment you are comfortable with rather than stretching the tenure to the maximum. And compare the processing fee, foreclosure charges and part-payment rules, not just the interest rate."
+      }
+    ],
+    faqs: [
+      {
+        q: "Can I get a loan on a used luxury car in Mumbai?",
+        a: "Yes. Most major private banks and many finance companies offer loans on pre-owned luxury cars. The amount is based on the lender's valuation of the car and your eligibility."
+      },
+      {
+        q: "How much down payment do I need for a used luxury car?",
+        a: "It depends on the lender's valuation and your profile. Lenders usually finance only part of the car's value, so plan to pay the rest yourself. A larger down payment also lowers your EMI and total interest."
+      },
+      {
+        q: "Are used car loan interest rates higher than new car loans?",
+        a: "Usually, yes. Rates on pre-owned car loans are typically higher than on new car loans and vary with the car's age, the lender and your credit profile."
+      },
+      {
+        q: "What is the maximum tenure for a used car loan?",
+        a: "It varies by lender. Many lenders also limit how old the car can be when the loan ends, so an older car may only qualify for a shorter tenure."
+      },
+      {
+        q: "Does Auto Pavilion help with financing?",
+        a: "Yes. We work with partner banks to arrange financing for our cars and handle the car's documents, valuation support and hypothecation paperwork."
+      }
+    ]
+  },
+  {
+    id: "best-used-luxury-cars-under-30-lakh-india",
+    slug: "best-used-luxury-cars-under-30-lakh-india",
+    title: "Best Used Luxury Cars Under ₹30 Lakh in India (2026 Guide)",
+    subtitle: "Sedans and SUVs From BMW, Mercedes-Benz, Audi, Skoda and Toyota That Make Sense on the Pre-Owned Market, and What to Check on Each",
+    excerpt: "With a budget of up to ₹30 lakh, a well-kept pre-owned luxury car can get you far more car than a new mid-size model. Here are the models worth shortlisting and what to check before you buy.",
+    category: "Buyer Guide",
+    readTime: "8 min read",
+    publishedAt: "November 02, 2026",
+    updatedAt: "November 02, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Used Luxury Cars Under 30 Lakh", "Best Used Luxury Cars India", "Used BMW Mumbai", "Used Mercedes Mumbai", "Used Audi Mumbai"],
+    seo: {
+      metaTitle: "Best Used Luxury Cars Under ₹30 Lakh in India (2026)",
+      metaDescription: "The best used luxury cars under ₹30 lakh: BMW 3 Series, X1, Mercedes C-Class, Audi A6, Skoda Superb, Camry Hybrid and what to check on each.",
+      keywords: "best used luxury cars under 30 lakh, used luxury cars under 30 lakh india, second hand luxury cars mumbai, used bmw under 30 lakh, used mercedes under 30 lakh, used audi a6 mumbai, used skoda superb mumbai, used camry hybrid mumbai",
+      canonical: "https://www.autopavilion.in/insights/best-used-luxury-cars-under-30-lakh-india"
+    },
+    keyTakeaways: [
+      "Up to ₹30 lakh buys a well-equipped pre-owned luxury sedan or compact SUV, often for the price of a new mid-size car.",
+      "German sedans such as the BMW 3 Series, Mercedes-Benz C-Class and Audi A6 offer the most luxury for the money.",
+      "The Skoda Superb and Toyota Camry Hybrid are strong choices if you value rear-seat space, comfort and running costs.",
+      "Whatever you choose, the car's service history, claim history and inspection report matter more than the badge."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why ₹30 Lakh Goes Further on the Pre-Owned Market",
+        content: `Luxury cars lose a large share of their value in the first few years. That is painful for the first owner, but it is good news for you: a few-year-old luxury car with modest kilometres can cost about the same as a new mid-size sedan or SUV, while giving you a better cabin, more features and a more refined drive.
+
+The models below are popular on the Indian pre-owned market and suit Mumbai driving. Prices vary widely with year, kilometres, variant and condition, so use this as a shortlist rather than a price guide.`
+      },
+      {
+        type: "table",
+        heading: "Our Shortlist at a Glance",
+        columns: ["Model", "Body Type", "Best For", "Check Before Buying"],
+        rows: [
+          ["BMW 3 Series", "Sedan", "Driving enjoyment with everyday comfort", "Service history, run-flat tyre condition, warning lights"],
+          ["BMW X1", "Compact SUV", "A practical first luxury SUV for city use", "Tyre wear, infotainment and cameras, service records"],
+          ["Mercedes-Benz C-Class", "Sedan", "A plush ride and a classy cabin", "Suspension noises, electronics, service records"],
+          ["Mercedes-Benz E-Class (older models)", "Sedan", "Rear-seat comfort in the long-wheelbase version", "Suspension, electronics, full service history"],
+          ["Audi A4 / A6", "Sedan", "Understated style and a quiet, refined cabin", "Gearbox smoothness, MMI system, service history"],
+          ["Skoda Superb (L&K / Laurin & Klement)", "Sedan", "Huge rear legroom and top-end features for the price", "DSG gearbox smoothness, service history"],
+          ["Toyota Camry Hybrid", "Sedan", "Low running costs, reliability and a calm drive", "Hybrid system health check, hybrid battery warranty status"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "2. German Luxury Sedans: BMW 3 Series, Mercedes C-Class, Audi A4 and A6",
+        content: `If you want a true luxury badge with a premium cabin, these are the natural starting points.
+
+BMW 3 Series: the driver's choice. It feels sharp and sporty, and petrol versions are smooth in city traffic. Many 3 Series run on run-flat tyres, which are expensive to replace, so check their condition.
+
+Mercedes-Benz C-Class: the comfort choice. It has a soft, quiet ride and an elegant interior. Listen for suspension knocks over Mumbai's speed breakers and check that every electronic feature works.
+
+Audi A4 and A6: the understated choice. Both are refined and well built. The A6 gives you a bigger, executive-class sedan for the money, which makes an older A6 one of the best-value luxury cars on the market.
+
+Older Mercedes-Benz E-Class: a few years older, but the long-wheelbase version sold in India offers rear-seat space that rivals far more expensive cars. Make sure the full service history is available.`
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1502877338535-766e1452684a?q=80&w=1600&auto=format&fit=crop",
+        alt: "Blue BMW coupe parked on a city street",
+        caption: "A well-maintained pre-owned BMW gives you a premium driving experience for a fraction of its new price."
+      },
+      {
+        type: "paragraph",
+        heading: "3. Compact Luxury SUVs: BMW X1 and Its Rivals",
+        content: `If you want a higher seating position and easier parking, a compact luxury SUV is a good fit for Mumbai. The BMW X1 is a popular choice, with a practical cabin and a commanding view of the road. The Mercedes-Benz GLA and Audi Q3 are worth comparing too.
+
+Compact luxury SUVs hold their value well, so you may find a slightly older or higher-mileage example within this budget. Do not let that worry you if the service history is complete and the inspection is clean.`
+      },
+      {
+        type: "paragraph",
+        heading: "4. The Smart Alternatives: Skoda Superb and Toyota Camry Hybrid",
+        content: `Not every great luxury car wears a German premium badge.
+
+Skoda Superb: in top Laurin & Klement (L&K) trim, the Superb offers rear legroom bigger than many luxury sedans, plus features such as ventilated seats, premium audio and a large boot. The 2.0 TSI petrol with its automatic DSG gearbox is quick and smooth. On a test drive, check that the gearbox shifts cleanly at low speeds.
+
+Toyota Camry Hybrid: a quiet, comfortable sedan with low running costs and Toyota's reputation for reliability. It is ideal for stop-and-go Mumbai traffic, where the hybrid system does its best work. Ask for a hybrid system health check and confirm whether the hybrid battery is still under Toyota's warranty.`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Complete Service History",
+            desc: "Regular servicing, ideally at an authorised workshop, is the best sign of a well-kept luxury car."
+          },
+          {
+            title: "Insurance Claim History",
+            desc: "Shows past accident repairs that may not be visible from the outside."
+          },
+          {
+            title: "Independent Inspection Report",
+            desc: "Every Auto Pavilion car is inspected to a 251-point standard, and we share the findings with you."
+          },
+          {
+            title: "Flood and Water Damage Check",
+            desc: "Essential in Mumbai. Look for damp carpets, rust under the seats and corrosion on low-lying wiring."
+          },
+          {
+            title: "Number of Owners and RC Details",
+            desc: "Fewer owners is better. Make sure the chassis and engine numbers match the RC."
+          }
+        ]
+      },
+      {
+        type: "callout",
+        title: "See What Is in Stock Now",
+        text: "Our collection changes every week. Browse current pre-owned luxury cars on our Inventory page, or call +91 82 9191 9393 and tell us your budget. We will shortlist cars for you and keep them ready for a test drive at our Santacruz West showroom."
+      }
+    ],
+    faqs: [
+      {
+        q: "Which is the best used luxury car under ₹30 lakh in India?",
+        a: "It depends on your priorities. The BMW 3 Series suits buyers who enjoy driving, the Mercedes-Benz C-Class and Audi A6 suit comfort-focused buyers, the BMW X1 suits those who want an SUV, and the Skoda Superb and Toyota Camry Hybrid offer great space and value."
+      },
+      {
+        q: "Is it worth buying a used luxury car instead of a new mid-size car?",
+        a: "For many buyers, yes. A well-maintained pre-owned luxury car gives you a better cabin, more features and a more refined drive for a similar price, as long as you buy one with a clean, documented history."
+      },
+      {
+        q: "Are used luxury cars expensive to maintain?",
+        a: "Service and parts cost more than for mass-market cars, but a car with a full service history and a clean inspection is far less likely to surprise you. Budget for tyres, brakes and routine servicing."
+      },
+      {
+        q: "Is the Skoda Superb a luxury car?",
+        a: "The Superb is sold as a premium sedan rather than under a luxury badge, but in Laurin & Klement trim its space, comfort and features compete with many luxury sedans."
+      },
+      {
+        q: "Can I finance a used luxury car under ₹30 lakh?",
+        a: "Yes. Banks and finance companies offer loans on pre-owned luxury cars, and Auto Pavilion can connect you with our partner banks."
+      }
+    ]
+  },
+  {
+    id: "buying-other-state-car-maharashtra-re-registration",
+    slug: "buying-other-state-car-maharashtra-re-registration",
+    title: "Buying a Car Registered in Another State? NOC, Re-Registration and Maharashtra Road Tax Explained",
+    subtitle: "What Happens When You Buy a Delhi, Karnataka or Gujarat-Registered Luxury Car and Bring It to Mumbai: Documents, Steps and Costs to Plan For",
+    excerpt: "Found the perfect pre-owned luxury car, but it is registered outside Maharashtra? Here is how the NOC, ownership transfer, re-registration and road tax work, and how to factor them into the price.",
+    category: "RTO Guide",
+    readTime: "7 min read",
+    publishedAt: "November 02, 2026",
+    updatedAt: "November 02, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Car Re-Registration Maharashtra", "Inter-State Car Transfer", "NOC for Car Transfer", "Maharashtra Road Tax", "RTO Mumbai"],
+    seo: {
+      metaTitle: "Other-State Car Re-Registration in Maharashtra: NOC & Road Tax",
+      metaDescription: "Buying a car registered in another state? How the NOC, ownership transfer, re-registration and Maharashtra road tax work, step by step.",
+      keywords: "other state car re-registration maharashtra, inter state car transfer mumbai, noc for car transfer from other state, maharashtra road tax for other state car, delhi car to mumbai re-registration, buy car registered in another state, form 28 noc, form 27 re-registration",
+      canonical: "https://www.autopavilion.in/insights/buying-other-state-car-maharashtra-re-registration"
+    },
+    keyTakeaways: [
+      "A car registered in another state needs an NOC from its original RTO before it can be re-registered in Maharashtra.",
+      "Under the Motor Vehicles Act, a car kept in a new state for more than 12 months must be re-registered there.",
+      "Re-registering in Maharashtra means paying Maharashtra road tax, so add it to the price when comparing an out-of-state car with an MH-registered one.",
+      "A car already registered in Maharashtra avoids the NOC and the fresh road tax completely."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why Out-of-State Luxury Cars Are Common in Mumbai",
+        content: `Many pre-owned luxury cars on sale in Mumbai were first registered elsewhere, most often in Delhi, Haryana, Karnataka or Gujarat. Owners relocate, companies move cars between offices, and some buyers look outside the state for a specific model or colour.
+
+There is nothing wrong with buying one of these cars. But the paperwork has more steps than buying an MH-registered car, and there is an extra cost: Maharashtra road tax. Knowing the process before you agree a price saves you surprises later.`
+      },
+      {
+        type: "paragraph",
+        heading: "2. The Rule You Need to Know",
+        content: `Under Section 47 of the Motor Vehicles Act, a vehicle registered in one state and kept in another state for more than 12 months must be registered in the new state. In practice, if you live in Mumbai and buy a car registered in Delhi, you will need to re-register it in Maharashtra and get an MH number.
+
+There is one exception worth knowing about. Cars registered under the Bharat (BH) series are designed for people who move between states, such as defence personnel, government employees and employees of companies with offices in several states, and do not need re-registering when they move. Eligibility rules apply, so check them with your RTO if this applies to you.`
+      },
+      {
+        type: "table",
+        heading: "MH-Registered vs Out-of-State Car",
+        columns: ["Step", "MH-Registered Car", "Car Registered in Another State"],
+        rows: [
+          ["NOC from the original RTO", "Not needed", "Needed (Form 28)"],
+          ["Ownership transfer", "Forms 29 and 30", "Forms 29 and 30"],
+          ["Re-registration with a new MH number", "Not needed", "Needed (Form 27)"],
+          ["Maharashtra road tax", "Already paid", "Payable on re-registration"],
+          ["Vehicle inspection at the RTO", "Usually not needed", "Usually needed"],
+          ["Typical time to complete", "Shorter", "Longer, often several weeks"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "3. Step by Step: Bringing an Out-of-State Car to Maharashtra",
+        content: `1. Get the NOC: the NOC (Form 28) is applied for at the RTO where the car is currently registered. It confirms there are no pending dues, challans or legal issues and names the Maharashtra RTO the car will move to. If the car has a loan, the lender's NOC is needed first.
+2. Transfer ownership: the sale is recorded using Forms 29 and 30. Depending on the case, this is done at the original RTO or at the Maharashtra RTO along with re-registration.
+3. Apply for re-registration: at your local Maharashtra RTO, apply for a new registration number using Form 27, with the NOC, original RC, valid insurance, PUC and your address proof.
+4. Pay Maharashtra road tax: the RTO works out the tax based on the car's value and age under Maharashtra's rules.
+5. Vehicle inspection: the RTO checks the car and matches its chassis and engine numbers with the records.
+6. Get your new RC: once approved, the car is issued a new MH registration number and RC. Fit the new number plates and update your insurance policy with the new registration.`
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1600&auto=format&fit=crop",
+        alt: "White SUV parked on a wet road with snow-covered mountains behind",
+        caption: "Cars often travel across state lines before they reach their next owner."
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Original RC",
+            desc: "Check that the chassis and engine numbers match the car and that the owner's name matches the seller."
+          },
+          {
+            title: "NOC From the Original RTO",
+            desc: "Make sure it names the correct Maharashtra RTO and has not expired before you apply."
+          },
+          {
+            title: "Lender's NOC and Form 35 (if the car had a loan)",
+            desc: "Needed to remove the old lender's hypothecation before the car can move."
+          },
+          {
+            title: "Valid Insurance and PUC",
+            desc: "Both must be valid when you apply. Update the insurance with the new registration number afterwards."
+          },
+          {
+            title: "Your ID and Maharashtra Address Proof",
+            desc: "Along with your PAN card (or Form 60) for the RTO application."
+          },
+          {
+            title: "Clear Challan Record",
+            desc: "Pending traffic challans in the original state can hold up the NOC, so check for them early."
+          }
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "4. Factor the Road Tax Into the Price",
+        content: `An out-of-state car can look cheaper than a similar MH-registered car until you add Maharashtra road tax. Before you agree a price, ask the RTO or the dealer for an estimate of the tax payable, then compare the total cost of both cars.
+
+Some states allow the previous owner to claim a refund of part of the road tax paid there when a car moves out. The rules and process differ from state to state, so do not count on a refund unless you have confirmed it with the original RTO.`
+      },
+      {
+        type: "callout",
+        title: "Prefer to Skip the Paperwork?",
+        text: "Most cars at Auto Pavilion are already registered in Maharashtra, so there is no NOC or fresh road tax to deal with. If you have your eye on a car from another state, call us on +91 82 9191 9393 and we will explain the steps and costs for that car before you decide."
+      }
+    ],
+    faqs: [
+      {
+        q: "Do I need to re-register a car from another state in Maharashtra?",
+        a: "Yes, if you keep it in Maharashtra for more than 12 months. Under Section 47 of the Motor Vehicles Act, the car must then be registered in the new state with a local registration number."
+      },
+      {
+        q: "Which form is used for the NOC to move a car to another state?",
+        a: "Form 28 is used to apply for the NOC at the RTO where the car is currently registered. Form 27 is then used to apply for a new registration number in Maharashtra."
+      },
+      {
+        q: "Do I have to pay road tax again when I re-register a car in Maharashtra?",
+        a: "Yes. Maharashtra road tax is payable when you re-register a car from another state, worked out on the car's value and age."
+      },
+      {
+        q: "Can I get a refund of road tax from the original state?",
+        a: "Some states allow a partial refund when a car moves out, but the rules differ. Check with the RTO where the car was originally registered."
+      },
+      {
+        q: "How long does inter-state re-registration take?",
+        a: "It varies by RTO and depends on how quickly the NOC is issued. It often takes several weeks, so plan for it and keep all documents ready."
+      }
+    ]
   }
 ];
 
