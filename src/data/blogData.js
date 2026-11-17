@@ -1578,6 +1578,456 @@ If the cover is weak or the policy is close to expiry, buying a new policy with 
         a: "Yes. We handle the insurance transfer along with the RTO transfer, or arrange a new policy if that suits you better."
       }
     ]
+  },
+  {
+    id: "buying-used-mercedes-benz-mumbai-guide",
+    slug: "buying-used-mercedes-benz-mumbai-guide",
+    title: "Buying a Used Mercedes-Benz in Mumbai: Which Model to Choose and What to Check",
+    subtitle: "C-Class, E-Class, GLA, GLC, GLE or S-Class? How to Pick the Right Pre-Owned Mercedes, Decode the Model Names, and Inspect One Before You Buy",
+    excerpt: "Thinking of a pre-owned Mercedes-Benz? Here is how to choose between the C-Class, E-Class, GLA, GLC, GLE and S-Class, what the model names mean, and the checks that matter before you buy.",
+    category: "Brand Guide",
+    readTime: "8 min read",
+    publishedAt: "November 17, 2026",
+    updatedAt: "November 17, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Used Mercedes Mumbai", "Pre-Owned Mercedes-Benz", "Mercedes E-Class Used", "Mercedes GLC Used", "Mercedes Buying Guide"],
+    seo: {
+      metaTitle: "Used Mercedes-Benz in Mumbai: Models & What to Check (2026)",
+      metaDescription: "How to choose a pre-owned Mercedes-Benz in Mumbai: C-Class, E-Class, GLA, GLC, GLE or S-Class, what the model names mean, and what to check.",
+      keywords: "used mercedes mumbai, pre owned mercedes mumbai, second hand mercedes mumbai, used mercedes e class, used mercedes c class, used mercedes glc, used mercedes gle, used mercedes s class, mercedes buying guide india",
+      canonical: "https://www.autopavilion.in/insights/buying-used-mercedes-benz-mumbai-guide"
+    },
+    keyTakeaways: [
+      "The E-Class sold in India is a long-wheelbase version with generous rear legroom, which makes it one of the most popular pre-owned luxury sedans in Mumbai.",
+      "In Mercedes names, a 'd' means diesel (E 220d), no letter usually means petrol (C 200), and '4MATIC' means all-wheel drive.",
+      "Check that the car has followed the Mercedes Service A and Service B schedule, and get a diagnostic scan before you buy.",
+      "On SUVs and the S-Class with air suspension, check that the car sits level and rises and lowers properly."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why a Pre-Owned Mercedes-Benz Makes Sense",
+        content: `Mercedes-Benz has been the best-selling luxury car brand in India for years, so Mumbai has one of the widest choices of pre-owned Mercedes cars in the country. Like most luxury cars, a Mercedes loses a large share of its value in the first few years. A well-kept example a few years old gives you the same comfort, safety and build quality at a much lower price.
+
+The wide choice also means quality varies a lot. Two cars with the same name and year can be in very different condition, so knowing what to look for matters.`
+      },
+      {
+        type: "table",
+        heading: "Which Mercedes-Benz Suits You?",
+        columns: ["Model", "Body Type", "Best For"],
+        rows: [
+          ["A-Class Limousine", "Compact sedan", "An entry into the brand with modern technology"],
+          ["C-Class", "Sedan", "A premium daily car that is easy to drive and park in the city"],
+          ["E-Class (long wheelbase)", "Executive sedan", "Rear-seat comfort, chauffeur-driven owners and long drives"],
+          ["S-Class", "Flagship sedan", "Maximum luxury, rear-seat comfort and technology"],
+          ["GLA", "Compact SUV", "City driving with a higher seating position"],
+          ["GLC", "Mid-size SUV", "A balance of space, comfort and easy handling for families"],
+          ["GLE", "Large SUV", "Space, presence and long-distance comfort"],
+          ["GLS", "Full-size 7-seat SUV", "Large families who want three rows of seating"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "2. How to Read Mercedes-Benz Model Names",
+        content: `Mercedes names follow a simple pattern once you know it:
+
+1. The letters tell you the model: C, E and S are sedans; GLA, GLC, GLE and GLS are SUVs, getting larger in that order.
+2. The number usually indicates the engine's power level, not its exact size. An E 350d is more powerful than an E 220d.
+3. A 'd' after the number means diesel, as in C 220d or GLE 300d. Most petrol models have no letter, as in C 200 or E 200. Older diesels used 'CDI', as in E 250 CDI.
+4. '4MATIC' means all-wheel drive. It is common on larger SUVs.
+5. 'AMG Line' is a sporty styling and equipment package. A full 'Mercedes-AMG' model, such as the C 43 or E 63, is a high-performance car with its own engine and running costs.
+
+Knowing this helps you compare listings properly, because the engine and equipment make a big difference to the car you are buying.`
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1600&auto=format&fit=crop",
+        alt: "Technician inspecting a car's engine bay",
+        caption: "A full diagnostic scan and a check of the service record are essential before buying any pre-owned Mercedes-Benz."
+      },
+      {
+        type: "paragraph",
+        heading: "3. What to Check on a Used Mercedes-Benz",
+        content: `A Mercedes that has been serviced on schedule is comfortable and dependable for many years. One that has missed services can become expensive. These are the checks that matter most:`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Service A and Service B History",
+            desc: "Mercedes cars follow an alternating Service A and Service B schedule. Check that every service was done on time, ideally at an authorised Mercedes-Benz workshop, and that the car is not overdue."
+          },
+          {
+            title: "Diagnostic Scan",
+            desc: "A scan with Mercedes-compatible equipment shows stored fault codes that do not always appear as warning lights on the dashboard."
+          },
+          {
+            title: "Air Suspension",
+            desc: "On the S-Class and many GLE and GLS models, check that the car sits level after standing overnight and that it rises and lowers smoothly in each driving mode."
+          },
+          {
+            title: "Gearbox",
+            desc: "The automatic gearbox should shift smoothly and quickly, both when cold and after a longer drive. Any jerks or delays need investigating."
+          },
+          {
+            title: "Diesel Emission Systems",
+            desc: "On BS6 diesels such as the E 220d and GLC 220d, check for particulate filter or AdBlue warnings, and ask how the car was mostly driven."
+          },
+          {
+            title: "Electronics and Infotainment",
+            desc: "Test the screens, cameras, parking sensors, seat adjustment and memory, sunroof, ambient lighting and every switch. Electrical repairs on luxury cars can be costly."
+          },
+          {
+            title: "Service Package and Warranty",
+            desc: "Ask whether a Mercedes-Benz service package or extended warranty is still active, and whether it transfers to you as the new owner."
+          },
+          {
+            title: "Flood History",
+            desc: "Essential in Mumbai. Look for damp carpets, a musty smell, rust under the seats and corrosion on low-lying wiring and connectors."
+          }
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "4. Sedan or SUV?",
+        content: `If you are often driven by a chauffeur, the long-wheelbase E-Class is hard to beat for rear-seat space and comfort at its price. The C-Class suits owners who drive themselves and want something easy to manage in Mumbai traffic.
+
+If you want a higher seating position for Mumbai's roads and speed breakers, the GLC is the most popular all-rounder. The GLE and GLS suit families who need more space or regularly drive out of the city.
+
+Many models are available in both petrol and diesel. As a rule, petrol suits mostly city driving and diesel suits regular highway trips. Our petrol vs diesel guide explains how to decide.`
+      },
+      {
+        type: "callout",
+        title: "See Our Pre-Owned Mercedes-Benz Cars",
+        text: "Every Mercedes-Benz at Auto Pavilion is inspected to our 251-point standard, and we share the findings and service history before you buy. Browse our Inventory page or call +91 82 9191 9393 to book a test drive at our Santacruz West showroom."
+      }
+    ],
+    faqs: [
+      {
+        q: "Is a used Mercedes-Benz a good buy in India?",
+        a: "Yes, if you choose one with a complete service history and a clean inspection. A pre-owned Mercedes gives you the brand's comfort, safety and build quality at a much lower price than a new one."
+      },
+      {
+        q: "Which used Mercedes is best for Mumbai?",
+        a: "For a chauffeur-driven car, the long-wheelbase E-Class is the most popular choice. For driving yourself in the city, the C-Class or GLA is easy to live with. For a family SUV, the GLC is a strong all-rounder."
+      },
+      {
+        q: "What does 'd' mean in Mercedes model names?",
+        a: "'d' means diesel. For example, an E 220d is a diesel E-Class. Most petrol models have no letter, such as the C 200."
+      },
+      {
+        q: "What is Service A and Service B on a Mercedes?",
+        a: "Mercedes-Benz uses an alternating maintenance schedule. Service A is the smaller service and Service B is the more detailed one. A complete record of both is a good sign of a well-kept car."
+      },
+      {
+        q: "Are used Mercedes cars expensive to maintain?",
+        a: "Servicing and parts cost more than for mass-market cars, but a Mercedes serviced on schedule is far less likely to need major repairs. Budget for tyres, brakes and regular servicing."
+      }
+    ]
+  },
+  {
+    id: "how-to-check-used-car-history-india",
+    slug: "how-to-check-used-car-history-india",
+    title: "How to Check a Used Car's History in India: Service Records, Odometer, Challans and Loans",
+    subtitle: "The Checks That Reveal a Pre-Owned Car's Real Past, From the RC and Service Book to Pending Challans, Insurance Claims and Signs of a Tampered Odometer",
+    excerpt: "A pre-owned car's history tells you more than its shine. Here is how to check the RC, service records, odometer, insurance claims, pending challans and loans before you buy a used car in India.",
+    category: "Buyer Guide",
+    readTime: "7 min read",
+    publishedAt: "November 17, 2026",
+    updatedAt: "November 17, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1771340012378-3c86cb649193?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Used Car History Check", "Odometer Tampering", "Service History", "Vahan RC Check", "Used Car Buying Guide"],
+    seo: {
+      metaTitle: "How to Check a Used Car's History in India (2026 Guide)",
+      metaDescription: "Check a used car's RC, service records, odometer, insurance claims, pending challans and loans before you buy. A step-by-step guide for India.",
+      keywords: "check used car history india, used car history check, how to check odometer tampering, used car service history check, vahan rc check, check pending challan car, hypothecation check rc, used car accident history india",
+      canonical: "https://www.autopavilion.in/insights/how-to-check-used-car-history-india"
+    },
+    keyTakeaways: [
+      "Start with the RC: the chassis and engine numbers on it must match the car, and it shows the number of previous owners and any loan.",
+      "The service record is the best proof of the real kilometres, because each visit logs the odometer reading.",
+      "Check for pending challans on the Parivahan e-challan portal, and make sure they are cleared before the transfer.",
+      "Ask for the previous insurance policies. The no claim bonus on them gives a strong hint about past claims."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why a Car's History Matters",
+        content: `Two pre-owned cars of the same model and year can look identical in photos and be very different underneath. One may have been serviced on time by one careful owner. The other may have been in an accident, missed services or had its odometer wound back.
+
+A car's history tells you which one you are looking at. Most of these checks take less than an hour, and they can save you from an expensive mistake. Here is what to check, in order.`
+      },
+      {
+        type: "paragraph",
+        heading: "2. Start With the RC",
+        content: `The registration certificate (RC) is the car's identity document. Check these points against the car itself:
+
+1. Chassis and engine numbers: they must match the numbers stamped on the car. Any mismatch is a reason to walk away.
+2. Owner serial number: this shows how many owners the car has had. A single-owner car usually has a clearer history.
+3. Registration and manufacturing dates: check they match what the seller has told you.
+4. Hypothecation: if the RC says the car is hypothecated to a bank, the loan has not yet been removed from the RC. You will need the bank's NOC and Form 35 before the car can be transferred to you.
+
+You can also check basic registration details, such as registration date, fuel type and insurance and PUC validity, on the government's Vahan service through the Parivahan website or the mParivahan app.`
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1600&auto=format&fit=crop",
+        alt: "Technician inspecting a car's engine bay",
+        caption: "A diagnostic scan and a physical inspection confirm what the paperwork says."
+      },
+      {
+        type: "paragraph",
+        heading: "3. Check the Service History",
+        content: `A complete service record is the single best sign of a well-kept car. It also helps confirm the real kilometres, because every service visit records the odometer reading.
+
+Ask for the service book or invoices. For most luxury brands, an authorised workshop can also look up the car's service history using its chassis number (VIN). Some cars, such as BMWs, also store recent services in the car's own menu.
+
+Look for services done on time, kilometres that rise steadily between visits, and no long unexplained gaps. A missing year of records is worth asking about.`
+      },
+      {
+        type: "paragraph",
+        heading: "4. Look for Signs of Odometer Tampering",
+        content: `A wound-back odometer is one of the most common problems in the used car market. The service record is your best check, but the car itself also gives clues:
+
+1. Wear that does not match the kilometres: a shiny or worn steering wheel, gear lever, pedal rubbers or driver's seat bolster on a car showing low kilometres.
+2. Old service stickers or invoices with higher readings than the odometer shows today.
+3. A diagnostic scan: on many modern cars, the mileage is stored in more than one control unit. A mismatch between them is a strong sign of tampering.
+
+If the kilometres look too good for the car's age and condition, treat them with caution.`
+      },
+      {
+        type: "table",
+        heading: "What to Check and Where",
+        columns: ["Check", "Where to Find It", "Warning Sign"],
+        rows: [
+          ["Ownership and loan", "RC, and Vahan via Parivahan or mParivahan", "Details that do not match, or a loan still recorded"],
+          ["Real kilometres", "Service records and a diagnostic scan", "Readings that drop or jump between services"],
+          ["Pending challans", "Parivahan e-challan portal and the Maharashtra traffic e-challan portal", "Unpaid fines that have not been cleared"],
+          ["Past claims", "Previous insurance policies", "A low or reset no claim bonus"],
+          ["Accident repairs", "Physical inspection and paint thickness check", "Uneven panel gaps, overspray or repainted panels"],
+          ["Flood damage", "Physical inspection", "Damp carpets, musty smell, rust under the seats"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "5. Pending Challans and Insurance Claims",
+        content: `Unpaid traffic fines stay linked to the car's registration number and can hold up the RC transfer. Check for pending challans on the Parivahan e-challan portal, and for Maharashtra-registered cars on the Maharashtra traffic e-challan portal. Make sure they are cleared before you pay.
+
+For insurance, ask the seller for the current and previous policies. The no claim bonus (NCB) on each one is a useful clue: an owner who has kept a high NCB for several years has probably not made major claims. A low or reset NCB is worth asking about, though it can also mean the owner moved their NCB from another car. Our insurance transfer guide explains how NCB works.`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "RC Matches the Car",
+            desc: "Chassis and engine numbers, owner serial number and dates all match."
+          },
+          {
+            title: "No Loan Left on the RC",
+            desc: "Or, if there is one, the bank's NOC and Form 35 are ready."
+          },
+          {
+            title: "Complete Service Record",
+            desc: "Services on time, with kilometres rising steadily between visits."
+          },
+          {
+            title: "Kilometres Match the Wear",
+            desc: "Interior wear and the diagnostic scan are consistent with the odometer."
+          },
+          {
+            title: "No Pending Challans",
+            desc: "Any fines are cleared before the sale."
+          },
+          {
+            title: "Insurance History Reviewed",
+            desc: "Previous policies and NCB checked for signs of past claims."
+          },
+          {
+            title: "Independent Inspection",
+            desc: "A full inspection for accident repairs, flood damage and mechanical health."
+          }
+        ]
+      },
+      {
+        type: "callout",
+        title: "We Do These Checks for You",
+        text: "Every car at Auto Pavilion is inspected to our 251-point standard, and we verify the RC, service history, challans and insurance before it joins our collection. We share the findings with you before you buy. Call +91 82 9191 9393 or visit our Santacruz West showroom."
+      }
+    ],
+    faqs: [
+      {
+        q: "How can I check a used car's history in India?",
+        a: "Check the RC against the car, review the service records, look up registration details on Vahan through Parivahan or the mParivahan app, check for pending challans, review previous insurance policies, and get an independent inspection."
+      },
+      {
+        q: "How do I know if a used car's odometer has been tampered with?",
+        a: "Compare the odometer with the readings in the service records, look for interior wear that does not match the kilometres, and get a diagnostic scan, which on many modern cars can show a mileage mismatch between control units."
+      },
+      {
+        q: "How do I check if a used car still has a loan on it?",
+        a: "Look at the RC. If it shows the car as hypothecated to a bank, the loan has not been removed. You need the bank's NOC and Form 35 before the car can be transferred to you."
+      },
+      {
+        q: "How do I check pending challans on a car?",
+        a: "Enter the registration number on the Parivahan e-challan portal. For Maharashtra-registered cars, also check the Maharashtra traffic e-challan portal."
+      },
+      {
+        q: "Can I find out if a used car has had insurance claims?",
+        a: "Ask the seller for the previous insurance policies. A high no claim bonus kept over several years suggests the owner has not made major claims."
+      }
+    ]
+  },
+  {
+    id: "best-used-7-seater-luxury-suv-india",
+    slug: "best-used-7-seater-luxury-suv-india",
+    title: "Best Used 7-Seater Luxury SUVs in India: Fortuner, XC90, Q7, GLS and More",
+    subtitle: "Which Pre-Owned Three-Row SUV Suits Your Family, How Usable the Third Row Really Is, and What to Check Before You Buy",
+    excerpt: "Need room for seven? Compare the best pre-owned 7-seater luxury and premium SUVs in India, from the Toyota Fortuner and Skoda Kodiaq to the Volvo XC90, Audi Q7 and Mercedes-Benz GLS.",
+    category: "Buyer Guide",
+    readTime: "7 min read",
+    publishedAt: "November 17, 2026",
+    updatedAt: "November 17, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["7 Seater Luxury SUV", "Used Fortuner", "Used Volvo XC90", "Used Audi Q7", "Used Mercedes GLS"],
+    seo: {
+      metaTitle: "Best Used 7-Seater Luxury SUVs in India (2026 Guide)",
+      metaDescription: "Compare the best pre-owned 7-seater luxury SUVs in India: Fortuner, Kodiaq, XC90, Q7, GLS, X7 and Discovery. Third-row space and what to check.",
+      keywords: "best used 7 seater luxury suv india, used 7 seater suv mumbai, used fortuner mumbai, used volvo xc90, used audi q7, used mercedes gls, used skoda kodiaq, 7 seater luxury car india",
+      canonical: "https://www.autopavilion.in/insights/best-used-7-seater-luxury-suv-india"
+    },
+    keyTakeaways: [
+      "In most 7-seater SUVs, the third row is best for children or short trips; the GLS, X7, XC90 and Discovery have the most usable third rows for adults.",
+      "The Toyota Fortuner is the toughest choice for rough roads and long trips; the Skoda Kodiaq is the most affordable premium option.",
+      "The Volvo XC90 is known for safety and calm comfort, and the Audi Q7 and Mercedes GLS for luxury and highway ability.",
+      "Check the third-row seats, rear air-conditioning, suspension and service history on any used 7-seater."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why Buy a Pre-Owned 7-Seater?",
+        content: `A 7-seater SUV lets the whole family travel in one car, with space for grandparents, children's friends or extra luggage when the third row is folded. Large luxury SUVs also lose a big share of their value in their first few years, which makes a well-kept pre-owned example far better value than a new one.
+
+Before you choose, be honest about how often you will use the third row. If it is only for occasional short trips, almost any of these SUVs will do. If adults will sit there on long drives, you need one of the larger models.`
+      },
+      {
+        type: "table",
+        heading: "Popular 7-Seaters at a Glance",
+        columns: ["Model", "Strength", "Third Row"],
+        rows: [
+          ["Toyota Fortuner", "Tough build, strong diesel engine, available with 4x4", "Best for children and short trips"],
+          ["Skoda Kodiaq", "Comfortable, well equipped and the most affordable premium choice", "Best for children and short trips"],
+          ["Mercedes-Benz GLB", "Compact size with a Mercedes cabin", "Best for children and short trips"],
+          ["Volvo XC90", "Excellent safety, calm ride and elegant cabin", "Usable for adults on shorter trips"],
+          ["Audi Q7", "Refined, quiet and very comfortable on the highway", "Best for children and short trips"],
+          ["Land Rover Discovery", "Space, comfort and real off-road ability", "Usable for adults"],
+          ["Mercedes-Benz GLS", "Limousine-like comfort and space", "Usable for adults"],
+          ["BMW X7", "Luxury, space and strong performance", "Usable for adults"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "2. The Practical Choices: Fortuner and Kodiaq",
+        content: `The Toyota Fortuner is one of the most popular large SUVs in India for good reason. It is built tough, handles bad roads and long highway trips with ease, and holds its value well. The 2.8-litre diesel with an automatic gearbox is the most popular choice, and the 4x4 versions suit owners who travel to hills or rough terrain. Its third row folds up to the sides and is best for children or short trips.
+
+The Skoda Kodiaq offers a more car-like drive, a comfortable ride and plenty of equipment. It is an excellent choice if you want a premium 7-seater without moving into full luxury-brand running costs.`
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1563720223185-11003d516935?q=80&w=1600&auto=format&fit=crop",
+        alt: "Black Range Rover Sport parked in front of a garage",
+        caption: "Larger luxury SUVs offer the most usable third rows for adults."
+      },
+      {
+        type: "paragraph",
+        heading: "3. The Luxury Choices: XC90, Q7, GLS, X7 and Discovery",
+        content: `The Volvo XC90 is a favourite with families for its safety record, calm ride and elegant Scandinavian cabin. Recent models in India use a petrol mild-hybrid engine, while older ones were sold as diesels and as a plug-in hybrid.
+
+The Audi Q7 is quiet, refined and very comfortable on long drives. Earlier models in India were diesels; since its 2022 relaunch, it has been sold with a petrol engine.
+
+The Mercedes-Benz GLS and BMW X7 are the most spacious of the group, with third rows that adults can use on longer trips. They are the closest thing to a limousine in SUV form.
+
+The Land Rover Discovery combines seven proper seats with genuine off-road ability, which makes it a good choice for families who travel to the hills or the coast.`
+      },
+      {
+        type: "paragraph",
+        heading: "4. What to Check on a Used 7-Seater",
+        content: `Large SUVs carry more weight and often more people, so a few checks matter more than on a sedan:`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Third-Row Seats",
+            desc: "Fold and unfold every seat, including any electric folding, and check the seat belts and mechanisms in all three rows."
+          },
+          {
+            title: "Rear Air-Conditioning",
+            desc: "Check that the rear AC vents and controls cool the second and third rows properly. This matters in Mumbai's heat."
+          },
+          {
+            title: "Suspension",
+            desc: "Listen for knocks over speed breakers. On SUVs with air suspension, such as many GLS, X7, Q7 and Discovery models, check that the car sits level and rises and lowers properly."
+          },
+          {
+            title: "Tyres and Brakes",
+            desc: "Large SUVs use large, expensive tyres and wear brakes faster. Check the tread depth, sidewalls and brake condition."
+          },
+          {
+            title: "4x4 System",
+            desc: "On 4x4 models such as the Fortuner, check that the four-wheel-drive modes engage properly, and look underneath for scrapes or damage from off-road use."
+          },
+          {
+            title: "Service History and Flood Check",
+            desc: "Make sure services were done on time, and look for damp carpets or rust under the seats that can point to flood damage."
+          }
+        ]
+      },
+      {
+        type: "callout",
+        title: "Looking for a 7-Seater?",
+        text: "Tell us how many people you need to seat and how you drive, and we will suggest the right SUV from our collection or source one for you. Every car is inspected to our 251-point standard. Browse our Inventory page or call +91 82 9191 9393 to book a test drive at our Santacruz West showroom."
+      }
+    ],
+    faqs: [
+      {
+        q: "Which is the best used 7-seater luxury SUV in India?",
+        a: "It depends on your needs. The Toyota Fortuner is the toughest all-rounder, the Volvo XC90 is known for safety and comfort, and the Mercedes-Benz GLS and BMW X7 offer the most space and luxury."
+      },
+      {
+        q: "Which 7-seater SUV has the most space in the third row?",
+        a: "The Mercedes-Benz GLS, BMW X7 and Land Rover Discovery have the most usable third rows for adults. In most other 7-seaters, the third row is best for children or short trips."
+      },
+      {
+        q: "Is a used Toyota Fortuner a good buy?",
+        a: "Yes. The Fortuner is tough, dependable and holds its value well. Check the service history, suspension and, on 4x4 versions, the four-wheel-drive system before you buy."
+      },
+      {
+        q: "Is the Audi Q7 available as a diesel?",
+        a: "Earlier Q7 models sold in India were diesels. Since its 2022 relaunch in India, the Q7 has been sold with a petrol engine, so a diesel Q7 will be an older pre-owned car."
+      },
+      {
+        q: "What should I check on a used 7-seater SUV?",
+        a: "Check the third-row seats and belts, rear air-conditioning, suspension, tyres and brakes, the 4x4 system if fitted, the service history and signs of flood damage."
+      }
+    ]
   }
 ];
 
