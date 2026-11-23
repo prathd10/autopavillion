@@ -2028,6 +2028,454 @@ The Land Rover Discovery combines seven proper seats with genuine off-road abili
         a: "Check the third-row seats and belts, rear air-conditioning, suspension, tyres and brakes, the 4x4 system if fitted, the service history and signs of flood damage."
       }
     ]
+  },
+  {
+    id: "buying-used-audi-mumbai-guide",
+    slug: "buying-used-audi-mumbai-guide",
+    title: "Buying a Used Audi in Mumbai: Which Model to Choose and What to Check",
+    subtitle: "A3, A4, A6, Q3, Q5 or Q7? How to Pick the Right Pre-Owned Audi, Decode Badges Like 35 TDI and 40 TFSI, and Inspect One Before You Buy",
+    excerpt: "Thinking of a pre-owned Audi? Here is how to choose between the A3, A4, A6, Q3, Q5 and Q7, what badges like 35 TDI and 40 TFSI really mean, and the checks that matter before you buy.",
+    category: "Brand Guide",
+    readTime: "8 min read",
+    publishedAt: "November 23, 2026",
+    updatedAt: "November 23, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1520050206274-a1ae44613e6d?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Used Audi Mumbai", "Pre-Owned Audi", "Audi A4 Used", "Audi Q5 Used", "Audi Buying Guide"],
+    seo: {
+      metaTitle: "Buying a Used Audi in Mumbai: Models & What to Check (2026)",
+      metaDescription: "How to choose a pre-owned Audi in Mumbai: A3, A4, A6, Q3, Q5 or Q7, what badges like 35 TDI and 40 TFSI mean, and what to check before you buy.",
+      keywords: "used audi mumbai, pre owned audi mumbai, second hand audi mumbai, used audi a4, used audi a6, used audi q3, used audi q5, used audi q7, audi 35 tdi meaning, audi buying guide india",
+      canonical: "https://www.autopavilion.in/insights/buying-used-audi-mumbai-guide"
+    },
+    keyTakeaways: [
+      "Choose by use: the A4 and A6 for comfort, the Q3 for easy city driving, and the Q5 and Q7 for space and long trips.",
+      "On an Audi, TFSI means petrol and TDI means diesel. The number, such as 35 or 40, shows the power band and not the engine size.",
+      "'quattro' means all-wheel drive, so check whether the car you are comparing actually has it.",
+      "Test the automatic gearbox carefully and ask for its service record, along with a full diagnostic scan."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why a Pre-Owned Audi Makes Sense",
+        content: `Audi is known for beautifully finished cabins, quiet refinement and understated design. Like most luxury cars, an Audi loses a large share of its value in the first few years, so a well-kept example a few years old offers the same quality at a much lower price.
+
+Mumbai has a healthy choice of pre-owned Audis, from compact sedans to large family SUVs. The key is matching the right model and engine to how you drive, then making sure the car has been looked after.`
+      },
+      {
+        type: "table",
+        heading: "Which Audi Suits You?",
+        columns: ["Model", "Body Type", "Best For"],
+        rows: [
+          ["A3", "Compact sedan", "An easy entry into the brand and simple city driving"],
+          ["A4", "Sedan", "A refined daily car for owners who drive themselves"],
+          ["A6", "Executive sedan", "Rear-seat comfort, chauffeur use and long drives"],
+          ["Q3", "Compact SUV", "City driving and parking with a higher seating position"],
+          ["Q5", "Mid-size SUV", "A balance of space, comfort and highway ability"],
+          ["Q7", "Large 7-seat SUV", "Families who want three rows and long-distance comfort"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "2. How to Read Audi Badges",
+        content: `Audi badges confuse many buyers because the numbers do not describe the engine size:
+
+1. TFSI means a petrol engine and TDI means a diesel engine.
+2. The two-digit number, such as 30, 35, 40 or 45, is a power band. A higher number means more power. A 35 TDI is not a 3.5-litre engine.
+3. Older Audis often use the engine size instead, such as 2.0 TDI or 1.8 TFSI.
+4. 'quattro' means all-wheel drive. Not every Audi has it, so check the exact variant.
+5. S line is a sportier styling package. Full S and RS models are high-performance cars with higher running costs.
+
+Because the same badge can be used on different engine outputs across model years, always compare the actual power figure and year when you look at two listings.`
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1542282088-72c9c27ed0cd?q=80&w=1600&auto=format&fit=crop",
+        alt: "White Audi parked in a dimly lit parking garage with its headlights on",
+        caption: "Two Audis with similar badges can differ in engine, year and equipment, so compare the details."
+      },
+      {
+        type: "paragraph",
+        heading: "3. What to Check on a Used Audi",
+        content: `An Audi that has been serviced on time is a pleasure to own. These are the checks that matter most:`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Complete Service History",
+            desc: "Check that services were done on time, ideally at an authorised Audi workshop, and that none is overdue."
+          },
+          {
+            title: "Automatic Gearbox",
+            desc: "Many Audis use the S tronic dual-clutch gearbox. Drive the car slowly in traffic as well as at speed, and watch for jerks, shudder or delayed shifts. Ask whether the gearbox oil has been changed on schedule."
+          },
+          {
+            title: "Diagnostic Scan",
+            desc: "A scan with Audi-compatible equipment shows stored fault codes that do not always appear as dashboard warnings."
+          },
+          {
+            title: "Engine Oil Level and Timing Components",
+            desc: "Check the oil level and ask how often it has needed topping up. On engines with a timing belt, confirm it has been replaced on schedule."
+          },
+          {
+            title: "Diesel Emission Systems",
+            desc: "On TDI models, check for particulate filter or AdBlue warnings, and ask how the car was mostly driven."
+          },
+          {
+            title: "Air Suspension",
+            desc: "On cars fitted with it, such as many Q7s, check that the car sits level after standing and rises and lowers properly."
+          },
+          {
+            title: "MMI and Electronics",
+            desc: "Test the MMI screen, virtual cockpit if fitted, cameras, parking sensors, seats, sunroof and every switch."
+          },
+          {
+            title: "Flood History",
+            desc: "Essential in Mumbai. Look for damp carpets, a musty smell, rust under the seats and corrosion on low-lying wiring."
+          }
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "4. Petrol or Diesel Audi?",
+        content: `TFSI petrol models are smooth and quiet in stop-and-go traffic, so they often suit owners who mostly drive within Mumbai. TDI diesels have strong pulling power and good highway fuel economy, which suits regular trips to Pune, Nashik or beyond.
+
+If you are comparing older and newer cars, check the fuel type carefully, as the engines offered on each Audi model have changed over the years. Our petrol vs diesel guide explains how to decide.`
+      },
+      {
+        type: "callout",
+        title: "See Our Pre-Owned Audis",
+        text: "Every Audi at Auto Pavilion is inspected to our 251-point standard, and we share the findings and service history before you buy. Browse our Inventory page or call +91 82 9191 9393 to book a test drive at our Santacruz West showroom."
+      }
+    ],
+    faqs: [
+      {
+        q: "Is a used Audi a good buy in India?",
+        a: "Yes, if it has a complete service history and a clean inspection. A pre-owned Audi gives you the brand's cabin quality and refinement at a much lower price than a new one."
+      },
+      {
+        q: "What does 35 TDI mean on an Audi?",
+        a: "TDI means diesel, and 35 is a power band. It does not mean a 3.5-litre engine."
+      },
+      {
+        q: "What is the difference between TFSI and TDI?",
+        a: "TFSI is Audi's name for its turbocharged petrol engines and TDI is its name for turbo diesel engines."
+      },
+      {
+        q: "Which used Audi is best for Mumbai?",
+        a: "For mostly city driving, the Q3 or A4 is easy to live with. For more space and regular highway trips, consider the Q5, A6 or Q7."
+      },
+      {
+        q: "Are used Audis expensive to maintain?",
+        a: "Servicing and parts cost more than for mass-market cars, but an Audi serviced on schedule is far less likely to need major repairs. Budget for tyres, brakes and regular gearbox and engine servicing."
+      }
+    ]
+  },
+  {
+    id: "how-to-spot-flood-damaged-car-mumbai",
+    slug: "how-to-spot-flood-damaged-car-mumbai",
+    title: "How to Spot a Flood-Damaged Used Car in Mumbai: Signs, Checks and Insurance",
+    subtitle: "The Smells, Stains, Rust and Electrical Faults That Give Away a Monsoon-Damaged Car, and Why a Clean Record Does Not Prove It Stayed Dry",
+    excerpt: "Mumbai's monsoon floods cars every year, and some reach the used market looking spotless. Here are the signs of a flood-damaged car, how to check one, and what insurance does and does not tell you.",
+    category: "Buyer Guide",
+    readTime: "6 min read",
+    publishedAt: "November 23, 2026",
+    updatedAt: "November 23, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1619682817481-e994891cd1f5?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["Flood Damaged Car", "Used Car Mumbai", "Monsoon Car Damage", "Used Car Inspection", "Hydrostatic Lock"],
+    seo: {
+      metaTitle: "How to Spot a Flood-Damaged Used Car in Mumbai (2026)",
+      metaDescription: "Signs of a flood-damaged used car in Mumbai: smells, stains, rust and electrical faults, why a clean record is not proof, and what to check.",
+      keywords: "flood damaged car, how to check flood damaged car, flood affected car india, used car flood damage mumbai, water damaged car signs, monsoon damaged car, hydrostatic lock car, flood car insurance india",
+      canonical: "https://www.autopavilion.in/insights/how-to-spot-flood-damaged-car-mumbai"
+    },
+    keyTakeaways: [
+      "A clean Vahan record does not prove a car was never flooded, because flood damage is not normally shown there.",
+      "The strongest signs are a musty smell, silt under the carpets, rust in unusual places and moisture inside the lights.",
+      "Brand-new carpets or heavy air freshener in an older car are reasons to look more closely.",
+      "On a luxury car, have a specialist check the wiring, electronics, engine oil and underbody before you pay."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why Flood Damage Matters in Mumbai",
+        content: `Every monsoon, low-lying parts of Mumbai flood and cars parked in basements or on the street can end up under water. Many are cleaned, repaired and sold again. From the outside, they can look perfect.
+
+The trouble often appears months later. Water and silt get into wiring, connectors, control units and bearings, and corrosion keeps spreading after the car has dried. On a modern luxury car packed with electronics, that can mean repeated faults and very high repair bills.`
+      },
+      {
+        type: "paragraph",
+        heading: "2. Why a Clean Record Is Not Enough",
+        content: `Vahan shows registration details. It is not a record of damage, so a car that has been badly flooded can still show a perfectly clean entry.
+
+Insurance history helps, but it has limits too. A flood claim will appear only if the owner made one. If the car was repaired privately, there may be no paper trail at all. That is why a physical inspection matters more than any document for this particular risk.`
+      },
+      {
+        type: "table",
+        heading: "Flood Warning Signs and Where to Find Them",
+        columns: ["Where to Look", "What to Look For"],
+        rows: [
+          ["Cabin air", "Musty or mildew smell, or strong air freshener hiding one"],
+          ["Carpets and seats", "Dampness, stains, caked mud, or suspiciously new carpets in an older car"],
+          ["Under the seats", "Rusty seat rails, bolts and screws"],
+          ["Seat belts", "Faded colour, staining or silt when pulled all the way out"],
+          ["Lights", "Fogging or water droplets inside headlights and tail lights"],
+          ["Boot and spare wheel well", "Silt, water marks or rust"],
+          ["Engine bay", "Mud, water lines on inner panels, stained air filter"],
+          ["Engine oil", "Pale or milky oil, which can indicate water contamination"],
+          ["Under the dashboard", "Brittle, corroded or muddy wiring"]
+        ]
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1625047509248-ec889cbff17f?q=80&w=1600&auto=format&fit=crop",
+        alt: "Technician inspecting a car's engine bay",
+        caption: "Silt, water lines and contaminated oil in the engine bay are strong signs that a car has been flooded."
+      },
+      {
+        type: "paragraph",
+        heading: "3. How to Check a Car Step by Step",
+        content: `You can do most of the first check yourself in about 20 minutes:`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Do the Smell Test",
+            desc: "Sit inside with the windows closed, then run the AC. A damp, musty smell from the vents is a serious warning."
+          },
+          {
+            title: "Lift the Carpets and Mats",
+            desc: "Feel for damp and look for silt, stains and rust on the metal floor underneath, as far as you can reach."
+          },
+          {
+            title: "Pull Out the Seat Belts",
+            desc: "Draw each belt out fully. Water marks or grit on the hidden section are hard for anyone to clean away."
+          },
+          {
+            title: "Check the Boot",
+            desc: "Lift the boot floor and inspect the spare wheel well, a low point where water and silt collect."
+          },
+          {
+            title: "Test Every Electrical Function",
+            desc: "Check the windows, seats, screen, cameras, AC, sensors and lights. Faults that come and go are a classic sign of water damage."
+          },
+          {
+            title: "Watch the Dashboard at Start-Up",
+            desc: "Warning lights should come on with the ignition and go off once the engine starts. A light that never comes on may have been disabled."
+          },
+          {
+            title: "Get a Diagnostic Scan",
+            desc: "A scan can reveal stored faults across several control units, which is a common pattern after water damage."
+          },
+          {
+            title: "Inspect the Underbody",
+            desc: "Have the car raised on a lift and look for fresh underbody coating, unusual rust and silt around the brakes and wheels."
+          }
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "4. What About Insurance?",
+        content: `Comprehensive car insurance in India generally covers flood damage, but a third-party-only policy does not. Engine damage caused by water entering the engine, known as hydrostatic lock, is often excluded unless the policy has an engine protection add-on. If you keep your car in Mumbai, this add-on is well worth having.
+
+If your own car is ever caught in a flood, do not try to start it. Starting a car with water in the engine can turn a repairable problem into a destroyed engine. Call your insurer and arrange for the car to be towed.`
+      },
+      {
+        type: "callout",
+        title: "Buy With Confidence",
+        text: "Flood and moisture checks are part of our 251-point inspection on every car at Auto Pavilion, and we share the findings with you before you buy. Call +91 82 9191 9393 or visit our Santacruz West showroom."
+      }
+    ],
+    faqs: [
+      {
+        q: "How can I tell if a used car has been in a flood?",
+        a: "Look for a musty smell, damp or new carpets, silt under the seats and in the boot, rust on seat rails and bolts, moisture inside the lights and intermittent electrical faults."
+      },
+      {
+        q: "Does the RC or Vahan show flood damage?",
+        a: "No. Vahan shows registration details and is not a record of damage, so a flooded car can still have a clean entry."
+      },
+      {
+        q: "Should I buy a car that has been flood damaged?",
+        a: "It is generally best to avoid one, especially a luxury car with complex electronics, because corrosion can keep causing faults long after the repair."
+      },
+      {
+        q: "Does car insurance cover flood damage in India?",
+        a: "A comprehensive policy generally covers it, but a third-party policy does not. Engine damage from water usually needs an engine protection add-on."
+      },
+      {
+        q: "What should I do if my car gets stuck in floodwater?",
+        a: "Do not start the engine. Move to safety, contact your insurer and have the car towed to a workshop."
+      }
+    ]
+  },
+  {
+    id: "rc-transfer-maharashtra-guide",
+    slug: "rc-transfer-maharashtra-guide",
+    title: "RC Transfer in Maharashtra: Forms 29 and 30, Documents, Deadlines and Process",
+    subtitle: "How to Transfer a Used Car Into Your Name in Mumbai, What the Buyer and Seller Each Need to Do, and How Long It Takes",
+    excerpt: "Bought a used car in Mumbai? Until the RC is transferred, the car legally stays in the seller's name. Here are the forms, documents, deadlines and steps for an RC transfer in Maharashtra.",
+    category: "RTO Guide",
+    readTime: "6 min read",
+    publishedAt: "November 23, 2026",
+    updatedAt: "November 23, 2026",
+    author: {
+      name: "Auto Pavilion Editorial Desk",
+      role: "Luxury Automotive Advisory"
+    },
+    coverImage: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1600&auto=format&fit=crop",
+    image: "https://images.unsplash.com/photo-1549399542-7e3f8b79c341?q=80&w=1600&auto=format&fit=crop",
+    featured: false,
+    tags: ["RC Transfer Maharashtra", "RC Transfer Mumbai", "Form 29 and 30", "Car Ownership Transfer", "RTO Guide"],
+    seo: {
+      metaTitle: "RC Transfer in Maharashtra: Forms, Documents & Process",
+      metaDescription: "How to transfer a used car's RC in Mumbai and Maharashtra: Forms 29 and 30, documents, the 14 and 30-day deadlines and step-by-step process.",
+      keywords: "rc transfer maharashtra, rc transfer mumbai, car ownership transfer maharashtra, form 29 and 30, how to transfer car ownership mumbai, rto transfer of ownership, rc transfer documents, rc transfer online maharashtra",
+      canonical: "https://www.autopavilion.in/insights/rc-transfer-maharashtra-guide"
+    },
+    keyTakeaways: [
+      "Under Section 50 of the Motor Vehicles Act, the seller must report a same-state sale within 14 days and the buyer must report it within 30 days.",
+      "Form 29 is the notice of transfer and Form 30 is the report and application for transferring ownership.",
+      "If the car has a loan on it, you also need the bank's NOC and Form 35 to remove it from the RC.",
+      "Clear any pending challans and keep insurance and PUC valid, since these can hold up the transfer."
+    ],
+    contentSections: [
+      {
+        type: "paragraph",
+        heading: "1. Why the RC Transfer Matters",
+        content: `Paying for a car and collecting the keys does not make you its registered owner. Until the RC is transferred, official records still show the seller's name.
+
+That is a risk for both sides. The buyer may struggle with insurance claims, resale or finance. The seller may keep receiving challans, and could be drawn into legal trouble if the car is involved in an accident or misused. Completing the transfer quickly protects everyone.`
+      },
+      {
+        type: "table",
+        heading: "Who Does What, and By When",
+        columns: ["Person", "What They Must Do", "Deadline"],
+        rows: [
+          ["Seller, car registered in the same state", "Report the transfer to the RTO and give the buyer a copy", "Within 14 days of the transfer"],
+          ["Seller, car registered in another state", "Send the NOC or related paperwork to the RTO", "Within 45 days of the transfer"],
+          ["Buyer", "Report the transfer to the RTO with the RC and the fee", "Within 30 days of the transfer"]
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "2. The Forms You Need",
+        content: `Most same-state transfers use two forms:
+
+1. Form 29: the notice of transfer of ownership, signed by the seller.
+2. Form 30: the report and application for transfer of ownership, signed by the seller and the buyer.
+
+Some cases need more:
+
+1. Form 28: the no-objection certificate (NOC), used when a car moves to another state. Check with your RTO whether one is needed for a move between RTOs within Maharashtra.
+2. Form 35: used with the bank's NOC to remove a loan (hypothecation) from the RC.
+
+If the car came from another state, our guide to buying a car registered in another state covers the extra steps and Maharashtra road tax.`
+      },
+      {
+        type: "checklist",
+        items: [
+          {
+            title: "Original RC",
+            desc: "The car's current registration certificate."
+          },
+          {
+            title: "Forms 29 and 30",
+            desc: "Filled in and signed by the people required on each form."
+          },
+          {
+            title: "Valid Insurance",
+            desc: "A current policy. Move it into your name as well, within 14 days of the transfer."
+          },
+          {
+            title: "Valid PUC Certificate",
+            desc: "A current pollution under control certificate."
+          },
+          {
+            title: "Buyer's ID and Address Proof",
+            desc: "Such as Aadhaar and PAN, with your current address."
+          },
+          {
+            title: "Chassis and Engine Number Impressions",
+            desc: "Pencil prints of both numbers, taken from the car."
+          },
+          {
+            title: "Bank NOC and Form 35",
+            desc: "Only if the RC shows a loan."
+          },
+          {
+            title: "Fee Receipt",
+            desc: "Proof of the transfer fee and smart card charges paid."
+          }
+        ]
+      },
+      {
+        type: "paragraph",
+        heading: "3. The Process, Step by Step",
+        content: `1. Clear the dues. Check for pending challans and make sure tax, insurance and PUC are in order.
+2. Remove any loan. If the RC shows hypothecation, get the bank's NOC and complete Form 35.
+3. Apply online. On the Parivahan website, open Vehicle Related Services, select Maharashtra and your RTO, then choose Transfer of Ownership.
+4. Pay the fee. Pay online and keep the receipts. Fees can vary, so go by the amount shown on the Parivahan payment screen.
+5. Sign and submit. Print the forms, get them signed, and submit them with your documents as your RTO requires.
+6. Receive the new RC. Track the application on Parivahan. The new smart card RC is sent to your registered address.
+
+The whole process often takes a few weeks, depending on the RTO and whether all the paperwork is in order.`
+      },
+      {
+        type: "image",
+        url: "https://images.unsplash.com/photo-1618642624018-a370cbf3cd80?q=80&w=1600&auto=format&fit=crop",
+        alt: "Bentley and Mercedes luxury vehicles showcased in boutique showroom",
+        caption: "When you buy from a dealer, ask who handles the RC transfer and what is included."
+      },
+      {
+        type: "paragraph",
+        heading: "4. Mistakes to Avoid",
+        content: `1. Signing blank forms. Sellers should never hand over blank signed Forms 29 and 30, because the car could be resold without being transferred.
+2. Paying in full with the loan still on the RC. Confirm how and when the loan will be closed before you hand over the money.
+3. Forgetting the insurance. The RC and the policy are separate transfers. Our insurance transfer guide explains the 14-day rule and what happens to the no claim bonus.
+4. Missing the deadline. Late reporting can attract a penalty, so start the process as soon as the sale is complete.`
+      },
+      {
+        type: "callout",
+        title: "We Handle the Paperwork",
+        text: "When you buy from Auto Pavilion, our team handles the RTO transfer and insurance transfer for you. Call +91 82 9191 9393 or visit our Santacruz West showroom if you have questions about the paperwork on any car in our collection."
+      }
+    ],
+    faqs: [
+      {
+        q: "How do I transfer a car's RC in Maharashtra?",
+        a: "Clear any dues and loan, apply for Transfer of Ownership on the Parivahan website, pay the fee, then submit the signed Forms 29 and 30 with the RC, insurance, PUC and your ID and address proof as your RTO requires."
+      },
+      {
+        q: "What is the time limit for RC transfer after buying a used car?",
+        a: "Under Section 50 of the Motor Vehicles Act, the seller must report a same-state sale within 14 days, and the buyer must report the transfer within 30 days."
+      },
+      {
+        q: "What is the difference between Form 29 and Form 30?",
+        a: "Form 29 is the notice of transfer of ownership. Form 30 is the report and application to transfer the car into the buyer's name."
+      },
+      {
+        q: "How much does an RC transfer cost in Maharashtra?",
+        a: "Fees can vary with the vehicle and the RTO, and smart card charges may apply. Check the exact amount on the Parivahan payment screen before you pay."
+      },
+      {
+        q: "How long does an RC transfer take?",
+        a: "It often takes a few weeks, depending on the RTO and whether all the paperwork is complete."
+      }
+    ]
   }
 ];
 
